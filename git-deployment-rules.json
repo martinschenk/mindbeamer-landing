@@ -1,0 +1,44 @@
+{
+  "gitDeployment": {
+    "description": "Git-Deployment-Konfiguration für Laravel-Projekte auf Plesk-Servern",
+    "serverType": "plesk",
+    "sshAuthentication": {
+      "method": "key-based",
+      "keyType": "ed25519",
+      "setupInstructions": [
+        "SSH-Schlüssel generieren: ssh-keygen -t ed25519 -C \"projektname git access\"",
+        "Öffentlichen Schlüssel auf Server kopieren: ssh-copy-id -i ~/.ssh/id_ed25519.pub benutzer@server",
+        "Oder manuell in authorized_keys eintragen"
+      ]
+    },
+    "gitConfiguration": {
+      "remoteNaming": "aussagekräftiger Name (z.B. s22-projektname-web)",
+      "remoteURL": "benutzer@server:~/git/repository.git",
+      "initialPush": "git push -u remote-name main"
+    },
+    "postReceiveHook": {
+      "path": "~/git/repository.git/hooks/post-receive",
+      "permissions": "chmod +x ~/git/repository.git/hooks/post-receive",
+      "features": [
+        "Automatisches Deployment vom Git-Repository ins Webverzeichnis",
+        "Beibehaltung wichtiger Dateien (.env, storage-Inhalte)",
+        "Automatische Composer-Updates bei Änderungen",
+        "Laravel-spezifische Artisan-Befehle (cache:clear, config:cache, etc.)",
+        "Berechtigungsanpassungen für Produktionsumgebung"
+      ],
+      "templateLocation": "/Users/martin/Laravel-Projekte/mindbeamer.io.landing/post-receive-hook.sh"
+    },
+    "workflow": {
+      "development": "Lokale Entwicklung in PHPStorm",
+      "deployment": "Commit und Push via Shift+Cmd+K in PHPStorm",
+      "automaticUpdate": "post-receive-Hook aktualisiert Produktivserver automatisch"
+    },
+    "bestPractices": [
+      "Lokale .env für Entwicklung, separate .env auf Server",
+      "Keine sensiblen Daten ins Git-Repository",
+      "Deploy immer über Git, nie direkt auf dem Server arbeiten",
+      "Produktionsumgebung testen nach größeren Updates",
+      "Regelmäßige Backups durchführen"
+    ]
+  }
+}
