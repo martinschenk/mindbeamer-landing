@@ -44,7 +44,13 @@
     </div>
     
     <div class="content">
-        <p>Es wurde eine neue Demo-Anfrage über das Kontaktformular auf mindbeamer.io eingereicht:</p>
+        @if(config('app.env') !== 'production')
+            <div style="background-color: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; padding: 10px; margin-bottom: 20px; border-radius: 4px;">
+                <strong>ENTWICKLUNGSUMGEBUNG:</strong> Diese E-Mail wurde von {{ config('app.url') }} ({{ config('app.env') }}) gesendet. NICHT PRODUKTIV!
+            </div>
+        @endif
+        
+        <p>Es wurde eine neue Demo-Anfrage über das Kontaktformular auf {{ parse_url(config('app.url'), PHP_URL_HOST) }} eingereicht:</p>
         
         <div class="info-row">
             <span class="info-label">E-Mail:</span> 
@@ -55,7 +61,10 @@
     </div>
     
     <div class="footer">
-        <p>Diese E-Mail wurde automatisch von mindbeamer.io gesendet.</p>
+        <p>Diese E-Mail wurde automatisch von {{ parse_url(config('app.url'), PHP_URL_HOST) }} gesendet.</p>
+        @if(config('app.env') !== 'production')
+            <p style="color: #0369a1; font-weight: bold;">{{ strtoupper(config('app.env')) }}-UMGEBUNG</p>
+        @endif
     </div>
 </body>
 </html>
