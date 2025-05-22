@@ -2,7 +2,15 @@
 // Session für CSRF-Token
 session_start();
 if (!isset($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    try {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    } catch (\Random\RandomException $e) {
+        // Fallback, wenn random_bytes() fehlschlägt
+        $_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(32));
+    } catch (\Exception $e) {
+        // Letzter Fallback, wenn beide sicheren Methoden fehlschlagen
+        $_SESSION['csrf_token'] = md5(uniqid(mt_rand(), true));
+    }
 }
 ?>
 
@@ -36,23 +44,25 @@ if (!isset($_SESSION['csrf_token'])) {
 <body class="bg-gray-50 text-gray-900">
 
 <!-- Header -->
-<header class="bg-white shadow fixed top-0 w-full z-20" x-data="{ open: false }">
+<header class="bg-white shadow fixed top-0 w-full z-20" data-x-data="{ open: false }">
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
     <a href="#" class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-teal-400">MindBeamer</a>
     <nav class="hidden md:flex space-x-8">
       <a href="#how-it-works" class="text-gray-700 hover:text-pink-500 font-medium">How It Works</a>
       <a href="#features" class="text-gray-700 hover:text-pink-500 font-medium">Features</a>
+      <a href="#pricing" class="text-gray-700 hover:text-pink-500 font-medium">Pricing</a>
       <a href="#why-choose-us" class="text-gray-700 hover:text-pink-500 font-medium">Why Us</a>
       <a href="#contact" class="text-gray-700 hover:text-pink-500 font-medium">Free Demo</a>
     </nav>
-    <button @click="open = !open" class="md:hidden text-pink-500 focus:outline-none">
+    <button x-on:click="open = !open" class="md:hidden text-pink-500 focus:outline-none">
       <i class="ri-menu-line text-2xl"></i>
     </button>
   </div>
-  <div x-show="open" @click.away="open = false" class="md:hidden bg-white shadow-lg">
+  <div data-x-show="open" x-on:click.away="open = false" class="md:hidden bg-white shadow-lg">
     <nav class="px-6 py-4 space-y-4">
       <a href="#how-it-works" class="block text-pink-500 hover:text-teal-400 font-medium">How It Works</a>
       <a href="#features" class="block text-pink-500 hover:text-teal-400 font-medium">Features</a>
+      <a href="#pricing" class="block text-pink-500 hover:text-teal-400 font-medium">Pricing</a>
       <a href="#why-choose-us" class="block text-pink-500 hover:text-teal-400 font-medium">Why Us</a>
       <a href="#contact" class="block text-pink-500 hover:text-teal-400 font-medium">Free Demo</a>
     </nav>
@@ -273,40 +283,40 @@ if (!isset($_SESSION['csrf_token'])) {
 <!-- FAQ Section -->
 <section id="faq" class="container mx-auto px-6 py-16">
   <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-  <div class="max-w-3xl mx-auto space-y-6" x-data="{selected:null}">
+  <div class="max-w-3xl mx-auto space-y-6" data-x-data="{selected:null}">
     <div class="bg-white rounded-2xl shadow-lg">
-      <button @click="selected !== 1 ? selected = 1 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
+      <button x-on:click="selected !== 1 ? selected = 1 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
         <span class="font-semibold text-left">How autonomously does MindBeamer really work?</span>
-        <i class="ri-arrow-down-s-line text-2xl" x-bind:class="selected == 1 ? 'transform rotate-180' : ''"></i>
+        <i class="ri-arrow-down-s-line text-2xl" data-x-bind:class="selected == 1 ? 'transform rotate-180' : ''"></i>
       </button>
-      <div x-show="selected == 1" class="px-6 pb-6">
+      <div data-x-show="selected == 1" class="px-6 pb-6">
         <p class="text-gray-600">After initial configuration, MindBeamer works 100% autonomously. It researches topics, creates content tailored for each platform, generates relevant media, and publishes everything on an optimal schedule – all without any human intervention required.</p>
       </div>
     </div>
     <div class="bg-white rounded-2xl shadow-lg">
-      <button @click="selected !== 2 ? selected = 2 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
+      <button x-on:click="selected !== 2 ? selected = 2 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
         <span class="font-semibold text-left">Do I need to review the generated content?</span>
-        <i class="ri-arrow-down-s-line text-2xl" x-bind:class="selected == 2 ? 'transform rotate-180' : ''"></i>
+        <i class="ri-arrow-down-s-line text-2xl" data-x-bind:class="selected == 2 ? 'transform rotate-180' : ''"></i>
       </button>
-      <div x-show="selected == 2" class="px-6 pb-6">
+      <div data-x-show="selected == 2" class="px-6 pb-6">
         <p class="text-gray-600">It's entirely your choice. MindBeamer can operate completely autonomously, publishing content without your review. Alternatively, you can enable the review option to approve content before it goes live. Many users start with reviews, then switch to full autonomy once they're comfortable with the quality.</p>
       </div>
     </div>
     <div class="bg-white rounded-2xl shadow-lg">
-      <button @click="selected !== 3 ? selected = 3 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
+      <button x-on:click="selected !== 3 ? selected = 3 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
         <span class="font-semibold text-left">How does MindBeamer adapt content for different platforms?</span>
-        <i class="ri-arrow-down-s-line text-2xl" x-bind:class="selected == 3 ? 'transform rotate-180' : ''"></i>
+        <i class="ri-arrow-down-s-line text-2xl" data-x-bind:class="selected == 3 ? 'transform rotate-180' : ''"></i>
       </button>
-      <div x-show="selected == 3" class="px-6 pb-6">
+      <div data-x-show="selected == 3" class="px-6 pb-6">
         <p class="text-gray-600">MindBeamer automatically recognizes the unique requirements of each platform. For LinkedIn, it creates longer, professional content with appropriate hashtags. For Instagram, it focuses on visual stories with concise captions. For WordPress blogs, it generates comprehensive articles with proper formatting. Each piece of content is specifically optimized for its destination platform.</p>
       </div>
     </div>
     <div class="bg-white rounded-2xl shadow-lg">
-      <button @click="selected !== 4 ? selected = 4 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
+      <button x-on:click="selected !== 4 ? selected = 4 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
         <span class="font-semibold text-left">Can I use MindBeamer for any business niche?</span>
-        <i class="ri-arrow-down-s-line text-2xl" x-bind:class="selected == 4 ? 'transform rotate-180' : ''"></i>
+        <i class="ri-arrow-down-s-line text-2xl" data-x-bind:class="selected == 4 ? 'transform rotate-180' : ''"></i>
       </button>
-      <div x-show="selected == 4" class="px-6 pb-6">
+      <div data-x-show="selected == 4" class="px-6 pb-6">
         <p class="text-gray-600">Absolutely! MindBeamer works for any business type or industry. Whether you run a local hair salon, a tech startup blog, or a financial news portal, MindBeamer adapts to your specific niche, researching relevant topics and creating appropriate content for your unique audience.</p>
       </div>
     </div>
@@ -334,7 +344,7 @@ if (!isset($_SESSION['csrf_token'])) {
 <!-- Footer -->
 <footer class="bg-gray-900 text-gray-300 py-8">
   <div class="container mx-auto px-6 text-center">
-    <p> 2025 MindBeamer.io, created by <a href="https://martin-schenk.es" class="text-teal-400 hover:underline">Martin Schenk</a>. All rights reserved.</p>
+    <p>&copy; 2025 MindBeamer.io, created by <a href="https://martin-schenk.es" class="text-teal-400 hover:underline">Martin Schenk</a>. All rights reserved.</p>
   </div>
 </footer>
 
