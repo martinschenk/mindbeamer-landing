@@ -1,26 +1,17 @@
 <?php
-// Session für CSRF-Token
-session_start();
-if (!isset($_SESSION['csrf_token'])) {
-    try {
-        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-    } catch (\Random\RandomException $e) {
-        // Fallback, wenn random_bytes() fehlschlägt
-        $_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(32));
-    } catch (\Exception $e) {
-        // Letzter Fallback, wenn beide sicheren Methoden fehlschlagen
-        $_SESSION['csrf_token'] = md5(uniqid(mt_rand(), true));
-    }
-}
+// Session für CSRF-Token und Sprachauswahl
+require_once __DIR__ . '/bootstrap.php';
+
+// CSRF-Token Generierung wird bereits in bootstrap.php gehandhabt
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $htmlLang; ?>">
 <head>
   <meta charset="UTF-8">
-  <title>MindBeamer - Your Autonomous AI Content Agent</title>
+  <title>MindBeamer - <?php echo __('hero_title'); ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MindBeamer: Fully autonomous AI-powered content creation and publishing for blogs and social media. Set it up once and it works entirely on its own. Book a free demo now!">
+  <meta name="description" content="<?php echo __('hero_subtitle'); ?>">
   <meta name="keywords" content="autonomous AI content, automated blog posts, autonomous social media, automated content creation, MindBeamer, free demo">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -44,111 +35,255 @@ if (!isset($_SESSION['csrf_token'])) {
 <body class="bg-gray-50 text-gray-900">
 
 <!-- Header -->
-<header class="bg-white shadow fixed top-0 w-full z-20" data-x-data="{ open: false }">
+<header class="bg-white shadow fixed top-0 w-full z-20" x-data="{ open: false }">
   <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="#" class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-teal-400">MindBeamer</a>
+    <a href="#" class="text-3xl font-bold text-pink-500">MindBeamer</a>
     <nav class="hidden md:flex space-x-8">
-      <a href="#how-it-works" class="text-gray-700 hover:text-pink-500 font-medium">How It Works</a>
-      <a href="#features" class="text-gray-700 hover:text-pink-500 font-medium">Features</a>
-      <a href="#pricing" class="text-gray-700 hover:text-pink-500 font-medium">Pricing</a>
-      <a href="#why-choose-us" class="text-gray-700 hover:text-pink-500 font-medium">Why Us</a>
-      <a href="#contact" class="text-gray-700 hover:text-pink-500 font-medium">Free Demo</a>
+      <a href="#how-it-works" class="text-gray-700 hover:text-pink-500 font-medium"><?php echo __('nav_how_it_works'); ?></a>
+      <a href="#features" class="text-gray-700 hover:text-pink-500 font-medium"><?php echo __('nav_features'); ?></a>
+      <a href="#why-us" class="text-gray-700 hover:text-pink-500 font-medium"><?php echo __('nav_why_us'); ?></a>
+      <a href="#contact" class="text-gray-700 hover:text-pink-500 font-medium"><?php echo __('nav_demo'); ?></a>
+      <div class="flex items-center space-x-2">
+        <a href="<?php echo getLocaleUrl('en'); ?>" class="text-gray-700 hover:text-pink-500 font-medium <?php echo isCurrentLocale('en') ? 'font-bold' : ''; ?>">EN</a>
+        <span class="text-gray-500">|</span>
+        <a href="<?php echo getLocaleUrl('de'); ?>" class="text-gray-700 hover:text-pink-500 font-medium <?php echo isCurrentLocale('de') ? 'font-bold' : ''; ?>">DE</a>
+      </div>
     </nav>
-    <button x-on:click="open = !open" class="md:hidden text-pink-500 focus:outline-none">
+    <button class="md:hidden" @click="open = !open">
       <i class="ri-menu-line text-2xl"></i>
     </button>
   </div>
-  <div data-x-show="open" x-on:click.away="open = false" class="md:hidden bg-white shadow-lg">
-    <nav class="px-6 py-4 space-y-4">
-      <a href="#how-it-works" class="block text-pink-500 hover:text-teal-400 font-medium">How It Works</a>
-      <a href="#features" class="block text-pink-500 hover:text-teal-400 font-medium">Features</a>
-      <a href="#pricing" class="block text-pink-500 hover:text-teal-400 font-medium">Pricing</a>
-      <a href="#why-choose-us" class="block text-pink-500 hover:text-teal-400 font-medium">Why Us</a>
-      <a href="#contact" class="block text-pink-500 hover:text-teal-400 font-medium">Free Demo</a>
+  <!-- Mobile menu -->
+  <div class="md:hidden" x-show="open" @click.away="open = false">
+    <nav class="bg-white px-6 pb-4 space-y-4">
+      <a href="#how-it-works" class="block text-gray-700 hover:text-pink-500 font-medium"><?php echo __('nav_how_it_works'); ?></a>
+      <a href="#features" class="block text-gray-700 hover:text-pink-500 font-medium"><?php echo __('nav_features'); ?></a>
+      <a href="#why-us" class="block text-gray-700 hover:text-pink-500 font-medium"><?php echo __('nav_why_us'); ?></a>
+      <a href="#contact" class="block text-gray-700 hover:text-pink-500 font-medium"><?php echo __('nav_demo'); ?></a>
+      <div class="flex items-center space-x-2 pt-2 border-t">
+        <a href="<?php echo getLocaleUrl('en'); ?>" class="text-gray-700 hover:text-pink-500 font-medium <?php echo isCurrentLocale('en') ? 'font-bold' : ''; ?>">EN</a>
+        <span class="text-gray-500">|</span>
+        <a href="<?php echo getLocaleUrl('de'); ?>" class="text-gray-700 hover:text-pink-500 font-medium <?php echo isCurrentLocale('de') ? 'font-bold' : ''; ?>">DE</a>
+      </div>
     </nav>
   </div>
 </header>
 
 <!-- Hero Section -->
-<section class="hero-bg text-white pt-24 pb-16">
+<section id="hero" class="hero-bg text-white pt-36 pb-20">
   <div class="container mx-auto px-6 text-center fade-in">
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Your Fully Autonomous AI Content Agent</h1>
-    <p class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto">
-      MindBeamer autonomously creates and publishes stunning blog posts and social media content – configure once, and it works entirely on its own. Book a free demo with Martin Schenk to see the magic!
+    <h1 class="text-4xl md:text-6xl font-bold mb-6"><?php echo __('hero_title'); ?></h1>
+    <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto">
+      <?php echo __('hero_subtitle'); ?>
     </p>
-    <a href="#contact" class="btn-primary inline-block bg-white text-pink-600 font-semibold text-lg py-3 px-8 rounded-full shadow-lg hover:bg-gray-100">Ask for a Free Demo</a>
+    <div class="flex flex-col md:flex-row justify-center gap-4">
+      <a href="#contact" class="btn-primary bg-white text-pink-600 font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100"><?php echo __('hero_cta'); ?></a>
+    </div>
   </div>
 </section>
 
 <!-- How It Works Section -->
-<section id="how-it-works" class="bg-gray-100 py-16">
+<section id="how-it-works" class="bg-white py-16">
   <div class="container mx-auto px-6 fade-in">
-    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">Autonomous Content in 5 Steps</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12"><?php echo __('how_it_works_title'); ?></h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <div class="text-center">
-        <i class="ri-settings-4-fill text-5xl text-pink-500 mb-4 block mx-auto"></i>
-        <h3 class="text-xl font-semibold mb-3">1. One-Time Setup</h3>
-        <p class="text-gray-600">Configure your brand, tone, topics and platforms just once.</p>
+        <div class="text-pink-500 text-4xl mb-4 flex justify-center">
+          <i class="ri-settings-3-line bg-pink-100 p-4 rounded-full"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4"><?php echo __('step1_title'); ?></h3>
+        <p class="text-gray-600"><?php echo __('step1_description'); ?></p>
       </div>
       <div class="text-center">
-        <i class="ri-lightbulb-flash-fill text-5xl text-teal-400 mb-4 block mx-auto"></i>
-        <h3 class="text-xl font-semibold mb-3">2. AI Finds Topics</h3>
-        <p class="text-gray-600">MindBeamer autonomously researches and selects engaging topics.</p>
+        <div class="text-teal-500 text-4xl mb-4 flex justify-center">
+          <i class="ri-lightbulb-flash-line bg-teal-100 p-4 rounded-full"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4"><?php echo __('step2_title'); ?></h3>
+        <p class="text-gray-600"><?php echo __('step2_description'); ?></p>
       </div>
       <div class="text-center">
-        <i class="ri-magic-fill text-5xl text-pink-500 mb-4 block mx-auto"></i>
-        <h3 class="text-xl font-semibold mb-3">3. Content Creation</h3>
-        <p class="text-gray-600">Creates platform-specific content and media automatically.</p>
+        <div class="text-pink-500 text-4xl mb-4 flex justify-center">
+          <i class="ri-file-edit-line bg-pink-100 p-4 rounded-full"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4"><?php echo __('step3_title'); ?></h3>
+        <p class="text-gray-600"><?php echo __('step3_description'); ?></p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="text-center">
+        <div class="text-teal-500 text-4xl mb-4 flex justify-center">
+          <i class="ri-edit-line bg-teal-100 p-4 rounded-full"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4"><?php echo __('step4_title'); ?></h3>
+        <p class="text-gray-600"><?php echo __('step4_description'); ?></p>
       </div>
       <div class="text-center">
-        <i class="ri-edit-2-fill text-5xl text-teal-400 mb-4 block mx-auto"></i>
-        <h3 class="text-xl font-semibold mb-3">4. Optional Review</h3>
-        <p class="text-gray-600">Approve content or let it publish automatically – your choice.</p>
-      </div>
-      <div class="text-center">
-        <i class="ri-rocket-fill text-5xl text-pink-500 mb-4 block mx-auto"></i>
-        <h3 class="text-xl font-semibold mb-3">5. Auto Publishing</h3>
-        <p class="text-gray-600">Content automatically posted across all platforms, continuously.</p>
+        <div class="text-pink-500 text-4xl mb-4 flex justify-center">
+          <i class="ri-rocket-line bg-pink-100 p-4 rounded-full"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-4"><?php echo __('step5_title'); ?></h3>
+        <p class="text-gray-600"><?php echo __('step5_description'); ?></p>
       </div>
     </div>
     <div class="text-center mt-12">
-      <a href="#contact" class="btn-primary inline-block bg-pink-500 text-white font-semibold text-lg py-3 px-8 rounded-full shadow-lg hover:bg-pink-600">Ask for a Free Demo</a>
+      <a href="#contact" class="btn-primary bg-pink-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-pink-600"><?php echo __('hero_cta'); ?></a>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Why MindBeamer Stands Out Section -->
+<section id="why-us" class="bg-white py-16">
+  <div class="container mx-auto px-6 fade-in">
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-8"><?php echo __('why_stands_out_title'); ?></h2>
+    
+    <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto">
+      <?php echo __('why_stands_out_subtitle'); ?>
+    </p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- vs Jasper AI -->
+      <div class="bg-gray-50 p-8 rounded-2xl shadow-md">
+        <h3 class="text-xl font-bold mb-4 text-center"><?php echo __('vs_jasper_title'); ?></h3>
+        <p class="text-gray-600"><?php echo __('vs_jasper_description'); ?></p>
+      </div>
+      
+      <!-- vs Buffer/Hootsuite -->
+      <div class="bg-gray-50 p-8 rounded-2xl shadow-md">
+        <h3 class="text-xl font-bold mb-4 text-center"><?php echo __('vs_buffer_title'); ?></h3>
+        <p class="text-gray-600"><?php echo __('vs_buffer_description'); ?></p>
+      </div>
+      
+      <!-- vs ContentStudio -->
+      <div class="bg-gray-50 p-8 rounded-2xl shadow-md">
+        <h3 class="text-xl font-bold mb-4 text-center"><?php echo __('vs_contentstudio_title'); ?></h3>
+        <p class="text-gray-600"><?php echo __('vs_contentstudio_description'); ?></p>
+      </div>
+    </div>
+    
+    <div class="text-center mt-12">
+      <p class="text-xl mb-6"><?php echo __('ready_to_see'); ?></p>
+      <a href="#contact" class="btn-primary bg-pink-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-pink-600 inline-block"><?php echo __('ask_for_demo'); ?></a>
+    </div>
+  </div>
+</section>
 
 <!-- Features Section -->
-<section id="features" class="container mx-auto px-6 py-16">
-  <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">Why You'll Love MindBeamer</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in">
-    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-      <i class="ri-robot-fill text-4xl text-pink-500 mb-4 block text-center"></i>
-      <h3 class="text-xl font-semibold mb-3 text-center">100% Self-Operating</h3>
-      <p class="text-gray-600 text-center">MindBeamer thinks, plans and acts independently – topic research, content creation, and publishing without your intervention.</p>
+<section id="features" class="bg-white py-16">
+  <div class="container mx-auto px-6 fade-in">
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12"><?php echo __('features_title'); ?></h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+      <!-- Feature 1 -->
+      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <div class="text-pink-500 text-3xl mb-4 flex justify-center">
+          <i class="ri-robot-line"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-center"><?php echo __('feature1_title'); ?></h3>
+        <p class="text-gray-600 text-center"><?php echo __('feature1_description'); ?></p>
+      </div>
+      
+      <!-- Feature 2 -->
+      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <div class="text-teal-500 text-3xl mb-4 flex justify-center">
+          <i class="ri-global-line"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-center"><?php echo __('feature2_title'); ?></h3>
+        <p class="text-gray-600 text-center"><?php echo __('feature2_description'); ?></p>
+      </div>
+      
+      <!-- Feature 3 -->
+      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <div class="text-pink-500 text-3xl mb-4 flex justify-center">
+          <i class="ri-image-line"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-center"><?php echo __('feature3_title'); ?></h3>
+        <p class="text-gray-600 text-center"><?php echo __('feature3_description'); ?></p>
+      </div>
     </div>
-    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-      <i class="ri-global-line text-4xl text-teal-400 mb-4 block text-center"></i>
-      <h3 class="text-xl font-semibold mb-3 text-center">Tailored for Every Platform</h3>
-      <p class="text-gray-600 text-center">Professional content for LinkedIn, visual stories for Instagram, engaging posts for Facebook, comprehensive articles for WordPress – automatically.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Feature 4 -->
+      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <div class="text-teal-500 text-3xl mb-4 flex justify-center">
+          <i class="ri-calendar-line"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-center"><?php echo __('feature4_title'); ?></h3>
+        <p class="text-gray-600 text-center"><?php echo __('feature4_description'); ?></p>
+      </div>
+      
+      <!-- Feature 5 -->
+      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <div class="text-pink-500 text-3xl mb-4 flex justify-center">
+          <i class="ri-check-line"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-center"><?php echo __('feature5_title'); ?></h3>
+        <p class="text-gray-600 text-center"><?php echo __('feature5_description'); ?></p>
+      </div>
+      
+      <!-- Feature 6 -->
+      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <div class="text-teal-500 text-3xl mb-4 flex justify-center">
+          <i class="ri-building-line"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-center"><?php echo __('feature6_title'); ?></h3>
+        <p class="text-gray-600 text-center"><?php echo __('feature6_description'); ?></p>
+      </div>
     </div>
-    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-      <i class="ri-image-fill text-4xl text-pink-500 mb-4 block text-center"></i>
-      <h3 class="text-xl font-semibold mb-3 text-center">Autonomous Media Creation</h3>
-      <p class="text-gray-600 text-center">Automatically creates images, infographics, sliders, comics and more – tailored to each platform and audience.</p>
-    </div>
-    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-      <i class="ri-send-plane-fill text-4xl text-teal-400 mb-4 block text-center"></i>
-      <h3 class="text-xl font-semibold mb-3 text-center">Continuous Publishing</h3>
-      <p class="text-gray-600 text-center">MindBeamer posts your content across all platforms on a regular schedule, with zero input needed.</p>
-    </div>
-    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-      <i class="ri-shield-check-fill text-4xl text-pink-500 mb-4 block text-center"></i>
-      <h3 class="text-xl font-semibold mb-3 text-center">You Maintain Control</h3>
-      <p class="text-gray-600 text-center">Let it work completely autonomously or review content before publishing – your choice.</p>
-    </div>
-    <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-      <i class="ri-store-3-fill text-4xl text-teal-400 mb-4 block text-center"></i>
-      <h3 class="text-xl font-semibold mb-3 text-center">Works for Any Business</h3>
-      <p class="text-gray-600 text-center">From hair salons to tech blogs to financial news portals – MindBeamer adapts to your specific industry automatically.</p>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="bg-gray-100 py-16">
+  <div class="container mx-auto px-6 fade-in">
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12"><?php echo __('testimonials_title'); ?></h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Testimonial 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md">
+        <div class="flex items-center mb-4">
+          <?php for($i=0; $i<5; $i++) { ?>
+            <i class="ri-star-fill text-yellow-400"></i>
+          <?php } ?>
+        </div>
+        <p class="text-gray-700 mb-6">"<?php echo __('testimonial1_text'); ?>"</p>
+        <div class="flex items-center">
+          <div class="ml-4">
+            <p class="font-bold"><?php echo __('testimonial1_name'); ?></p>
+            <p class="text-gray-600 text-sm"><?php echo __('testimonial1_position'); ?></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md">
+        <div class="flex items-center mb-4">
+          <?php for($i=0; $i<5; $i++) { ?>
+            <i class="ri-star-fill text-yellow-400"></i>
+          <?php } ?>
+        </div>
+        <p class="text-gray-700 mb-6">"<?php echo __('testimonial2_text'); ?>"</p>
+        <div class="flex items-center">
+          <div class="ml-4">
+            <p class="font-bold"><?php echo __('testimonial2_name'); ?></p>
+            <p class="text-gray-600 text-sm"><?php echo __('testimonial2_position'); ?></p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-md">
+        <div class="flex items-center mb-4">
+          <?php for($i=0; $i<5; $i++) { ?>
+            <i class="ri-star-fill text-yellow-400"></i>
+          <?php } ?>
+        </div>
+        <p class="text-gray-700 mb-6">"<?php echo __('testimonial3_text'); ?>"</p>
+        <div class="flex items-center">
+          <div class="ml-4">
+            <p class="font-bold"><?php echo __('testimonial3_name'); ?></p>
+            <p class="text-gray-600 text-sm"><?php echo __('testimonial3_position'); ?></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -156,168 +291,164 @@ if (!isset($_SESSION['csrf_token'])) {
 <!-- Pricing Section -->
 <section id="pricing" class="bg-gray-100 py-16">
   <div class="container mx-auto px-6 fade-in">
-    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">Simple, Transparent Pricing</h2>
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12"><?php echo __('pricing_title'); ?></h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Light Plan -->
       <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-        <div class="text-center">
-          <h3 class="text-2xl font-bold mb-2">Light</h3>
-          <p class="text-gray-600 mb-4">For small businesses or beginners</p>
-          <div class="text-4xl font-bold text-pink-500 mb-6">€15<span class="text-lg text-gray-500">/month</span></div>
-        </div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Autonomous content creation</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Up to 10 posts per month</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> 2 social platforms</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Basic media creation</li>
+        <h3 class="text-2xl font-bold mb-2"><?php echo __('light_plan'); ?></h3>
+        <p class="text-gray-600 mb-6"><?php echo __('light_plan_subtitle'); ?></p>
+        <div class="text-4xl font-bold mb-6">€15<span class="text-lg font-normal text-gray-600">/<?php echo __('month'); ?></span></div>
+        <ul class="mb-8 space-y-3">
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('light_feature1'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('light_feature2'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('light_feature3'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('light_feature4'); ?></span>
+          </li>
         </ul>
-        <div class="text-center">
-          <a href="#contact" class="btn-primary inline-block bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-300 w-full">Request Demo</a>
-        </div>
+        <a href="#contact" class="block w-full bg-gray-200 text-gray-800 text-center font-semibold py-3 rounded-full hover:bg-gray-300"><?php echo __('request_demo_button'); ?></a>
       </div>
-      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition transform scale-105 z-10 border-2 border-pink-500">
-        <div class="text-center">
-          <div class="inline-block bg-pink-500 text-white text-sm font-semibold py-1 px-4 rounded-full mb-4">Most Popular</div>
-          <h3 class="text-2xl font-bold mb-2">Standard</h3>
-          <p class="text-gray-600 mb-4">For growing businesses</p>
-          <div class="text-4xl font-bold text-pink-500 mb-6">€35<span class="text-lg text-gray-500">/month</span></div>
+      
+      <!-- Standard Plan -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-2 border-pink-500 relative">
+        <div class="absolute top-0 left-0 w-full">
+          <div class="bg-pink-500 text-white text-center py-1 text-sm font-semibold"><?php echo __('most_popular'); ?></div>
         </div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Fully autonomous content</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Up to 30 posts per month</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> 4 social platforms + blog</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Advanced media creation</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Platform-specific optimization</li>
+        <h3 class="text-2xl font-bold mb-2 mt-4"><?php echo __('standard_plan'); ?></h3>
+        <p class="text-gray-600 mb-6"><?php echo __('standard_plan_subtitle'); ?></p>
+        <div class="text-4xl font-bold mb-6">€35<span class="text-lg font-normal text-gray-600">/<?php echo __('month'); ?></span></div>
+        <ul class="mb-8 space-y-3">
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('standard_feature1'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('standard_feature2'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('standard_feature3'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('standard_feature4'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('standard_feature5'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('standard_feature6'); ?></span>
+          </li>
         </ul>
-        <div class="text-center">
-          <a href="#contact" class="btn-primary inline-block bg-pink-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-600 w-full">Request Demo</a>
-        </div>
+        <a href="#contact" class="block w-full bg-pink-500 text-white text-center font-semibold py-3 rounded-full hover:bg-pink-600"><?php echo __('request_demo_button'); ?></a>
       </div>
+      
+      <!-- News Portal Plan -->
       <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
-        <div class="text-center">
-          <h3 class="text-2xl font-bold mb-2">News Portal</h3>
-          <p class="text-gray-600 mb-4">For high-volume publishers</p>
-          <div class="text-4xl font-bold text-pink-500 mb-6">€50<span class="text-lg text-gray-500">/month</span></div>
-        </div>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Fully autonomous content</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Daily posts & updates</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> All social platforms + blog</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Premium media creation</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> Topic research automation</li>
-          <li class="flex items-center"><i class="ri-check-line text-teal-400 mr-2"></i> News & trend monitoring</li>
+        <h3 class="text-2xl font-bold mb-2"><?php echo __('news_plan'); ?></h3>
+        <p class="text-gray-600 mb-6"><?php echo __('news_plan_subtitle'); ?></p>
+        <div class="text-4xl font-bold mb-6">€50<span class="text-lg font-normal text-gray-600">/<?php echo __('month'); ?></span></div>
+        <ul class="mb-8 space-y-3">
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('news_feature1'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('news_feature2'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('news_feature3'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('news_feature4'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('news_feature5'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('news_feature6'); ?></span>
+          </li>
+          <li class="flex items-start">
+            <i class="ri-check-line text-green-500 mr-2 mt-1"></i>
+            <span><?php echo __('news_feature7'); ?></span>
+          </li>
         </ul>
-        <div class="text-center">
-          <a href="#contact" class="btn-primary inline-block bg-gray-200 text-gray-800 font-semibold py-3 px-8 rounded-full shadow hover:bg-gray-300 w-full">Request Demo</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Why Choose Us Section -->
-<section id="why-choose-us" class="bg-white py-16">
-  <div class="container mx-auto px-6 fade-in">
-    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">Why MindBeamer Stands Out</h2>
-    <p class="text-lg text-center mb-12 max-w-3xl mx-auto">
-      You've got options for AI content tools, but MindBeamer is the only fully autonomous agent that handles everything from topic selection to publishing – with zero input required.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-gray-100 p-8 rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-3 text-center">vs. Jasper AI</h3>
-        <p class="text-gray-600 text-center">While Jasper requires you to manually create and distribute content, MindBeamer operates fully autonomously, generating and posting content across all platforms without your intervention.</p>
-      </div>
-      <div class="bg-gray-100 p-8 rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-3 text-center">vs. Buffer/Hootsuite</h3>
-        <p class="text-gray-600 text-center">Unlike scheduling tools that only publish content you've already created, MindBeamer autonomously generates, optimizes, and posts content – eliminating the entire content creation workflow.</p>
-      </div>
-      <div class="bg-gray-100 p-8 rounded-2xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-3 text-center">vs. ContentStudio</h3>
-        <p class="text-gray-600 text-center">ContentStudio requires ongoing oversight and direction. MindBeamer operates completely independently after initial setup, generating topics and content tailored for each platform automatically.</p>
-      </div>
-    </div>
-    <div class="text-center mt-12">
-      <p class="text-lg font-semibold mb-4">Ready to see how MindBeamer's autonomous content agent can transform your online presence?</p>
-      <a href="#contact" class="btn-primary inline-block bg-pink-500 text-white font-semibold text-lg py-3 px-8 rounded-full shadow-lg hover:bg-pink-600">Ask for a Free Demo</a>
-    </div>
-  </section>
-
-<!-- Testimonial Section -->
-<section id="testimonials" class="bg-gray-100 py-16">
-  <div class="container mx-auto px-6 fade-in">
-    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">What Our Users Say</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white p-8 rounded-2xl shadow-lg">
-        <div class="flex items-center mb-4">
-          <div class="text-yellow-400 flex">
-            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-          </div>
-        </div>
-        <p class="text-gray-600 mb-6">"Since implementing MindBeamer, our content production has tripled with zero additional resources. The agent handles everything completely independently – truly set and forget!"</p>
-        <div class="font-semibold">Alex Johnson</div>
-        <div class="text-sm text-gray-500">Marketing Director</div>
-      </div>
-      <div class="bg-white p-8 rounded-2xl shadow-lg">
-        <div class="flex items-center mb-4">
-          <div class="text-yellow-400 flex">
-            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-          </div>
-        </div>
-        <p class="text-gray-600 mb-6">"I run a small hair salon and have no time for social media. MindBeamer creates and posts content that's perfect for my business – I don't have to do anything after setup!"</p>
-        <div class="font-semibold">Sarah Miller</div>
-        <div class="text-sm text-gray-500">Small Business Owner</div>
-      </div>
-      <div class="bg-white p-8 rounded-2xl shadow-lg">
-        <div class="flex items-center mb-4">
-          <div class="text-yellow-400 flex">
-            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
-          </div>
-        </div>
-        <p class="text-gray-600 mb-6">"Our tech blog gets daily updates across all platforms now, with perfectly formatted LinkedIn posts, engaging Twitter threads, and comprehensive blog articles – all on autopilot."</p>
-        <div class="font-semibold">David Chen</div>
-        <div class="text-sm text-gray-500">Tech Publication Editor</div>
+        <a href="#contact" class="block w-full bg-gray-200 text-gray-800 text-center font-semibold py-3 rounded-full hover:bg-gray-300"><?php echo __('request_demo_button'); ?></a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ Section -->
-<section id="faq" class="container mx-auto px-6 py-16">
-  <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-  <div class="max-w-3xl mx-auto space-y-6" data-x-data="{selected:null}">
-    <div class="bg-white rounded-2xl shadow-lg">
-      <button x-on:click="selected !== 1 ? selected = 1 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
-        <span class="font-semibold text-left">How autonomously does MindBeamer really work?</span>
-        <i class="ri-arrow-down-s-line text-2xl" data-x-bind:class="selected == 1 ? 'transform rotate-180' : ''"></i>
-      </button>
-      <div data-x-show="selected == 1" class="px-6 pb-6">
-        <p class="text-gray-600">After initial configuration, MindBeamer works 100% autonomously. It researches topics, creates content tailored for each platform, generates relevant media, and publishes everything on an optimal schedule – all without any human intervention required.</p>
+<section id="faq" class="bg-white py-16">
+  <div class="container mx-auto px-6 fade-in">
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12"><?php echo __('faq_title'); ?></h2>
+    
+    <div class="max-w-3xl mx-auto" x-data="{ active: null }">
+      <!-- FAQ Item 1 -->
+      <div class="mb-4 border border-gray-200 rounded-lg">
+        <button @click="active !== 'faq1' ? active = 'faq1' : active = null" class="flex justify-between items-center w-full p-5 font-medium text-left">
+          <span><?php echo __('faq1_question'); ?></span>
+          <i x-show="active !== 'faq1'" class="ri-arrow-down-s-line"></i>
+          <i x-show="active === 'faq1'" class="ri-arrow-up-s-line"></i>
+        </button>
+        <div x-show="active === 'faq1'" class="p-5 border-t border-gray-200">
+          <p class="text-gray-600"><?php echo __('faq1_answer'); ?></p>
+        </div>
       </div>
-    </div>
-    <div class="bg-white rounded-2xl shadow-lg">
-      <button x-on:click="selected !== 2 ? selected = 2 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
-        <span class="font-semibold text-left">Do I need to review the generated content?</span>
-        <i class="ri-arrow-down-s-line text-2xl" data-x-bind:class="selected == 2 ? 'transform rotate-180' : ''"></i>
-      </button>
-      <div data-x-show="selected == 2" class="px-6 pb-6">
-        <p class="text-gray-600">It's entirely your choice. MindBeamer can operate completely autonomously, publishing content without your review. Alternatively, you can enable the review option to approve content before it goes live. Many users start with reviews, then switch to full autonomy once they're comfortable with the quality.</p>
+      
+      <!-- FAQ Item 2 -->
+      <div class="mb-4 border border-gray-200 rounded-lg">
+        <button @click="active !== 'faq2' ? active = 'faq2' : active = null" class="flex justify-between items-center w-full p-5 font-medium text-left">
+          <span><?php echo __('faq2_question'); ?></span>
+          <i x-show="active !== 'faq2'" class="ri-arrow-down-s-line"></i>
+          <i x-show="active === 'faq2'" class="ri-arrow-up-s-line"></i>
+        </button>
+        <div x-show="active === 'faq2'" class="p-5 border-t border-gray-200">
+          <p class="text-gray-600"><?php echo __('faq2_answer'); ?></p>
+        </div>
       </div>
-    </div>
-    <div class="bg-white rounded-2xl shadow-lg">
-      <button x-on:click="selected !== 3 ? selected = 3 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
-        <span class="font-semibold text-left">How does MindBeamer adapt content for different platforms?</span>
-        <i class="ri-arrow-down-s-line text-2xl" data-x-bind:class="selected == 3 ? 'transform rotate-180' : ''"></i>
-      </button>
-      <div data-x-show="selected == 3" class="px-6 pb-6">
-        <p class="text-gray-600">MindBeamer automatically recognizes the unique requirements of each platform. For LinkedIn, it creates longer, professional content with appropriate hashtags. For Instagram, it focuses on visual stories with concise captions. For WordPress blogs, it generates comprehensive articles with proper formatting. Each piece of content is specifically optimized for its destination platform.</p>
+      
+      <!-- FAQ Item 3 -->
+      <div class="mb-4 border border-gray-200 rounded-lg">
+        <button @click="active !== 'faq3' ? active = 'faq3' : active = null" class="flex justify-between items-center w-full p-5 font-medium text-left">
+          <span><?php echo __('faq3_question'); ?></span>
+          <i x-show="active !== 'faq3'" class="ri-arrow-down-s-line"></i>
+          <i x-show="active === 'faq3'" class="ri-arrow-up-s-line"></i>
+        </button>
+        <div x-show="active === 'faq3'" class="p-5 border-t border-gray-200">
+          <p class="text-gray-600"><?php echo __('faq3_answer'); ?></p>
+        </div>
       </div>
-    </div>
-    <div class="bg-white rounded-2xl shadow-lg">
-      <button x-on:click="selected !== 4 ? selected = 4 : selected = null" class="flex justify-between items-center w-full p-6 focus:outline-none">
-        <span class="font-semibold text-left">Can I use MindBeamer for any business niche?</span>
-        <i class="ri-arrow-down-s-line text-2xl" data-x-bind:class="selected == 4 ? 'transform rotate-180' : ''"></i>
-      </button>
-      <div data-x-show="selected == 4" class="px-6 pb-6">
-        <p class="text-gray-600">Absolutely! MindBeamer works for any business type or industry. Whether you run a local hair salon, a tech startup blog, or a financial news portal, MindBeamer adapts to your specific niche, researching relevant topics and creating appropriate content for your unique audience.</p>
+      
+      <!-- FAQ Item 4 -->
+      <div class="mb-4 border border-gray-200 rounded-lg">
+        <button @click="active !== 'faq4' ? active = 'faq4' : active = null" class="flex justify-between items-center w-full p-5 font-medium text-left">
+          <span><?php echo __('faq4_question'); ?></span>
+          <i x-show="active !== 'faq4'" class="ri-arrow-down-s-line"></i>
+          <i x-show="active === 'faq4'" class="ri-arrow-up-s-line"></i>
+        </button>
+        <div x-show="active === 'faq4'" class="p-5 border-t border-gray-200">
+          <p class="text-gray-600"><?php echo __('faq4_answer'); ?></p>
+        </div>
       </div>
     </div>
   </div>
@@ -326,25 +457,31 @@ if (!isset($_SESSION['csrf_token'])) {
 <!-- Contact/Demo Section -->
 <section id="contact" class="bg-gradient-to-r from-pink-500 to-teal-400 text-white py-16">
   <div class="container mx-auto px-6 text-center fade-in">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Book Your Free MindBeamer Demo</h2>
-    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-      Join freelancers and SMEs saving hours with MindBeamer. Enter your email, and Martin Schenk will show you how it works in a personal video call – built by a developer with 20+ years of experience!
+    <h2 class="text-3xl md:text-4xl font-bold mb-6"><?php echo __('demo_title'); ?></h2>
+    <p class="text-lg mb-8 max-w-2xl mx-auto">
+      <?php echo __('demo_subtitle'); ?>
     </p>
-    <form id="demo-form" class="max-w-md mx-auto" action="sendmail.php" method="POST">
-      <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-      <div class="flex flex-col md:flex-row gap-4">
-        <input type="email" name="email" placeholder="Your Email" class="flex-1 px-4 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-400" required>
-        <button type="submit" class="btn-primary bg-white text-pink-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100">Ask for a Free Demo</button>
+    <form class="max-w-md mx-auto">
+      <div class="mb-4">
+        <input type="email" placeholder="<?php echo __('your_email'); ?>" class="w-full px-4 py-3 rounded-full text-gray-800 focus:outline-none">
       </div>
+      <button type="submit" class="btn-primary bg-white text-pink-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 w-full"><?php echo __('ask_for_demo'); ?></button>
     </form>
-    <p class="mt-6 text-sm">You’ll hear from Martin soon to set up your personal demo.</p>
+    <p class="text-sm mt-4"><?php echo __('demo_note'); ?></p>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-gray-900 text-gray-300 py-8">
+<footer class="bg-gray-900 text-white py-8">
   <div class="container mx-auto px-6 text-center">
-    <p>&copy; 2025 MindBeamer.io, created by <a href="https://martin-schenk.es" class="text-teal-400 hover:underline">Martin Schenk</a>. All rights reserved.</p>
+    <p class="mb-2"> 2025 MindBeamer.io, <?php echo __('created_by'); ?> <a href="#" class="text-teal-400 hover:underline">Martin Schenk</a>. <?php echo __('all_rights_reserved'); ?></p>
+    <div class="flex justify-center space-x-4 mt-4">
+      <div class="flex items-center space-x-2">
+        <a href="<?php echo getLocaleUrl('en'); ?>" class="text-gray-400 hover:text-white <?php echo isCurrentLocale('en') ? 'font-bold text-white' : ''; ?>">EN</a>
+        <span class="text-gray-500">|</span>
+        <a href="<?php echo getLocaleUrl('de'); ?>" class="text-gray-400 hover:text-white <?php echo isCurrentLocale('de') ? 'font-bold text-white' : ''; ?>">DE</a>
+      </div>
+    </div>
   </div>
 </footer>
 
