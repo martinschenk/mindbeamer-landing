@@ -6,11 +6,7 @@
  * @return string Current locale code
  */
 function getCurrentLocale() {
-    if (!isset($_SESSION['locale'])) {
-        $_SESSION['locale'] = 'en';
-    }
-    
-    return $_SESSION['locale'];
+    return app()->getLocale();
 }
 
 /**
@@ -20,52 +16,28 @@ function getCurrentLocale() {
  * @return void
  */
 function setAppLocale($locale) {
-    $supportedLocales = ['en', 'de'];
+    $supportedLocales = config('languages.available_locales', ['en', 'de']);
     
     if (in_array($locale, $supportedLocales)) {
-        $_SESSION['locale'] = $locale;
+        session(['locale' => $locale]);
+        app()->setLocale($locale);
     }
 }
 
-/**
- * Translates a string based on the current locale
- *
- * @param string $key Translation key
- * @param array $replace Values to replace in the translation
- * @param string|null $locale Override the current locale
- * @return string
- */
-function __($key, $replace = [], $locale = null) {
-    $locale = $locale ?: getCurrentLocale();
-    
-    $path = __DIR__ . '/lang/' . $locale . '/messages.php';
-    
-    if (!file_exists($path)) {
-        $path = __DIR__ . '/lang/en/messages.php'; // Fallback to English
+// Don't redefine the __ function if it already exists (Laravel provides it)
+if (!function_exists('__')) {
+    /**
+     * Translates a string based on the current locale
+     *
+     * @param string $key Translation key
+     * @param array $replace Values to replace in the translation
+     * @param string|null $locale Override the current locale
+     * @return string
+     */
+    function __($key, $replace = [], $locale = null) {
+        // Use Laravel's built-in translation function
+        return trans($key, $replace, $locale);
     }
-    
-    $translations = include $path;
-    
-    // If translation doesn't exist in current locale, try English as fallback
-    if (!isset($translations[$key]) && $locale !== 'en') {
-        $fallbackPath = __DIR__ . '/lang/en/messages.php';
-        if (file_exists($fallbackPath)) {
-            $fallbackTranslations = include $fallbackPath;
-            $translation = $fallbackTranslations[$key] ?? $key;
-        } else {
-            $translation = $key;
-        }
-    } else {
-        $translation = $translations[$key] ?? $key;
-    }
-    
-    if (!empty($replace)) {
-        foreach ($replace as $k => $value) {
-            $translation = str_replace(':' . $k, $value, $translation);
-        }
-    }
-    
-    return $translation;
 }
 
 /**
@@ -75,25 +47,13 @@ function __($key, $replace = [], $locale = null) {
  * @return string URL with locale parameter
  */
 function getLocaleUrl($locale) {
-    $currentUrl = $_SERVER['REQUEST_URI'];
-    $parsedUrl = parse_url($currentUrl);
-    
-    $query = [];
-    if (isset($parsedUrl['query'])) {
-        parse_str($parsedUrl['query'], $query);
-    }
-    
-    $query['locale'] = $locale;
-    
-    $newQuery = http_build_query($query);
-    
-    return $parsedUrl['path'] . '?' . $newQuery;
+    return url()->current() . '?locale=' . $locale;
 }
 
 /**
  * Check if the current locale is the specified one
- * 
- * @param string $locale Locale to check against
+ *
+ * @param string $locale Locale code to check
  * @return bool
  */
 function isCurrentLocale($locale) {
