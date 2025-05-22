@@ -1,18 +1,45 @@
 /node_modules
+/public/build
 /public/hot
 /public/storage
 /storage/*.key
 /vendor
 .env
-.env.backup
 .env.production
+.env.backup
+.env.*.local
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
-auth.json
 npm-debug.log
 yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/.phpunit.cache
 composer.phar
+
+# Laravel-specific files to ignore
+/bootstrap/cache/*.php
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+
+# Logs and databases
+/storage/logs/*.log
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/framework/cache/data/*
+/database/*.sqlite
+/database/*.sqlite-journal
+
+# Build files
+/public/css
+/public/js
+/public/mix-manifest.json
+
+# Misc
+.DS_Store
+Thumbs.db
