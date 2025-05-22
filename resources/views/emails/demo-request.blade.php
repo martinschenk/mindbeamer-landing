@@ -48,7 +48,7 @@
         
         <div class="info-row">
             <span class="info-label">E-Mail:</span> 
-            <span>{{ $data['email'] ?? 'Nicht angegeben' }}</span>
+            <span>{{ $email ?? 'Nicht angegeben' }}</span>
         </div>
         
         <p>Bitte kontaktieren Sie den Interessenten zeitnah, um einen Termin für eine persönliche Demo zu vereinbaren.</p>
