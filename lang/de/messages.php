@@ -52,9 +52,31 @@ return [
     'feature6_title' => 'Für jedes Unternehmen geeignet',
     'feature6_description' => 'Vom Friseursalon bis zum Tech-Blog oder Finanzportal – MindBeamer passt sich automatisch an Ihre spezifische Branche an.',
     
+    // Advantages Section
+    'advantages_title' => 'Sechs Schlüsselvorteile von MindBeamer',
+    'advantages_subtitle' => 'Entdecken Sie die Vorteile, die MindBeamer zur intelligentesten Wahl für Ihre Content-Marketing-Anforderungen machen.',
+    
     // Why MindBeamer Stands Out Section
     'why_stands_out_title' => 'Warum MindBeamer heraussticht',
     'why_stands_out_subtitle' => 'Es gibt viele KI-Content-Tools, aber MindBeamer ist der einzige vollständig autonome Agent, der alles von der Themenauswahl bis zur Veröffentlichung übernimmt – ohne jeglichen Aufwand Ihrerseits.',
+    
+    'why1_title' => 'Zeitsparende Automatisierung',
+    'why1_description' => 'Eliminieren Sie stundenlange Content-Erstellung und Veröffentlichungsarbeit jede Woche mit einem wirklich autonomen System.',
+    
+    'why2_title' => 'Überlegene Inhaltsqualität',
+    'why2_description' => 'Unsere spezialisierte KI produziert ansprechende, zielgruppenspezifische Inhalte, die Engagement und Conversions fördern.',
+    
+    'why3_title' => 'Völlige Sorglosigkeit',
+    'why3_description' => 'Einmal konfiguriert, erledigt MindBeamer alles - Sie können sich auf andere Aspekte Ihres Unternehmens konzentrieren.',
+    
+    'why4_title' => 'Komplettlösung',
+    'why4_description' => 'Von der Recherche über das Schreiben bis hin zur Medienerstellung und Veröffentlichung - alles wird in einem integrierten System abgewickelt.',
+    
+    'why5_title' => 'Verlässliche Konsistenz',
+    'why5_description' => 'Verpassen Sie nie wieder einen Veröffentlichungstermin - MindBeamer hält Ihren Zeitplan ohne Ausfälle ein.',
+    
+    'why6_title' => 'Messbarer ROI',
+    'why6_description' => 'Sehen Sie klare Renditen, da MindBeamer Traffic, Engagement und Leads ohne laufende Kosten generiert.',
     
     'vs_jasper_title' => 'vs. Jasper AI',
     'vs_jasper_description' => 'Während Jasper erfordert, dass Sie Inhalte manuell erstellen und verteilen, arbeitet MindBeamer vollständig autonom und generiert und veröffentlicht Inhalte auf allen Plattformen ohne Ihr Eingreifen.',
@@ -111,7 +133,6 @@ return [
     'news_feature4' => 'Premium-Medienerstellung',
     'news_feature5' => 'Automatisierte Themenrecherche',
     'news_feature6' => 'News- & Trend-Monitoring',
-    'news_feature7' => 'API-Integration',
     
     'month' => 'Monat',
     'request_demo_button' => 'Demo anfragen',
@@ -135,6 +156,10 @@ return [
     'demo_title' => 'Buchen Sie Ihre kostenlose MindBeamer-Demo',
     'demo_subtitle' => 'Schließen Sie sich Freelancern und KMUs an, die mit MindBeamer viel Zeit sparen. Geben Sie Ihre E-Mail ein, und Martin Schenk zeigt Ihnen in einem persönlichen Videoanruf, wie es funktioniert – entwickelt von einem Entwickler mit über 20 Jahren Erfahrung!',
     'your_email' => 'Ihre E-Mail',
+    'ask_for_demo' => 'Kostenlose Demo anfragen',
+    'form_success' => 'Vielen Dank! Wir werden Sie in Kürze kontaktieren.',
+    'form_error' => 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
+    'form_validation_error' => 'Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.',
     'demo_note' => 'Sie hören bald von Martin, um Ihre persönliche Demo zu vereinbaren.',
     
     // Footer

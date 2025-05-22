@@ -52,9 +52,31 @@ return [
     'feature6_title' => 'Works for Any Business',
     'feature6_description' => 'From hair salons to tech blogs to financial news portals – MindBeamer adapts to your specific industry automatically.',
     
+    // Advantages Section
+    'advantages_title' => 'Six Key Advantages of MindBeamer',
+    'advantages_subtitle' => 'Discover the benefits that make MindBeamer the smartest choice for your content marketing needs.',
+    
     // Why MindBeamer Stands Out Section
     'why_stands_out_title' => 'Why MindBeamer Stands Out',
     'why_stands_out_subtitle' => 'You\'ve got options for AI content tools, but MindBeamer is the only fully autonomous agent that handles everything from topic selection to publishing – with zero input required.',
+    
+    'why1_title' => 'Time-Saving Automation',
+    'why1_description' => 'Eliminate hours of content creation and publishing work every week with a truly autonomous system.',
+    
+    'why2_title' => 'Superior Content Quality',
+    'why2_description' => 'Our specialized AI produces engaging, audience-specific content that drives engagement and conversions.',
+    
+    'why3_title' => 'Complete Peace of Mind',
+    'why3_description' => 'Once configured, MindBeamer handles everything - you can focus on other aspects of your business.',
+    
+    'why4_title' => 'Full-Service Solution',
+    'why4_description' => 'From research to writing to media creation to publishing - everything is handled in one integrated system.',
+    
+    'why5_title' => 'Reliable Consistency',
+    'why5_description' => 'Never miss a publishing day again - MindBeamer maintains your schedule without fail.',
+    
+    'why6_title' => 'Measurable ROI',
+    'why6_description' => 'See clear returns as MindBeamer drives traffic, engagement, and leads without ongoing costs.',
     
     'vs_jasper_title' => 'vs. Jasper AI',
     'vs_jasper_description' => 'While Jasper requires you to manually create and distribute content, MindBeamer operates fully autonomously, generating and posting content across all platforms without your intervention.',
@@ -111,7 +133,6 @@ return [
     'news_feature4' => 'Premium media creation',
     'news_feature5' => 'Topic research automation',
     'news_feature6' => 'News & trend monitoring',
-    'news_feature7' => 'API integration',
     
     'month' => 'month',
     'request_demo_button' => 'Request Demo',
@@ -135,6 +156,10 @@ return [
     'demo_title' => 'Book Your Free MindBeamer Demo',
     'demo_subtitle' => 'Join freelancers and SMEs saving hours with MindBeamer. Enter your email, and Martin Schenk will show you how it works in a personal video call – built by a developer with 20+ years of experience!',
     'your_email' => 'Your Email',
+    'ask_for_demo' => 'Ask for a Free Demo',
+    'form_success' => 'Thank you! We\'ll contact you soon.',
+    'form_error' => 'Something went wrong. Please try again.',
+    'form_validation_error' => 'Please check your input and try again.',
     'demo_note' => 'You\'ll hear from Martin soon to set up your personal demo.',
     
     // Footer
