@@ -1,0 +1,433 @@
+/* MindBeamer Cookie Consent Custom Styles */
+
+:root {
+    --cc-primary-gradient: linear-gradient(135deg, #EC4899, #9F7AEA, #4ECDC4);
+    --cc-text-color: #ffffff;
+    --cc-bg-overlay: rgba(0, 0, 0, 0.85);
+    --cc-border-radius: 12px;
+    --cc-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --cc-button-padding: 12px 24px;
+    --cc-font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Cookie Banner Styling */
+#cc-main {
+    background: var(--cc-bg-overlay) !important;
+    backdrop-filter: blur(10px);
+    font-family: var(--cc-font-family) !important;
+    border-radius: var(--cc-border-radius) !important;
+    box-shadow: var(--cc-shadow) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    margin: 20px !important;
+    max-width: calc(100vw - 40px) !important;
+}
+
+/* Banner Content */
+#cc-main .cc-content {
+    color: var(--cc-text-color) !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    padding: 20px !important;
+}
+
+/* Banner Title */
+#cc-main .cc-title {
+    background: var(--cc-primary-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    margin-bottom: 10px !important;
+}
+
+/* Button Container */
+#cc-main .cc-compliance {
+    margin-top: 15px !important;
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+}
+
+/* All Buttons Base Style */
+#cc-main button,
+#cc-main .cc-btn {
+    background: var(--cc-primary-gradient) !important;
+    color: var(--cc-text-color) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: var(--cc-button-padding) !important;
+    font-family: var(--cc-font-family) !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 40px !important;
+}
+
+/* Button Hover Effects */
+#cc-main button:hover,
+#cc-main .cc-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3) !important;
+}
+
+/* Reject Button - Different Style */
+#cc-main .cc-deny,
+#cc-main button[data-role="reject"] {
+    background: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    color: var(--cc-text-color) !important;
+}
+
+#cc-main .cc-deny:hover,
+#cc-main button[data-role="reject"]:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Preferences Modal */
+#cc-modal {
+    background: var(--cc-bg-overlay) !important;
+    backdrop-filter: blur(15px) !important;
+    border-radius: var(--cc-border-radius) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    max-width: 600px !important;
+    margin: 20px auto !important;
+    font-family: var(--cc-font-family) !important;
+}
+
+#cc-modal .cc-content {
+    color: var(--cc-text-color) !important;
+    padding: 30px !important;
+}
+
+#cc-modal .cc-title {
+    background: var(--cc-primary-gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+}
+
+/* Cookie Categories */
+.cc-categories {
+    margin: 20px 0 !important;
+}
+
+.cc-category {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.cc-category-title {
+    color: var(--cc-text-color) !important;
+    font-weight: 600 !important;
+    margin-bottom: 5px !important;
+    font-size: 14px !important;
+}
+
+.cc-category-description {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+
+/* Toggle Switches - Extended Selectors */
+.cc-toggle,
+.cookie-toggle,
+.cookie-switch,
+input[type="checkbox"].cookie-toggle,
+.cc-category .toggle,
+.cookie-preferences-modal .toggle,
+.cookie-preferences-modal input[type="checkbox"] {
+    position: relative !important;
+    display: block !important;
+    width: 50px !important;
+    height: 24px !important;
+    float: right !important;
+    margin-top: -5px !important;
+    pointer-events: auto !important;
+    z-index: 9999 !important;
+}
+
+.cc-toggle input,
+.cookie-toggle input,
+.cookie-switch input,
+.cc-category .toggle input,
+.cookie-preferences-modal .toggle input,
+.cookie-preferences-modal input[type="checkbox"] {
+    opacity: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    cursor: pointer !important;
+    z-index: 10000 !important;
+    pointer-events: auto !important;
+}
+
+.cc-slider,
+.cookie-toggle .slider,
+.cookie-switch .slider,
+.cc-category .slider,
+.cookie-preferences-modal .slider {
+    position: absolute !important;
+    cursor: pointer !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    transition: 0.3s ease !important;
+    border-radius: 24px !important;
+    pointer-events: auto !important;
+}
+
+.cc-slider:before,
+.cookie-toggle .slider:before,
+.cookie-switch .slider:before,
+.cc-category .slider:before,
+.cookie-preferences-modal .slider:before {
+    position: absolute !important;
+    content: "" !important;
+    height: 18px !important;
+    width: 18px !important;
+    left: 3px !important;
+    bottom: 3px !important;
+    background-color: white !important;
+    transition: 0.3s ease !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+/* Checked State */
+input:checked + .cc-slider,
+input:checked + .slider,
+.cc-toggle input:checked + .cc-slider,
+.cookie-toggle input:checked + .slider,
+.cookie-switch input:checked + .slider,
+.cc-category input:checked + .slider,
+.cookie-preferences-modal input:checked + .slider {
+    background: var(--cc-primary-gradient) !important;
+}
+
+input:checked + .cc-slider:before,
+input:checked + .slider:before,
+.cc-toggle input:checked + .cc-slider:before,
+.cookie-toggle input:checked + .slider:before,
+.cookie-switch input:checked + .slider:before,
+.cc-category input:checked + .slider:before,
+.cookie-preferences-modal input:checked + .slider:before {
+    transform: translateX(26px) !important;
+}
+
+/* Disabled State */
+input:disabled + .cc-slider,
+input:disabled + .slider,
+.cc-toggle input:disabled + .cc-slider,
+.cookie-toggle input:disabled + .slider,
+.cookie-switch input:disabled + .slider,
+.cc-category input:disabled + .slider,
+.cookie-preferences-modal input:disabled + .slider {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+}
+
+/* Visual Slider Synchronization */
+.slider.checked,
+.slider[data-checked="true"] {
+    background: linear-gradient(135deg, #EC4899, #9F7AEA, #4ECDC4) !important;
+    box-shadow: 0 0 10px rgba(236, 72, 153, 0.5) !important;
+}
+
+.slider:not(.checked),
+.slider[data-checked="false"] {
+    background: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: none !important;
+}
+
+/* Slider knob positioning */
+.slider.checked:before,
+.slider[data-checked="true"]:before {
+    transform: translateX(26px) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.slider:not(.checked):before,
+.slider[data-checked="false"]:before {
+    transform: translateX(0px) !important;
+    transition: transform 0.3s ease !important;
+}
+
+/* Smooth transitions for all sliders */
+.slider {
+    transition: background 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.slider:before {
+    transition: transform 0.3s ease !important;
+}
+
+/* Modal Positioning - Center the modal */
+.cc-modal,
+.cookie-consent-modal,
+.preferences-modal {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 999999 !important;
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+}
+
+/* Policy Links */
+.cc-policy-links {
+    margin-top: 15px !important;
+    text-align: center !important;
+}
+
+.cc-policy-links a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: underline !important;
+    font-size: 12px !important;
+    margin: 0 10px !important;
+    transition: color 0.3s ease !important;
+}
+
+.cc-policy-links a:hover {
+    color: var(--cc-text-color) !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #cc-main {
+        margin: 10px !important;
+        max-width: calc(100vw - 20px) !important;
+    }
+    
+    #cc-main .cc-content {
+        padding: 15px !important;
+    }
+    
+    #cc-main .cc-compliance {
+        flex-direction: column !important;
+    }
+    
+    #cc-main button,
+    #cc-main .cc-btn {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+    }
+    
+    #cc-modal {
+        margin: 10px !important;
+        max-width: calc(100vw - 20px) !important;
+    }
+    
+    #cc-modal .cc-content {
+        padding: 20px !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --cc-bg-overlay: rgba(0, 0, 0, 0.9);
+        --cc-text-color: #ffffff;
+    }
+}
+
+/* Animation */
+@keyframes ccSlideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#cc-main {
+    animation: ccSlideUp 0.4s ease-out !important;
+}
+
+/* Focus States for Accessibility */
+#cc-main button:focus,
+#cc-main .cc-btn:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+    outline-offset: 2px !important;
+}
+
+/* Force Modal Interactivity */
+.cookie-preferences-modal,
+#cc-modal,
+.cc-modal {
+    pointer-events: auto !important;
+    z-index: 99999 !important;
+    position: fixed !important;
+}
+
+.cookie-preferences-modal *,
+#cc-modal *,
+.cc-modal * {
+    pointer-events: auto !important;
+}
+
+.cookie-preferences-modal button,
+.cookie-preferences-modal input,
+.cookie-preferences-modal .toggle,
+.cookie-preferences-modal .slider,
+#cc-modal button,
+#cc-modal input,
+#cc-modal .toggle,
+#cc-modal .slider,
+.cc-modal button,
+.cc-modal input,
+.cc-modal .toggle,
+.cc-modal .slider {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    z-index: 100000 !important;
+    position: relative !important;
+    user-select: auto !important;
+}
+
+.cookie-preferences-modal input[type="checkbox"],
+#cc-modal input[type="checkbox"],
+.cc-modal input[type="checkbox"] {
+    opacity: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+}
+
+/* Remove any overlays that might block interactions */
+.modal-overlay,
+.backdrop,
+.cc-overlay {
+    pointer-events: none !important;
+}

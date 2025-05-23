@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TranslationController;
 use App\Http\Controllers\TestErrorController;
+use App\Http\Controllers\PrivacyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
 Route::middleware('setlocale')->group(function () {
     // Main landing page route
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    
+    // Privacy Policy route
+    Route::get('/privacy-policy', [PrivacyController::class, 'index'])->name('privacy.policy');
 });
 
 // Test error pages route
