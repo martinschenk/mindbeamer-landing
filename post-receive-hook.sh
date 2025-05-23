@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Enhanced error handling
+set -e  # Exit immediately if a command exits with non-zero status
+trap 'log_message "Error occurred. Deployment failed at line $LINENO"; exit 1' ERR
+
 # Pfade einstellen
 TARGET="/home/mbeamer/httpdocs"
 GIT_DIR="/home/mbeamer/git/mindbeamer.git"
@@ -27,6 +31,17 @@ cd "$TMP_GIT_CLONE" || exit
 if [ -f "composer.json" ]; then
     log_message "Installiere Composer-Abhängigkeiten..."
     $COMPOSER install --no-dev --optimize-autoloader
+fi
+
+# Frontend-Assets bauen, wenn package.json existiert
+if [ -f "package.json" ]; then
+    log_message "Baue Frontend-Assets..."
+    if command -v npm &>/dev/null; then
+        npm ci --production
+        npm run build
+    else
+        log_message "WARNUNG: npm nicht gefunden. Frontend-Assets werden nicht gebaut."
+    fi
 fi
 
 # Spezielle Verzeichnisse erhalten (falls vorhanden)
