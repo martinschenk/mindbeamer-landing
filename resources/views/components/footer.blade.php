@@ -7,6 +7,8 @@
                 <a href="{{ route('language.switch', ['locale' => 'en']) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'en' ? 'font-bold text-white' : '' }}">EN</a>
                 <span class="text-gray-500">|</span>
                 <a href="{{ route('language.switch', ['locale' => 'de']) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'de' ? 'font-bold text-white' : '' }}">DE</a>
+                <span class="text-gray-500">|</span>
+                <a href="{{ route('language.switch', ['locale' => 'es']) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'es' ? 'font-bold text-white' : '' }}">ES</a>
             </div>
         </div>
     </div>

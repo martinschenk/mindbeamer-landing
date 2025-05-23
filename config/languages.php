@@ -15,6 +15,7 @@ return [
     'available_locales' => [
         'en',
         'de',
+        'es',
     ],
 
     /*
@@ -49,5 +50,6 @@ return [
     'locale_names' => [
         'en' => 'English',
         'de' => 'Deutsch',
+        'es' => 'Español',
     ],
 ];
