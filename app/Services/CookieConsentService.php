@@ -97,7 +97,7 @@ class CookieConsentService
         return [
             'privacy_policy' => [
                 'text' => __('cookie-consent.policy_links.privacy_policy'),
-                'link' => route('privacy.policy')
+                'link' => route('privacy.policy', ['locale' => app()->getLocale()])
             ]
         ];
     }

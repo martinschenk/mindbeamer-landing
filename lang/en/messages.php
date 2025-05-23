@@ -155,6 +155,12 @@ return [
     'faq4_question' => 'Can I use MindBeamer for any business niche?',
     'faq4_answer' => 'Yes! MindBeamer has been successfully deployed across diverse industries - from professional services like law and accounting to retail businesses, healthcare providers, tech startups, educational institutions, and creative agencies. The initial setup allows MindBeamer to understand your specific industry, target audience, and content goals.',
     
+    // GDPR Compliance and Security
+    'cookie_consent_content' => 'We use cookies to enhance your experience. By continuing to use our website, you agree to the use of cookies.',
+    'gdpr_compliant' => 'GDPR Compliant',
+    'ssl_secured' => 'SSL Secured',
+    'data_protection' => 'Data Protection',
+    
     // Contact Section
     'demo_title' => 'Book Your Free MindBeamer Demo',
     'demo_subtitle' => 'Join freelancers and SMEs saving hours with MindBeamer. Enter your email, and Martin Schenk will show you how it works in a personal video call – built by a developer with 20+ years of experience!',

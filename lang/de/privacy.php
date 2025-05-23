@@ -3,6 +3,7 @@
 return [
     'title' => 'Datenschutzerklärung',
     'last_updated' => 'Zuletzt aktualisiert',
+    'gdpr_notice' => 'Diese Datenschutzerklärung entspricht vollständig den Anforderungen der EU-Datenschutz-Grundverordnung (DSGVO).',
     
     // Company Information
     'company_info_title' => 'Unternehmensinformationen',

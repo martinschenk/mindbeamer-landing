@@ -196,4 +196,10 @@ return [
     'error_503_title' => 'Servicio no disponible',
     'error_503_message' => 'Lo sentimos, estamos temporalmente fuera de servicio por mantenimiento o alta carga.',
     'error_503_joke' => '¡Incluso nuestra incansable IA necesita un descanso para tomar café a veces!',
+    
+    // GDPR Compliance and Security
+    'cookie_consent_content' => 'Utilizamos cookies para mejorar su experiencia. Al continuar usando nuestro sitio web, acepta el uso de cookies.',
+    'gdpr_compliant' => 'Cumple RGPD',
+    'ssl_secured' => 'SSL Seguro',
+    'data_protection' => 'Protección de Datos',
 ];

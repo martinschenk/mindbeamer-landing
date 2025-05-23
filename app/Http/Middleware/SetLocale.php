@@ -22,8 +22,18 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $supportedLocales = Config::get('languages.available_locales', ['en', 'de']);
-        $defaultLocale = Config::get('languages.default_locale', 'en');
+        $supportedLocales = Config::get('languages.available_locales', ['en', 'de', 'es']);
+        $defaultLocale = Config::get('languages.default_locale', 'de');
+        
+        // Get locale from URL parameter first
+        $locale = $request->route('locale');
+        
+        // Check if locale from URL is valid
+        if ($locale && in_array($locale, $supportedLocales, true)) {
+            Session::put('locale', $locale);
+            App::setLocale($locale);
+            return $next($request);
+        }
         
         // Check if locale is explicitly set in the request
         if ($request->has('locale') && in_array($request->locale, $supportedLocales, true)) {
