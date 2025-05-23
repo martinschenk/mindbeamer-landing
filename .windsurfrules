@@ -66,13 +66,22 @@
 
 - `vendor/`
 - `node_modules/`
-- `storage/`
-- `public/`
+- `storage/logs/`
+- `storage/framework/cache/`
+- `storage/framework/sessions/`
+- `storage/framework/views/`
+- `public/build/` (Vite-Build-Ausgabe)
+- `public/hot` (Vite HMR)
 - `documentation/`
 - `.env`
 - `.idea/`
 - `tests/Browser/`
 - `bootstrap/cache/`
+
+### Eingeschränkt bearbeitbar (mit Vorsicht)
+
+- `storage/app/` (nur .gitignore und Verzeichnisstruktur)
+- `public/` (nur custom CSS/JS/Images, nicht Build-Ausgaben)
 
 ### Ziele
 
@@ -365,6 +374,38 @@ done
 - Erstelle inline PHPDoc für alle Klassen und Methoden
 - Füge Kontext-Kommentare für komplexe Logik hinzu
 - Verwende Diagramme für komplexere Workflows
+
+
+## Production Deployment
+
+### Allgemeine Deployment-Prinzipien
+
+- **Automatisierung First**: Nutze Git-basierte Deployment-Workflows mit post-receive hooks
+- **Keine manuellen Schritte**: Alles was nach `git push` passiert, muss automatisch ablaufen
+- **PHP-Version-Bewusstsein**: Prüfe Package-Requirements vs. Server-PHP-Version vor Deployment
+- **Dependency-Management**: `composer install` und `npm build` müssen Teil des Deployment-Prozesses sein
+- **Laravel-Optimierung**: Cache-Clearing und Rebuilding muss automatisch erfolgen
+
+### Post-Receive Hook Setup (Plesk Server)
+
+#### Basis-Struktur für alle Laravel-Projekte:
+
+```bash
+#!/bin/bash
+set -e
+trap 'log_message "Error occurred. Deployment failed at line $LINENO"; exit 1' ERR
+
+# Projektspezifische Pfade anpassen:
+TARGET="/var/www/vhosts/[DOMAIN]/httpdocs"
+GIT_DIR="/var/www/vhosts/[DOMAIN]/git/[REPO].git"
+TMP_GIT_CLONE="/var/www/vhosts/[DOMAIN]/tmp_git_clone"
+
+# PHP-Version basierend auf Package-Requirements:
+PHP="/opt/plesk/php/8.3/bin/php"  # Für moderne Laravel + Packages
+# PHP="/opt/plesk/php/8.2/bin/php"  # Für ältere Projekte
+
+# Composer mit expliziter PHP-Version:
+$PHP /usr/local/psa/var/modules/composer/composer.phar install --no-dev --optimize-autoloader
 
 
 
