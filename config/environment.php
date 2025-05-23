@@ -23,6 +23,6 @@ return [
     ],
     
     // Check if we're on a local development domain
-    // Note: This cannot be a closure for config:cache to work in production
-    'is_local_domain' => false, // Will be checked via helper function instead
+    // Note: Cannot use closure for config:cache - will be handled in helper function
+    'is_local_domain' => false,
 ];
