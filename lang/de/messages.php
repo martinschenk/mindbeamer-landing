@@ -172,4 +172,28 @@ return [
     'footer_privacy' => 'Datenschutz',
     'footer_terms' => 'AGB',
     'footer_language' => 'Sprache',
+    
+    // Error Pages
+    'return_home' => 'Zur Startseite zurückkehren',
+    'error_incident_id' => 'Vorfalls-ID',
+    
+    // 404 Error
+    'error_404_title' => 'Seite nicht gefunden',
+    'error_404_message' => 'Hoppla! Die gesuchte Seite existiert nicht oder wurde verschoben.',
+    'error_404_joke' => 'Anscheinend konnte unser KI-Content-Agent diese Seite nicht herbeizaubern!',
+    
+    // 403 Error
+    'error_403_title' => 'Zugriff verboten',
+    'error_403_message' => 'Entschuldigung, Sie haben keine Berechtigung, auf diese Seite zuzugreifen.',
+    'error_403_joke' => 'Selbst unsere autonome KI weiß, wann sie Grenzen respektieren muss!',
+    
+    // 500 Error
+    'error_500_title' => 'Serverfehler',
+    'error_500_message' => 'Hoppla! Auf unseren Servern ist etwas schiefgelaufen.',
+    'error_500_joke' => 'Unsere KI hat gerade eine kleine Existenzkrise. Sie sollte sich bald erholen!',
+    
+    // 503 Error
+    'error_503_title' => 'Dienst nicht verfügbar',
+    'error_503_message' => 'Entschuldigung, wir sind vorübergehend wegen Wartungsarbeiten oder hoher Auslastung nicht erreichbar.',
+    'error_503_joke' => 'Auch unsere unermüdliche KI braucht manchmal eine Kaffeepause!',
 ];

@@ -172,4 +172,28 @@ return [
     'footer_privacy' => 'Privacy',
     'footer_terms' => 'Terms',
     'footer_language' => 'Language',
+    
+    // Error Pages
+    'return_home' => 'Return to Homepage',
+    'error_incident_id' => 'Incident ID',
+    
+    // 404 Error
+    'error_404_title' => 'Page Not Found',
+    'error_404_message' => 'Oops! The page you\'re looking for doesn\'t exist or has been moved.',
+    'error_404_joke' => 'Looks like our AI content agent couldn\'t beam this page into existence!',
+    
+    // 403 Error
+    'error_403_title' => 'Access Forbidden',
+    'error_403_message' => 'Sorry, you don\'t have permission to access this page.',
+    'error_403_joke' => 'Even our autonomous AI knows when to respect boundaries!',
+    
+    // 500 Error
+    'error_500_title' => 'Server Error',
+    'error_500_message' => 'Oops! Something went wrong on our servers.',
+    'error_500_joke' => 'Our AI is having a bit of an existential crisis. It should recover shortly!',
+    
+    // 503 Error
+    'error_503_title' => 'Service Unavailable',
+    'error_503_message' => 'Sorry, we\'re temporarily down for maintenance or experiencing high load.',
+    'error_503_joke' => 'Even our tireless AI needs a coffee break sometimes!',
 ];
