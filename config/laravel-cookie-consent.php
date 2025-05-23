@@ -232,11 +232,11 @@ return [
     'policy_links' => [
         [
             'text' => 'Privacy Policy',
-            'link' => env('COOKIE_CONSENT_PRIVACY_POLICY_URL', '') ?? route('privacy.policy')
+            'link' => env('COOKIE_CONSENT_PRIVACY_POLICY_URL', '/privacy-policy')
         ],
         [
             'text' => 'Terms and Conditions',
-            'link' => env('COOKIE_CONSENT_TERMS_URL', '') ?? url('terms-and-conditions')
+            'link' => env('COOKIE_CONSENT_TERMS_URL', '/terms-and-conditions')
         ],
     ],
 ];
