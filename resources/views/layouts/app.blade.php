@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ __('messages.hero_subtitle') }}">
+    <meta name="description" content="@yield('meta_description', __('messages.hero_subtitle'))">
     <meta name="keywords" content="autonomous AI content, automated blog posts, autonomous social media, automated content creation, MindBeamer, free demo">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>MindBeamer - {{ __('messages.hero_title') }}</title>
+    <title>@yield('title', 'MindBeamer - ' . __('messages.hero_title'))</title>
     
     <!-- Vite Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -155,7 +155,8 @@
 
     @include('components.header')
 
-    {{ $slot }}
+    @yield('content')
+    {{ $slot ?? '' }}
 
     @include('components.footer')
 

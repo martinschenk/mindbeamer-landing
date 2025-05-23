@@ -3,6 +3,7 @@
 return [
     'title' => 'Privacy Policy',
     'last_updated' => 'Last updated',
+    'gdpr_notice' => 'This privacy policy fully complies with the requirements of the EU General Data Protection Regulation (GDPR).',
     
     // Company Information
     'company_info_title' => 'Company Information',

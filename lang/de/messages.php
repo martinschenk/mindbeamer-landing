@@ -196,4 +196,10 @@ return [
     'error_503_title' => 'Dienst nicht verfügbar',
     'error_503_message' => 'Entschuldigung, wir sind vorübergehend wegen Wartungsarbeiten oder hoher Auslastung nicht erreichbar.',
     'error_503_joke' => 'Auch unsere unermüdliche KI braucht manchmal eine Kaffeepause!',
+    
+    // GDPR compliance and security translations
+    'cookie_consent_content' => 'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die weitere Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.',
+    'gdpr_compliant' => 'DSGVO-konform',
+    'ssl_secured' => 'SSL-gesichert',
+    'data_protection' => 'Datenschutz',
 ];

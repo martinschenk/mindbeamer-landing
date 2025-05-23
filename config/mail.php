@@ -133,5 +133,5 @@ return [
     |
     */
     
-    'admin_email' => env('ADMIN_EMAIL', 'info@mindbeamer.io'),
+    'admin_email' => env('ADMIN_EMAIL', 'm.schenk@mindbeamer.io'),
 ];

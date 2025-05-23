@@ -3,6 +3,7 @@
 return [
     'title' => 'Política de Privacidad',
     'last_updated' => 'Última actualización',
+    'gdpr_notice' => 'Esta política de privacidad cumple completamente con los requisitos del Reglamento General de Protección de Datos (RGPD) de la UE.',
     
     // Company Information
     'company_info_title' => 'Información de la Empresa',

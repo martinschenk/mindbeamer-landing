@@ -13,17 +13,30 @@
 
             <!-- Content -->
             <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+                <!-- GDPR Compliance Badge -->
+                <div class="mb-8 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">{{ __('messages.gdpr_compliant') }}</h3>
+                            <p class="text-sm text-gray-600">{{ __('privacy.gdpr_notice') }}</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="prose prose-lg max-w-none">
                     
                     <!-- Company Information -->
                     <section class="mb-8">
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ __('privacy.company_info_title') }}</h2>
-                        <div class="bg-gray-50 p-6 rounded-lg">
-                            <p class="mb-2"><strong>{{ __('privacy.company_name') }}:</strong> Martin Schenk S.L.</p>
-                            <p class="mb-2"><strong>{{ __('privacy.address') }}:</strong> Calle Claudio Coello 14, 5G</p>
-                            <p class="mb-2"><strong>{{ __('privacy.city') }}:</strong> 28001 Madrid</p>
-                            <p class="mb-2"><strong>{{ __('privacy.country') }}:</strong> España</p>
-                            <p><strong>{{ __('privacy.contact') }}:</strong> info@mindbeamer.io</p>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p><strong>{{ __('privacy.company') }}:</strong> Martin Schenk S.L.</p>
+                            <p><strong>{{ __('privacy.address') }}:</strong> Calle Claudio Coello 14, 5G, 28001 Madrid, España</p>
+                            <p><strong>{{ __('legal.vat_number') }}:</strong> ESB84645654</p>
+                            <p><strong>{{ __('legal.phone') }}:</strong> <a href="tel:+34669686832" class="text-pink-600 hover:text-pink-800">(+34) 669 686 832</a></p>
+                            <p><strong>{{ __('privacy.contact') }}:</strong> m.schenk@mindbeamer.io</p>
                         </div>
                     </section>
 
@@ -70,7 +83,7 @@
                         <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ __('privacy.contact_title') }}</h2>
                         <p class="mb-4">{{ __('privacy.contact_desc') }}</p>
                         <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-lg">
-                            <p class="font-semibold">{{ __('privacy.contact_email') }}: info@mindbeamer.io</p>
+                            <p class="font-semibold">{{ __('privacy.contact_email') }}: m.schenk@mindbeamer.io</p>
                         </div>
                     </section>
 
@@ -79,7 +92,7 @@
 
             <!-- Back to Home -->
             <div class="text-center mt-12">
-                <a href="{{ route('home') }}" 
+                <a href="{{ route('home', ['locale' => app()->getLocale()]) }}" 
                    class="inline-flex items-center px-6 py-3 bg-pink-500 text-white font-medium rounded-lg hover:bg-pink-600 transition-colors duration-200">
                     ← {{ __('privacy.back_to_home') }}
                 </a>
