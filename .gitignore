@@ -1,15 +1,15 @@
+# Laravel standard ignores
 /node_modules
-# Keep build files for production deployment
-# /public/build
 /public/hot
 /public/storage
 /storage/*.key
 /vendor
 .env
-.env.production
-.env.backup
 .env.*.local
+.env.backup
+.env.production
 .phpunit.result.cache
+docker-compose.override.yml
 Homestead.json
 Homestead.yaml
 npm-debug.log
@@ -20,11 +20,19 @@ yarn-error.log
 /.phpunit.cache
 composer.phar
 
+# Build files - using a comment format that allows you to keep certain 
+# build files for production deployment
+/public/build
+#/public/build/assets
+#/public/build/manifest.json
+/public/mix-manifest.json
+
 # Laravel-specific files to ignore
 /bootstrap/cache/*.php
 .phpstorm.meta.php
 _ide_helper.php
 _ide_helper_models.php
+.php-cs-fixer.cache
 
 # Logs and databases
 /storage/logs/*.log
@@ -36,15 +44,10 @@ _ide_helper_models.php
 /database/*.sqlite
 /database/*.sqlite-journal
 
-# Build files - keep for production
-# /public/css
-# /public/js
-/public/mix-manifest.json
-
-# Misc
-.DS_Store
-Thumbs.db
-
-# Backup files
+# Your specific backup files
 /storage/app/MindBeamer/*
 /storage/app/backup-temp/*
+
+# OS generated files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+* text=auto
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+CHANGELOG.md export-ignore
+.styleci.yml export-ignore
+.github export-ignore
+.editorconfig export-ignore
+.gitignore export-ignore
+phpunit.xml export-ignore
+.php-cs-fixer.* export-ignore
