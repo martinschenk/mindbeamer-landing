@@ -22,9 +22,9 @@ composer.phar
 
 # Build files - using a comment format that allows you to keep certain 
 # build files for production deployment
-/public/build
-#/public/build/assets
-#/public/build/manifest.json
+#/public/build
+/public/build/assets
+/public/build/manifest.json
 /public/mix-manifest.json
 
 # Laravel-specific files to ignore
