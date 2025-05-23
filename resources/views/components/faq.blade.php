@@ -1,7 +1,7 @@
 <!-- FAQ Section -->
 <section id="faq" class="bg-white py-16">
     <div class="container mx-auto px-6 fade-in">
-        <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12">{{ __('messages.faq_title') }}</h2>
+        <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-pink-500 via-purple-400 to-teal-400 text-transparent bg-clip-text">{{ __('messages.faq_title') }}</h2>
         
         <div class="max-w-3xl mx-auto space-y-6" x-data="{selected:1}">
             <!-- Question 1 -->
