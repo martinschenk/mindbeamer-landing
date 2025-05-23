@@ -172,6 +172,18 @@ return [
     'footer_privacy' => 'Privacy',
     'footer_terms' => 'Terms',
     'footer_language' => 'Language',
+    'footer_company' => 'MindBeamer',
+    'footer_rights' => 'All rights reserved.',
+    'footer_description' => 'Empowering businesses with autonomous AI content creation.',
+    'footer_links' => 'Quick Links',
+    'footer_home' => 'Home',
+    'footer_about' => 'About',
+    'footer_features' => 'Features',
+    'footer_pricing' => 'Pricing',
+    'footer_contact' => 'Contact',
+    'footer_legal' => 'Legal',
+    'footer_privacy' => 'Privacy Policy',
+    'footer_terms' => 'Terms of Service',
     
     // Error Pages
     'return_home' => 'Return to Homepage',
