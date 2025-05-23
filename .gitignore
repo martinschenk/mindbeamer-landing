@@ -36,9 +36,9 @@ _ide_helper_models.php
 /database/*.sqlite
 /database/*.sqlite-journal
 
-# Build files
-/public/css
-/public/js
+# Build files - keep for production
+# /public/css
+# /public/js
 /public/mix-manifest.json
 
 # Misc
