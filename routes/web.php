@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TranslationController;
+use App\Http\Controllers\TestErrorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,11 @@ Route::middleware('setlocale')->group(function () {
     // Main landing page route
     Route::get('/', [HomeController::class, 'index'])->name('home');
 });
+
+// Test error pages route
+Route::get('/test-error/{code}', [TestErrorController::class, 'show'])
+    ->name('test.error')
+    ->where('code', '403|404|500|503');
 
 // Fallback route
 Route::fallback(function () {
