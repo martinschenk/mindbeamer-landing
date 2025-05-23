@@ -33,7 +33,9 @@
     <!-- FilamentPHP App Styles -->
     @filamentStyles
     
-    {!! CookieConsent::styles() !!}
+    @if(class_exists(\Devrabiul\CookieConsent\Facades\CookieConsent::class))
+        {!! CookieConsent::styles() !!}
+    @endif
     
     <!-- MindBeamer Cookie Consent Custom Styles -->
     <link rel="stylesheet" href="{{ asset('css/cookie-consent-custom.css') }}">
@@ -174,7 +176,9 @@
         $customConfig['cookie_categories']['marketing']['locked'] = false;
     @endphp
     
-    {!! CookieConsent::scripts($customConfig) !!}
+    @if(class_exists(\Devrabiul\CookieConsent\Facades\CookieConsent::class))
+        {!! CookieConsent::scripts($customConfig) !!}
+    @endif
     
     <script>
         // Show cookie settings function - ROBUST VERSION
