@@ -5,10 +5,10 @@ set -e  # Exit immediately if a command exits with non-zero status
 trap 'log_message "Error occurred. Deployment failed at line $LINENO"; exit 1' ERR
 
 # Pfade einstellen
-TARGET="/home/mbeamer/httpdocs"
-GIT_DIR="/home/mbeamer/git/mindbeamer.git"
-TMP_GIT_CLONE="/home/mbeamer/tmp_git_clone"
-COMPOSER="/home/mbeamer/composer"
+TARGET="/var/www/vhosts/mindbeamer.io/httpdocs"
+GIT_DIR="$HOME/git/mindbeamer.git"
+TMP_GIT_CLONE="$HOME/tmp_git_clone"
+COMPOSER="/usr/local/bin/composer"
 
 # Log-Funktion
 log_message() {
@@ -76,6 +76,12 @@ if [ -f "$TARGET/artisan" ]; then
     php artisan config:clear
     php artisan view:clear
     php artisan route:clear
+    
+    # Datenbank-Migrationen ausführen (SQLite safe)
+    if [ -f "database/database.sqlite" ] || [ ! -z "$DB_CONNECTION" ]; then
+        log_message "Führe Datenbank-Migrationen aus..."
+        php artisan migrate --force
+    fi
     
     # Optimierungen für Produktionsumgebung
     php artisan config:cache
