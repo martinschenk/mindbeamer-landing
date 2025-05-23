@@ -11,6 +11,8 @@
                 <a href="{{ route('language.switch', ['locale' => 'en']) }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'en' ? 'font-bold underline' : '' }}">EN</a>
                 <span class="text-white">|</span>
                 <a href="{{ route('language.switch', ['locale' => 'de']) }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'de' ? 'font-bold underline' : '' }}">DE</a>
+                <span class="text-white">|</span>
+                <a href="{{ route('language.switch', ['locale' => 'es']) }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'es' ? 'font-bold underline' : '' }}">ES</a>
             </div>
         </nav>
         <button class="md:hidden" @click="open = !open">
@@ -28,6 +30,8 @@
                 <a href="{{ route('language.switch', ['locale' => 'en']) }}" class="text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500 font-medium {{ app()->getLocale() == 'en' ? 'font-bold' : '' }}">EN</a>
                 <span class="text-gray-500">|</span>
                 <a href="{{ route('language.switch', ['locale' => 'de']) }}" class="text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500 font-medium {{ app()->getLocale() == 'de' ? 'font-bold' : '' }}">DE</a>
+                <span class="text-gray-500">|</span>
+                <a href="{{ route('language.switch', ['locale' => 'es']) }}" class="text-gray-700 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500 font-medium {{ app()->getLocale() == 'es' ? 'font-bold' : '' }}">ES</a>
             </div>
         </nav>
     </div>
