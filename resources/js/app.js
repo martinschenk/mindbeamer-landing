@@ -2,6 +2,9 @@
  * Main JavaScript file for MindBeamer Landing Page
  */
 
+// Import our CSS file which includes Tailwind CSS
+import '../css/app.css';
+
 // Import unsere eigene Notifications-Implementierung
 import './notifications.js';
 

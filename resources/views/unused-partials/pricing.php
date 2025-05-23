@@ -1,7 +1,7 @@
 <!-- Pricing Section -->
 <section id="pricing" class="bg-gray-100 py-16">
   <div class="container mx-auto px-6 fade-in">
-    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12"><?php echo __('pricing_title'); ?></h2>
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-500 via-purple-400 to-teal-400 text-transparent bg-clip-text"><?php echo __('pricing_title'); ?></h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Light Plan -->
       <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition">
@@ -30,9 +30,9 @@
       </div>
       
       <!-- Standard Plan -->
-      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-2 border-pink-500 relative">
+      <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition border-2 border-purple-400 relative">
         <div class="absolute top-0 left-0 w-full">
-          <div class="bg-pink-500 text-white text-center py-1 text-sm font-semibold"><?php echo __('most_popular'); ?></div>
+          <div class="bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 text-white text-center py-1 text-sm font-semibold"><?php echo __('most_popular'); ?></div>
         </div>
         <h3 class="text-2xl font-bold mb-2 mt-4"><?php echo __('standard_plan'); ?></h3>
         <p class="text-gray-600 mb-6"><?php echo __('standard_plan_subtitle'); ?></p>
@@ -63,7 +63,7 @@
             <span><?php echo __('standard_feature6'); ?></span>
           </li>
         </ul>
-        <a href="#contact" class="block w-full bg-pink-500 text-white text-center font-semibold py-3 rounded-full hover:bg-pink-600"><?php echo __('request_demo_button'); ?></a>
+        <a href="#contact" class="block w-full bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 text-white text-center font-semibold py-3 rounded-full hover:opacity-90"><?php echo __('request_demo_button'); ?></a>
       </div>
       
       <!-- News Portal Plan -->

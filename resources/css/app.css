@@ -1,0 +1,13 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.section-title { 
+    font-weight: bold;
+    background: linear-gradient(to right, #EC4899, #9F7AEA, #4ECDC4); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    color: transparent; 
+}

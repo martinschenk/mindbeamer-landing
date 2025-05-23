@@ -6,7 +6,7 @@
       <?php echo __('hero_subtitle'); ?>
     </p>
     <div class="flex flex-col md:flex-row justify-center gap-4">
-      <a href="#contact" class="btn-primary bg-white text-pink-600 font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100"><?php echo __('hero_cta'); ?></a>
+      <a href="#contact" class="btn-primary bg-white text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 font-semibold py-4 px-8 rounded-full shadow-lg hover:bg-gray-100"><?php echo __('hero_cta'); ?></a>
     </div>
   </div>
 </section>

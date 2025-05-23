@@ -10,8 +10,8 @@
     
     <title>MindBeamer - {{ __('messages.hero_title') }}</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Vite Assets -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Alpine.js -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <!-- Remix Icon -->
@@ -24,10 +24,10 @@
     
     <style>
         body { font-family: 'Poppins', sans-serif; }
-        .hero-bg { background: linear-gradient(135deg, #FF6B6B, #4ECDC4); }
+        .hero-bg { background: linear-gradient(135deg, #EC4899, #9F7AEA, #4ECDC4); }
         .btn-primary { transition: transform 0.2s, background-color 0.3s; }
         .btn-primary:hover { transform: scale(1.05); }
-        .section-title { background: linear-gradient(to right, #FF6B6B, #4ECDC4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        /* Section title styling moved to app.css */
         .fade-in { animation: fadeIn 1s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
