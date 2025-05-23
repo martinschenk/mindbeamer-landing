@@ -96,14 +96,17 @@ return [
     'testimonial1_text' => 'Since implementing MindBeamer, our content production has tripled with zero additional resources. The agent handles everything completely independently – truly set and forget!',
     'testimonial1_name' => 'Alex Johnson',
     'testimonial1_position' => 'Marketing Director',
+    'testimonial1_role' => 'Marketing Director',
     
     'testimonial2_text' => 'I run a small hair salon and have no time for social media. MindBeamer creates and posts content that\'s perfect for my business – I don\'t have to do anything after setup!',
     'testimonial2_name' => 'Sarah Miller',
     'testimonial2_position' => 'Small Business Owner',
+    'testimonial2_role' => 'Small Business Owner',
     
     'testimonial3_text' => 'Our tech blog gets daily updates across all platforms now, with perfectly formatted LinkedIn posts, engaging Twitter threads, and comprehensive blog articles – all on autopilot.',
     'testimonial3_name' => 'David Chen',
     'testimonial3_position' => 'Tech Publication Editor',
+    'testimonial3_role' => 'Tech Publication Editor',
     
     // Pricing Section
     'pricing_title' => 'Simple, Transparent Pricing',
