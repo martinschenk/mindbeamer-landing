@@ -72,7 +72,8 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        // Note: Using strings instead of helper functions for config:cache compatibility
+        // public_path('storage') => storage_path('app/public'),
     ],
 
 ];
