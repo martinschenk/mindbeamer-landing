@@ -23,11 +23,6 @@ return [
     ],
     
     // Check if we're on a local development domain
-    'is_local_domain' => function() {
-        $appUrl = env('APP_URL', '');
-        $parsedUrl = parse_url($appUrl);
-        $host = $parsedUrl['host'] ?? '';
-        
-        return in_array($host, config('environment.local_domains'));
-    },
+    // Note: This cannot be a closure for config:cache to work in production
+    'is_local_domain' => false, // Will be checked via helper function instead
 ];
