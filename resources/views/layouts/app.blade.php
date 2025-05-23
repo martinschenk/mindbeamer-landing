@@ -43,13 +43,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Debug if Filament Notifications is available
             if (window.Livewire) {
-                console.log('Livewire found');
+                // Livewire is available - use it
             } else {
-                console.log('Livewire not found - initializing custom notification system');
+                // Initialize custom notification system silently
             }
             
             if (!window.Notification) {
-                console.log('Creating Notification object');
                 // Create a global Notification object if not provided by Filament
                 window.Notification = {
                     make: function() {
@@ -82,8 +81,6 @@
                                 return this;
                             },
                             send: function() {
-                                console.log('Sending notification:', this);
-                                
                                 // Create a notification element
                                 const notificationElement = document.createElement('div');
                                 notificationElement.className = `notification notification-${this._status} fixed right-4 top-4 z-50 max-w-md rounded-lg p-4 shadow-lg transition-all duration-300 transform translate-y-0 opacity-100`;

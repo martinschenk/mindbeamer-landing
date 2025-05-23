@@ -18,7 +18,7 @@ class SimpleNotifications {
             document.body.appendChild(this.container);
         }
         
-        console.log('SimpleNotifications initialized');
+        // SimpleNotifications initialized silently
     }
     
     /**
@@ -88,8 +88,7 @@ class SimpleNotifications {
             setTimeout(() => this.close(notification), duration);
         }
         
-        console.log(`Notification shown: ${message}`);
-        
+        // Notification shown silently
         return notification;
     }
     
