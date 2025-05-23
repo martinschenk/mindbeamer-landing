@@ -1,7 +1,7 @@
 <!-- Testimonials Section -->
 <section id="testimonials" class="bg-gray-100 py-16">
   <div class="container mx-auto px-6 fade-in">
-    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12"><?php echo __('testimonials_title'); ?></h2>
+    <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-pink-500 via-purple-400 to-teal-400 text-transparent bg-clip-text"><?php echo __('testimonials_title'); ?></h2>
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Testimonial 1 -->
