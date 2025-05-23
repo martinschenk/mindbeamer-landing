@@ -48,6 +48,9 @@ _ide_helper_models.php
 /storage/app/MindBeamer/*
 /storage/app/backup-temp/*
 
+# Deployment counter files
+/storage/app/git-push-counter.txt
+
 # OS generated files
 .DS_Store
 Thumbs.db
