@@ -6,9 +6,10 @@ trap 'log_message "Error occurred. Deployment failed at line $LINENO"; exit 1' E
 
 # Pfade einstellen
 TARGET="/var/www/vhosts/mindbeamer.io/httpdocs"
-GIT_DIR="$HOME/git/mindbeamer.git"
-TMP_GIT_CLONE="$HOME/tmp_git_clone"
+GIT_DIR="/var/www/vhosts/mindbeamer.io/git/mindbeamer.git"
+TMP_GIT_CLONE="/var/www/vhosts/mindbeamer.io/tmp_git_clone"
 COMPOSER="/usr/local/bin/composer"
+PHP="/opt/plesk/php/8.3/bin/php"
 
 # Log-Funktion
 log_message() {
@@ -29,8 +30,15 @@ cd "$TMP_GIT_CLONE" || exit
 
 # Composer-Abhängigkeiten installieren, wenn composer.json existiert
 if [ -f "composer.json" ]; then
-    log_message "Installiere Composer-Abhängigkeiten..."
-    $COMPOSER install --no-dev --optimize-autoloader
+    log_message "Installiere Composer-Abhängigkeiten mit PHP 8.3..."
+    # Use Plesk's composer with explicit PHP 8.3
+    $PHP /usr/local/psa/var/modules/composer/composer.phar install --no-dev --optimize-autoloader
+    
+    # Verify vendor directory was created
+    if [ ! -d "vendor" ]; then
+        log_message "FEHLER: vendor-Verzeichnis wurde nicht erstellt"
+        exit 1
+    fi
 fi
 
 # Frontend-Assets bauen, wenn package.json existiert
@@ -72,21 +80,21 @@ if [ -f "$TARGET/artisan" ]; then
     
     # Cache löschen
     cd "$TARGET" || exit
-    php artisan cache:clear
-    php artisan config:clear
-    php artisan view:clear
-    php artisan route:clear
+    $PHP artisan cache:clear
+    $PHP artisan config:clear
+    $PHP artisan view:clear
+    $PHP artisan route:clear
     
     # Datenbank-Migrationen ausführen (SQLite safe)
     if [ -f "database/database.sqlite" ] || [ ! -z "$DB_CONNECTION" ]; then
         log_message "Führe Datenbank-Migrationen aus..."
-        php artisan migrate --force
+        $PHP artisan migrate --force
     fi
     
     # Optimierungen für Produktionsumgebung
-    php artisan config:cache
-    php artisan route:cache
-    php artisan view:cache
+    $PHP artisan config:cache
+    $PHP artisan route:cache
+    $PHP artisan view:cache
 fi
 
 log_message "Deployment abgeschlossen!"
