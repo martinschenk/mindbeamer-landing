@@ -7,12 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const demoForm = document.getElementById('demo-form');
     
     if (demoForm) {
-        // Debug: Verify form is found
-        console.log('Demo form found, attaching listener');
+        // Attach form submit event listener
         
         demoForm.addEventListener('submit', async function(event) {
             event.preventDefault();
-            console.log('Form submitted');
             
             // Get form data
             const formData = new FormData(demoForm);
@@ -31,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             try {
                 // Send form data via fetch API
-                console.log('Sending to:', demoForm.action);
                 const response = await fetch(demoForm.action, {
                     method: 'POST',
                     body: formData,
@@ -43,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
                 
                 const data = await response.json();
-                console.log('Response:', data);
                 
                 // Reset form
                 if (response.ok && data.success) {
@@ -56,8 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (window.notifications) {
                         window.notifications.success(successMessage);
                     } else {
-                        console.error('SimpleNotifications nicht verfügbar');
-                        
                         // Fallback - Zeige eine einfache Meldung unterhalb des Formulars
                         const successElement = document.getElementById('form-success');
                         if (successElement) {
@@ -83,8 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (window.notifications) {
                             window.notifications.error(errorMessage + '<br>' + errorDetails);
                         } else {
-                            console.error('SimpleNotifications nicht verfügbar');
-                            
                             // Fallback - Zeige eine einfache Meldung unterhalb des Formulars
                             const errorElement = document.getElementById('form-error');
                             if (errorElement) {
@@ -105,8 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (window.notifications) {
                             window.notifications.error(errorMessage);
                         } else {
-                            console.error('SimpleNotifications nicht verfügbar');
-                            
                             // Fallback - Zeige eine einfache Meldung unterhalb des Formulars
                             const errorElement = document.getElementById('form-error');
                             if (errorElement) {
@@ -122,16 +112,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             } catch (error) {
-                console.error('Error submitting form:', error);
-                
                 const errorMessage = window.translations?.connection_error || 'Connection error. Please try again.';
                 
                 // Verwende unsere neue SimpleNotifications-Lösung
                 if (window.notifications) {
                     window.notifications.error(errorMessage);
                 } else {
-                    console.error('SimpleNotifications nicht verfügbar');
-                    
                     // Fallback - Zeige eine einfache Meldung unterhalb des Formulars
                     const errorElement = document.getElementById('form-error');
                     if (errorElement) {
@@ -151,6 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } else {
-        console.error('Demo form not found on page');
+        // Demo form not found on page
     }
 });
