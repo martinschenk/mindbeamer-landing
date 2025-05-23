@@ -9,8 +9,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?php echo __('hero_subtitle'); ?>">
   <meta name="keywords" content="autonomous AI content, automated blog posts, autonomous social media, automated content creation, MindBeamer, free demo">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Vite Assets for CSS and JS -->
+  <?php echo app('\Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
   <!-- Alpine.js -->
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <!-- Remix Icon -->
@@ -19,10 +19,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Poppins', sans-serif; }
-    .hero-bg { background: linear-gradient(135deg, #FF6B6B, #4ECDC4); }
+    .hero-bg { background: linear-gradient(135deg, #EC4899, #9F7AEA, #4ECDC4); }
     .btn-primary { transition: transform 0.2s, background-color 0.3s; }
     .btn-primary:hover { transform: scale(1.05); }
-    .section-title { background: linear-gradient(to right, #FF6B6B, #4ECDC4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    /* Section title styling moved to app.css */
     .fade-in { animation: fadeIn 1s ease-in; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>

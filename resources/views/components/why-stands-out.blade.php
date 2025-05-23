@@ -29,7 +29,7 @@
         
         <div class="text-center mt-8">
             <p class="text-xl mb-8">{{ __('messages.ready_to_see') }}</p>
-            <a href="#contact" class="btn-primary bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium hover:from-pink-600 hover:to-purple-700 transition duration-300">{{ __('messages.ask_for_demo') }}</a>
+            <a href="#contact" class="btn-primary bg-pink-500 text-white px-8 py-3 rounded-full font-medium hover:bg-pink-600 transition duration-300">{{ __('messages.ask_for_demo') }}</a>
         </div>
     </div>
 </section>
