@@ -4,13 +4,17 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Contact form script loaded');
+    
     const demoForm = document.getElementById('demo-form');
     
     if (demoForm) {
-        // Attach form submit event listener
+        console.log('Demo form found');
         
+        // Attach form submit event listener
         demoForm.addEventListener('submit', async function(event) {
             event.preventDefault();
+            console.log('Form submitted');
             
             // Get form data
             const formData = new FormData(demoForm);
@@ -28,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             
             try {
+                console.log('Sending request to:', demoForm.action);
+                
                 // Send form data via fetch API
                 const response = await fetch(demoForm.action, {
                     method: 'POST',
@@ -39,7 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
+                console.log('Response status:', response.status);
+                
                 const data = await response.json();
+                console.log('Response data:', data);
                 
                 // Reset form
                 if (response.ok && data.success) {
@@ -48,14 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Use translation for success message if available
                     const successMessage = window.translations?.form_success || data.message;
                     
-                    // Verwende unsere neue SimpleNotifications-Lösung
+                    // Show success notification
                     if (window.notifications) {
+                        console.log('Showing success notification');
                         window.notifications.success(successMessage);
                     } else {
-                        // Fallback - Zeige eine einfache Meldung unterhalb des Formulars
+                        console.log('No notifications system found, using fallback');
+                        // Fallback - show message below form
                         const successElement = document.getElementById('form-success');
                         if (successElement) {
-                            successElement.textContent = successMessage;
+                            successElement.querySelector('p').textContent = successMessage;
                             successElement.classList.remove('hidden');
                             
                             // Hide after 5 seconds
@@ -73,14 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         errorMessage = window.translations?.validation_error || 'Please check your inputs';
                         const errorDetails = Object.values(data.errors).flat().join('. ');
                         
-                        // Verwende unsere neue SimpleNotifications-Lösung
                         if (window.notifications) {
-                            window.notifications.error(errorMessage + '<br>' + errorDetails);
+                            window.notifications.error(errorMessage + ': ' + errorDetails);
                         } else {
-                            // Fallback - Zeige eine einfache Meldung unterhalb des Formulars
+                            // Fallback - show message below form
                             const errorElement = document.getElementById('form-error');
                             if (errorElement) {
-                                errorElement.textContent = errorMessage + ' ' + errorDetails;
+                                errorElement.querySelector('p').textContent = errorMessage + ' ' + errorDetails;
                                 errorElement.classList.remove('hidden');
                                 
                                 // Hide after 5 seconds
@@ -93,14 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         // General error
                         errorMessage = window.translations?.form_error || data.message;
                         
-                        // Verwende unsere neue SimpleNotifications-Lösung
                         if (window.notifications) {
                             window.notifications.error(errorMessage);
                         } else {
-                            // Fallback - Zeige eine einfache Meldung unterhalb des Formulars
+                            // Fallback - show message below form
                             const errorElement = document.getElementById('form-error');
                             if (errorElement) {
-                                errorElement.textContent = errorMessage;
+                                errorElement.querySelector('p').textContent = errorMessage;
                                 errorElement.classList.remove('hidden');
                                 
                                 // Hide after 5 seconds
@@ -112,16 +121,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             } catch (error) {
+                console.error('Fetch error:', error);
                 const errorMessage = window.translations?.connection_error || 'Connection error. Please try again.';
                 
-                // Verwende unsere neue SimpleNotifications-Lösung
                 if (window.notifications) {
                     window.notifications.error(errorMessage);
                 } else {
-                    // Fallback - Zeige eine einfache Meldung unterhalb des Formulars
+                    // Fallback - show message below form
                     const errorElement = document.getElementById('form-error');
                     if (errorElement) {
-                        errorElement.textContent = errorMessage;
+                        errorElement.querySelector('p').textContent = errorMessage;
                         errorElement.classList.remove('hidden');
                         
                         // Hide after 5 seconds
@@ -137,6 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } else {
-        // Demo form not found on page
+        console.log('Demo form not found on page');
     }
 });
