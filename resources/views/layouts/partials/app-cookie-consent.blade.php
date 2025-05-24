@@ -1,8 +1,9 @@
     @php
-        // FORCE OVERRIDE cookie categories to ensure Analytics and Marketing are visible
+        // Bereite lokalisierte Konfiguration für Cookie-Consent vor
         $customConfig = app(\App\Services\CookieConsentService::class)->getLocalizedConfig();
         
-        // Ensure Analytics and Marketing cookies are always visible in the modal
+        // Stelle sicher, dass Analytics und Marketing Cookies sichtbar sind
+        // Wichtig: Nicht deaktivieren, nur konfigurierbar machen
         $customConfig['cookie_categories']['analytics']['enabled'] = true;
         $customConfig['cookie_categories']['analytics']['visible'] = true;
         $customConfig['cookie_categories']['analytics']['locked'] = false;
@@ -17,10 +18,19 @@
     @endif
     
     <script>
-        // Cookie Consent Modal State Manager
+        /**
+         * MindBeamer Cookie-Consent-Manager
+         * 
+         * Verwaltet die Cookie-Einstellungen ohne Page-Reload durch Mutation Observer.
+         * 
+         * Löst das Problem, dass das Cookie-Modal nach dem Speichern nicht mehr reagiert.
+         */
         window.MBCookieModal = {
+            // Status-Tracking
             isOpen: false,
             lastInteraction: 0,
+            
+            // Umfassende Selektoren für alle möglichen Cookie-Consent-Plugins
             modalSelectors: [
                 '.cc-modal',
                 '.cookie-consent-modal',
@@ -29,6 +39,7 @@
                 '[class*="cookie_modal"]',
                 '[class*="preferences-modal"]'
             ],
+            
             buttonSelectors: [
                 '[data-cc="show-preferencesModal"]',
                 '[data-role="show-preferences"]', 
@@ -40,6 +51,7 @@
                 'button[class*="settings"]',
                 'a[href*="preferences"]'
             ],
+            
             saveButtonSelectors: [
                 '[data-cc="save"]',
                 '.cc-save-btn', 
@@ -48,7 +60,10 @@
                 'button[type="submit"]'
             ],
             
-            // Find modal element
+            /**
+             * Findet das Modal-Element
+             * @return {HTMLElement|null}
+             */
             getModalElement: function() {
                 for (const selector of this.modalSelectors) {
                     const elements = document.querySelectorAll(selector);
@@ -59,7 +74,10 @@
                 return null;
             },
             
-            // Find settings button
+            /**
+             * Findet den Button für Cookie-Einstellungen
+             * @return {HTMLElement|null}
+             */
             getSettingsButton: function() {
                 for (const selector of this.buttonSelectors) {
                     const buttons = document.querySelectorAll(selector);
@@ -70,7 +88,10 @@
                 return null;
             },
             
-            // Find all save buttons
+            /**
+             * Findet alle Speichern-Buttons im Modal
+             * @return {Array<HTMLElement>}
+             */
             getSaveButtons: function() {
                 let saveButtons = [];
                 for (const selector of this.saveButtonSelectors) {
@@ -82,8 +103,12 @@
                 return saveButtons;
             },
             
-            // Shows the modal
+            /**
+             * Zeigt das Cookie-Einstellungen-Modal an
+             * @return {boolean} Erfolg
+             */
             showModal: function() {
+                // Methode 1: Button finden und klicken
                 const button = this.getSettingsButton();
                 if (button) {
                     button.click();
@@ -92,7 +117,7 @@
                     return true;
                 }
                 
-                // Try global methods if button not found
+                // Methode 2: Globale Methoden versuchen
                 const globalMethods = [
                     () => window.CookieConsent && window.CookieConsent.showPreferences(),
                     () => window.cookieConsent && window.cookieConsent.showPreferences(),
@@ -109,42 +134,43 @@
                         this.lastInteraction = Date.now();
                         return true;
                     } catch (e) {
-                        // Continue to next method
+                        // Zum nächsten Versuch fortfahren
                     }
                 }
                 
                 return false;
             },
             
-            // Setup event listeners for save buttons
+            /**
+             * Konfiguriert Event-Listener für Speichern-Buttons
+             */
             setupSaveListeners: function() {
                 const saveButtons = this.getSaveButtons();
                 if (saveButtons.length === 0) return;
                 
                 saveButtons.forEach(btn => {
-                    // Remove existing listeners by cloning
+                    // Bestehende Event-Listener entfernen durch Klonen
                     const newBtn = btn.cloneNode(true);
                     if (btn.parentNode) {
                         btn.parentNode.replaceChild(newBtn, btn);
                     }
                     
-                    // Add our custom listener
+                    // Neuen Event-Listener hinzufügen
                     newBtn.addEventListener('click', (e) => {
-                        // Don't prevent default - let the plugin save cookies
+                        // Plugin speichern lassen
                         this.lastInteraction = Date.now();
                         
-                        // Give time for saving to complete
+                        // Zeit zum Speichern geben, dann Modal verstecken
                         setTimeout(() => {
                             this.isOpen = false;
                             
-                            // Only hide the modal, don't reload page
                             const modal = this.getModalElement();
                             if (modal) {
                                 modal.style.display = 'none';
                                 modal.style.visibility = 'hidden';
                                 modal.style.opacity = '0';
                                 
-                                // Reset the modal structure
+                                // Modal-Struktur ohne Page-Reload zurücksetzen
                                 this.resetModalStructure();
                             }
                         }, 500);
@@ -152,65 +178,61 @@
                 });
             },
             
-            // Reset the modal structure without page reload
+            /**
+             * Setzt die Modal-Struktur ohne Page-Reload zurück
+             */
             resetModalStructure: function() {
-                // Perform a "soft reset" on the cookie consent system
+                // Soft-Reset des Cookie-Consent-Systems
                 if (window.cookieConsent) {
                     try {
-                        // This is a more elegant approach than page reload
                         if (typeof window.cookieConsent.resetInstance === 'function') {
                             window.cookieConsent.resetInstance();
-                        }
-                        
-                        // Some libraries have a reset method
-                        if (typeof window.cookieConsent.reset === 'function') {
+                        } else if (typeof window.cookieConsent.reset === 'function') {
                             window.cookieConsent.reset();
                         }
                     } catch (e) {
-                        console.log('Cookie consent reset failed:', e);
+                        // Fehler beim Reset ignorieren
                     }
                 }
                 
-                // Rebind all footer cookie links
+                // Footer-Links neu binden
                 this.rebindCookieLinks();
             },
             
-            // Setup DOM mutation observer to watch for modal changes
+            /**
+             * Konfiguriert Mutation Observer für DOM-Änderungen
+             */
             setupMutationObserver: function() {
-                // Watch the entire document for changes
                 const observer = new MutationObserver((mutations) => {
-                    // Look for cookie modal being added to the DOM
+                    // Nach neu hinzugefügtem Cookie-Modal suchen
                     let shouldBindSaveButtons = false;
                     
                     for (const mutation of mutations) {
                         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
                             for (const node of mutation.addedNodes) {
                                 if (node.nodeType === Node.ELEMENT_NODE) {
-                                    // Check if this element or any of its children match our modal selectors
+                                    // Element oder Kinder prüfen
                                     for (const selector of this.modalSelectors) {
-                                        if (node.matches && node.matches(selector) || node.querySelector(selector)) {
+                                        if ((node.matches && node.matches(selector)) || 
+                                            node.querySelector(selector)) {
                                             shouldBindSaveButtons = true;
                                             break;
                                         }
                                     }
-                                    
-                                    // If we found something, no need to check other nodes
                                     if (shouldBindSaveButtons) break;
                                 }
                             }
                         }
-                        
-                        // If we found something, no need to check other mutations
                         if (shouldBindSaveButtons) break;
                     }
                     
-                    // If modal was added, set up save button listeners
+                    // Bei Bedarf Save-Buttons neu konfigurieren
                     if (shouldBindSaveButtons) {
                         setTimeout(() => this.setupSaveListeners(), 300);
                     }
                 });
                 
-                // Start observing with these configuration options
+                // Beobachtung starten
                 observer.observe(document.body, {
                     childList: true,
                     subtree: true,
@@ -219,17 +241,19 @@
                 });
             },
             
-            // Rebind all cookie links in the footer
+            /**
+             * Bindet alle Cookie-Links im Footer neu
+             */
             rebindCookieLinks: function() {
                 const footerLinks = document.querySelectorAll('button[onclick*="showCookieSettings"], a[onclick*="showCookieSettings"]');
                 footerLinks.forEach(link => {
-                    // Remove old event by cloning
+                    // Alten Event entfernen durch Klonen
                     const newLink = link.cloneNode(true);
                     if (link.parentNode) {
                         link.parentNode.replaceChild(newLink, link);
                     }
                     
-                    // Add fresh click handler
+                    // Neuen Event-Handler hinzufügen
                     newLink.addEventListener('click', (e) => {
                         e.preventDefault();
                         window.showCookieSettings();
@@ -237,27 +261,21 @@
                 });
             },
             
-            // Initialize the cookie modal manager
+            /**
+             * Initialisiert den Cookie-Modal-Manager
+             */
             init: function() {
-                // Set up mutation observer to detect modal changes
                 this.setupMutationObserver();
-                
-                // Initial binding of footer links
                 setTimeout(() => this.rebindCookieLinks(), 1000);
-                
-                // Add to window object for debugging
-                window.MBCookieModal = this;
-                
-                console.log('MindBeamer Cookie Modal Manager initialized');
             }
         };
         
-        // Initialize on page load
+        // Bei Seitenladung initialisieren
         document.addEventListener('DOMContentLoaded', function() {
             window.MBCookieModal.init();
         });
         
-        // Show cookie settings function - improved version
+        // Globale Funktion zum Anzeigen der Cookie-Einstellungen
         window.showCookieSettings = function() {
             return window.MBCookieModal.showModal();
         };
