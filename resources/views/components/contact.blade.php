@@ -17,8 +17,13 @@
                     </button>
                 </div>
                 
-                <div id="form-success" class="hidden bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded" role="alert">
-                    <p>{{ __('messages.form_success') }}</p>
+                <div id="form-success" class="hidden bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 text-white p-6 rounded-lg shadow-lg border-l-4 border-white" role="alert">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p class="font-semibold">{{ __('messages.form_success') }}</p>
+                    </div>
                 </div>
                 
                 <div id="form-error" class="hidden bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded" role="alert">
