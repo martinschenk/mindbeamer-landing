@@ -25,15 +25,22 @@ class DemoRequest extends Mailable
     protected string $userLocale;
 
     /**
+     * @var string
+     */
+    protected string $adminLocale;
+
+    /**
      * Create a new message instance.
      *
      * @param  array  $data
-     * @param  string  $locale
+     * @param  string  $adminLocale  Locale for admin email content (always 'de')
+     * @param  string  $userLocale   Locale of the user who submitted the form
      */
-    public function __construct(array $data, string $locale = 'en')
+    public function __construct(array $data, string $adminLocale = 'de', string $userLocale = 'en')
     {
         $this->data = $data;
-        $this->userLocale = $locale;
+        $this->adminLocale = $adminLocale;
+        $this->userLocale = $userLocale;
     }
 
     /**
@@ -55,7 +62,8 @@ class DemoRequest extends Mailable
             view: 'emails.demo-request',
             with: [
                 'email' => $this->data['email'],
-                'locale' => $this->userLocale,
+                'userLocale' => $this->userLocale,  // User's actual locale for display
+                'adminLocale' => $this->adminLocale, // Admin locale for email text
             ],
         );
     }

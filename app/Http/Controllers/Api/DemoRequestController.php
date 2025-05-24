@@ -43,18 +43,24 @@ class DemoRequestController extends Controller
                 'email' => $request->email,
             ];
 
-            // Get current locale for user confirmation email
-            $currentLocale = App::getLocale();
+            // Extract user locale from request (priority: header > parameter > referer URL > default)
+            $userLocale = $this->extractUserLocale($request);
 
-            // Send notification email to admin
-            Mail::to(config('mail.admin_email'))->send(new DemoRequest($data, $currentLocale));
+            // Admin email is ALWAYS in German (as requested)
+            $adminLocale = 'de';
+
+            // Send admin notification email in German with user's locale info
+            App::setLocale('de');
+            Mail::to(config('mail.admin_email', 'admin@mindbeamer.io'))
+                ->send(new DemoRequest($data, 'de', $userLocale));
 
             // Send confirmation email to user in their language
-            Mail::to($request->email)->send(new DemoRequestConfirmation($data, $currentLocale));
+            Mail::to($request->email)->send(new DemoRequestConfirmation($data, $userLocale));
 
             Log::info('Demo request processed successfully', [
                 'email' => $request->email,
-                'locale' => $currentLocale,
+                'user_locale' => $userLocale,
+                'admin_locale' => $adminLocale,
                 'admin_notified' => true,
                 'user_confirmed' => true,
             ]);
@@ -77,5 +83,53 @@ class DemoRequestController extends Controller
                 'message' => __('messages.form_error'),
             ], 500);
         }
+    }
+
+    /**
+     * Extract user locale from request
+     * Priority: X-Locale header > locale parameter > referer URL > default
+     *
+     * @param Request $request
+     * @return string
+     */
+    private function extractUserLocale(Request $request): string
+    {
+        $supportedLocales = config('languages.available_locales', ['en', 'de', 'es']);
+        $defaultLocale = config('languages.default_locale', 'en');
+
+        // 1. Try X-Locale header (if frontend sends it)
+        $headerLocale = $request->header('X-Locale');
+        if ($headerLocale && in_array($headerLocale, $supportedLocales, true)) {
+            return $headerLocale;
+        }
+
+        // 2. Try locale parameter (if sent in POST data)
+        $paramLocale = $request->input('locale');
+        if ($paramLocale && in_array($paramLocale, $supportedLocales, true)) {
+            return $paramLocale;
+        }
+
+        // 3. Try to extract from referer URL (e.g., https://example.com/de/ -> 'de')
+        $referer = $request->header('referer');
+        if ($referer) {
+            $urlParts = parse_url($referer);
+            if (isset($urlParts['path'])) {
+                $pathSegments = array_filter(explode('/', $urlParts['path']));
+                $possibleLocale = reset($pathSegments);
+                
+                if ($possibleLocale && in_array($possibleLocale, $supportedLocales, true)) {
+                    return $possibleLocale;
+                }
+            }
+        }
+
+        // 4. Fallback to session locale
+        $sessionLocale = session('locale');
+        if ($sessionLocale && in_array($sessionLocale, $supportedLocales, true)) {
+            return $sessionLocale;
+        }
+
+        // 5. Ultimate fallback
+        return $defaultLocale;
     }
 }

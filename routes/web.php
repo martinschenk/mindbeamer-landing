@@ -64,12 +64,12 @@ Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{
     // Legal pages routes
     Route::get('/impressum', [LegalController::class, 'impressum'])->name('legal.impressum');
     Route::get('/terms', [LegalController::class, 'terms'])->name('legal.terms');
+    
+    // Test error pages route
+    Route::get('/test-error/{code}', [TestErrorController::class, 'show'])
+        ->name('test.error')
+        ->where('code', '403|404|500|503');
 });
-
-// Test error pages route
-Route::get('/test-error/{code}', [TestErrorController::class, 'show'])
-    ->name('test.error')
-    ->where('code', '403|404|500|503');
 
 // Fallback route
 Route::fallback(function () {

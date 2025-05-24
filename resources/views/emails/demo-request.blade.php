@@ -62,10 +62,10 @@
             <span>
                 @php
                     $localeService = app(\App\Services\LocaleService::class);
-                    $displayLanguage = $localeService->getFormattedDisplayName($locale ?? 'en');
+                    $displayLanguage = $localeService->getFormattedDisplayName($userLocale ?? 'en');
                 @endphp
                 {{ $displayLanguage }}
-                <em style="color: #666; font-size: 0.9em;">({{ strtoupper($locale ?? 'en') }})</em>
+                <em style="color: #666; font-size: 0.9em;">({{ strtoupper($userLocale ?? 'en') }})</em>
             </span>
         </div>
         
