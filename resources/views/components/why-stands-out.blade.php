@@ -1,5 +1,8 @@
 <!-- Why MindBeamer Stands Out Section -->
-<section id="why-us" class="py-20 bg-gray-50">
+<!-- Invisible anchor target for menu navigation -->
+<span id="why-us" class="invisible block" style="position: relative; top: -40px; height: 1px;"></span>
+
+<section class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
         <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-6 bg-gradient-to-r from-pink-500 via-purple-400 to-teal-400 text-transparent bg-clip-text">{{ __('messages.why_stands_out_title') }}</h2>
         

@@ -1,5 +1,8 @@
+<!-- Invisible anchor target for menu navigation -->
+<span id="contact" class="invisible block" style="position: relative; top: -40px; height: 1px;"></span>
+
 <!-- Contact/Demo Section -->
-<section id="contact" class="bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 py-16 text-white">
+<section class="bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 py-16 text-white">
     <div class="container mx-auto px-6 fade-in text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">{{ __('messages.demo_title') }}</h2>
         <p class="text-xl max-w-3xl mx-auto mb-10">
