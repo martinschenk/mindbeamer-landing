@@ -10,7 +10,7 @@ return [
     
     // Hero Section
     'hero_title' => 'Ihr vollautomatischer KI-Content-Agent',
-    'hero_subtitle' => 'MindBeamer erstellt und veröffentlicht eigenständig beeindruckende Blogbeiträge und Social-Media-Inhalte – einmal konfiguriert, arbeitet er komplett selbstständig. Buchen Sie eine kostenlose Demo mit Martin Schenk und erleben Sie die Magie!',
+    'hero_subtitle' => 'MindBeamer erstellt und veröffentlicht eigenständig beeindruckende Blogbeiträge und Social-Media-Inhalte – einmal konfiguriert, arbeitet er komplett selbstständig. Buchen Sie eine kostenlose Demo und erleben Sie die Magie!',
     'hero_cta' => 'Kostenlose Demo anfragen',
     
     // How It Works Section
