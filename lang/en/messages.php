@@ -6,6 +6,7 @@ return [
     'nav_how_it_works' => 'How It Works',
     'nav_features' => 'Features', 
     'nav_why_us' => 'Why Us',
+    'nav_pricing' => 'Pricing',
     'nav_demo' => 'Free Demo',
     
     // Hero Section

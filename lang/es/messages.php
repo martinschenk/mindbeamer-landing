@@ -3,10 +3,11 @@
 return [
     // Navigation
     'nav_home' => 'Inicio',
-    'nav_how_it_works' => 'Cómo Funciona',
-    'nav_features' => 'Características', 
-    'nav_why_us' => 'Por Qué Nosotros',
-    'nav_demo' => 'Demo Gratuita',
+    'nav_how_it_works' => 'Proceso',
+    'nav_features' => 'Funciones', 
+    'nav_why_us' => 'Ventajas',
+    'nav_pricing' => 'Precios',
+    'nav_demo' => 'Demo',
     
     // Hero Section
     'hero_title' => 'Tu Agente de Contenido IA Completamente Autónomo',

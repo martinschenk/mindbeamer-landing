@@ -1,5 +1,8 @@
+<!-- Invisible anchor target for menu navigation -->
+<span id="pricing" class="invisible block" style="position: relative; top: -40px; height: 1px;"></span>
+
 <!-- Pricing Section -->
-<section id="pricing" class="bg-gray-100 py-16">
+<section class="bg-gray-100 py-16">
     <div class="container mx-auto px-6 fade-in">
         <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-pink-500 via-purple-400 to-teal-400 text-transparent bg-clip-text">{{ __('messages.pricing_title') }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

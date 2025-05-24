@@ -24,6 +24,29 @@
     @livewireStyles
     <!-- Additional Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scroll Behavior and Section Anchors -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Anker-Abschnitte mit Pseudo-Elementen */
+        section[id]::before { 
+            content: "";
+            display: block;
+            height: 80px; /* Höhe des Headers */
+            margin-top: -80px; /* Negativ, damit die Position direkt unter dem Header ist */
+            visibility: hidden;
+            pointer-events: none;
+        }
+        
+        /* Spezielle Anpassung für die erste Sektion (Hero) */
+        section#hero::before {
+            height: 0;
+            margin-top: 0;
+        }
+    </style>
     @php
         use Devrabiul\CookieConsent\Facades\CookieConsent;
     @endphp
