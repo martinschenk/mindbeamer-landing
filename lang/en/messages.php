@@ -10,7 +10,7 @@ return [
     
     // Hero Section
     'hero_title' => 'Your Fully Autonomous AI Content Agent',
-    'hero_subtitle' => 'MindBeamer autonomously creates and publishes stunning blog posts and social media content – configure once, and it works entirely on its own. Book a free demo with Martin Schenk to see the magic!',
+    'hero_subtitle' => 'MindBeamer autonomously creates and publishes stunning blog posts and social media content – configure once, and it works entirely on its own. Book a free demo to see the magic!',
     'hero_cta' => 'Ask for a Free Demo',
     
     // How It Works Section
