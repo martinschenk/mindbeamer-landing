@@ -29,13 +29,31 @@ A multilingual Laravel 11 landing page for MindBeamer.io with GDPR-compliant coo
 
 ## Development
 
+### Local Development
 ```bash
-# Start development server
 php artisan serve
-
-# Watch for asset changes
 npm run dev
 ```
+
+### Available Commands
+```bash
+php artisan config:clear    # Clear configuration cache
+php artisan route:list      # List all routes
+php artisan migrate:fresh   # Reset database
+```
+
+## 📚 Documentation
+
+For detailed documentation, see the `/docs/` directory:
+
+- **[📖 Development Guide](docs/DEVELOPMENT.md)** - Architecture, coding standards, and development workflow
+- **[🌍 Localization Guide](docs/LOCALIZATION.md)** - How to add new languages and manage translations
+- **[🍪 Cookie Consent](docs/COOKIES.md)** - GDPR compliance and cookie management *(coming soon)*
+
+### Quick Links
+- **Add new language**: See [LOCALIZATION.md](docs/LOCALIZATION.md#-neue-sprache-hinzufügen)
+- **Service architecture**: See [DEVELOPMENT.md](docs/DEVELOPMENT.md#️-architektur)
+- **E-mail system**: See [DEVELOPMENT.md](docs/DEVELOPMENT.md#e-mail-system)
 
 ## Deployment
 

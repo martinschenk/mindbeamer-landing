@@ -18070,3 +18070,11 @@ Did you mean one of these?
 #54 {main}"} 
 [2025-05-24 02:39:07] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","locale":"en","admin_notified":true,"user_confirmed":true} 
 [2025-05-24 03:28:30] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","locale":"en","admin_notified":true,"user_confirmed":true} 
+[2025-05-24 18:21:49] local.ERROR: Command "tinker" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"tinker\" is not defined. at /Users/martin/Laravel-Projekte/mindbeamer.io.landing/vendor/symfony/console/Application.php:726)
+[stacktrace]
+#0 /Users/martin/Laravel-Projekte/mindbeamer.io.landing/vendor/symfony/console/Application.php(284): Symfony\\Component\\Console\\Application->find('tinker')
+#1 /Users/martin/Laravel-Projekte/mindbeamer.io.landing/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /Users/martin/Laravel-Projekte/mindbeamer.io.landing/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /Users/martin/Laravel-Projekte/mindbeamer.io.landing/artisan(34): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Services\CookieConsentService;
+use App\Services\LocaleService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +15,10 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(CookieConsentService::class, function ($app) {
             return new CookieConsentService();
+        });
+
+        $this->app->singleton(LocaleService::class, function ($app) {
+            return new LocaleService();
         });
     }
 

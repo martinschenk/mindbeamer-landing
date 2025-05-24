@@ -104,6 +104,7 @@ return [
     'supported_locales' => [
         'en' => 'English',
         'de' => 'Deutsch',
+        'es' => 'Español',
     ],
 
     /*

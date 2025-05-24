@@ -14,14 +14,26 @@ class DemoRequest extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $data;
+    /**
+     * @var array
+     */
+    protected array $data;
+
+    /**
+     * @var string
+     */
+    protected string $userLocale;
 
     /**
      * Create a new message instance.
+     *
+     * @param  array  $data
+     * @param  string  $locale
      */
-    public function __construct(array $data)
+    public function __construct(array $data, string $locale = 'en')
     {
         $this->data = $data;
+        $this->userLocale = $locale;
     }
 
     /**
@@ -43,6 +55,7 @@ class DemoRequest extends Mailable
             view: 'emails.demo-request',
             with: [
                 'email' => $this->data['email'],
+                'locale' => $this->userLocale,
             ],
         );
     }
