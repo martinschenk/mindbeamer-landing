@@ -201,6 +201,6 @@ return [
     // GDPR compliance and security translations
     'cookie_consent_content' => 'Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die weitere Nutzung unserer Website stimmen Sie der Verwendung von Cookies zu.',
     'gdpr_compliant' => 'DSGVO-konform',
-    'ssl_secured' => 'SSL-gesichert',
+    'privacy_first' => 'Datenschutz First',
     'data_protection' => 'Datenschutz',
 ];

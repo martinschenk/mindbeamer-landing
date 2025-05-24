@@ -27,11 +27,12 @@
                 </svg>
                 <span class="text-sm font-medium">{{ __('messages.gdpr_compliant') }}</span>
             </div>
-            <div class="flex items-center space-x-2 text-blue-400">
+            <div class="flex items-center space-x-2 text-blue-500">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 5.522 4.477 10 10 10s10-4.478 10-10c0-5.523-4.477-10-10-10zm0 18a8 8 0 100-16 8 8 0 000 16zm0-8a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                 </svg>
-                <span class="text-sm font-medium">{{ __('messages.ssl_secured') }}</span>
+                <span class="text-sm font-medium">{{ __('messages.privacy_first') }}</span>
             </div>
         </div>
         
