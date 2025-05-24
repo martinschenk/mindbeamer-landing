@@ -17,10 +17,19 @@
     @endif
     
     <script>
-        // Show cookie settings function - ROBUST VERSION
-        window.showCookieSettings = function() {
-            // Method 1: Look for existing "Manage Preferences" or "Settings" buttons with retry
-            const settingsSelectors = [
+        // Cookie Consent Modal State Manager
+        window.MBCookieModal = {
+            isOpen: false,
+            lastInteraction: 0,
+            modalSelectors: [
+                '.cc-modal',
+                '.cookie-consent-modal',
+                '.preferences-modal',
+                '[class*="cookie-modal"]',
+                '[class*="cookie_modal"]',
+                '[class*="preferences-modal"]'
+            ],
+            buttonSelectors: [
                 '[data-cc="show-preferencesModal"]',
                 '[data-role="show-preferences"]', 
                 '.cc-btn-preferences',
@@ -30,41 +39,61 @@
                 'button[class*="preferences"]',
                 'button[class*="settings"]',
                 'a[href*="preferences"]'
-            ];
+            ],
+            saveButtonSelectors: [
+                '[data-cc="save"]',
+                '.cc-save-btn', 
+                '.cc-save',
+                'button[class*="save"]',
+                'button[type="submit"]'
+            ],
             
-            // Try multiple times with delays
-            let attempts = 0;
-            const maxAttempts = 5;
-            
-            const tryFindButton = () => {
-                attempts++;
-                
-                for (const selector of settingsSelectors) {
-                    const buttons = document.querySelectorAll(selector);
-                    if (buttons.length > 0) {
-                        buttons[0].click();
-                        return true;
+            // Find modal element
+            getModalElement: function() {
+                for (const selector of this.modalSelectors) {
+                    const elements = document.querySelectorAll(selector);
+                    if (elements.length > 0) {
+                        return elements[0];
                     }
                 }
-                
-                // If not found and still have attempts, try again after delay
-                if (attempts < maxAttempts) {
-                    setTimeout(tryFindButton, 200);
-                    return false;
+                return null;
+            },
+            
+            // Find settings button
+            getSettingsButton: function() {
+                for (const selector of this.buttonSelectors) {
+                    const buttons = document.querySelectorAll(selector);
+                    if (buttons.length > 0) {
+                        return buttons[0];
+                    }
+                }
+                return null;
+            },
+            
+            // Find all save buttons
+            getSaveButtons: function() {
+                let saveButtons = [];
+                for (const selector of this.saveButtonSelectors) {
+                    const buttons = document.querySelectorAll(selector);
+                    if (buttons.length > 0) {
+                        saveButtons = saveButtons.concat(Array.from(buttons));
+                    }
+                }
+                return saveButtons;
+            },
+            
+            // Shows the modal
+            showModal: function() {
+                const button = this.getSettingsButton();
+                if (button) {
+                    button.click();
+                    this.isOpen = true;
+                    this.lastInteraction = Date.now();
+                    return true;
                 }
                 
-                // If all attempts failed, use fallback methods
-                return false;
-            };
-            
-            // Start first attempt
-            if (tryFindButton()) {
-                return;
-            }
-            
-            // Method 2: Try to trigger global cookie consent events (with delay fallback)
-            setTimeout(() => {
-                const globalEventMethods = [
+                // Try global methods if button not found
+                const globalMethods = [
                     () => window.CookieConsent && window.CookieConsent.showPreferences(),
                     () => window.cookieConsent && window.cookieConsent.showPreferences(),
                     () => window.CC && window.CC.showPreferences(),
@@ -73,123 +102,163 @@
                     () => document.dispatchEvent(new CustomEvent('cookie-consent:show-modal'))
                 ];
                 
-                for (const method of globalEventMethods) {
+                for (const method of globalMethods) {
                     try {
                         method();
-                        return;
+                        this.isOpen = true;
+                        this.lastInteraction = Date.now();
+                        return true;
                     } catch (e) {
-                        // Silently continue to next method
+                        // Continue to next method
                     }
                 }
                 
-                // Method 3: Nuclear option - clear cookies and force reload
-                const cookieNames = [
-                    'Laravel_App_consent',
-                    'Laravel_App_categories',
-                    'MindBeamer_consent', 
-                    'MindBeamer_categories',
-                    'cookie_consent',
-                    'laravel_cookie_consent'
-                ];
+                return false;
+            },
+            
+            // Setup event listeners for save buttons
+            setupSaveListeners: function() {
+                const saveButtons = this.getSaveButtons();
+                if (saveButtons.length === 0) return;
                 
-                const domains = ['', window.location.hostname, '.' + window.location.hostname];
+                saveButtons.forEach(btn => {
+                    // Remove existing listeners by cloning
+                    const newBtn = btn.cloneNode(true);
+                    if (btn.parentNode) {
+                        btn.parentNode.replaceChild(newBtn, btn);
+                    }
+                    
+                    // Add our custom listener
+                    newBtn.addEventListener('click', (e) => {
+                        // Don't prevent default - let the plugin save cookies
+                        this.lastInteraction = Date.now();
+                        
+                        // Give time for saving to complete
+                        setTimeout(() => {
+                            this.isOpen = false;
+                            
+                            // Only hide the modal, don't reload page
+                            const modal = this.getModalElement();
+                            if (modal) {
+                                modal.style.display = 'none';
+                                modal.style.visibility = 'hidden';
+                                modal.style.opacity = '0';
+                                
+                                // Reset the modal structure
+                                this.resetModalStructure();
+                            }
+                        }, 500);
+                    }, { passive: true });
+                });
+            },
+            
+            // Reset the modal structure without page reload
+            resetModalStructure: function() {
+                // Perform a "soft reset" on the cookie consent system
+                if (window.cookieConsent) {
+                    try {
+                        // This is a more elegant approach than page reload
+                        if (typeof window.cookieConsent.resetInstance === 'function') {
+                            window.cookieConsent.resetInstance();
+                        }
+                        
+                        // Some libraries have a reset method
+                        if (typeof window.cookieConsent.reset === 'function') {
+                            window.cookieConsent.reset();
+                        }
+                    } catch (e) {
+                        console.log('Cookie consent reset failed:', e);
+                    }
+                }
                 
-                cookieNames.forEach(name => {
-                    domains.forEach(domain => {
-                        const domainPart = domain ? `; domain=${domain}` : '';
-                        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/${domainPart}`;
+                // Rebind all footer cookie links
+                this.rebindCookieLinks();
+            },
+            
+            // Setup DOM mutation observer to watch for modal changes
+            setupMutationObserver: function() {
+                // Watch the entire document for changes
+                const observer = new MutationObserver((mutations) => {
+                    // Look for cookie modal being added to the DOM
+                    let shouldBindSaveButtons = false;
+                    
+                    for (const mutation of mutations) {
+                        if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                            for (const node of mutation.addedNodes) {
+                                if (node.nodeType === Node.ELEMENT_NODE) {
+                                    // Check if this element or any of its children match our modal selectors
+                                    for (const selector of this.modalSelectors) {
+                                        if (node.matches && node.matches(selector) || node.querySelector(selector)) {
+                                            shouldBindSaveButtons = true;
+                                            break;
+                                        }
+                                    }
+                                    
+                                    // If we found something, no need to check other nodes
+                                    if (shouldBindSaveButtons) break;
+                                }
+                            }
+                        }
+                        
+                        // If we found something, no need to check other mutations
+                        if (shouldBindSaveButtons) break;
+                    }
+                    
+                    // If modal was added, set up save button listeners
+                    if (shouldBindSaveButtons) {
+                        setTimeout(() => this.setupSaveListeners(), 300);
+                    }
+                });
+                
+                // Start observing with these configuration options
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true,
+                    attributes: false,
+                    characterData: false
+                });
+            },
+            
+            // Rebind all cookie links in the footer
+            rebindCookieLinks: function() {
+                const footerLinks = document.querySelectorAll('button[onclick*="showCookieSettings"], a[onclick*="showCookieSettings"]');
+                footerLinks.forEach(link => {
+                    // Remove old event by cloning
+                    const newLink = link.cloneNode(true);
+                    if (link.parentNode) {
+                        link.parentNode.replaceChild(newLink, link);
+                    }
+                    
+                    // Add fresh click handler
+                    newLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        window.showCookieSettings();
                     });
                 });
+            },
+            
+            // Initialize the cookie modal manager
+            init: function() {
+                // Set up mutation observer to detect modal changes
+                this.setupMutationObserver();
                 
-                // Add artificial delay to ensure cookies are cleared
-                setTimeout(() => {
-                    window.location.href = window.location.pathname + '?show_cookie_banner=1';
-                }, 100);
-            }, 500);
+                // Initial binding of footer links
+                setTimeout(() => this.rebindCookieLinks(), 1000);
+                
+                // Add to window object for debugging
+                window.MBCookieModal = this;
+                
+                console.log('MindBeamer Cookie Modal Manager initialized');
+            }
         };
         
-        // Auto-close banner after saving preferences
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                // More specific selectors for save buttons
-                const saveSelectors = [
-                    '[data-cc="save"]',
-                    '.cc-save-btn', 
-                    '.cc-save',
-                    'button[class*="save"]',
-                    'button[type="submit"]'
-                ];
-                
-                let saveButtons = [];
-                saveSelectors.forEach(selector => {
-                    const buttons = document.querySelectorAll(selector);
-                    saveButtons = saveButtons.concat(Array.from(buttons));
-                });
-                
-                saveButtons.forEach((btn, index) => {
-                    btn.addEventListener('click', function(e) {
-                        // Don't prevent default - let the plugin handle saving
-                        setTimeout(() => {
-                            try {
-                                const modals = document.querySelectorAll('.cc-modal, .cookie-consent-modal, .preferences-modal, [class*="modal"]');
-                                
-                                modals.forEach(modal => {
-                                    if (modal && modal.style) {
-                                        modal.style.display = 'none';
-                                        modal.style.visibility = 'hidden';
-                                        modal.style.opacity = '0';
-                                    }
-                                });
-                                
-                                const banners = document.querySelectorAll('.cc-banner, .cookie-consent-banner, [class*="banner"]');
-                                
-                                banners.forEach(banner => {
-                                    if (banner && banner.style) {
-                                        banner.style.display = 'none';
-                                        banner.style.visibility = 'hidden';
-                                        banner.style.opacity = '0';
-                                    }
-                                });
-                                
-                                // CRITICAL: Re-bind footer link after saving!
-                                setTimeout(() => {
-                                    // SIMPLE SOLUTION: Just reload the page after save
-                                    // This is not elegant but it WORKS 100%
-                                    window.location.reload();
-                                }, 800);
-                                
-                            } catch (error) {
-                                // Silently continue
-                            }
-                        }, 300);
-                    }, { passive: true }); // Use passive listener to avoid issues
-                });
-            }, 1500); // Increased timeout to ensure elements are loaded
+            window.MBCookieModal.init();
         });
         
-        // Function to rebind footer cookie link 
-        function rebindFooterCookieLink() {
-            const footerLinks = document.querySelectorAll('a[onclick*="showCookieSettings"], a[href*="cookie"]');
-            footerLinks.forEach(link => {
-                // Remove old event listeners by cloning the element
-                const newLink = link.cloneNode(true);
-                link.parentNode.replaceChild(newLink, link);
-                
-                // Add fresh event listener
-                newLink.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    // Small delay to ensure DOM is ready
-                    setTimeout(() => {
-                        window.showCookieSettings();
-                    }, 100);
-                });
-            });
-        }
-        
-        // Initial binding on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(rebindFooterCookieLink, 1000);
-        });
+        // Show cookie settings function - improved version
+        window.showCookieSettings = function() {
+            return window.MBCookieModal.showModal();
+        };
     </script>
