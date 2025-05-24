@@ -29,7 +29,7 @@
     <div class="bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 py-2">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
-                <a href="/" class="text-white font-bold text-xl">MindBeamer</a>
+                <a href="{{ url('/') }}" class="text-white font-bold text-xl">MindBeamer</a>
             </div>
         </div>
     </div>
@@ -47,7 +47,7 @@
                     @yield('message')
                 </div>
                 <div class="mt-8">
-                    <a href="/" class="bg-white text-pink-600 border border-pink-600 hover:bg-pink-50 font-medium rounded-md px-6 py-3 transition duration-300 ease-in-out">
+                    <a href="{{ url('/') }}" class="bg-white text-pink-600 border border-pink-600 hover:bg-pink-50 font-medium rounded-md px-6 py-3 transition duration-300 ease-in-out">
                         {{ __('messages.return_home') }}
                     </a>
                 </div>

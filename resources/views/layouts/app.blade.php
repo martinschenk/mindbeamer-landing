@@ -454,13 +454,22 @@
                 try {
                     console.log('Sending request to:', form.action);
                     
+                    // Extract current locale from URL (e.g., /de/, /en/, /es/)
+                    const currentLocale = window.location.pathname.split('/')[1] || 'en';
+                    console.log('Current locale from URL:', currentLocale);
+                    
+                    // Record start time for minimum loading duration
+                    const startTime = Date.now();
+                    const minimumLoadingTime = 2000; // 2 seconds minimum
+                    
                     const response = await fetch(form.action, {
                         method: 'POST',
                         body: formData,
                         headers: {
                             'X-Requested-With': 'XMLHttpRequest',
                             'Accept': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                            'X-Locale': currentLocale  // Send current locale to API
                         }
                     });
                     
@@ -468,6 +477,15 @@
                     
                     const data = await response.json();
                     console.log('Response data:', data);
+                    
+                    // Ensure minimum loading time has passed for better UX
+                    const elapsedTime = Date.now() - startTime;
+                    const remainingTime = minimumLoadingTime - elapsedTime;
+                    
+                    if (remainingTime > 0) {
+                        console.log(`Waiting additional ${remainingTime}ms for better UX`);
+                        await new Promise(resolve => setTimeout(resolve, remainingTime));
+                    }
                     
                     if (response.ok && data.success) {
                         form.reset();

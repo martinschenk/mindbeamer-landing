@@ -18094,3 +18094,7 @@ Did you mean one of these?
 #3 /Users/martin/Laravel-Projekte/mindbeamer.io.landing/artisan(34): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #4 {main}
 "} 
+[2025-05-24 22:53:48] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","locale":"en","admin_notified":true,"user_confirmed":true} 
+[2025-05-24 23:05:46] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","user_locale":"es","admin_locale":"de","admin_notified":true,"user_confirmed":true} 
+[2025-05-24 23:10:01] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","user_locale":"es","admin_locale":"de","admin_notified":true,"user_confirmed":true} 
+[2025-05-24 23:13:34] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","user_locale":"en","admin_locale":"de","admin_notified":true,"user_confirmed":true} 
