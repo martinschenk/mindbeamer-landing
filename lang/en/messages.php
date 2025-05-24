@@ -159,7 +159,7 @@ return [
     // GDPR Compliance and Security
     'cookie_consent_content' => 'We use cookies to enhance your experience. By continuing to use our website, you agree to the use of cookies.',
     'gdpr_compliant' => 'GDPR Compliant',
-    'ssl_secured' => 'SSL Secured',
+    'privacy_first' => 'Privacy-First Business',
     'data_protection' => 'Data Protection',
     
     // Contact Section

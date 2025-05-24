@@ -201,6 +201,6 @@ return [
     // GDPR Compliance and Security
     'cookie_consent_content' => 'Utilizamos cookies para mejorar su experiencia. Al continuar usando nuestro sitio web, acepta el uso de cookies.',
     'gdpr_compliant' => 'Cumple RGPD',
-    'ssl_secured' => 'SSL Seguro',
+    'privacy_first' => 'Prioridad en Privacidad',
     'data_protection' => 'Protección de Datos',
 ];
