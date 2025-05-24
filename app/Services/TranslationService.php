@@ -74,9 +74,17 @@ class TranslationService
      */
     public function getAvailableLocales(): array
     {
-        return Config::get('languages.locale_names', [
-            'en' => 'English',
-            'de' => 'Deutsch',
-        ]);
+        return Config::get('languages.locale_names', []);
+    }
+
+    /**
+     * Get the display name for a given locale
+     *
+     * @param string $locale Locale code
+     * @return string Display name for the locale
+     */
+    public function getLocaleName(string $locale): string
+    {
+        return Config::get('languages.locale_names', [])[$locale] ?? 'Unknown';
     }
 }

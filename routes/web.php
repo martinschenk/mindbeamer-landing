@@ -28,8 +28,8 @@ Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
 
 // Root route with browser language detection
 Route::get('/', function () {
-    $supportedLocales = ['en', 'de', 'es'];
-    $defaultLocale = 'en';
+    $supportedLocales = config('languages.available_locales', []);
+    $defaultLocale = config('languages.default_locale', 'en');
     
     // Try to get locale from session first
     $sessionLocale = session('locale');

@@ -22,8 +22,8 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $supportedLocales = Config::get('languages.available_locales', ['en', 'de', 'es']);
-        $defaultLocale = Config::get('languages.default_locale', 'de');
+        $supportedLocales = Config::get('languages.available_locales', []);
+        $defaultLocale = Config::get('languages.default_locale', 'en');
         
         // Get locale from URL parameter first
         $locale = $request->route('locale');
