@@ -57,6 +57,18 @@
             <span>{{ $email ?? 'Nicht angegeben' }}</span>
         </div>
         
+        <div class="info-row">
+            <span class="info-label">Sprache der Website:</span> 
+            <span>
+                @php
+                    $localeService = app(\App\Services\LocaleService::class);
+                    $displayLanguage = $localeService->getFormattedDisplayName($locale ?? 'en');
+                @endphp
+                {{ $displayLanguage }}
+                <em style="color: #666; font-size: 0.9em;">({{ strtoupper($locale ?? 'en') }})</em>
+            </span>
+        </div>
+        
         <p>Bitte kontaktieren Sie den Interessenten zeitnah, um einen Termin für eine persönliche Demo zu vereinbaren.</p>
     </div>
     

@@ -47,7 +47,7 @@ class DemoRequestController extends Controller
             $currentLocale = App::getLocale();
 
             // Send notification email to admin
-            Mail::to(config('mail.admin_email'))->send(new DemoRequest($data));
+            Mail::to(config('mail.admin_email'))->send(new DemoRequest($data, $currentLocale));
 
             // Send confirmation email to user in their language
             Mail::to($request->email)->send(new DemoRequestConfirmation($data, $currentLocale));
