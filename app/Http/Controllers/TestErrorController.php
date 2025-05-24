@@ -20,7 +20,8 @@ class TestErrorController extends Controller
     public function show(Request $request, string $code)
     {
         // Set locale if specified in the query string
-        if ($request->has('lang') && in_array($request->lang, ['en', 'de', 'es'])) {
+        $supportedLocales = config('languages.available_locales', []);
+        if ($request->has('lang') && in_array($request->lang, $supportedLocales)) {
             app()->setLocale($request->lang);
         }
 

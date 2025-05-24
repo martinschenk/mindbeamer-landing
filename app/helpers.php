@@ -16,7 +16,7 @@ function getCurrentLocale() {
  * @return void
  */
 function setAppLocale($locale) {
-    $supportedLocales = config('languages.available_locales', ['en', 'de']);
+    $supportedLocales = config('languages.available_locales', []);
     
     if (in_array($locale, $supportedLocales)) {
         session(['locale' => $locale]);

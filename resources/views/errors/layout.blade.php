@@ -57,7 +57,7 @@
             </div>
             <div class="mt-6">
                 <div class="inline-flex items-center space-x-1">
-                    @foreach(['en', 'de', 'es'] as $locale)
+                    @foreach(config('languages.available_locales', []) as $locale)
                         <a href="{{ request()->url() }}?lang={{ $locale }}" class="px-3 py-1 {{ app()->getLocale() == $locale ? 'bg-pink-100 text-pink-800' : 'bg-gray-100 text-gray-700' }} rounded-md text-sm font-medium">
                             {{ strtoupper($locale) }}
                         </a>
@@ -69,7 +69,7 @@
 
     <footer class="bg-gray-100 py-8">
         <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
-            <p>© {{ date('Y') }} MindBeamer.io. {{ __('messages.all_rights_reserved') }}</p>
+            <p>  {{ date('Y') }} MindBeamer.io. {{ __('messages.all_rights_reserved') }}</p>
         </div>
     </footer>
 </body>

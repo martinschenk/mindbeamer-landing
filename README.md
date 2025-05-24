@@ -47,6 +47,7 @@ php artisan migrate:fresh   # Reset database
 For detailed documentation, see the `/docs/` directory:
 
 - **[📖 Development Guide](docs/DEVELOPMENT.md)** - Architecture, coding standards, and development workflow
+- **[🧪 Testing Guide](docs/TESTING.md)** - PHPUnit testing standards and localization test suite
 - **[🌍 Localization Guide](docs/LOCALIZATION.md)** - How to add new languages and manage translations
 - **[🍪 Cookie Consent](docs/COOKIES.md)** - GDPR compliance and cookie management *(coming soon)*
 
