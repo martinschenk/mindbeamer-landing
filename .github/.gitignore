@@ -1,0 +1,8 @@
+# Diese .gitignore gilt nur für GitHub und wird dort geladen
+# Sie hat keinen Einfluss auf den Produktionsserver
+
+# Build-Dateien - ignorieren bei GitHub
+/public/build
+/public/build/assets
+/public/build/manifest.json
+/public/mix-manifest.json
