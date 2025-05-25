@@ -26,12 +26,20 @@ class TranslationService
     /**
      * Sets the current locale in the session
      *
-     * @param string $locale Locale code (e.g., 'en', 'de')
+     * @param string $locale Locale code (e.g., 'en', 'de', 'zh-CN')
      * @return void
      */
     public function setAppLocale(string $locale): void
     {
-        $supportedLocales = Config::get('languages.available_locales', ['en', 'de']);
+        $supportedLocales = Config::get('languages.available_locales', ['en', 'de', 'es', 'zh-CN']);
+        
+        // Explizites Debugging-Log um zu sehen, welcher Locale gesetzt wird
+        if (Config::get('app.debug', false)) {
+            \Illuminate\Support\Facades\Log::debug("Setting locale to: {$locale}", [
+                'supported' => in_array($locale, $supportedLocales, true),
+                'available' => $supportedLocales
+            ]);
+        }
         
         if (in_array($locale, $supportedLocales, true)) {
             Session::put('locale', $locale);
@@ -42,7 +50,7 @@ class TranslationService
     /**
      * Get the URL for the current page with a specific locale
      *
-     * @param string $locale Locale code
+     * @param string $locale Locale code (e.g., 'en', 'de', 'zh-CN')
      * @return string URL with locale parameter
      */
     public function getLocaleUrl(string $locale): string
@@ -59,7 +67,7 @@ class TranslationService
     /**
      * Check if the current locale is the specified one
      * 
-     * @param string $locale Locale to check against
+     * @param string $locale Locale to check against (e.g., 'en', 'de', 'zh-CN')
      * @return bool
      */
     public function isCurrentLocale(string $locale): bool
@@ -80,7 +88,7 @@ class TranslationService
     /**
      * Get the display name for a given locale
      *
-     * @param string $locale Locale code
+     * @param string $locale Locale code (e.g., 'en', 'de', 'zh-CN')
      * @return string Display name for the locale
      */
     public function getLocaleName(string $locale): string

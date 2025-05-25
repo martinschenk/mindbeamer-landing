@@ -49,6 +49,8 @@
                 <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'de'])) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'de' ? 'font-bold text-white' : '' }}">DE</a>
                 <span class="text-gray-500">|</span>
                 <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'es'])) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'es' ? 'font-bold text-white' : '' }}">ES</a>
+                <span class="text-gray-500">|</span>
+                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'zh_CN'])) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'zh_CN' ? 'font-bold text-white' : '' }}">ZH</a>
             </div>
         </div>
     </div>

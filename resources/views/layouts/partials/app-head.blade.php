@@ -25,6 +25,35 @@
     <!-- Additional Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Spezielles Script zur korrekten Behandlung der chinesischen Sprache -->
+    <script>
+        // Diese Funktion stellt sicher, dass die chinesische Sprache korrekt persistent bleibt
+        document.addEventListener('DOMContentLoaded', function() {
+            // Prüfe, ob wir auf der chinesischen Seite sind
+            const pathParts = window.location.pathname.split('/');
+            const urlLocale = pathParts[1]; // z.B. 'zh_CN'
+            
+            if (urlLocale === 'zh_CN') {
+                console.log('Chinese locale detected in URL. Ensuring it persists...');
+                
+                // Setze einen Cookie für zusätzliche Persistenz
+                document.cookie = "app_locale=zh_CN; path=/; max-age=" + (60 * 60 * 24 * 30);
+                
+                // Verhindere Sprachänderungen durch automatische Weiterleitungen
+                const originalPushState = history.pushState;
+                history.pushState = function() {
+                    const result = originalPushState.apply(this, arguments);
+                    // Prüfe nach jeder Navigation, ob wir auf der chinesischen Seite bleiben sollten
+                    if (urlLocale === 'zh_CN' && !window.location.pathname.startsWith('/zh_CN')) {
+                        console.log('Navigation detected outside of Chinese locale. Redirecting back...');
+                        window.location.href = '/zh_CN' + window.location.pathname;
+                    }
+                    return result;
+                };
+            }
+        });
+    </script>
+    
     <!-- Scroll Behavior and Section Anchors -->
     <style>
         html {

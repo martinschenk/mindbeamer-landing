@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{-- 
+    Verwende unseren verbesserten LocaleService für das HTML lang Attribut 
+    Kritisch für die korrekte Darstellung von Chinesisch (zh_CN vs zh-CN)
+--}}
+<html lang="{{ app(\App\Services\LocaleService::class)->getHtmlLangAttribute() }}">
 @include('layouts.partials.app-head')
 <body class="bg-gray-50 text-gray-900">
 

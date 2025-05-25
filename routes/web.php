@@ -24,17 +24,38 @@ use Illuminate\Support\Facades\Mail;
 // Language switching route
 Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
     ->name('language.switch')
-    ->where('locale', '[a-z]{2}');
+    ->where('locale', '[a-z]{2}([_-][A-Z]{2})?');
 
 // Root route with browser language detection
 Route::get('/', function () {
+    // Detailliertes Debugging für Root-Route
+    \Illuminate\Support\Facades\Log::info("=== ROOT ROUTE TRIGGERED ===", [
+        'referer' => request()->header('referer'),
+        'user_agent' => request()->header('user-agent'), 
+        'session_locale' => session('locale'),
+        'cookie_locale' => request()->cookie('app_locale'),
+        'session_id' => session()->getId(),
+        'url' => request()->url(),
+        'full_url' => request()->fullUrl(),
+        'method' => request()->method(),
+        'ajax' => request()->ajax(),
+        'time' => now()->format('Y-m-d H:i:s.u')
+    ]);
+    
     $supportedLocales = config('languages.available_locales', []);
     $defaultLocale = config('languages.default_locale', 'en');
     
-    // Try to get locale from session first
+    // VERBESSERT: Prüfe immer zuerst die Session und das Cookie
     $sessionLocale = session('locale');
+    $cookieLocale = request()->cookie('app_locale');
+    
+    // Benutze die Session-Locale, dann Cookie, dann Browser-Erkennung
     if ($sessionLocale && in_array($sessionLocale, $supportedLocales)) {
+        \Illuminate\Support\Facades\Log::info("Root-Redirect aus Session: {$sessionLocale}");
         return redirect("/{$sessionLocale}");
+    } elseif ($cookieLocale && in_array($cookieLocale, $supportedLocales)) {
+        \Illuminate\Support\Facades\Log::info("Root-Redirect aus Cookie: {$cookieLocale}");
+        return redirect("/{$cookieLocale}");
     }
     
     // Detect browser language
@@ -42,19 +63,31 @@ Route::get('/', function () {
     $locale = $defaultLocale;
     
     if ($browserLang) {
-        $browserLang = substr($browserLang, 0, 2);
-        if (in_array($browserLang, $supportedLocales)) {
-            $locale = $browserLang;
+        // Extrahiere Sprachcode (unterstützt auch Formate wie zh-CN)
+        $browserLangParts = explode(',', $browserLang);
+        $primaryLang = explode(';', $browserLangParts[0])[0];
+        
+        // Überprüfe vollständige Sprachcodes (z.B. zh-CN)
+        if (in_array($primaryLang, $supportedLocales)) {
+            $locale = $primaryLang;
+        } else {
+            // Fallback: Prüfe Basis-Sprachcode (z.B. nur 'zh')
+            $baseLang = substr($primaryLang, 0, 2);
+            if (in_array($baseLang, $supportedLocales)) {
+                $locale = $baseLang;
+            }
         }
     }
     
     // Set session and redirect
     session(['locale' => $locale]);
+    session()->save(); // Explizites Speichern der Session
+    \Illuminate\Support\Facades\Log::info("Root-Redirect aus Browser-Detection: {$locale}");
     return redirect("/{$locale}");
 });
 
 // Localized routes with locale prefix
-Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{2}'])->group(function () {
+Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{2}([_-][A-Z]{2})?'])->group(function () {
     // Main landing page route
     Route::get('/', [HomeController::class, 'index'])->name('home');
     
@@ -70,6 +103,11 @@ Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{
         ->name('test.error')
         ->where('code', '403|404|500|503');
 });
+
+// Debug-Routen - WICHTIG für Sprachprobleme mit zh_CN
+Route::get('/debug/locale', [\App\Http\Controllers\DebugController::class, 'localeDebug'])->name('debug.locale');
+Route::get('/debug/locale/{test_locale}', [\App\Http\Controllers\DebugController::class, 'localeDebug'])->name('debug.locale.specific');
+Route::get('/debug/chinese', [\App\Http\Controllers\DebugController::class, 'testChinese'])->name('debug.chinese');
 
 // Fallback route
 Route::fallback(function () {
