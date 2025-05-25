@@ -16,6 +16,7 @@ return [
         'en',
         'de',
         'es',
+        'zh_CN',
     ],
 
     /*
@@ -51,6 +52,7 @@ return [
         'en' => 'English',
         'de' => 'Deutsch',
         'es' => 'Español',
+        'zh_CN' => '简体中文',
     ],
 
     /*
@@ -65,5 +67,6 @@ return [
         'en' => '🇬🇧',
         'de' => '🇩🇪', 
         'es' => '🇪🇸',
+        'zh_CN' => '🇨🇳',
     ],
 ];
