@@ -36,19 +36,27 @@ class TranslationController extends Controller
      */
     public function switchLocale(Request $request, string $locale): RedirectResponse
     {
-        // Ausführliches Debug-Logging
-        Log::info("=== LANGUAGE SWITCH DEBUG ===");
-        Log::info("Requested locale: $locale");
-        Log::info("Session before: " . Session::get('locale', 'none'));
-        Log::info("Session ID before: " . Session::getId());
+        // Debug-Modus prüfen
+        $debug = config('app.debug', false);
+        
+        // Debug-Informationen nur im Debug-Modus loggen
+        if ($debug) {
+            Log::debug("Language switch requested", [
+                'locale' => $locale,
+                'session_locale' => Session::get('locale', 'none'),
+                'session_id' => Session::getId()
+            ]);
+        }
         
         // Stelle sicher, dass die Locale unterstützt wird
         $supportedLocales = config('languages.available_locales', ['en', 'de', 'es', 'zh_CN']);
-        Log::info("Supported locales: " . implode(', ', $supportedLocales));
         
         if (!in_array($locale, $supportedLocales, true)) {
             $locale = config('languages.default_locale', 'en');
-            Log::info("Locale not supported, using default: $locale");
+            
+            if ($debug) {
+                Log::debug("Locale not supported, using default", ['locale' => $locale]);
+            }
         }
         
         // Setze die Sprache in Session und App
@@ -58,26 +66,31 @@ class TranslationController extends Controller
         // Cookie setzen für zusätzliche Persistenz (30 Tage gültig)
         $cookie = cookie('app_locale', $locale, 60 * 24 * 30);
         
-        Log::info("Session after: " . Session::get('locale', 'none'));
-        Log::info("Session ID after: " . Session::getId());
-        Log::info("Cookie set: app_locale=$locale (30 days)");
+        if ($debug) {
+            Log::debug("Session and cookie updated", [
+                'session_locale' => Session::get('locale'),
+                'cookie_duration' => '30 days'
+            ]);
+        }
         
         // Bestimme die URL für die Rückleitung
         $referer = $request->headers->get('referer');
-        Log::info("Referer: " . ($referer ?: 'none'));
         
         // Explizites Setzen des Translators für alle Sprachen
         app('translator')->setLocale($locale);
         config(['app.locale' => $locale]);
-        Log::info("Translator and config locale set to: {$locale}");
         
         // Fallback, falls kein Referer vorhanden ist
         if (!$referer) {
-            Log::info("No referer, redirecting to home route with locale: $locale");
+            if ($debug) {
+                Log::debug("No referer, redirecting to home route", ['locale' => $locale]);
+            }
             return redirect()->route('home', ['locale' => $locale])->withCookie($cookie);
         }
         
-        Log::info("Redirecting back to: $referer");
+        if ($debug) {
+            Log::debug("Redirecting back to referer", ['referer' => $referer]);
+        }
         return redirect($referer)->withCookie($cookie);
     }
 }
