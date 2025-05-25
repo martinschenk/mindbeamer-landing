@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="@yield('meta_description', __('messages.hero_subtitle'))">
     <meta name="keywords" content="autonomous AI content, automated blog posts, autonomous social media, automated content creation, MindBeamer, free demo">
     <!-- CSRF Token -->
@@ -62,7 +62,8 @@
     <link rel="stylesheet" href="{{ asset('css/cookie-consent-custom.css') }}">
     
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        html, body { overflow-x: hidden; width: 100%; }
+        body { font-family: 'Poppins', sans-serif; position: relative; }
         .hero-bg { background: linear-gradient(135deg, #EC4899, #9F7AEA, #4ECDC4); }
         .btn-primary { transition: transform 0.2s, background-color 0.3s; }
         .btn-primary:hover { transform: scale(1.05); }
