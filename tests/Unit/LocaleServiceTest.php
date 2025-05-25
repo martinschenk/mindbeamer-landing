@@ -246,4 +246,43 @@ class LocaleServiceTest extends TestCase
         $this->assertEquals('fr', $this->localeService->getDefaultLocale());
         $this->assertEquals('en', $this->localeService->getFallbackLocale());
     }
+    
+    /**
+     * Test that Chinese locale is treated like any other locale without special handling
+     * 
+     * @test
+     */
+    public function it_treats_chinese_locale_like_any_other_locale(): void
+    {
+        // Set up a test configuration with Chinese included
+        $testLocales = ['en', 'de', 'zh_CN'];
+        $testNames = [
+            'en' => 'English', 
+            'de' => 'Deutsch',
+            'zh_CN' => '中文'
+        ];
+        $testFlags = [
+            'en' => '🇬🇧', 
+            'de' => '🇩🇪',
+            'zh_CN' => '🇨🇳'
+        ];
+        
+        Config::set('languages.available_locales', $testLocales);
+        Config::set('languages.locale_names', $testNames);
+        Config::set('languages.locale_flags', $testFlags);
+        
+        // Test that Chinese is handled just like any other locale
+        $this->assertTrue($this->localeService->isSupported('zh_CN'));
+        $this->assertEquals('中文', $this->localeService->getDisplayName('zh_CN'));
+        $this->assertEquals('🇨🇳', $this->localeService->getFlag('zh_CN'));
+        
+        // Test that Chinese is sanitized properly
+        $this->assertEquals('zh_CN', $this->localeService->sanitizeLocale('zh_CN'));
+        
+        // Test enforcing the Chinese locale
+        $this->assertEquals('zh_CN', $this->localeService->enforceLocale('zh_CN'));
+        
+        // Ensure HTML attribute is still properly formatted
+        $this->assertEquals('zh-CN', $this->localeService->getHtmlLangAttribute('zh_CN'));
+    }
 }
