@@ -28,3 +28,10 @@ phpunit.xml export-ignore
 TESTS.md export-ignore
 .env.example export-ignore
 CONTRIBUTING.md export-ignore
+
+# Filter für selektives Pushen zu unterschiedlichen Remotes
+# Build-Assets werden zu Produktionsserver gepusht, aber nicht zu GitHub
+/public/build/** filter=production-assets
+/public/build/assets/** filter=production-assets
+/public/build/manifest.json filter=production-assets
+/public/mix-manifest.json filter=production-assets
