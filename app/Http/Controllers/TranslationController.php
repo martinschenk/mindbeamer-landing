@@ -66,30 +66,10 @@ class TranslationController extends Controller
         $referer = $request->headers->get('referer');
         Log::info("Referer: " . ($referer ?: 'none'));
         
-        // Spezielle Behandlung für Chinesisch
-        if ($locale === 'zh_CN') {
-            Log::info("CHINESE LANGUAGE ACTIVATION");
-            Log::info("Full session dump: " . json_encode(Session::all()));
-            
-            // Versuche den Cache zu invalidieren
-            app('translator')->setLocale($locale);
-            
-            // Force Config
-            config(['app.locale' => $locale]);
-            
-            // Fallback, falls kein Referer vorhanden ist
-            if (!$referer) {
-                Log::info("No referer for Chinese locale, redirecting to home route");
-                $referer = route('home', ['locale' => $locale]);
-            }
-            
-            // Forciere einen 302 statt 303 Redirect für Chinesisch
-            // Viele Browser behandeln 302 Redirects anders als 303
-            $response = redirect($referer, 302)->withCookie($cookie);
-            $response->header('Cache-Control', 'no-store, no-cache, must-revalidate');
-            $response->header('Pragma', 'no-cache');
-            return $response;
-        }
+        // Explizites Setzen des Translators für alle Sprachen
+        app('translator')->setLocale($locale);
+        config(['app.locale' => $locale]);
+        Log::info("Translator and config locale set to: {$locale}");
         
         // Fallback, falls kein Referer vorhanden ist
         if (!$referer) {

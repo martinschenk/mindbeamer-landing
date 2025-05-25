@@ -133,25 +133,15 @@ class SetLocale
             ]);
         }
         
-        // ============= KRITISCHER TEIL FÜR CHINESISCH =============
-        // Nutze den LocaleService, um die Locale zu erzwingen und zu sichern
+        // Nutze den LocaleService zur standardmäßigen Behandlung aller Sprachen
         $enforcedLocale = $this->localeService->enforceLocale($locale);
         
-        // Logging für die erzwungene Locale
-        Log::info("App locale after enforcing: " . App::getLocale());
+        // Logging für die gesetzte Locale
+        Log::info("App locale set to: " . App::getLocale());
         Log::info("Final locale determined: $enforcedLocale (source: $source)");
         
-        // Verarbeite den Request - VERMEIDE RACE CONDITIONS
+        // Verarbeite den Request
         $response = $next($request);
-        
-        // ================ NACHVERARBEITUNG =================
-        // NACH dem Rendering nochmals prüfen, ob die Locale noch korrekt ist
-        // Dies schützt vor unbeabsichtigten Änderungen während des Renderings
-        if (App::getLocale() !== $enforcedLocale) {
-            Log::warning("Locale changed during rendering from {$enforcedLocale} to " . App::getLocale() . ". Fixing...");
-            // Fixe die Locale erneut, um sicherzustellen, dass sie konsistent ist
-            $this->localeService->enforceLocale($enforcedLocale);
-        }
         
         // Cookie setzen, wenn die Locale nicht aus einem Cookie kam
         if ($source !== 'cookie') {
