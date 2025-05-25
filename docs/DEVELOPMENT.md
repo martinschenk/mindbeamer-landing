@@ -1,85 +1,86 @@
-# 🛠️ Entwicklungsdokumentation - MindBeamer.io
+# 🛠️ Development Documentation - MindBeamer.io
 
-## Projekt-Übersicht
+## Project Overview
 
-MindBeamer.io ist eine Laravel 11 Landing Page mit mehrsprachiger Unterstützung und GDPR-konformem Cookie-Management.
+MindBeamer.io is a Laravel 11 landing page with multilingual support and GDPR-compliant cookie management.
 
-## 🏗️ Architektur
+## 🏗️ Architecture
 
-### Framework & Versionen
+### Framework & Versions
 - **Laravel**: 11.x
 - **PHP**: 8.2+
 - **Database**: SQLite (Development), MySQL/PostgreSQL (Production)
-- **Session**: Database-basiert
-- **Cache**: File-basiert
+- **Session**: Database-based
+- **Cache**: File-based
 
-### Wichtige Services
+### Key Services
 
 #### LocaleService
-Zentrale Verwaltung aller Sprach-Funktionen basierend auf `config/languages.php`.
+Central management of all language functions based on `config/languages.php`.
 
 ```php
 $localeService = app(\App\Services\LocaleService::class);
 ```
 
 #### TranslationService
-Übersetzungs- und Locale-Management für die Website.
+Translation and locale management for the website.
 
 #### CookieConsentService
-GDPR-konformes Cookie-Management mit granularen Kategorien.
+GDPR-compliant cookie management with granular categories.
 
-### E-Mail-System
-- **Admin-Benachrichtigungen**: `DemoRequest` Mailable
-- **User-Bestätigungen**: `DemoRequestConfirmation` Mailable
-- **Automatische Sprach-Erkennung**: Basiert auf aktueller Locale
-- **Mehrsprachige Templates**: Mit `__()` Helper
+### Email System
+- **Admin Notifications**: `DemoRequest` Mailable
+- **User Confirmations**: `DemoRequestConfirmation` Mailable
+- **Automatic Language Detection**: Based on current locale
+- **Multilingual Templates**: Using the `__()` helper
 
-## 📁 Projektstruktur
+## 📁 Project Structure
 
 ```
 app/
 ├── Http/Controllers/
-│   ├── Api/DemoRequestController.php    # Kontaktformular-API
-│   └── LocaleController.php             # Sprach-Umschaltung
+│   ├── Api/DemoRequestController.php    # Contact form API
+│   └── LocaleController.php             # Language switching
 ├── Mail/
-│   ├── DemoRequest.php                  # Admin-E-Mail
-│   └── DemoRequestConfirmation.php      # User-E-Mail
+│   ├── DemoRequest.php                  # Admin email
+│   └── DemoRequestConfirmation.php      # User email
 ├── Services/
-│   ├── LocaleService.php               # Sprach-Management
-│   ├── TranslationService.php          # Übersetzungen
-│   └── CookieConsentService.php        # Cookie-Consent
+│   ├── LocaleService.php               # Language management
+│   ├── TranslationService.php          # Translations
+│   └── CookieConsentService.php        # Cookie consent
 └── Providers/
-    └── AppServiceProvider.php          # Service-Registrierung
+    └── AppServiceProvider.php          # Service registration
 
 config/
-├── languages.php                       # 🎯 ZENTRALE Sprach-Konfiguration
-├── laravel-cookie-consent.php          # Cookie-Einstellungen
-└── backup.php                          # Backup-Konfiguration
+├── languages.php                       # 🎯 CENTRAL language configuration
+├── laravel-cookie-consent.php          # Cookie settings
+└── backup.php                          # Backup configuration
+
+lang/                                   # Translation files
+├── de/
+├── en/
+└── es/
 
 resources/
 ├── views/
-│   ├── components/                      # Blade-Komponenten
-│   └── emails/                         # E-Mail-Templates
-└── lang/                               # Übersetzungsdateien
-    ├── de/
-    ├── en/
-    └── es/
+│   ├── components/                      # Blade components
+│   └── emails/                         # Email templates
 
-docs/                                   # 📚 Diese Dokumentation
-├── LOCALIZATION.md                     # Mehrsprachigkeit
-└── DEVELOPMENT.md                      # Entwicklung (diese Datei)
+docs/                                   # 📚 This documentation
+├── LOCALIZATION.md                     # Multilingualism
+└── DEVELOPMENT.md                      # Development (this file)
 ```
 
-## 🔧 Entwicklungs-Richtlinien
+## 🔧 Development Guidelines
 
-### Code-Standards
+### Code Standards
 - **PSR-12** Coding Standard
-- **Strict Typing**: `declare(strict_types=1);` in allen Dateien
-- **PHPDoc**: Vollständige Dokumentation mit `@param`, `@return`, `@throws`
-- **Laravel-Konventionen**: Controller-, Model-, Service-Naming
+- **Strict Typing**: `declare(strict_types=1);` in all files
+- **PHPDoc**: Complete documentation with `@param`, `@return`, `@throws`
+- **Laravel Conventions**: Controller, model, and service naming
 
-### Service-Registrierung
-Alle Services werden als Singletons im `AppServiceProvider` registriert:
+### Service Registration
+All services are registered as singletons in `AppServiceProvider`:
 
 ```php
 $this->app->singleton(LocaleService::class, function ($app) {
@@ -87,53 +88,60 @@ $this->app->singleton(LocaleService::class, function ($app) {
 });
 ```
 
-### Konfiguration
-- **Zentrale Konfiguration**: Keine hardcoded Werte
-- **Environment Variables**: Für umgebungsabhängige Einstellungen
-- **Config-driven**: Services nutzen `Config::get()`
+### Configuration
+- **Central Configuration**: No hardcoded values
+- **Environment Variables**: For environment-dependent settings
+- **Config-driven**: Services use `Config::get()`
 
-## 🎯 Wichtige Prinzipien
+## 🎯 Key Principles
 
 ### 1. Single Source of Truth
-- Sprachen: `config/languages.php`
-- E-Mail-Adressen: `config/mail.php`
-- App-Einstellungen: `config/app.php`
+- Languages: `config/languages.php`
+- Email addresses: `config/mail.php`
+- App settings: `config/app.php`
 
 ### 2. Service-Layer Pattern
-- Business Logic in Services
-- Controller nur für HTTP-Handling
-- Dependency Injection über Laravel Container
+- Business logic in services
+- Controllers only for request/response handling
+- Models only for data structures
 
-### 3. Mehrsprachigkeit
-- Übersetzungen mit `__()` Helper
-- Keine hardcoded Texte
-- Zentrale Sprachverwaltung
+### 3. DRY (Don't Repeat Yourself)
+- Helpers for recurring functions
+- Central services instead of duplicated logic
+- Blade components instead of duplicated views
 
-### 4. SOLID Principles
-- Single Responsibility: Eine Klasse, eine Aufgabe
-- Dependency Inversion: Abhängigkeit von Interfaces
-- Interface Segregation: Kleine, spezifische Interfaces
+## Helpful Tips
 
-## 🚀 Deployment
+### Debugging
+- **Laravel Telescope**: Requests, mails, logs in dev
+- **Laravel Debugbar**: Performance, queries in dev
+- **Logging**: `Log::info()`, `Log::error()` etc.
 
-### Development
+### Performance
+- **Route Caching**: `php artisan route:cache` in production
+- **Config Caching**: `php artisan config:cache` in production
+- **View Caching**: `php artisan view:cache` in production
+
+### Deployment
 ```bash
-php artisan serve
-php artisan config:clear
+composer install --no-dev --optimize-autoloader
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+npm run build
 ```
 
-### Production
-- Config caching aktiviert
-- Laravel Optimizations
-- Backup-System mit Spatie Laravel Backup
+## Additional Resources
 
-## 🧪 Testing
+- [Laravel 11 Documentation](https://laravel.com/docs/11.x)
+- [Localization](LOCALIZATION.md)
+- [Testing](TESTING.md)
 
 ### E-Mail-Testing
 - **Development**: MailPit auf localhost:8025
 - **Testing**: Mailable-Tests mit Laravel
 
-### Cache Management
+## Checklisten
 ```bash
 php artisan config:clear    # Konfiguration
 php artisan route:clear     # Routen

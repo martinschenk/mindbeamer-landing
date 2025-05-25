@@ -49,6 +49,10 @@ _ide_helper_models.php
 /storage/app/backup-temp/*
 
 # Deployment counter files
+
+# Deployment configuration
+git-deployment-rules.json
+post-receive-hook.sh
 /storage/app/git-push-counter.txt
 
 # OS generated files
