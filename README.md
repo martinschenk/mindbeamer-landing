@@ -2,6 +2,16 @@
 
 A multilingual Laravel 11 landing page for MindBeamer.io with GDPR-compliant cookie consent.
 
+## 🔍 Important Notice: Educational & Transparency Repository
+
+This repository is made public for **educational and transparency purposes only**. The code is shared to demonstrate Laravel best practices, multilingual implementation, and modern web development techniques. While you may study, learn from, and suggest improvements to the code, please note the following restrictions:
+
+- The MindBeamer name, brand, logos, and visual assets are **not** licensed for use
+- You may not create derivative works using the MindBeamer name or brand
+- See [LICENSE.md](LICENSE.md) for complete terms
+
+We welcome contributions that improve code quality or documentation. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
 ## Features
 
 - 🌍 **Multilingual Support**: German, English, Spanish
@@ -41,6 +51,36 @@ php artisan config:clear    # Clear configuration cache
 php artisan route:list      # List all routes
 php artisan migrate:fresh   # Reset database
 ```
+
+## 🧪 Tests
+
+The project includes comprehensive test coverage for multilingual functionality and core features:
+
+### Running Tests
+```bash
+# Run all tests
+php artisan test
+
+# Run specific test suite
+php artisan test --filter=LocaleServiceTest
+
+# Run with coverage report (requires Xdebug)
+php artisan test --coverage
+```
+
+### Test Suites
+
+- **Feature Tests**: Test HTTP requests, routes, and controller functionality
+  - `TranslationControllerTest`: Tests language switching functionality
+  - `SetLocaleMiddlewareTest`: Tests middleware for locale detection and setting
+  - `ContactFormTest`: Tests contact form submission and validation
+
+- **Unit Tests**: Test individual components and services
+  - `LocaleServiceTest`: Tests locale normalization and validation
+  - `CookieConsentServiceTest`: Tests cookie consent preferences
+  - `EmailServiceTest`: Tests email template rendering and sending
+
+All tests are designed to run in isolation without affecting your development database.
 
 ## 📚 Documentation
 
@@ -90,4 +130,4 @@ Key environment variables for production:
 
 ## License
 
-Proprietary - Martin Schenk S.L.
+MIT License with Additional Restrictions - See [LICENSE.md](LICENSE.md) for details.
