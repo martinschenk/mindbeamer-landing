@@ -39,13 +39,8 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Debug-Logging für jede Anfrage
-        Log::info("=== MIDDLEWARE DEBUG ===");
-        Log::info("URL: " . $request->url());
-        Log::info("Session locale: " . Session::get('locale', 'none'));
-        Log::info("Session ID: " . Session::getId());
-        Log::info("App locale before: " . App::getLocale());
-        Log::info("HTTP_ACCEPT_LANGUAGE: " . ($request->server('HTTP_ACCEPT_LANGUAGE') ?? 'none'));
+        // Logging nur im Debug-Modus aktivieren
+        $debug = Config::get('app.debug', false);
         
         $supportedLocales = $this->localeService->getAvailableLocales();
         $defaultLocale = $this->localeService->getDefaultLocale();
@@ -136,10 +131,6 @@ class SetLocale
         // Nutze den LocaleService zur standardmäßigen Behandlung aller Sprachen
         $enforcedLocale = $this->localeService->enforceLocale($locale);
         
-        // Logging für die gesetzte Locale
-        Log::info("App locale set to: " . App::getLocale());
-        Log::info("Final locale determined: $enforcedLocale (source: $source)");
-        
         // Verarbeite den Request
         $response = $next($request);
         
@@ -147,10 +138,12 @@ class SetLocale
         if ($source !== 'cookie') {
             $cookie = cookie('app_locale', $enforcedLocale, 60 * 24 * 30); // 30 Tage
             $response = $response->withCookie($cookie);
-            Log::info("Cookie app_locale=$enforcedLocale set (30 days)");
+            
+            // Logging nur im Debug-Modus
+            if ($debug) {
+                Log::debug("Cookie app_locale=$enforcedLocale set (30 days)");
+            }
         }
-        
-        Log::info("=== END MIDDLEWARE DEBUG ===");
         return $response;
     }
 }
