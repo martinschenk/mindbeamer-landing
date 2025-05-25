@@ -20,8 +20,7 @@ yarn-error.log
 /.phpunit.cache
 composer.phar
 
-# Build files - auskommentiert, damit sie zum Produktionsserver gepusht werden
-# WICHTIG: Diese Dateien werden nicht auf GitHub hochgeladen - siehe .github/.gitignore
+# Build files - standardmäßig auskommentiert für den Produktionsserver
 #/public/build
 #/public/build/assets
 #/public/build/manifest.json
