@@ -3,34 +3,25 @@
         (function() {
             'use strict';
             
-            console.log('Contact form handler initializing...');
-            
             let formIsSubmitting = false;
             
             function initContactForm() {
                 const demoForm = document.getElementById('demo-form');
                 
                 if (!demoForm) {
-                    console.log('Demo form not found, retrying...');
                     return false;
                 }
-                
-                console.log('Demo form found, setting up handler');
                 
                 // AGGRESSIVE FORM SUBMIT BLOCKING
                 // Block ALL submit events on this form
                 demoForm.addEventListener('submit', function(event) {
-                    console.log('Submit event captured - blocking default behavior');
                     event.preventDefault();
                     event.stopImmediatePropagation();
                     event.stopPropagation();
                     
                     if (!formIsSubmitting) {
                         formIsSubmitting = true;
-                        console.log('Form submission intercepted successfully');
                         handleFormSubmission(demoForm);
-                    } else {
-                        console.log('Form is already submitting, ignoring duplicate');
                     }
                     
                     return false;
@@ -38,7 +29,6 @@
                 
                 // Also block in bubble phase as backup
                 demoForm.addEventListener('submit', function(event) {
-                    console.log('Submit event in bubble phase - blocking');
                     event.preventDefault();
                     event.stopImmediatePropagation();
                     event.stopPropagation();
@@ -49,14 +39,12 @@
                 const submitButton = demoForm.querySelector('button[type="submit"]');
                 if (submitButton) {
                     submitButton.addEventListener('click', function(event) {
-                        console.log('Submit button clicked - blocking default');
                         event.preventDefault();
                         event.stopImmediatePropagation();
                         event.stopPropagation();
                         
                         if (!formIsSubmitting) {
                             formIsSubmitting = true;
-                            console.log('Button click intercepted successfully');
                             handleFormSubmission(demoForm);
                         }
                         
@@ -64,7 +52,6 @@
                     }, true);
                 }
                 
-                console.log('Contact form handler attached successfully');
                 return true;
             }
             
@@ -90,13 +77,10 @@
                 if (errorElement) errorElement.classList.add('hidden');
                 
                 try {
-                    console.log('Sending request to:', form.action);
-                    
                     // Einfache Locale-Ermittlung über den LocaleHelper
                     const currentLocale = window.LocaleHelper 
                         ? window.LocaleHelper.getCurrentLocale() 
                         : window.location.pathname.split('/')[1] || document.documentElement.lang.replace('-', '_') || 'en';
-                    console.log('Current locale:', currentLocale);
                     
                     // Record start time for minimum loading duration
                     const startTime = Date.now();
@@ -113,17 +97,13 @@
                         }
                     });
                     
-                    console.log('Response received, status:', response.status);
-                    
                     const data = await response.json();
-                    console.log('Response data:', data);
                     
                     // Ensure minimum loading time has passed for better UX
                     const elapsedTime = Date.now() - startTime;
                     const remainingTime = minimumLoadingTime - elapsedTime;
                     
                     if (remainingTime > 0) {
-                        console.log(`Waiting additional ${remainingTime}ms for better UX`);
                         await new Promise(resolve => setTimeout(resolve, remainingTime));
                     }
                     
@@ -137,9 +117,9 @@
                             }, 5000);
                         }
                         
-                        console.log('Form submitted successfully');
+
                     } else {
-                        console.log('Form submission failed:', data);
+
                         showError(errorElement, data);
                     }
                 } catch (error) {
@@ -150,7 +130,6 @@
                     submitButton.disabled = false;
                     submitButton.textContent = originalButtonText;
                     formIsSubmitting = false;
-                    console.log('Form submission completed, reset flag');
                 }
             }
             
@@ -177,7 +156,6 @@
             
             // Initialize on DOM ready
             document.addEventListener('DOMContentLoaded', function() {
-                console.log('DOM loaded, initializing contact form...');
                 if (!initContactForm()) {
                     // Retry after a short delay if not found
                     setTimeout(initContactForm, 500);
@@ -185,10 +163,7 @@
             });
             
             // Also try to initialize immediately if DOM is already loaded
-            if (document.readyState === 'loading') {
-                console.log('DOM is loading, waiting...');
-            } else {
-                console.log('DOM already loaded, initializing immediately...');
+            if (document.readyState !== 'loading') {
                 if (!initContactForm()) {
                     setTimeout(initContactForm, 500);
                 }

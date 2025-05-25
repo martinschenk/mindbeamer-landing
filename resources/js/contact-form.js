@@ -4,17 +4,13 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Contact form script loaded');
-    
     const demoForm = document.getElementById('demo-form');
     
     if (demoForm) {
-        console.log('Demo form found');
         
         // Attach form submit event listener
         demoForm.addEventListener('submit', async function(event) {
             event.preventDefault();
-            console.log('Form submitted');
             
             // Get form data
             const formData = new FormData(demoForm);
@@ -32,13 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
             
             try {
-                console.log('Sending request to:', demoForm.action);
-                
                 // Einfache Locale-Ermittlung über den LocaleHelper
                 const currentLocale = window.LocaleHelper 
                     ? window.LocaleHelper.getCurrentLocale() 
                     : window.location.pathname.split('/')[1] || document.documentElement.lang.replace('-', '_') || 'en';
-                console.log('Current locale:', currentLocale);
                 
                 // Record start time for minimum loading duration
                 const startTime = Date.now();
@@ -165,7 +158,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.textContent = originalButtonText;
             }
         });
-    } else {
-        console.log('Demo form not found on page');
     }
 });
