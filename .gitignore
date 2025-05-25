@@ -20,12 +20,11 @@ yarn-error.log
 /.phpunit.cache
 composer.phar
 
-# Build files - using a comment format that allows you to keep certain 
-# build files for production deployment
-#/public/build
-#/public/build/assets
-#/public/build/manifest.json
-#/public/mix-manifest.json
+# Build files - standardmäßig ignorieren (werden durch Filter für Produktionsserver selektiv eingefügt)
+/public/build
+/public/build/assets
+/public/build/manifest.json
+/public/mix-manifest.json
 
 # Laravel-specific files to ignore
 /bootstrap/cache/*.php
