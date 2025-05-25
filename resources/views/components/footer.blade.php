@@ -1,10 +1,10 @@
 <!-- Footer -->
-<footer class="bg-gray-900 text-white py-8">
-    <div class="container mx-auto px-6 text-center">
+<footer class="bg-gray-900 text-white py-8 w-full overflow-hidden">
+    <div class="container mx-auto px-6 text-center w-full">
         <p class="mb-2">&copy; 2025 <a href="https://martin-schenk.es" class="text-teal-400 hover:underline">Martin Schenk S.L.</a> {{ __('messages.all_rights_reserved') }}</p>
         
         <!-- Links -->
-        <div class="flex justify-center space-x-6 mt-4 mb-4">
+        <div class="flex flex-wrap justify-center mt-4 mb-4 gap-4 md:gap-6 px-2">
             <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-teal-400 transition-colors">
                 {{ __('cookie-consent.policy_links.privacy_policy') }}
             </a>
