@@ -1,68 +1,68 @@
-# 🌍 Mehrsprachigkeit (Localization) - MindBeamer.io
+# 🌍 Localization - MindBeamer.io
 
-## Übersicht
+## Overview
 
-MindBeamer.io unterstützt mehrere Sprachen durch ein zentrales Konfigurationssystem. Alle Sprach-Einstellungen werden in `config/languages.php` verwaltet.
+MindBeamer.io supports multiple languages through a central configuration system. All language settings are managed in `config/languages.php`.
 
-## Aktuell unterstützte Sprachen
+## Currently Supported Languages
 
-- **Deutsch** (de) 🇩🇪
-- **Englisch** (en) 🇬🇧  
-- **Spanisch** (es) 🇪🇸
+- **German** (de) 🇩🇪
+- **English** (en) 🇬🇧  
+- **Spanish** (es) 🇪🇸
 
-## 🔧 Neue Sprache hinzufügen
+## 🔧 Adding a New Language
 
-### Schritt 1: Konfiguration erweitern
+### Step 1: Extend Configuration
 
-Erweitere `config/languages.php`:
+Extend `config/languages.php`:
 
 ```php
 'available_locales' => [
     'en',
     'de', 
     'es',
-    'it', // NEU: Italienisch hinzufügen
+    'it', // NEW: Add Italian
 ],
 
 'locale_names' => [
     'en' => 'English',
     'de' => 'Deutsch',
     'es' => 'Español', 
-    'it' => 'Italiano', // NEU
+    'it' => 'Italiano', // NEW
 ],
 
 'locale_flags' => [
     'en' => '🇬🇧',
     'de' => '🇩🇪',
     'es' => '🇪🇸',
-    'it' => '🇮🇹', // NEU
+    'it' => '🇮🇹', // NEW
 ],
 ```
 
-### Schritt 2: Übersetzungsdateien erstellen
+### Step 2: Create Translation Files
 
-Erstelle das Verzeichnis und die Übersetzungsdateien:
+Create the directory and translation files:
 
 ```bash
 mkdir -p lang/it
 ```
 
-Kopiere und übersetze folgende Dateien:
-- `lang/it/messages.php` (Hauptübersetzungen)
-- `lang/it/emails.php` (E-Mail-Übersetzungen)
-- `lang/it/privacy.php` (Datenschutz-Texte)
-- `lang/it/legal.php` (Rechtliche Texte)
-- `lang/it/cookie-consent.php` (Cookie-Zustimmung)
+Copy and translate the following files:
+- `lang/it/messages.php` (Main translations)
+- `lang/it/emails.php` (Email translations)
+- `lang/it/privacy.php` (Privacy texts)
+- `lang/it/legal.php` (Legal texts)
+- `lang/it/cookie-consent.php` (Cookie consent)
 
-### Schritt 3: Route hinzufügen
+### Step 3: Add Route
 
-In `routes/web.php` füge hinzu:
+In `routes/web.php` add:
 
 ```php
 Route::get('/it', [LocaleController::class, 'it'])->name('locale.it');
 ```
 
-### Schritt 4: Controller-Methode erstellen
+### Step 4: Create Controller Method
 
 In `app/Http/Controllers/LocaleController.php`:
 
@@ -75,71 +75,71 @@ public function it()
 }
 ```
 
-### Schritt 5: Navigation erweitern
+### Step 5: Extend Navigation
 
-In der Sprachauswahl-Komponente (falls vorhanden) Italienisch hinzufügen.
+Add Italian to the language selector component (if present).
 
-## ✅ Das war's!
+## ✅ That's it!
 
-**Wichtig**: Das System erkennt die neue Sprache automatisch:
-- ✅ E-Mails werden automatisch in der neuen Sprache gesendet
-- ✅ Admin-E-Mails zeigen die korrekte Sprache-Information an
-- ✅ Alle Services funktionieren ohne Code-Änderungen
+**Important**: The system automatically recognizes the new language:
+- ✅ Emails are automatically sent in the new language
+- ✅ Admin emails show the correct language information
+- ✅ All services work without code changes
 
-## 🔍 System-Architektur
+## 🔍 System Architecture
 
-### Zentrale Konfiguration
-- `config/languages.php` - Haupt-Konfigurationsdatei
-- `app/Services/LocaleService.php` - Service für Sprach-Management
-- `app/Services/TranslationService.php` - Übersetzungs-Service
+### Central Configuration
+- `config/languages.php` - Main configuration file
+- `app/Services/LocaleService.php` - Service for language management
+- `app/Services/TranslationService.php` - Translation service
 
-### E-Mail-System
-- `app/Mail/DemoRequest.php` - Admin-Benachrichtigung
-- `app/Mail/DemoRequestConfirmation.php` - User-Bestätigung
-- Templates automatisch mehrsprachig
+### Email System
+- `app/Mail/DemoRequest.php` - Admin notification
+- `app/Mail/DemoRequestConfirmation.php` - User confirmation
+- Templates automatically multilingual
 
-### Wichtige Services
+### Important Services
 ```php
 $localeService = app(\App\Services\LocaleService::class);
 
-// Verfügbare Sprachen abrufen
+// Get available languages
 $locales = $localeService->getAvailableLocales();
 
-// Anzeigename mit Flagge
+// Display name with flag
 $display = $localeService->getFormattedDisplayName('de'); // "Deutsch 🇩🇪"
 
-// Sprache validieren
-$valid = $localeService->sanitizeLocale('invalid'); // Fallback zu 'en'
+// Validate language
+$valid = $localeService->sanitizeLocale('invalid'); // Fallback to 'en'
 ```
 
-## 🚫 Was NICHT getan werden sollte
+## 🚫 What NOT to Do
 
-- ❌ Hardcoded Sprach-Arrays in Templates oder Services
-- ❌ Doppelte Konfiguration in `config/app.php` und `config/languages.php`
-- ❌ Direkte Übersetzungen ohne `__()` Helper
-- ❌ Sprach-spezifische if/else Blöcke im Code
+- ❌ Hardcoded language arrays in templates or services
+- ❌ Duplicate configuration in `config/app.php` and `config/languages.php`
+- ❌ Direct translations without the `__()` helper
+- ❌ Language-specific if/else blocks in code
 
 ## 🧪 Testing
 
-Nach dem Hinzufügen einer neuen Sprache:
+After adding a new language:
 
-1. Cache leeren: `php artisan config:clear`
-2. E-Mail-Funktionalität testen mit MailPit
-3. Sprachauswahl auf der Website testen
-4. Admin-E-Mails auf korrekte Sprach-Anzeige prüfen
+1. Clear cache: `php artisan config:clear`
+2. Test email functionality with MailPit
+3. Test language selection on the website
+4. Check admin emails for correct language display
 
 ## 📝 Troubleshooting
 
-### Problem: Neue Sprache wird nicht erkannt
-- ✅ Prüfe `config/languages.php` Syntax
-- ✅ Führe `php artisan config:clear` aus
-- ✅ Stelle sicher, dass alle Arrays erweitert wurden
+### Problem: New language is not recognized
+- ✅ Check `config/languages.php` syntax
+- ✅ Run `php artisan config:clear`
+- ✅ Ensure all arrays have been extended
 
-### Problem: E-Mails in falscher Sprache
-- ✅ Prüfe ob Übersetzungsdateien existieren
-- ✅ Validiere `__()` Helper in Templates
-- ✅ Teste `App::getLocale()` im Controller
+### Problem: Emails in wrong language
+- ✅ Check if translation files exist
+- ✅ Validate `__()` helper in templates
+- ✅ Test `App::getLocale()` in the controller
 
-### Problem: Flaggen werden nicht angezeigt
-- ✅ Prüfe `locale_flags` Array in `config/languages.php`
-- ✅ Stelle sicher, dass UTF-8 korrekt konfiguriert ist
+### Problem: Flags are not displayed
+- ✅ Check `locale_flags` array in `config/languages.php`
+- ✅ Ensure UTF-8 is correctly configured
