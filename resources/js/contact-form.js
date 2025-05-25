@@ -34,9 +34,38 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 console.log('Sending request to:', demoForm.action);
                 
-                // Extract current locale from URL (e.g., /de/, /en/, /es/)
-                const currentLocale = window.location.pathname.split('/')[1] || 'en';
-                console.log('Current locale from URL:', currentLocale);
+                // Verwende eine robustere Methode zur Locale-Ermittlung
+                let currentLocale;
+                
+                // Wenn der LocaleHelper verfügbar ist, nutze ihn
+                if (window.LocaleHelper) {
+                    currentLocale = window.LocaleHelper.getCurrentLocale();
+                    console.log('Current locale from LocaleHelper:', currentLocale);
+                } else {
+                    // Fallback: Erst Cookie prüfen, dann URL-Pfad
+                    const cookies = document.cookie.split(';');
+                    let cookieLocale = null;
+                    
+                    for (let i = 0; i < cookies.length; i++) {
+                        const cookie = cookies[i].trim();
+                        if (cookie.startsWith('app_locale=')) {
+                            cookieLocale = cookie.substring('app_locale='.length);
+                            break;
+                        }
+                    }
+                    
+                    if (cookieLocale) {
+                        currentLocale = cookieLocale;
+                        console.log('Current locale from cookie:', currentLocale);
+                    } else {
+                        // Locale aus URL-Pfad extrahieren mit Prüfung auf gültiges Format
+                        const pathParts = window.location.pathname.split('/');
+                        currentLocale = (pathParts.length > 1 && pathParts[1] && /^[a-z]{2}(_[A-Z]{2})?$/.test(pathParts[1])) 
+                            ? pathParts[1] 
+                            : document.documentElement.lang.replace('-', '_') || 'en';
+                        console.log('Current locale from URL/HTML:', currentLocale);
+                    }
+                }
                 
                 // Record start time for minimum loading duration
                 const startTime = Date.now();

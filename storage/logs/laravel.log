@@ -20572,3 +20572,695 @@ Did you mean one of these?
 [2025-05-25 17:47:36] local.INFO: === END MIDDLEWARE DEBUG ===  
 [2025-05-25 17:47:51] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","user_locale":"zh_CN","admin_locale":"de","admin_notified":true,"user_confirmed":true} 
 [2025-05-25 17:48:10] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","user_locale":"zh_CN","admin_locale":"de","admin_notified":true,"user_confirmed":true} 
+[2025-05-25 17:54:36] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:54:36] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:54:36] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:54:36] local.INFO: App locale before: en  
+[2025-05-25 17:54:36] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:54:36] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:54:36] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:54:36] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:54:36] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:54:36] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:54:36] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:54:36] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:54:36] local.INFO: App locale before: en  
+[2025-05-25 17:54:36] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:54:36] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:54:36] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:54:36] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:54:36] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:54:36] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:54:36] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:54:36] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:54:36] local.INFO: App locale before: en  
+[2025-05-25 17:54:36] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:54:36] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:54:36] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:54:36] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:54:36.970072"} 
+[2025-05-25 17:54:36] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:54:36] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:54:36] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:54:36] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:54:36] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:54:36] local.INFO: App locale before: en  
+[2025-05-25 17:54:36] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:54:36] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:54:36] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:54:36] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:54:36] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:54:36] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:36] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:36] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:55:36] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:55:36] local.INFO: App locale before: en  
+[2025-05-25 17:55:36] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:55:36] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:55:36] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:55:36] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:55:36] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:36] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:36] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:55:36] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:55:36] local.INFO: App locale before: en  
+[2025-05-25 17:55:36] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:55:36] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:55:36] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:55:36] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:55:36] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:36] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:36] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:55:36] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:55:36] local.INFO: App locale before: en  
+[2025-05-25 17:55:36] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:55:36] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:55:36] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:55:36] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:55:36.963245"} 
+[2025-05-25 17:55:36] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:55:36] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:36] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:36] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:55:36] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:55:36] local.INFO: App locale before: en  
+[2025-05-25 17:55:36] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:55:36] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:55:36] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:55:36] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:55:36] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:55:36] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:52] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:52] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:55:52] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:55:52] local.INFO: App locale before: en  
+[2025-05-25 17:55:52] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:55:52] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:55:52] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:55:52] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:55:52] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:52] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:52] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:55:52] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:55:52] local.INFO: App locale before: en  
+[2025-05-25 17:55:52] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:55:52] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:55:52] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:55:52] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:55:52] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:52] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:52] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:55:52] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:55:52] local.INFO: App locale before: en  
+[2025-05-25 17:55:52] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:55:52] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:55:52] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:55:52] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:55:52.958067"} 
+[2025-05-25 17:55:52] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:55:52] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:52] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:55:52] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:55:52] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:55:52] local.INFO: App locale before: en  
+[2025-05-25 17:55:52] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:55:52] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:55:52] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:55:52] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:55:52] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:55:52] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:04] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:04] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:04] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:04] local.INFO: App locale before: en  
+[2025-05-25 17:56:04] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:04] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:04] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:04] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:04] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:04] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:04] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:56:04] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:04] local.INFO: App locale before: en  
+[2025-05-25 17:56:04] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:04] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:04] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:04] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:04] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:04] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:04] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:56:04] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:04] local.INFO: App locale before: en  
+[2025-05-25 17:56:04] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:04] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:04] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:04] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:56:04.444133"} 
+[2025-05-25 17:56:04] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:04] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:04] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:04] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:04] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:04] local.INFO: App locale before: en  
+[2025-05-25 17:56:04] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:04] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:04] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:04] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:04] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:04] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:09] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:09] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:09] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:09] local.INFO: App locale before: en  
+[2025-05-25 17:56:09] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:09] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:09] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:09] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:09] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:09] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:09] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:56:09] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:09] local.INFO: App locale before: en  
+[2025-05-25 17:56:09] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:09] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:09] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:09] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:09] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:09] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:09] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:56:09] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:09] local.INFO: App locale before: en  
+[2025-05-25 17:56:09] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:09] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:09] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:09] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:56:09.476355"} 
+[2025-05-25 17:56:09] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:09] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:09] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:09] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:09] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:09] local.INFO: App locale before: en  
+[2025-05-25 17:56:09] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:09] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:09] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:09] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:09] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:09] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:11] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:11] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:11] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:11] local.INFO: App locale before: en  
+[2025-05-25 17:56:11] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:11] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:11] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:11] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:11] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:11] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:11] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:56:11] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:11] local.INFO: App locale before: en  
+[2025-05-25 17:56:11] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:11] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:11] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:11] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:11] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:11] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:11] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:56:11] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:11] local.INFO: App locale before: en  
+[2025-05-25 17:56:11] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:11] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:11] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:11] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:56:11.917238"} 
+[2025-05-25 17:56:11] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:11] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:11] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:11] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:11] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:11] local.INFO: App locale before: en  
+[2025-05-25 17:56:11] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:11] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:11] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:11] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:11] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:11] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:19] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:19] local.INFO: URL: https://mindbeamer.test/zh_CN/privacy-policy  
+[2025-05-25 17:56:19] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:19] local.INFO: App locale before: en  
+[2025-05-25 17:56:19] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:19] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:19] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:19] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:19] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:19] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:19] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:56:19] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:19] local.INFO: App locale before: en  
+[2025-05-25 17:56:19] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:19] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:19] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:19] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:19] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:19] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:19] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:56:19] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:19] local.INFO: App locale before: en  
+[2025-05-25 17:56:19] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:19] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:19] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:19] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN/privacy-policy","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:56:19.280759"} 
+[2025-05-25 17:56:19] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:19] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:19] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:19] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:19] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:19] local.INFO: App locale before: en  
+[2025-05-25 17:56:19] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:19] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:19] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:19] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:19] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:19] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:22] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:22] local.INFO: URL: https://mindbeamer.test/zh_CN/impressum  
+[2025-05-25 17:56:22] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:22] local.INFO: App locale before: en  
+[2025-05-25 17:56:22] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:22] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:22] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:22] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:22] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:22] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:22] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:56:22] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:22] local.INFO: App locale before: en  
+[2025-05-25 17:56:22] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:22] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:22] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:22] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:22] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:22] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:22] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:56:22] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:22] local.INFO: App locale before: en  
+[2025-05-25 17:56:22] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:22] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:22] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:22] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN/impressum","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:56:22.912473"} 
+[2025-05-25 17:56:22] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:22] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:22] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:22] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:22] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:22] local.INFO: App locale before: en  
+[2025-05-25 17:56:22] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:22] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:22] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:22] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:22] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:22] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:25] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:25] local.INFO: URL: https://mindbeamer.test/zh_CN/terms  
+[2025-05-25 17:56:25] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:25] local.INFO: App locale before: en  
+[2025-05-25 17:56:25] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:25] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:25] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:25] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:25] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:25] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:25] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:56:25] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:25] local.INFO: App locale before: en  
+[2025-05-25 17:56:25] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:25] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:25] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:25] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:25] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:25] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:25] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:56:25] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:25] local.INFO: App locale before: en  
+[2025-05-25 17:56:25] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:25] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:25] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:56:25] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN/terms","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:56:25.804492"} 
+[2025-05-25 17:56:25] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:25] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:25] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:56:25] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:56:25] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:56:25] local.INFO: App locale before: en  
+[2025-05-25 17:56:25] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:56:25] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:56:25] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:56:25] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:56:25] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:56:25] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:54] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:54] local.INFO: URL: https://mindbeamer.test/zh_CN/terms  
+[2025-05-25 17:58:54] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:58:54] local.INFO: App locale before: en  
+[2025-05-25 17:58:54] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:58:54] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:58:54] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:58:54] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:58:54] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:54] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:54] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:58:54] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:58:54] local.INFO: App locale before: en  
+[2025-05-25 17:58:54] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:58:54] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:58:54] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:58:54] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:58:54] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:54] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:54] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:58:54] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:58:54] local.INFO: App locale before: en  
+[2025-05-25 17:58:54] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:58:54] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:58:54] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:58:54] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN/terms","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:58:54.272046"} 
+[2025-05-25 17:58:54] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:58:54] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:54] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:54] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:58:54] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:58:54] local.INFO: App locale before: en  
+[2025-05-25 17:58:54] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:58:54] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:58:54] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:58:54] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:58:54] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:58:54] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:58] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:58] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:58:58] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:58:58] local.INFO: App locale before: en  
+[2025-05-25 17:58:58] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:58:58] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:58:58] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:58:58] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:58:58] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:58] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:58] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 17:58:58] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:58:58] local.INFO: App locale before: en  
+[2025-05-25 17:58:58] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:58:58] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:58:58] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:58:58] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:58:58] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:58] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:58] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 17:58:58] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:58:58] local.INFO: App locale before: en  
+[2025-05-25 17:58:58] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:58:58] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:58:58] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 17:58:58] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 17:58:58.957045"} 
+[2025-05-25 17:58:58] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:58:58] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:58] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 17:58:58] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 17:58:58] local.INFO: Session locale: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 17:58:58] local.INFO: App locale before: en  
+[2025-05-25 17:58:58] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 17:58:58] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 17:58:58] local.INFO: App locale after enforcing: zh_CN  
+[2025-05-25 17:58:58] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 17:58:58] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 17:58:58] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 17:59:04] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","user_locale":"zh_CN","admin_locale":"de","admin_notified":true,"user_confirmed":true} 
+[2025-05-25 18:01:15] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:15] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 18:01:15] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:15] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:15] local.INFO: App locale before: en  
+[2025-05-25 18:01:15] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:15] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:15] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:15] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 18:01:15] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:15] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:15] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:15] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 18:01:15] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:15] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:15] local.INFO: App locale before: en  
+[2025-05-25 18:01:15] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:15] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:15] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:15] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 18:01:15] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:15] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:15] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:15] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 18:01:15] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:15] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:15] local.INFO: App locale before: en  
+[2025-05-25 18:01:15] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:15] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:15] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:15] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 18:01:15] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 18:01:15.989013"} 
+[2025-05-25 18:01:15] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 18:01:15] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:15] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:16] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:16] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 18:01:16] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:16] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:16] local.INFO: App locale before: en  
+[2025-05-25 18:01:16] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:16] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:16] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:16] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 18:01:16] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:16] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:19] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:19] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 18:01:19] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:19] local.INFO: App locale before: en  
+[2025-05-25 18:01:19] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:19] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:19] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 18:01:19] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:19] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:19] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:19] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 18:01:19] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:19] local.INFO: App locale before: en  
+[2025-05-25 18:01:19] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:19] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:19] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 18:01:19] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:19] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:19] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:19] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 18:01:19] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:19] local.INFO: App locale before: en  
+[2025-05-25 18:01:19] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:19] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:19] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 18:01:19] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 18:01:19.620995"} 
+[2025-05-25 18:01:19] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:19] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:19] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:19] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 18:01:19] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:19] local.INFO: App locale before: en  
+[2025-05-25 18:01:19] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:19] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:19] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:19] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 18:01:19] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:19] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:23] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:23] local.INFO: URL: https://mindbeamer.test/es  
+[2025-05-25 18:01:23] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:23] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:23] local.INFO: App locale before: en  
+[2025-05-25 18:01:23] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:23] local.DEBUG: Locale determination {"final":"es","source":"url","url":"es","session":"es","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:23] local.INFO: App locale set to: es  
+[2025-05-25 18:01:23] local.INFO: Final locale determined: es (source: url)  
+[2025-05-25 18:01:23] local.INFO: Cookie app_locale=es set (30 days)  
+[2025-05-25 18:01:23] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:23] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:23] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 18:01:23] local.INFO: Session locale: es  
+[2025-05-25 18:01:23] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:23] local.INFO: App locale before: en  
+[2025-05-25 18:01:23] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:23] local.DEBUG: Locale determination {"final":"es","source":"session","url":null,"session":"es","cookie":"es","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:23] local.INFO: App locale set to: es  
+[2025-05-25 18:01:23] local.INFO: Final locale determined: es (source: session)  
+[2025-05-25 18:01:23] local.INFO: Cookie app_locale=es set (30 days)  
+[2025-05-25 18:01:23] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:23] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:23] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 18:01:23] local.INFO: Session locale: es  
+[2025-05-25 18:01:23] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:23] local.INFO: App locale before: en  
+[2025-05-25 18:01:23] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:23] local.DEBUG: Locale determination {"final":"es","source":"session","url":null,"session":"es","cookie":"es","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:23] local.INFO: App locale set to: es  
+[2025-05-25 18:01:23] local.INFO: Final locale determined: es (source: session)  
+[2025-05-25 18:01:23] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/es","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"es","cookie_locale":"es","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 18:01:23.790577"} 
+[2025-05-25 18:01:23] local.INFO: Root-Redirect aus Session: es  
+[2025-05-25 18:01:23] local.INFO: Cookie app_locale=es set (30 days)  
+[2025-05-25 18:01:23] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:23] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:23] local.INFO: URL: https://mindbeamer.test/es  
+[2025-05-25 18:01:23] local.INFO: Session locale: es  
+[2025-05-25 18:01:23] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:23] local.INFO: App locale before: en  
+[2025-05-25 18:01:23] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:23] local.DEBUG: Locale determination {"final":"es","source":"url","url":"es","session":"es","cookie":"es","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:23] local.INFO: App locale set to: es  
+[2025-05-25 18:01:23] local.INFO: Final locale determined: es (source: url)  
+[2025-05-25 18:01:23] local.INFO: Cookie app_locale=es set (30 days)  
+[2025-05-25 18:01:23] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:27] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:27] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 18:01:27] local.INFO: Session locale: es  
+[2025-05-25 18:01:27] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:27] local.INFO: App locale before: en  
+[2025-05-25 18:01:27] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:27] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"es","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:27] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:27] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 18:01:27] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:27] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:27] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:27] local.INFO: URL: https://mindbeamer.test/css/filament/notifications/notifications.css  
+[2025-05-25 18:01:27] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:27] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:27] local.INFO: App locale before: en  
+[2025-05-25 18:01:27] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:27] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:27] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:27] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 18:01:27] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:27] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:27] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:27] local.INFO: URL: https://mindbeamer.test  
+[2025-05-25 18:01:27] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:27] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:27] local.INFO: App locale before: en  
+[2025-05-25 18:01:27] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:27] local.DEBUG: Locale determination {"final":"zh_CN","source":"session","url":null,"session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:27] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:27] local.INFO: Final locale determined: zh_CN (source: session)  
+[2025-05-25 18:01:27] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/zh_CN","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"zh_CN","cookie_locale":"zh_CN","session_id":"kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-25 18:01:27.317496"} 
+[2025-05-25 18:01:27] local.INFO: Root-Redirect aus Session: zh_CN  
+[2025-05-25 18:01:27] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:27] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:27] local.INFO: === MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:27] local.INFO: URL: https://mindbeamer.test/zh_CN  
+[2025-05-25 18:01:27] local.INFO: Session locale: zh_CN  
+[2025-05-25 18:01:27] local.INFO: Session ID: kbGJlTssnIFU0anEZdtX8068uFKesPCQmAvDLHE8  
+[2025-05-25 18:01:27] local.INFO: App locale before: en  
+[2025-05-25 18:01:27] local.INFO: HTTP_ACCEPT_LANGUAGE: es,de;q=0.9,en;q=0.8  
+[2025-05-25 18:01:27] local.DEBUG: Locale determination {"final":"zh_CN","source":"url","url":"zh_CN","session":"zh_CN","cookie":"zh_CN","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-25 18:01:27] local.INFO: App locale set to: zh_CN  
+[2025-05-25 18:01:27] local.INFO: Final locale determined: zh_CN (source: url)  
+[2025-05-25 18:01:27] local.INFO: Cookie app_locale=zh_CN set (30 days)  
+[2025-05-25 18:01:27] local.INFO: === END MIDDLEWARE DEBUG ===  
+[2025-05-25 18:01:42] local.INFO: Demo request processed successfully {"email":"mschenk.pda@gmail.com","user_locale":"zh_CN","admin_locale":"de","admin_notified":true,"user_confirmed":true} 

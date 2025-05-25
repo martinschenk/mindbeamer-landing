@@ -92,9 +92,9 @@
                 try {
                     console.log('Sending request to:', form.action);
                     
-                    // Extract current locale from URL (e.g., /de/, /en/, /es/)
-                    const currentLocale = window.location.pathname.split('/')[1] || 'en';
-                    console.log('Current locale from URL:', currentLocale);
+                    // Verwende den LocaleHelper zur Ermittlung der korrekten Locale
+                    const currentLocale = window.LocaleHelper ? window.LocaleHelper.getCurrentLocale() : 'en';
+                    console.log('Current locale from LocaleHelper:', currentLocale);
                     
                     // Record start time for minimum loading duration
                     const startTime = Date.now();
