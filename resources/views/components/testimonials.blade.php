@@ -28,7 +28,7 @@
             <div class="bg-gray-50 p-8 rounded-lg shadow">
                 <div class="flex items-center mb-4">
                     <div class="mr-4">
-                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Michael T." class="w-14 h-14 rounded-full">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Miller" class="w-14 h-14 rounded-full">
                     </div>
                     <div>
                         <h3 class="font-bold">{{ __('messages.testimonial2_name') }}</h3>
@@ -49,7 +49,7 @@
             <div class="bg-gray-50 p-8 rounded-lg shadow">
                 <div class="flex items-center mb-4">
                     <div class="mr-4">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma L." class="w-14 h-14 rounded-full">
+                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="David Chen" class="w-14 h-14 rounded-full">
                     </div>
                     <div>
                         <h3 class="font-bold">{{ __('messages.testimonial3_name') }}</h3>
