@@ -8,6 +8,172 @@
     
     <title>@yield('title', 'MindBeamer - ' . __('messages.hero_title'))</title>
     
+    <!-- Google Analytics Test-Funktion -->
+    <script>
+        // Test-Funktion global verfügbar machen
+        window.testAnalytics = function() {
+            console.log('%c[MB-ANALYTICS] DSGVO-Konformitätstest für Google Analytics', 'background: #2196F3; color: white; padding: 5px; border-radius: 3px;');
+            
+            // Google Analytics-Status prüfen
+            console.log('\n%c1. Allgemeiner Analytics-Status:', 'font-weight: bold;');
+            
+            // Prüfen, ob der gtag aktiviert oder blockiert ist
+            let gtagActive = false;
+            try {
+                gtagActive = (typeof gtag === 'function');
+            } catch (e) {
+                gtagActive = false;
+            }
+            
+            console.log('[MB-ANALYTICS] gtag-Funktion ist aktiv: ' + (gtagActive ? '%cJA ⚠️' : '%cNEIN ✅'), gtagActive ? 'color: red; font-weight: bold' : 'color: green; font-weight: bold');
+            
+            // Prüfen, ob GA-Skript geladen ist
+            const gaScripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
+            console.log('[MB-ANALYTICS] Google Analytics-Skript ist geladen: ' + (gaScripts.length > 0 ? '%cJA ⚠️' : '%cNEIN ✅'), gaScripts.length > 0 ? 'color: red; font-weight: bold' : 'color: green; font-weight: bold');
+            
+            // dataLayer prüfen
+            console.log('[MB-ANALYTICS] dataLayer existiert: ' + (window.dataLayer ? '%cJA ⚠️' : '%cNEIN ✅'), window.dataLayer ? 'color: red; font-weight: bold' : 'color: green; font-weight: bold');
+            
+            // Prüfen aller Google Analytics-Cookies
+            console.log('\n%c2. Google Analytics-Cookies:', 'font-weight: bold;');
+            
+            // Hilfsfunktion zum Auslesen von Cookies
+            const getCookie = function(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            };
+            
+            // Liste aller möglichen GA-Cookies prüfen
+            const gaCookies = {
+                '_ga': getCookie('_ga'),
+                '_gid': getCookie('_gid'),
+                '_gat': getCookie('_gat')
+            };
+            
+            // Alle GA-Cookies mit G- suchen (GA4-spezifisch)
+            document.cookie.split(';').forEach(cookie => {
+                const trimmedCookie = cookie.trim();
+                if (trimmedCookie.startsWith('_ga_')) {
+                    const cookieName = trimmedCookie.split('=')[0];
+                    gaCookies[cookieName] = getCookie(cookieName);
+                }
+            });
+            
+            // Ausgabe der gefundenen Cookies
+            let cookiesFound = 0;
+            for (const [name, value] of Object.entries(gaCookies)) {
+                if (value) {
+                    cookiesFound++;
+                    console.log(`[MB-ANALYTICS] Cookie ${name}: %c${value} ⚠️`, 'color: red;');
+                }
+            }
+            
+            if (cookiesFound === 0) {
+                console.log('%c[MB-ANALYTICS] Keine Google Analytics-Cookies gefunden ✅', 'color: green; font-weight: bold');
+            } else {
+                console.log('%c[MB-ANALYTICS] ' + cookiesFound + ' Google Analytics-Cookies gefunden ⚠️', 'color: red; font-weight: bold');
+            }
+            
+            // Tracking-Versuche prüfen
+            console.log('\n%c3. Tracking-Funktionalität:', 'font-weight: bold;');
+            try {
+                if (typeof gtag === 'function') {
+                    console.log('%c[MB-ANALYTICS] gtag-Funktion ist verfügbar ⚠️', 'color: red;');
+                    console.log('[MB-ANALYTICS] Sende Test-Event...');
+                    gtag('event', 'test_event', {
+                        'event_category': 'dsgvo_test',
+                        'event_label': 'analytics_deactivation_test'
+                    });
+                } else {
+                    console.log('%c[MB-ANALYTICS] gtag-Funktion ist nicht verfügbar ✅', 'color: green; font-weight: bold');
+                }
+            } catch (e) {
+                console.error('[MB-ANALYTICS] Fehler beim Tracking-Test:', e);
+                console.log('%c[MB-ANALYTICS] gtag-Funktion ist nicht verfügbar ✅', 'color: green; font-weight: bold');
+            }
+            
+            // Netzwerkverbindungen zu Google Analytics prüfen
+            console.log('\n%c4. Netzwerkverbindungen zu Google:', 'font-weight: bold;');
+            console.log('[MB-ANALYTICS] Überprüfen Sie den Netzwerk-Tab in den Entwickler-Tools auf Verbindungen zu:');
+            console.log('- googletagmanager.com');
+            console.log('- google-analytics.com');
+            console.log('- analytics.google.com');
+            
+            // Zusammenfassung und DSGVO-Bewertung
+            console.log('\n%c5. DSGVO-Konformitätsbewertung:', 'font-weight: bold;');
+            if (!gtagActive && gaScripts.length === 0 && !window.dataLayer && cookiesFound === 0) {
+                console.log('%c[MB-ANALYTICS] DSGVO-KONFORM: Google Analytics ist vollständig deaktiviert ✅', 'background: green; color: white; padding: 5px; border-radius: 3px;');
+            } else {
+                console.log('%c[MB-ANALYTICS] NICHT DSGVO-KONFORM: Google Analytics ist noch aktiv oder Cookies sind vorhanden ⚠️', 'background: red; color: white; padding: 5px; border-radius: 3px;');
+            }
+            
+            return 'DSGVO-Test abgeschlossen: ' + ((!gtagActive && cookiesFound === 0) ? 'KONFORM ✅' : 'NICHT KONFORM ⚠️');
+        };
+    </script>
+    
+    <!-- Google tag (gtag.js) - wird durch cookie consent gesteuert -->
+    <script>
+        // enableAnalytics-Funktion, die vom Cookie-Consent-Paket aufgerufen wird
+        window.enableAnalytics = function(cookieValue) {
+            console.log('\n%c[MB-ANALYTICS] ===== ANALYTICS STATUS CHANGE =====', 'background: #333; color: #fff; padding: 3px;');
+            console.log('[MB-ANALYTICS] Cookie-Wert:', cookieValue);
+            
+            if (cookieValue === 'allow') {
+                console.log('%c[MB-ANALYTICS] Google Analytics wird AKTIVIERT', 'background: #4CAF50; color: white; padding: 5px; border-radius: 3px;');
+                
+                // Die Analytics-Skripte werden direkt im Markup definiert, werden aber erst hier initialisiert
+                (function() {
+                    // Analytics-Skript laden
+                    const gaScript = document.createElement('script');
+                    gaScript.async = true;
+                    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8ESLMYS9SV';
+                    document.head.appendChild(gaScript);
+                    
+                    // Analytics initialisieren
+                    window.dataLayer = window.dataLayer || [];
+                    window.gtag = function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-8ESLMYS9SV');
+                    
+                    console.log('[MB-ANALYTICS] Google Analytics wurde initialisiert');
+                })();
+                
+            } else if (cookieValue === 'deny') {
+                console.log('%c[MB-ANALYTICS] Google Analytics wird DEAKTIVIERT', 'background: #F44336; color: white; padding: 5px; border-radius: 3px;');
+                
+                // Existierende GA-Skripte entfernen
+                const gaScripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
+                gaScripts.forEach(script => {
+                    console.log('[MB-ANALYTICS] Entferne GA-Skript:', script.src);
+                    script.remove();
+                });
+                
+                // dataLayer zurücksetzen
+                if (window.dataLayer) {
+                    console.log('[MB-ANALYTICS] Setze dataLayer zurück');
+                    delete window.dataLayer;
+                }
+                
+                // GA-Funktion deaktivieren
+                window.gtag = function() {
+                    console.log('[MB-ANALYTICS] Tracking-Versuch blockiert:', arguments);
+                    return null;
+                };
+                
+                // Entfernen von GA-Cookies
+                document.cookie = '_ga=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                document.cookie = '_ga_*=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                document.cookie = '_gid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                document.cookie = '_gat=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                
+                console.log('[MB-ANALYTICS] Google Analytics wurde deaktiviert');
+            }
+        };
+    </script>
+    </script>
+    
     <!-- Vite Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Remix Icon -->

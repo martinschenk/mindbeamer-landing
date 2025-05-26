@@ -203,4 +203,11 @@ return [
     'gdpr_compliant' => 'Cumple RGPD',
     'privacy_first' => 'Prioridad en Privacidad',
     'data_protection' => 'Protección de Datos',
+    
+    // Marketing consent
+    'marketing_consent_text' => 'Acepto que mis datos se almacenen y utilicen con fines de marketing.',
+    
+    // JavaScript error messages
+    'js_default_error' => 'Se produjo un error al enviar su solicitud.',
+    'js_connection_error' => 'Error de conexión. Por favor, inténtelo de nuevo.',
 ];

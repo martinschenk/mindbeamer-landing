@@ -20,6 +20,14 @@
                     </button>
                 </div>
                 
+                <!-- Marketing-Einwilligung -->
+                <div class="mt-4 flex items-center justify-center">
+                    <label class="flex items-center text-white text-sm">
+                        <input type="checkbox" name="marketing_consent" id="marketing_consent" class="form-checkbox mr-2 h-4 w-4 text-pink-500 focus:ring-pink-500">
+                        <span>{{ __('messages.marketing_consent_text') }}</span>
+                    </label>
+                </div>
+                
                 <div id="form-success" class="hidden bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 text-white p-6 rounded-lg shadow-lg border-l-4 border-white" role="alert">
                     <div class="flex items-center">
                         <svg class="w-6 h-6 mr-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

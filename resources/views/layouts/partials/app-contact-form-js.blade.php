@@ -3,6 +3,12 @@
         (function() {
             'use strict';
             
+            // Mehrsprachige Übersetzungen aus Laravel
+            const translations = {
+                defaultError: "{{ __('messages.form_error') }}",
+                connectionError: "{{ __('messages.js_connection_error') }}"
+            };
+            
             let formIsSubmitting = false;
             
             function initContactForm() {
@@ -82,9 +88,18 @@
                         ? window.LocaleHelper.getCurrentLocale() 
                         : window.location.pathname.split('/')[1] || document.documentElement.lang.replace('-', '_') || 'en';
                     
+                    // Marketing-Consent-Checkbox Status abrufen
+                    const marketingConsentCheckbox = form.querySelector('#marketing_consent');
+                    const marketingConsentChecked = marketingConsentCheckbox ? marketingConsentCheckbox.checked : false;
+                    
+                    // IMMER die Checkbox-Info zum FormData hinzufügen, unabhängig von Cookie-Einstellungen
+                    formData.set('marketing_consent', marketingConsentChecked ? '1' : '0');
+                    
                     // Record start time for minimum loading duration
                     const startTime = Date.now();
                     const minimumLoadingTime = 2000; // 2 seconds minimum
+                    
+
                     
                     const response = await fetch(form.action, {
                         method: 'POST',
@@ -92,7 +107,7 @@
                         headers: {
                             'X-Requested-With': 'XMLHttpRequest',
                             'Accept': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '',
                             'X-Locale': currentLocale  // Send current locale to API
                         }
                     });
@@ -123,8 +138,7 @@
                         showError(errorElement, data);
                     }
                 } catch (error) {
-                    console.error('Fetch error:', error);
-                    showError(errorElement, { message: 'Verbindungsfehler. Bitte versuchen Sie es erneut.' });
+                    showError(errorElement, { message: translations.connectionError });
                 } finally {
                     // Reset button and submission flag
                     submitButton.disabled = false;
@@ -135,10 +149,11 @@
             
             function showError(errorElement, data) {
                 if (errorElement) {
-                    let errorMsg = 'Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten.';
-                    if (data.errors) {
-                        errorMsg = 'Bitte überprüfen Sie Ihre Eingaben: ' + Object.values(data.errors).flat().join('. ');
-                    } else if (data.message) {
+                    // Standard-Fehlermeldung aus den übersetzten Texten
+                    let errorMsg = translations.defaultError;
+                    
+                    // Wenn eine lokalisierte Nachricht vom Server zurückgegeben wird, verwenden wir diese direkt
+                    if (data.message) {
                         errorMsg = data.message;
                     }
                     

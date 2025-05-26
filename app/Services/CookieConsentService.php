@@ -4,13 +4,18 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Models\MarketingConsent;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Request;
 
 /**
  * Service für mehrsprachige Cookie Consent Konfiguration
  * 
  * Dieser Service stellt lokalisierte Cookie Consent Konfigurationen
- * für alle unterstützten Sprachen bereit (DE, EN, ES).
+ * für alle unterstützten Sprachen bereit (DE, EN, ES) und verwaltet
+ * Marketing-Einwilligungen gemäß DSGVO-Richtlinien.
  */
 class CookieConsentService
 {
@@ -52,35 +57,39 @@ class CookieConsentService
      */
     public function getLocalizedCategories(): array
     {
+        // Die Basiskonfiguration aus der Config-Datei abrufen
+        $baseConfig = config('laravel-cookie-consent.cookie_categories');
+        
+        // Nur die lokalisierten Titel und Beschreibungen hinzufügen, ohne Sichtbarkeit zu ändern
         return [
             'necessary' => [
-                'enabled' => true,
-                'locked' => true,
-                'visible' => true,
+                'enabled' => $baseConfig['necessary']['enabled'] ?? true,
+                'locked' => $baseConfig['necessary']['locked'] ?? true,
+                'visible' => $baseConfig['necessary']['visible'] ?? true,
                 'title' => __('cookie-consent.categories.necessary.title'),
                 'description' => __('cookie-consent.categories.necessary.description'),
             ],
             'analytics' => [
-                'enabled' => false, // Show but unchecked by default
-                'locked' => false,
-                'visible' => true,
-                'js_action' => 'enableAnalytics',
+                'enabled' => $baseConfig['analytics']['enabled'] ?? true,
+                'locked' => $baseConfig['analytics']['locked'] ?? false,
+                'visible' => $baseConfig['analytics']['visible'] ?? true,
+                'js_action' => $baseConfig['analytics']['js_action'] ?? 'enableAnalytics',
                 'title' => __('cookie-consent.categories.analytics.title'),
                 'description' => __('cookie-consent.categories.analytics.description'),
             ],
             'marketing' => [
-                'enabled' => false, // Show but unchecked by default
-                'locked' => false,
-                'visible' => true,
-                'js_action' => 'enableMarketing',
+                'enabled' => $baseConfig['marketing']['enabled'] ?? false,
+                'locked' => $baseConfig['marketing']['locked'] ?? false,
+                'visible' => $baseConfig['marketing']['visible'] ?? true,
+                'js_action' => $baseConfig['marketing']['js_action'] ?? 'enableMarketing',
                 'title' => __('cookie-consent.categories.marketing.title'),
                 'description' => __('cookie-consent.categories.marketing.description'),
             ],
             'preferences' => [
-                'enabled' => true, // Enable by default
-                'locked' => false,
-                'visible' => true,
-                'js_action' => 'enablePreferences',
+                'enabled' => $baseConfig['preferences']['enabled'] ?? true,
+                'locked' => $baseConfig['preferences']['locked'] ?? false,
+                'visible' => $baseConfig['preferences']['visible'] ?? true,
+                'js_action' => $baseConfig['preferences']['js_action'] ?? 'saveUserLanguagePreference',
                 'title' => __('cookie-consent.categories.preferences.title'),
                 'description' => __('cookie-consent.categories.preferences.description'),
             ],
@@ -123,5 +132,76 @@ class CookieConsentService
     public function getAvailableCategories(): array
     {
         return array_keys($this->getLocalizedCategories());
+    }
+    
+    /**
+     * Speichert eine Marketing-Einwilligung in der Datenbank
+     *
+     * @param array<string, mixed> $data Daten für die Einwilligung (email, consent)
+     * @return bool Ob die Speicherung erfolgreich war
+     */
+    public function saveMarketingConsent(array $data): bool
+    {
+        try {
+            // Prüfen, ob die E-Mail vorhanden ist
+            if (empty($data['email']) || !filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                Log::warning('Ungültige E-Mail-Adresse bei Marketing-Einwilligung', ['email' => $data['email'] ?? 'nicht angegeben']);
+                return false;
+            }
+            
+            $consentGiven = isset($data['consent']) && filter_var($data['consent'], FILTER_VALIDATE_BOOLEAN);
+            
+            // Prüfen, ob bereits eine Einwilligung für diese E-Mail existiert
+            $existingConsent = MarketingConsent::where('email', $data['email'])->first();
+            
+            if ($existingConsent) {
+                // Vorhandenen Eintrag aktualisieren
+                $existingConsent->update([
+                    'consent_given' => $consentGiven,
+                    'ip_address' => Request::ip(),
+                    'user_agent' => Request::userAgent(),
+                    'locale' => App::getLocale(),
+                ]);
+            } else {
+                // Neuen Eintrag erstellen
+                MarketingConsent::create([
+                    'email' => $data['email'],
+                    'consent_given' => $consentGiven,
+                    'ip_address' => Request::ip(),
+                    'user_agent' => Request::userAgent(),
+                    'locale' => App::getLocale(),
+                ]);
+            }
+            
+            return true;
+        } catch (\Exception $e) {
+            Log::error('Fehler beim Speichern der Marketing-Einwilligung', [
+                'error' => $e->getMessage(),
+                'email' => $data['email'] ?? 'nicht angegeben'
+            ]);
+            return false;
+        }
+    }
+    
+    /**
+     * Prüft, ob analytische Cookies akzeptiert wurden
+     *
+     * @return bool
+     */
+    public function hasAnalyticsCookiesConsent(): bool
+    {
+        return Cookie::has('laravel_cookie_consent_analytics') && 
+               Cookie::get('laravel_cookie_consent_analytics') === 'true';
+    }
+    
+    /**
+     * Prüft, ob Marketing-Cookies akzeptiert wurden
+     *
+     * @return bool
+     */
+    public function hasMarketingCookiesConsent(): bool
+    {
+        return Cookie::has('laravel_cookie_consent_marketing') && 
+               Cookie::get('laravel_cookie_consent_marketing') === 'true';
     }
 }

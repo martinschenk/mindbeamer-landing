@@ -100,7 +100,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'keine-antwort@mindbeamer.io'),
+        'address' => env('MAIL_FROM_ADDRESS'),
         'name' => env('MAIL_FROM_NAME', 'MindBeamer'),
     ],
 
@@ -133,5 +133,5 @@ return [
     |
     */
     
-    'admin_email' => env('ADMIN_EMAIL', 'm.schenk@mindbeamer.io'),
+    'admin_email' => env('ADMIN_EMAIL'),
 ];

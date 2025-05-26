@@ -1,16 +1,6 @@
     @php
-        // Bereite lokalisierte Konfiguration für Cookie-Consent vor
+        // Lokalisierte Konfiguration für Cookie-Consent abrufen
         $customConfig = app(\App\Services\CookieConsentService::class)->getLocalizedConfig();
-        
-        // Stelle sicher, dass Analytics und Marketing Cookies sichtbar sind
-        // Wichtig: Nicht deaktivieren, nur konfigurierbar machen
-        $customConfig['cookie_categories']['analytics']['enabled'] = true;
-        $customConfig['cookie_categories']['analytics']['visible'] = true;
-        $customConfig['cookie_categories']['analytics']['locked'] = false;
-        
-        $customConfig['cookie_categories']['marketing']['enabled'] = true;
-        $customConfig['cookie_categories']['marketing']['visible'] = true;
-        $customConfig['cookie_categories']['marketing']['locked'] = false;
     @endphp
     
     @if(class_exists(\Devrabiul\CookieConsent\Facades\CookieConsent::class))
@@ -275,8 +265,31 @@
             window.MBCookieModal.init();
         });
         
+        // Auch versuchen zu initialisieren, wenn DOM bereits geladen ist
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            window.MBCookieModal.init();
+        }
+        
         // Globale Funktion zum Anzeigen der Cookie-Einstellungen
         window.showCookieSettings = function() {
             return window.MBCookieModal.showModal();
+        };
+        
+        /**
+         * Funktion zur Verwaltung des Sprachpräferenz-Cookies
+         * Diese Funktion wird vom Cookie-Consent-System aufgerufen, wenn der Benutzer
+         * die Präferenz-Cookies aktiviert oder deaktiviert
+         */
+        window.saveUserLanguagePreference = function(cookieValue) {
+            // cookieValue ist 'allow' oder 'deny' basierend auf der Nutzerentscheidung
+            const currentLocale = window.location.pathname.split('/')[1] || document.documentElement.lang.replace('-', '_') || 'en';
+            
+            if (cookieValue === 'allow') {
+                // Präferenz-Cookies sind erlaubt, speichere die Spracheinstellung
+                document.cookie = 'locale=' + currentLocale + '; path=/; max-age=' + (365 * 24 * 60 * 60) + '; SameSite=Lax';
+            } else {
+                // Präferenz-Cookies sind abgelehnt, lösche das Cookie
+                document.cookie = 'locale=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax';
+            }
         };
     </script>

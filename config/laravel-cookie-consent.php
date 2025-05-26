@@ -197,27 +197,28 @@ return [
             'description' => 'These cookies are essential for the website to function properly.',
         ],
         'analytics' => [
-            'enabled' => true, // Force enable to show in modal
+            'enabled' => true, // Standardmäßig aktiviert
             'locked' => false,
-            'visible' => true,
-            'js_action' => 'loadGoogleAnalytics',
+            'visible' => true, // Immer sichtbar
+            'js_action' => 'enableAnalytics',
             'title' => 'Analytics Cookies',
             'description' => 'These cookies help us understand how visitors interact with our website.',
         ],
         'marketing' => [
-            'enabled' => true, // Force enable to show in modal
+            'enabled' => false, // Standardmäßig deaktiviert
             'locked' => false,
-            'visible' => true,
+            'visible' => true, // Immer sichtbar
             'js_action' => 'loadFacebookPixel',
             'title' => 'Marketing Cookies',
             'description' => 'These cookies are used for advertising and tracking purposes.',
         ],
         'preferences' => [
-            'enabled' => env('COOKIE_CONSENT_PREFERENCES', true),
+            'enabled' => true, // Standardmäßig aktiviert
             'locked' => false,
-            'visible' => true,
+            'visible' => true, // Immer sichtbar
+            'js_action' => 'saveUserLanguagePreference', // Verwendet für Spracheinstellungen
             'title' => 'Preferences Cookies',
-            'description' => 'These cookies allow the website to remember user preferences.',
+            'description' => 'These cookies allow the website to remember your language preference and other settings.',
         ],
     ],
 

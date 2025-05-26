@@ -179,6 +179,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'email' => 'E-Mail-Adresse',
+        'marketing_consent' => 'Marketing-Einwilligung',
+    ],
 
 ];

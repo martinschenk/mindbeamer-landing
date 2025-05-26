@@ -215,4 +215,17 @@ return [
     'error_503_title' => 'Service Unavailable',
     'error_503_message' => 'Sorry, we\'re temporarily down for maintenance or experiencing high load.',
     'error_503_joke' => 'Even our tireless AI needs a coffee break sometimes!',
+    
+    // GDPR compliance and security translations
+    'cookie_consent_content' => 'We use cookies to enhance your experience. By continuing to use our website, you agree to the use of cookies.',
+    'gdpr_compliant' => 'GDPR Compliant',
+    'privacy_first' => 'Privacy First',
+    'data_protection' => 'Data Protection',
+    
+    // Marketing consent
+    'marketing_consent_text' => 'I agree that my data may be stored and used for marketing purposes.',
+    
+    // JavaScript error messages
+    'js_default_error' => 'An error occurred while sending your request.',
+    'js_connection_error' => 'Connection error. Please try again.',
 ];

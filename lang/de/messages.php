@@ -203,4 +203,11 @@ return [
     'gdpr_compliant' => 'DSGVO-konform',
     'privacy_first' => 'Datenschutz First',
     'data_protection' => 'Datenschutz',
+    
+    // Marketing consent
+    'marketing_consent_text' => 'Ich bin damit einverstanden, dass meine Daten für Marketingzwecke gespeichert und verwendet werden.',
+    
+    // JavaScript error messages
+    'js_default_error' => 'Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten.',
+    'js_connection_error' => 'Verbindungsfehler. Bitte versuchen Sie es erneut.',
 ];
