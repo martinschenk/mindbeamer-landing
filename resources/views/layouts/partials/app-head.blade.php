@@ -118,6 +118,14 @@
         // enableAnalytics-Funktion, die vom Cookie-Consent-Paket aufgerufen wird
         window.enableAnalytics = function(cookieValue) {
             console.log('\n%c[MB-ANALYTICS] ===== ANALYTICS STATUS CHANGE =====', 'background: #333; color: #fff; padding: 3px;');
+            
+            // Parameter ableiten, wenn nicht explizit übergeben
+            // Das Cookie-Consent-Paket ruft die Funktion ohne Parameter auf, wenn Analytics aktiviert werden soll
+            if (cookieValue === undefined) {
+                cookieValue = 'allow';
+                console.log('[MB-ANALYTICS] Kein Parameter übergeben, nehme an: allow');
+            }
+            
             console.log('[MB-ANALYTICS] Cookie-Wert:', cookieValue);
             
             if (cookieValue === 'allow') {
