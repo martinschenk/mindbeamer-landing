@@ -1,12 +1,11 @@
 /**
  * MindBeamer Analytics Cookie Cleanup
  *
- * Diese standalone JavaScript-Datei sorgt für die DSGVO-konforme Löschung
- * von Google Analytics-Cookies, wenn der Benutzer Analytics deaktiviert hat.
+ * Diese standalone JavaScript-Datei sorgt für die DSGVO-konforme Behandlung von
+ * Google Analytics, wenn der Benutzer Analytics deaktiviert hat.
  * 
  * @license MIT
- * @author Cascade
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 (function() {
@@ -28,63 +27,52 @@
     }
     
     /**
-     * Löscht alle Google Analytics-Cookies gründlich
+     * Löscht die wichtigsten Google Analytics-Cookies
      * 
      * @return {void}
      */
-    function deleteAllGACookies() {
-        // Liste der möglichen Domains, auf denen Cookies gesetzt sein könnten
-        const possibleDomains = [
-            '', // Leere Domain = aktueller Host
+    function deleteGACookies() {
+        // Liste der wichtigsten Domains
+        const domains = [
+            '', // Aktueller Host
             '.mindbeamer.io',
             'mindbeamer.io',
-            'www.mindbeamer.io',
-            window.location.hostname
+            window.location.hostname,
+            '.' + window.location.hostname
         ];
         
-        // Liste der bekannten GA-Cookie-Präfixe
-        const cookiePrefixes = ['_ga', '_gid', '_gat', '_gac', '_gali', '_gat_gtag'];
+        // Liste der wichtigsten GA-Cookies
+        const cookies = ['_ga', '_gid', '_gat'];
         
-        // Alle bekannten Cookies und ihre Varianten löschen
-        for (const prefix of cookiePrefixes) {
-            for (const domain of possibleDomains) {
-                // Mit verschiedenen Pfaden löschen
+        // Alle Basis-Cookies löschen
+        for (const name of cookies) {
+            for (const domain of domains) {
                 const domainStr = domain ? `; Domain=${domain}` : '';
-                document.cookie = `${prefix}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=Lax`;
-                document.cookie = `${prefix}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=None; Secure`;
+                document.cookie = `${name}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}`;
             }
         }
         
-        // Alle vorhandenen Cookies durchsuchen nach dynamischen GA-Cookies
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
+        // Dynamische GA-Cookies löschen (z.B. _ga_XXXXXXXX)
+        const allCookies = document.cookie.split(';');
+        for (let i = 0; i < allCookies.length; i++) {
+            const cookie = allCookies[i].trim();
             const cookieName = cookie.split('=')[0];
             
-            // Prüfen auf dynamische GA-Cookies (z.B. _ga_XXXXXXXX)
-            if (cookieName.startsWith('_ga_') || 
-                cookieName.startsWith('_gac_') || 
-                cookieName.startsWith('_gat_')) {
-                
-                for (const domain of possibleDomains) {
+            if (cookieName.startsWith('_ga_')) {
+                for (const domain of domains) {
                     const domainStr = domain ? `; Domain=${domain}` : '';
-                    document.cookie = `${cookieName}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=Lax`;
-                    document.cookie = `${cookieName}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=None; Secure`;
+                    document.cookie = `${cookieName}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}`;
                 }
-                
-                console.debug('[MB-ANALYTICS] GA-Cookie gelöscht:', cookieName);
             }
         }
         
-        // GA-Speicher leeren
+        // LocalStorage leeren
         try {
             localStorage.removeItem('_ga');
             sessionStorage.removeItem('_ga');
-        } catch (e) {
-            // Ignorieren, falls localStorage nicht verfügbar ist
-        }
+        } catch (e) {}
         
-        console.debug('[MB-ANALYTICS] Alle Google Analytics-Cookies wurden gelöscht');
+        console.debug('[MB-ANALYTICS] Google Analytics-Cookies wurden gelöscht');
     }
     
     /**
@@ -110,60 +98,48 @@
             return null;
         };
         
-        // Alle GA-Cookies löschen
-        deleteAllGACookies();
+        // GA-Cookies löschen
+        deleteGACookies();
+        
+        console.debug('[MB-ANALYTICS] Google Analytics wurde blockiert');
     }
     
     /**
-     * Hauptfunktion, die bei jedem Seitenladen ausgeführt wird
+     * Überwacht Änderungen an den Cookie-Einstellungen
      * 
      * @return {void}
      */
-    function init() {
-        // Den Namen des Analytics-Cookies bestimmen
-        const cookiePrefix = 'MindBeamer'; // Fallback-Wert
-        let analyticsName = `${cookiePrefix}_cookie_analytics`;
+    function setupAnalyticsWatcher() {
+        // Cookie-Namen bestimmen
+        const cookiePrefix = 'MindBeamer'; // Standard-Wert
+        const analyticsName = `${cookiePrefix}_cookie_analytics`;
         
-        // Den Cookie-Wert auslesen
-        const analyticsCookie = getCookie(analyticsName);
-        
-        // Wenn Analytics deaktiviert ist, Google Analytics blockieren
-        if (analyticsCookie === 'false') {
+        // Beim Laden prüfen
+        if (getCookie(analyticsName) === 'false') {
             blockGoogleAnalytics();
         }
         
-        // Event-Listener für Änderungen am Cookie-Modal hinzufügen
+        // Auf Klicks auf den Speichern-Button reagieren
         document.addEventListener('click', function(event) {
-            // Auf Klicks auf den Speichern-Button im Cookie-Modal reagieren
             if (event.target && (
                 event.target.classList.contains('cookie-preferences-save') || 
-                event.target.hasAttribute('data-cc') && event.target.getAttribute('data-cc') === 'save' ||
+                (event.target.hasAttribute('data-cc') && event.target.getAttribute('data-cc') === 'save') ||
                 event.target.textContent.includes('Save Preferences') ||
                 event.target.textContent.includes('Guardar Preferencias')
             )) {
-                // Kurze Verzögerung, um sicherzustellen, dass Cookies gesetzt wurden
                 setTimeout(function() {
-                    const currentValue = getCookie(analyticsName);
-                    if (currentValue === 'false') {
+                    if (getCookie(analyticsName) === 'false') {
                         blockGoogleAnalytics();
                     }
                 }, 100);
             }
         }, true);
-        
-        // Kontinuierlich auf Cookie-Änderungen prüfen
-        setInterval(function() {
-            const currentValue = getCookie(analyticsName);
-            if (currentValue === 'false') {
-                blockGoogleAnalytics();
-            }
-        }, 2000); // Alle 2 Sekunden prüfen
     }
     
     // Initialisierung beim Laden der Seite
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', setupAnalyticsWatcher);
     } else {
-        init();
+        setupAnalyticsWatcher();
     }
 })();

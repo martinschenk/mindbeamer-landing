@@ -116,8 +116,9 @@ class SetLocale
             $source = 'default';
         }
         
-        // Debugging, wenn aktiviert
-        if ($debug) {
+        // Debugging, wenn aktiviert - nur bei Bedarf einschalten
+        // Im Produktionsbetrieb deaktiviert, um die Log-Datei nicht zu überfüllen
+        if (false && $debug) {
             Log::debug('Locale determination', [
                 'final' => $locale,
                 'source' => $source,
