@@ -2138,3 +2138,43 @@ Did you mean one of these?
 [2025-05-26 23:57:41] local.INFO: Root-Redirect aus Session: en  
 [2025-05-26 23:57:41] local.DEBUG: Cookie app_locale=en set (30 days)  
 [2025-05-26 23:57:41] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:58:20] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:58:20] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:58:20] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-26 23:58:20.221928"} 
+[2025-05-26 23:58:20] local.INFO: Root-Redirect aus Session: en  
+[2025-05-26 23:58:20] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:58:20] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:23] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:23] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:23] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:23] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-27 00:03:23.454798"} 
+[2025-05-27 00:03:23] local.INFO: Root-Redirect aus Session: en  
+[2025-05-27 00:03:23] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:23] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-27 00:03:23.480386"} 
+[2025-05-27 00:03:23] local.INFO: Root-Redirect aus Session: en  
+[2025-05-27 00:03:23] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:23] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:23] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:55] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:55] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:55] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:55] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-27 00:03:55.432012"} 
+[2025-05-27 00:03:55] local.INFO: Root-Redirect aus Session: en  
+[2025-05-27 00:03:55] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:55] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-27 00:03:55.457792"} 
+[2025-05-27 00:03:55] local.INFO: Root-Redirect aus Session: en  
+[2025-05-27 00:03:55] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:55] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:03:55] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:05:26] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:05:26] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:05:26] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-27 00:05:26.419755"} 
+[2025-05-27 00:05:26] local.INFO: Root-Redirect aus Session: en  
+[2025-05-27 00:05:26] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:05:26] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:05:50] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:05:50] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:05:50] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-27 00:05:50.408946"} 
+[2025-05-27 00:05:50] local.INFO: Root-Redirect aus Session: en  
+[2025-05-27 00:05:50] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:05:50] local.DEBUG: Cookie app_locale=en set (30 days)  

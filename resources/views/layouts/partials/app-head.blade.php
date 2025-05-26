@@ -9,6 +9,74 @@
     <title>@yield('title', 'MindBeamer - ' . __('messages.hero_title'))</title>
     
     <!-- Google Analytics Test-Funktion -->
+    <!-- Language Preference Cookies Management -->
+    <script>
+        // Handler für Preference-Cookies
+        window.enablePreferences = function(cookieValue) {
+            console.log('[MB-PREFERENCES] Preferences werden aktiviert');
+            
+            // Aktuelle Sprache ermitteln
+            const currentLocale = window.LocaleHelper ? window.LocaleHelper.getCurrentLocale() : 
+                                  (document.documentElement.lang || 'en').replace('-', '_');
+            
+            // Cookie-Lebensdauer: 30 Tage
+            const expiryDate = new Date();
+            expiryDate.setDate(expiryDate.getDate() + 30);
+            
+            // Sprach-Cookie setzen
+            document.cookie = `app_locale=${currentLocale}; path=/; expires=${expiryDate.toUTCString()}; SameSite=Lax`;
+            
+            console.log(`[MB-PREFERENCES] Sprach-Cookie für '${currentLocale}' wurde gesetzt (30 Tage)`);
+        };
+        
+        window.disablePreferences = function() {
+            console.log('[MB-PREFERENCES] Preferences werden deaktiviert');
+            
+            // Sprach-Cookie löschen
+            document.cookie = 'app_locale=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT; SameSite=Lax';
+            
+            // Auch für alle möglichen Domains löschen
+            const domains = [
+                '', // Aktueller Host
+                '.mindbeamer.io',
+                'mindbeamer.io',
+                'www.mindbeamer.io',
+                window.location.hostname,
+                '.' + window.location.hostname
+            ];
+            
+            domains.forEach(domain => {
+                const domainStr = domain ? `; domain=${domain}` : '';
+                document.cookie = `app_locale=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=Lax`;
+            });
+            
+            console.log('[MB-PREFERENCES] Sprach-Cookie wurde gelöscht');
+        };
+        
+        // Prüfen, ob Preferences in den Cookies deaktiviert wurden
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cookie-Wert auslesen
+            const getCookie = function(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            };
+            
+            // Cookie-Prefix aus der Konfiguration
+            const cookiePrefix = '{{ config("laravel-cookie-consent.cookie_prefix") }}' || 'MindBeamer';
+            const preferencesCookie = getCookie(`${cookiePrefix}_cookie_preferences`);
+            
+            console.log('[MB-PREFERENCES] Cookie-Status beim Laden:', preferencesCookie);
+            
+            // Wenn der Preferences-Cookie explizit auf 'false' gesetzt ist, Preferences deaktivieren
+            if (preferencesCookie === 'false') {
+                console.log('[MB-PREFERENCES] Preferences-Cookie ist auf false gesetzt, deaktiviere Preferences');
+                window.disablePreferences();
+            }
+        });
+    </script>
+    
     <script>
         // Test-Funktion global verfügbar machen
         window.testAnalytics = function() {
@@ -113,42 +181,8 @@
         };
     </script>
     
-    <!-- Google tag (gtag.js) - wird nur geladen, wenn Analytics aktiviert ist -->
+    <!-- Google tag (gtag.js) - wird durch cookie consent gesteuert -->
     <script>
-        // Hilfsfunktion zum Auslesen von Cookies
-        function getCookieValue(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-            return null;
-        }
-        
-        // Prüfen, ob Analytics aktiviert ist
-        const cookiePrefix = '{{ config("laravel-cookie-consent.cookie_prefix") }}' || 'MindBeamer';
-        const analyticsName = `${cookiePrefix}_cookie_analytics`;
-        const analyticsEnabled = getCookieValue(analyticsName) !== 'false';
-        
-        // Google Analytics NUR laden, wenn es explizit aktiviert ist
-        if (analyticsEnabled) {
-            console.log('%c[MB-ANALYTICS] Google Analytics wird AKTIVIERT', 'background: #4CAF50; color: white; padding: 5px; border-radius: 3px;');
-            
-            // GA-Script dynamisch laden
-            const gaScript = document.createElement('script');
-            gaScript.async = true;
-            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8ESLMYS9SV';
-            document.head.appendChild(gaScript);
-            
-            // GA initialisieren
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = function() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-8ESLMYS9SV');
-        } else {
-            console.log('%c[MB-ANALYTICS] Google Analytics wird DEAKTIVIERT', 'background: #F44336; color: white; padding: 5px; border-radius: 3px;');
-            
-            // Dummy-Funktion bereitstellen, damit keine Fehler auftreten
-            window.gtag = function() { return null; };
-        }
         
         // Hilfsfunktion, um ALLE GA-Cookies zu finden und zu löschen (gründlichere Version)
         function deleteAllGACookies() {
@@ -274,8 +308,8 @@
             }
         };
         
-        // Event-Listener, der auf Änderungen der Cookie-Einstellungen reagiert
-        function setupCookieConsentListener() {
+        // Prüfen, ob Analytics in den Cookies deaktiviert wurde
+        document.addEventListener('DOMContentLoaded', function() {
             // Cookie-Wert auslesen
             const getCookie = function(name) {
                 const value = `; ${document.cookie}`;
@@ -286,59 +320,16 @@
             
             // Cookie-Prefix aus der Konfiguration
             const cookiePrefix = '{{ config("laravel-cookie-consent.cookie_prefix") }}' || 'MindBeamer';
-            const analyticsName = `${cookiePrefix}_cookie_analytics`;
+            const analyticsCookie = getCookie(`${cookiePrefix}_cookie_analytics`);
             
-            // Prüfen, ob Analytics deaktiviert ist und ggf. deaktivieren
-            function checkAndDisableAnalytics() {
-                const analyticsCookie = getCookie(analyticsName);
-                console.log('[MB-ANALYTICS] Cookie-Status:', analyticsCookie);
-                
-                if (analyticsCookie === 'false') {
-                    console.log('[MB-ANALYTICS] Analytics-Cookie ist auf false gesetzt, deaktiviere Analytics');
-                    window.disableAnalytics();
-                }
+            console.log('[MB-ANALYTICS] Cookie-Status beim Laden:', analyticsCookie);
+            
+            // Wenn der Analytics-Cookie explizit auf 'false' gesetzt ist, Analytics deaktivieren
+            if (analyticsCookie === 'false') {
+                console.log('[MB-ANALYTICS] Analytics-Cookie ist auf false gesetzt, deaktiviere Analytics');
+                window.disableAnalytics();
             }
-            
-            // Initialen Check durchführen
-            checkAndDisableAnalytics();
-            
-            // MutationObserver für DOM-Änderungen (Cookie-Modal-Interaktionen)
-            const observer = new MutationObserver(function(mutations) {
-                // Prüfen, ob relevante Änderungen vorhanden sind
-                for (const mutation of mutations) {
-                    if (mutation.type === 'childList' || mutation.type === 'attributes') {
-                        // Auf Speichern-Button-Klicks prüfen
-                        const saveButtons = document.querySelectorAll('.cookie-preferences-save, [data-cc="save"], button[class*="save"]');
-                        if (saveButtons.length > 0) {
-                            saveButtons.forEach(btn => {
-                                if (!btn.hasAttribute('data-mb-listener')) {
-                                    btn.setAttribute('data-mb-listener', 'true');
-                                    btn.addEventListener('click', function() {
-                                        // Kurze Verzögerung, um sicherzustellen, dass Cookies gesetzt wurden
-                                        setTimeout(checkAndDisableAnalytics, 100);
-                                    });
-                                }
-                            });
-                        }
-                    }
-                }
-            });
-            
-            // Beobachte den gesamten Body auf Änderungen
-            observer.observe(document.body, { childList: true, subtree: true, attributes: true });
-            
-            // Zusätzlich Änderungen an den Cookies überwachen (sicherheitshalber)
-            let lastCookieString = document.cookie;
-            setInterval(function() {
-                if (document.cookie !== lastCookieString) {
-                    lastCookieString = document.cookie;
-                    checkAndDisableAnalytics();
-                }
-            }, 1000); // Alle 1 Sekunde prüfen
-        }
-        
-        // Beim Laden der Seite Cookie-Listener einrichten
-        document.addEventListener('DOMContentLoaded', setupCookieConsentListener);
+        });
     </script>
     
     <!-- Vite Assets -->
@@ -443,9 +434,6 @@
     
     <!-- MindBeamer Cookie Consent Custom Styles -->
     <link rel="stylesheet" href="{{ asset('css/cookie-consent-custom.css') }}">
-    
-    <!-- DSGVO Cookie Cleanup Script (wird vor allen anderen Scripts geladen) -->
-    <script src="{{ asset('js/analytics-cleanup.js') }}?v={{ time() }}"></script>
     
     <style>
         html, body { overflow-x: hidden; width: 100%; }
