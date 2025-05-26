@@ -479,11 +479,6 @@
     <!-- MindBeamer Cookie Consent Custom Styles -->
     <link rel="stylesheet" href="{{ asset('css/cookie-consent-custom.css') }}">
     
-    <!-- Einfacher Test, ob Änderungen ankommen (27.05.2025) -->
-    <script>
-        console.log('%c[MB-TEST] Hallo! Die Änderungen vom 27.05.2025 sind angekommen.', 'background: #9C27B0; color: white; padding: 5px; border-radius: 3px;');
-    </script>
-    
     <style>
         html, body { overflow-x: hidden; width: 100%; }
         body { font-family: 'Poppins', sans-serif; position: relative; }

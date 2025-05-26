@@ -29,6 +29,10 @@ composer.phar
 # Laravel-specific files to ignore
 /bootstrap/cache/*.php
 .phpstorm.meta.php
+
+# Laravel logs
+/storage/logs/*.log
+/storage/logs/laravel.log
 _ide_helper.php
 _ide_helper_models.php
 .php-cs-fixer.cache

@@ -2190,3 +2190,9 @@ Did you mean one of these?
 [2025-05-27 00:15:57] local.INFO: Root-Redirect aus Session: en  
 [2025-05-27 00:15:57] local.DEBUG: Cookie app_locale=en set (30 days)  
 [2025-05-27 00:15:57] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:19:00] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:19:00] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:19:00] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-27 00:19:00.423842"} 
+[2025-05-27 00:19:00] local.INFO: Root-Redirect aus Session: en  
+[2025-05-27 00:19:00] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-27 00:19:00] local.DEBUG: Cookie app_locale=en set (30 days)  
