@@ -115,6 +115,66 @@
     
     <!-- Google tag (gtag.js) - wird durch cookie consent gesteuert -->
     <script>
+        // Hilfsfunktion, um ALLE GA-Cookies zu finden und zu löschen (verbesserte Version)
+        function deleteAllGACookies() {
+            // Standard-Cookies löschen
+            document.cookie = '_ga=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.mindbeamer.io;';
+            document.cookie = '_gid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.mindbeamer.io;';
+            document.cookie = '_gat=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.mindbeamer.io;';
+            
+            // Auch ohne Domain löschen (für lokale Cookies)
+            document.cookie = '_ga=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            document.cookie = '_gid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            document.cookie = '_gat=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            
+            // Alle _ga_* Cookies finden und löschen
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                const cookieName = cookie.split('=')[0];
+                
+                if (cookieName.startsWith('_ga_')) {
+                    // Mit Domain löschen
+                    document.cookie = cookieName + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.mindbeamer.io;';
+                    // Auch ohne Domain löschen
+                    document.cookie = cookieName + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                    
+                    console.log('[MB-ANALYTICS] GA-Cookie gelöscht:', cookieName);
+                }
+            }
+            
+            console.log('[MB-ANALYTICS] Alle Google Analytics-Cookies wurden gelöscht');
+        }
+        
+        // Funktion zum Deaktivieren von Google Analytics (wird separat aufgerufen)
+        window.disableAnalytics = function() {
+            console.log('%c[MB-ANALYTICS] Google Analytics wird DEAKTIVIERT', 'background: #F44336; color: white; padding: 5px; border-radius: 3px;');
+            
+            // Existierende GA-Skripte entfernen
+            const gaScripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
+            gaScripts.forEach(script => {
+                console.log('[MB-ANALYTICS] Entferne GA-Skript:', script.src);
+                script.remove();
+            });
+            
+            // dataLayer zurücksetzen
+            if (window.dataLayer) {
+                console.log('[MB-ANALYTICS] Setze dataLayer zurück');
+                delete window.dataLayer;
+            }
+            
+            // GA-Funktion deaktivieren
+            window.gtag = function() {
+                console.log('[MB-ANALYTICS] Tracking-Versuch blockiert:', arguments);
+                return null;
+            };
+            
+            // Alle GA-Cookies löschen
+            deleteAllGACookies();
+            
+            console.log('[MB-ANALYTICS] Google Analytics wurde deaktiviert');
+        };
+        
         // enableAnalytics-Funktion, die vom Cookie-Consent-Paket aufgerufen wird
         window.enableAnalytics = function(cookieValue) {
             console.log('\n%c[MB-ANALYTICS] ===== ANALYTICS STATUS CHANGE =====', 'background: #333; color: #fff; padding: 3px;');
@@ -149,37 +209,33 @@
                 })();
                 
             } else if (cookieValue === 'deny') {
-                console.log('%c[MB-ANALYTICS] Google Analytics wird DEAKTIVIERT', 'background: #F44336; color: white; padding: 5px; border-radius: 3px;');
-                
-                // Existierende GA-Skripte entfernen
-                const gaScripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
-                gaScripts.forEach(script => {
-                    console.log('[MB-ANALYTICS] Entferne GA-Skript:', script.src);
-                    script.remove();
-                });
-                
-                // dataLayer zurücksetzen
-                if (window.dataLayer) {
-                    console.log('[MB-ANALYTICS] Setze dataLayer zurück');
-                    delete window.dataLayer;
-                }
-                
-                // GA-Funktion deaktivieren
-                window.gtag = function() {
-                    console.log('[MB-ANALYTICS] Tracking-Versuch blockiert:', arguments);
-                    return null;
-                };
-                
-                // Entfernen von GA-Cookies
-                document.cookie = '_ga=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-                document.cookie = '_ga_*=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-                document.cookie = '_gid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-                document.cookie = '_gat=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-                
-                console.log('[MB-ANALYTICS] Google Analytics wurde deaktiviert');
+                // Rufe disableAnalytics auf
+                window.disableAnalytics();
             }
         };
-    </script>
+        
+        // Prüfen, ob Analytics in den Cookies deaktiviert wurde
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cookie-Wert auslesen
+            const getCookie = function(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            };
+            
+            // Cookie-Prefix aus der Konfiguration
+            const cookiePrefix = '{{ config("laravel-cookie-consent.cookie_prefix") }}' || 'MindBeamer';
+            const analyticsCookie = getCookie(`${cookiePrefix}_cookie_analytics`);
+            
+            console.log('[MB-ANALYTICS] Cookie-Status beim Laden:', analyticsCookie);
+            
+            // Wenn der Analytics-Cookie explizit auf 'false' gesetzt ist, Analytics deaktivieren
+            if (analyticsCookie === 'false') {
+                console.log('[MB-ANALYTICS] Analytics-Cookie ist auf false gesetzt, deaktiviere Analytics');
+                window.disableAnalytics();
+            }
+        });
     </script>
     
     <!-- Vite Assets -->
