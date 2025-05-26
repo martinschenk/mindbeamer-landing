@@ -2102,3 +2102,33 @@ Did you mean one of these?
 [2025-05-26 23:27:29] local.DEBUG: Cookie app_locale=en set (30 days)  
 [2025-05-26 23:27:29] local.DEBUG: Locale determination {"final":"en","source":"url","url":"en","session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
 [2025-05-26 23:27:29] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:14] local.DEBUG: Locale determination {"final":"en","source":"url","url":"en","session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:14] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:14] local.DEBUG: Locale determination {"final":"en","source":"session","url":null,"session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:14] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:15] local.DEBUG: Locale determination {"final":"en","source":"session","url":null,"session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:15] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-26 23:38:15.004654"} 
+[2025-05-26 23:38:15] local.INFO: Root-Redirect aus Session: en  
+[2025-05-26 23:38:15] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:15] local.DEBUG: Locale determination {"final":"en","source":"url","url":"en","session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:15] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:15] local.DEBUG: Locale determination {"final":"en","source":"url","url":"en","session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:15] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:15] local.DEBUG: Locale determination {"final":"en","source":"session","url":null,"session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:15] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:15] local.DEBUG: Locale determination {"final":"en","source":"session","url":null,"session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:15] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-26 23:38:15.413779"} 
+[2025-05-26 23:38:15] local.INFO: Root-Redirect aus Session: en  
+[2025-05-26 23:38:15] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:15] local.DEBUG: Locale determination {"final":"en","source":"url","url":"en","session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:15] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:18] local.DEBUG: Locale determination {"final":"en","source":"url","url":"en","session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:18] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:18] local.DEBUG: Locale determination {"final":"en","source":"session","url":null,"session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:18] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:18] local.DEBUG: Locale determination {"final":"en","source":"session","url":null,"session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:18] local.INFO: === ROOT ROUTE TRIGGERED === {"referer":"https://mindbeamer.test/en","user_agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36","session_locale":"en","cookie_locale":"en","session_id":"bPC92rh57cTYcnHMeOTKK5IUpoF05X5imXUMLIDe","url":"https://mindbeamer.test","full_url":"https://mindbeamer.test","method":"GET","ajax":false,"time":"2025-05-26 23:38:18.371601"} 
+[2025-05-26 23:38:18] local.INFO: Root-Redirect aus Session: en  
+[2025-05-26 23:38:18] local.DEBUG: Cookie app_locale=en set (30 days)  
+[2025-05-26 23:38:18] local.DEBUG: Locale determination {"final":"en","source":"url","url":"en","session":"en","cookie":"en","browser":"es,de;q=0.9,en;q=0.8"} 
+[2025-05-26 23:38:18] local.DEBUG: Cookie app_locale=en set (30 days)  
