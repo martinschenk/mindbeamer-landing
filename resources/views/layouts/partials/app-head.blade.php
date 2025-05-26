@@ -115,32 +115,57 @@
     
     <!-- Google tag (gtag.js) - wird durch cookie consent gesteuert -->
     <script>
-        // Hilfsfunktion, um ALLE GA-Cookies zu finden und zu löschen (verbesserte Version)
+        // Hilfsfunktion, um ALLE GA-Cookies zu finden und zu löschen (gründlichere Version)
         function deleteAllGACookies() {
-            // Standard-Cookies löschen
-            document.cookie = '_ga=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.mindbeamer.io;';
-            document.cookie = '_gid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.mindbeamer.io;';
-            document.cookie = '_gat=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.mindbeamer.io;';
+            // Liste der möglichen Domains, auf denen Cookies gesetzt sein könnten
+            const possibleDomains = [
+                '', // Leere Domain = aktueller Host
+                '.mindbeamer.io',
+                'mindbeamer.io',
+                'www.mindbeamer.io',
+                window.location.hostname
+            ];
             
-            // Auch ohne Domain löschen (für lokale Cookies)
-            document.cookie = '_ga=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-            document.cookie = '_gid=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-            document.cookie = '_gat=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            // Liste der bekannten GA-Cookie-Präfixe
+            const cookiePrefixes = ['_ga', '_gid', '_gat', '_gac', '_gali', '_gat_gtag'];
             
-            // Alle _ga_* Cookies finden und löschen
+            // Alle bekannten Cookies und ihre Varianten löschen
+            for (const prefix of cookiePrefixes) {
+                for (const domain of possibleDomains) {
+                    // Mit verschiedenen Pfaden löschen
+                    const domainStr = domain ? `; Domain=${domain}` : '';
+                    document.cookie = `${prefix}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=Lax`;
+                    document.cookie = `${prefix}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=None; Secure`;
+                }
+            }
+            
+            // Alle vorhandenen Cookies durchsuchen
             const cookies = document.cookie.split(';');
             for (let i = 0; i < cookies.length; i++) {
                 const cookie = cookies[i].trim();
                 const cookieName = cookie.split('=')[0];
                 
-                if (cookieName.startsWith('_ga_')) {
-                    // Mit Domain löschen
-                    document.cookie = cookieName + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT; Domain=.mindbeamer.io;';
-                    // Auch ohne Domain löschen
-                    document.cookie = cookieName + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+                // Prüfen auf dynamische GA-Cookies (z.B. _ga_XXXXXXXX)
+                if (cookieName.startsWith('_ga_') || 
+                    cookieName.startsWith('_gac_') || 
+                    cookieName.startsWith('_gat_')) {
+                    
+                    for (const domain of possibleDomains) {
+                        const domainStr = domain ? `; Domain=${domain}` : '';
+                        document.cookie = `${cookieName}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=Lax`;
+                        document.cookie = `${cookieName}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT${domainStr}; SameSite=None; Secure`;
+                    }
                     
                     console.log('[MB-ANALYTICS] GA-Cookie gelöscht:', cookieName);
                 }
+            }
+            
+            // GA-Speicher leeren
+            try {
+                localStorage.removeItem('_ga');
+                sessionStorage.removeItem('_ga');
+            } catch (e) {
+                // Ignorieren, falls localStorage nicht verfügbar ist
             }
             
             console.log('[MB-ANALYTICS] Alle Google Analytics-Cookies wurden gelöscht');
