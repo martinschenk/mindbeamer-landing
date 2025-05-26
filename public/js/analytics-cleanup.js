@@ -101,7 +101,8 @@
         // GA-Cookies löschen
         deleteGACookies();
         
-        console.debug('[MB-ANALYTICS] Google Analytics wurde blockiert');
+        // Auffällige Konsolenmeldung für die Deaktivierung
+        console.log('%c[MB-ANALYTICS] Google Analytics wird DEAKTIVIERT', 'background: #F44336; color: white; padding: 5px; border-radius: 3px;');
     }
     
     /**

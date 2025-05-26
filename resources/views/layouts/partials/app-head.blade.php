@@ -113,8 +113,43 @@
         };
     </script>
     
-    <!-- Google tag (gtag.js) - wird durch cookie consent gesteuert -->
+    <!-- Google tag (gtag.js) - wird nur geladen, wenn Analytics aktiviert ist -->
     <script>
+        // Hilfsfunktion zum Auslesen von Cookies
+        function getCookieValue(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+        
+        // Prüfen, ob Analytics aktiviert ist
+        const cookiePrefix = '{{ config("laravel-cookie-consent.cookie_prefix") }}' || 'MindBeamer';
+        const analyticsName = `${cookiePrefix}_cookie_analytics`;
+        const analyticsEnabled = getCookieValue(analyticsName) !== 'false';
+        
+        // Google Analytics NUR laden, wenn es explizit aktiviert ist
+        if (analyticsEnabled) {
+            console.log('%c[MB-ANALYTICS] Google Analytics wird AKTIVIERT', 'background: #4CAF50; color: white; padding: 5px; border-radius: 3px;');
+            
+            // GA-Script dynamisch laden
+            const gaScript = document.createElement('script');
+            gaScript.async = true;
+            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8ESLMYS9SV';
+            document.head.appendChild(gaScript);
+            
+            // GA initialisieren
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-8ESLMYS9SV');
+        } else {
+            console.log('%c[MB-ANALYTICS] Google Analytics wird DEAKTIVIERT', 'background: #F44336; color: white; padding: 5px; border-radius: 3px;');
+            
+            // Dummy-Funktion bereitstellen, damit keine Fehler auftreten
+            window.gtag = function() { return null; };
+        }
+        
         // Hilfsfunktion, um ALLE GA-Cookies zu finden und zu löschen (gründlichere Version)
         function deleteAllGACookies() {
             // Liste der möglichen Domains, auf denen Cookies gesetzt sein könnten
