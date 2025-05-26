@@ -239,8 +239,8 @@
             }
         };
         
-        // Prüfen, ob Analytics in den Cookies deaktiviert wurde
-        document.addEventListener('DOMContentLoaded', function() {
+        // Event-Listener, der auf Änderungen der Cookie-Einstellungen reagiert
+        function setupCookieConsentListener() {
             // Cookie-Wert auslesen
             const getCookie = function(name) {
                 const value = `; ${document.cookie}`;
@@ -251,16 +251,59 @@
             
             // Cookie-Prefix aus der Konfiguration
             const cookiePrefix = '{{ config("laravel-cookie-consent.cookie_prefix") }}' || 'MindBeamer';
-            const analyticsCookie = getCookie(`${cookiePrefix}_cookie_analytics`);
+            const analyticsName = `${cookiePrefix}_cookie_analytics`;
             
-            console.log('[MB-ANALYTICS] Cookie-Status beim Laden:', analyticsCookie);
-            
-            // Wenn der Analytics-Cookie explizit auf 'false' gesetzt ist, Analytics deaktivieren
-            if (analyticsCookie === 'false') {
-                console.log('[MB-ANALYTICS] Analytics-Cookie ist auf false gesetzt, deaktiviere Analytics');
-                window.disableAnalytics();
+            // Prüfen, ob Analytics deaktiviert ist und ggf. deaktivieren
+            function checkAndDisableAnalytics() {
+                const analyticsCookie = getCookie(analyticsName);
+                console.log('[MB-ANALYTICS] Cookie-Status:', analyticsCookie);
+                
+                if (analyticsCookie === 'false') {
+                    console.log('[MB-ANALYTICS] Analytics-Cookie ist auf false gesetzt, deaktiviere Analytics');
+                    window.disableAnalytics();
+                }
             }
-        });
+            
+            // Initialen Check durchführen
+            checkAndDisableAnalytics();
+            
+            // MutationObserver für DOM-Änderungen (Cookie-Modal-Interaktionen)
+            const observer = new MutationObserver(function(mutations) {
+                // Prüfen, ob relevante Änderungen vorhanden sind
+                for (const mutation of mutations) {
+                    if (mutation.type === 'childList' || mutation.type === 'attributes') {
+                        // Auf Speichern-Button-Klicks prüfen
+                        const saveButtons = document.querySelectorAll('.cookie-preferences-save, [data-cc="save"], button[class*="save"]');
+                        if (saveButtons.length > 0) {
+                            saveButtons.forEach(btn => {
+                                if (!btn.hasAttribute('data-mb-listener')) {
+                                    btn.setAttribute('data-mb-listener', 'true');
+                                    btn.addEventListener('click', function() {
+                                        // Kurze Verzögerung, um sicherzustellen, dass Cookies gesetzt wurden
+                                        setTimeout(checkAndDisableAnalytics, 100);
+                                    });
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+            
+            // Beobachte den gesamten Body auf Änderungen
+            observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+            
+            // Zusätzlich Änderungen an den Cookies überwachen (sicherheitshalber)
+            let lastCookieString = document.cookie;
+            setInterval(function() {
+                if (document.cookie !== lastCookieString) {
+                    lastCookieString = document.cookie;
+                    checkAndDisableAnalytics();
+                }
+            }, 1000); // Alle 1 Sekunde prüfen
+        }
+        
+        // Beim Laden der Seite Cookie-Listener einrichten
+        document.addEventListener('DOMContentLoaded', setupCookieConsentListener);
     </script>
     
     <!-- Vite Assets -->
@@ -365,6 +408,9 @@
     
     <!-- MindBeamer Cookie Consent Custom Styles -->
     <link rel="stylesheet" href="{{ asset('css/cookie-consent-custom.css') }}">
+    
+    <!-- DSGVO Cookie Cleanup Script (wird vor allen anderen Scripts geladen) -->
+    <script src="{{ asset('js/analytics-cleanup.js') }}?v={{ time() }}"></script>
     
     <style>
         html, body { overflow-x: hidden; width: 100%; }
