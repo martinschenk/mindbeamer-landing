@@ -181,52 +181,8 @@
         };
     </script>
     
-    <!-- Google tag (gtag.js) - wird NUR geladen, wenn explizit erlaubt -->
+    <!-- Google tag (gtag.js) - wird durch cookie consent gesteuert -->
     <script>
-        // Wichtig: Google Analytics standardmäßig BLOCKIEREN
-        // Prüfen, ob Analytics-Cookie existiert und explizit auf 'true' gesetzt ist
-        const checkAnalyticsConsent = function() {
-            const cookiePrefix = '{{ config("laravel-cookie-consent.cookie_prefix") }}' || 'MindBeamer';
-            const analyticsCookieName = `${cookiePrefix}_cookie_analytics`;
-            
-            // Cookie-Wert auslesen
-            const getCookie = function(name) {
-                const value = `; ${document.cookie}`;
-                const parts = value.split(`; ${name}=`);
-                if (parts.length === 2) return parts.pop().split(';').shift();
-                return null;
-            };
-            
-            // Standardmäßig keine Zustimmung annehmen
-            const analyticsConsent = getCookie(analyticsCookieName);
-            return analyticsConsent === 'true'; // Nur bei explizitem 'true' erlauben
-        };
-        
-        // Google Analytics NUR laden, wenn explizit zugestimmt wurde
-        // Standardmäßig NICHT laden (opt-in statt opt-out)
-        if (checkAnalyticsConsent()) {
-            console.log('%c[MB-ANALYTICS] Google Analytics wird AKTIVIERT (explizite Zustimmung)', 'background: #4CAF50; color: white; padding: 5px; border-radius: 3px;');
-            
-            // Dynamisch Google Analytics laden
-            const gaScript = document.createElement('script');
-            gaScript.async = true;
-            gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-8ESLMYS9SV';
-            document.head.appendChild(gaScript);
-            
-            // GA initialisieren
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-8ESLMYS9SV');
-        } else {
-            console.log('%c[MB-ANALYTICS] Google Analytics ist BLOCKIERT (keine explizite Zustimmung)', 'background: #F44336; color: white; padding: 5px; border-radius: 3px;');
-            
-            // GA blockieren
-            window.gtag = function() { 
-                console.log('[MB-ANALYTICS] Tracking-Versuch blockiert');
-                return null; 
-            };
-        }
         
         // Hilfsfunktion, um ALLE GA-Cookies zu finden und zu löschen (gründlichere Version)
         function deleteAllGACookies() {

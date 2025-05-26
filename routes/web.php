@@ -8,6 +8,7 @@ use App\Http\Controllers\TranslationController;
 use App\Http\Controllers\TestErrorController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\LegalController;
+use App\Http\Controllers\CookieController;
 use Illuminate\Support\Facades\Mail;
 
 /*
