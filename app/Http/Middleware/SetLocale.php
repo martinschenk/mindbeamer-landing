@@ -135,14 +135,23 @@ class SetLocale
         // Verarbeite den Request
         $response = $next($request);
         
-        // Cookie setzen, wenn die Locale nicht aus einem Cookie kam
+        // Cookie setzen, wenn die Locale nicht aus einem Cookie kam UND wenn Präferenz-Cookies erlaubt sind
         if ($source !== 'cookie') {
-            $cookie = cookie('app_locale', $enforcedLocale, 60 * 24 * 30); // 30 Tage
-            $response = $response->withCookie($cookie);
+            // Prüfen, ob Präferenz-Cookies erlaubt sind
+            $cookiePrefix = config('laravel-cookie-consent.cookie_prefix', 'MindBeamer');
+            $preferencesAllowed = $request->cookie("{$cookiePrefix}_cookie_preferences") !== 'false';
             
-            // Logging nur im Debug-Modus
-            if ($debug) {
-                Log::debug("Cookie app_locale=$enforcedLocale set (30 days)");
+            // Cookie nur setzen, wenn Präferenz-Cookies erlaubt sind
+            if ($preferencesAllowed) {
+                $cookie = cookie('app_locale', $enforcedLocale, 60 * 24 * 30); // 30 Tage
+                $response = $response->withCookie($cookie);
+                
+                // Logging nur im Debug-Modus
+                if ($debug) {
+                    Log::debug("Cookie app_locale=$enforcedLocale set (30 days)");
+                }
+            } else if ($debug) {
+                Log::debug("Cookie app_locale nicht gesetzt - Präferenz-Cookies deaktiviert");
             }
         }
         return $response;
