@@ -162,10 +162,16 @@ function cookieConsent() {
                 this.showSettingsModal = true;
             });
             
-            // Prüfe, ob bereits Einstellungen gespeichert sind
+            // Prüfe, ob bereits Einstellungen gespeichert sind UND ob ein Cookie existiert
             const saved = localStorage.getItem('cookieConsent');
-            if (!saved) {
+            const hasCookie = document.cookie.split(';').some(c => c.trim().startsWith('cookieConsent='));
+            
+            if (!saved || !hasCookie) {
+                // Wenn entweder der localStorage-Eintrag ODER das Cookie fehlt, zeige den Banner
                 this.showModal = true;
+                
+                // Lösche auch andere Speicherformen, falls nur eine fehlt (Synchronisierung)
+                if (saved && !hasCookie) localStorage.removeItem('cookieConsent');
             } else {
                 this.consent = JSON.parse(saved);
                 this.applyConsent();
@@ -208,10 +214,17 @@ function cookieConsent() {
             this.storeConsent();
             this.applyConsent();
             this.showSettingsModal = false;
+            this.showModal = false;
         },
 
         storeConsent() {
+            // In localStorage speichern
             localStorage.setItem('cookieConsent', JSON.stringify(this.consent));
+            
+            // Auch als Cookie speichern (1 Jahr Gültigkeit)
+            const cookieValue = encodeURIComponent(JSON.stringify(this.consent));
+            const oneYear = 365 * 24 * 60 * 60;
+            document.cookie = `cookieConsent=${cookieValue}; path=/; max-age=${oneYear}; SameSite=Lax`;
         },
 
         applyConsent() {
