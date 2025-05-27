@@ -176,6 +176,7 @@ return [
     // Footer
     'created_by' => 'created by',
     'all_rights_reserved' => 'All rights reserved.',
+    'cookie_settings' => 'Cookie Settings',
     'footer_copyright' => '2025 MindBeamer.io, created by Martin Schenk. All rights reserved.',
     'footer_privacy' => 'Privacy',
     'footer_terms' => 'Terms',

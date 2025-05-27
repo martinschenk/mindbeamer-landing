@@ -6,7 +6,7 @@
         <!-- Links -->
         <div class="flex flex-wrap justify-center mt-4 mb-4 gap-4 md:gap-6 px-2">
             <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-teal-400 transition-colors">
-                {{ __('cookie-consent.policy_links.privacy_policy') }}
+                {{ __('messages.footer_privacy') }}
             </a>
             <a href="{{ route('legal.impressum', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-teal-400 transition-colors">
                 {{ __('legal.impressum_title') }}
@@ -14,9 +14,9 @@
             <a href="{{ route('legal.terms', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-teal-400 transition-colors">
                 {{ __('legal.terms_title') }}
             </a>
-            <button onclick="showCookieSettings()" class="text-gray-400 hover:text-teal-400 transition-colors cursor-pointer">
-                {{ __('cookie-consent.policy_links.cookie_settings') }}
-            </button>
+            <a href="javascript:void(0);" class="text-gray-400 hover:text-teal-400 transition-colors">
+                {{ __('messages.cookie_settings') }}
+            </a>
         </div>
         
         <!-- GDPR & Security Badges -->

@@ -170,6 +170,9 @@ return [
     // Footer
     'created_by' => 'erstellt von',
     'all_rights_reserved' => 'Alle Rechte vorbehalten.',
+    'gdpr_compliant' => 'DSGVO-konform',
+    'ssl_secured' => 'SSL-gesichert',
+    'cookie_settings' => 'Cookie-Einstellungen',
     'footer_copyright' => '2025 MindBeamer.io, erstellt von Martin Schenk. Alle Rechte vorbehalten.',
     'footer_privacy' => 'Datenschutz',
     'footer_terms' => 'AGB',

@@ -22,8 +22,6 @@
     
     @include('layouts.partials.app-notification-system')
     
-    @include('layouts.partials.app-cookie-consent')
-    
     @include('layouts.partials.app-contact-form-js')
     
     @livewireScripts

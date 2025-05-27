@@ -1,411 +1,61 @@
-# Windsurf Rules: Laravel-Projekte
+# 🌿 Windsurf Coding-Regeln – Laravel-Projekte
 
-## Teil 1: Generelle Laravel-Entwicklungsrichtlinien
+## 🧍️‍♂️ Grundprinzipien
 
-### Hinweise für KI-Assistenten
+- **Keep it simple**: Keine Spielereien – nur bewährte Laravel-Mittel.
+- **Konsistenz**: Code folgt dem Projektstil. Kein Wildwuchs.
+- **Respekt**: Architektur, Datenbank und Services **nie ändern**, außer ausdrücklich erlaubt.
+- **Arbeite im Rahmen**: Nur die vorgesehenen Verzeichnisse bearbeiten.
+- **Keine Überraschungen**: Verhalten darf sich beim Refactoring **nie** ändern.
 
-- **Grundsatz**: Diese Regeln definieren verbindliche Leitlinien für alle Codeänderungen.
-- **Änderungen**: Schlage niemals Änderungen vor, die diesen Regeln widersprechen.
-- **Nachfragen**: Bei Unklarheiten oder widersprüchlichen Anforderungen immer nachfragen, statt Annahmen zu treffen.
-- **Keine eigenständigen Anpassungen**: Ändere niemals Projektarchitektur, Datenbankstruktur oder kritische Komponenten ohne explizite Erlaubnis.
-- **Grenzen respektieren**: Arbeite nur innerhalb der spezifizierten Fokus-Verzeichnisse.
-- **Bestehender Code**: Bewahre die Konsistenz mit bestehendem Code - folge den etablierten Mustern.
+## ⚙️ Projekt-Setup
 
-### Projekt-Informationen
+- **Laravel-Version**: 11
+- **PHP-Version**: 8.2+
+- **Coding-Style**: PSR-12, `strict_types`
+- **Architektur**: Queue-basiert, config-gesteuert
+- **Dokumentation**: PHPDoc mit @param, @return
 
-- **Projekttyp**: Laravel
-- **Framework-Version**: Laravel 11
-- **PHP-Version**: 8.2
+## 📁 Fokus-Verzeichnisse (nur hier arbeiten)
 
-### Coding-Standards
+- `app/`, `config/`, `routes/`, `resources/`, `database/`, `tests/`
 
-- **Coding-Style**: PSR-12
-- **Architektur**: Config-driven Queue-Jobs
-- **Dokumentation**: PHPDoc mit @param, @return, @throws
-- **Schnittstellen**: Interfaces für Services verwenden
-- **Service-Registrierung**: Services automatisch registrieren
-- **Klassen-Design**: Große Klassen in Module aufteilen
-- **Tests**: Tests generieren
-- **Mocks**: Mocks vermeiden
-- **Kommentar-Stil**: PHPDoc
-- **Typsystem**: Strict Typing
+## ❌ Ausschlüsse
 
-### Fokus auf Verzeichnisse
+- `vendor/`, `node_modules/`, `.env`, `public/build/`, `storage/`, `bootstrap/cache/`
 
-- `app/` (inkl. aller Unterordner)
-  - `app/Http/Controllers`
-  - `app/Http/Middleware`
-  - `app/Http/Requests`
-  - `app/Models`
-  - `app/Services`
-  - `app/Jobs`
-  - `app/Console`
-  - `app/Providers`
-  - `app/Exceptions`
-  - `app/Filament`
-- `config/`
-- `routes/`
-  - `routes/web.php`
-  - `routes/api.php`
-  - `routes/console.php`
-  - `routes/channels.php`
-- `resources/`
-  - `resources/views`
-  - `resources/js`
-  - `resources/css`
-  - `resources/sass`
-- `database/`
-  - `database/migrations`
-  - `database/seeders`
-  - `database/factories`
-- `tests/`
-  - `tests/Unit`
-  - `tests/Feature`
+## 📦 Struktur & Codequalität
 
-### Ausgeschlossene Verzeichnisse
+- **Kleine Dateien**: Idealfall <200 Zeilen
+- **Keine Logik in Views oder Controllern** – nutze Services
+- **SOLID-Prinzipien einhalten**: insbesondere SRP (eine Verantwortung pro Klasse)
+- **Wiederverwendbarkeit statt Wiederholung**
+- **Nur produktionsreifer Code** – keine Mocks, keine Platzhalter
 
-- `vendor/`
-- `node_modules/`
-- `storage/logs/`
-- `storage/framework/cache/`
-- `storage/framework/sessions/`
-- `storage/framework/views/`
-- `public/build/` (Vite-Build-Ausgabe)
-- `public/hot` (Vite HMR)
-- `documentation/`
-- `.env`
-- `.idea/`
-- `tests/Browser/`
-- `bootstrap/cache/`
+## ✅ Tests & Sicherheit
 
-### Eingeschränkt bearbeitbar (mit Vorsicht)
+- **Unit- und Feature-Tests** schreiben
+- **Input validieren**, **Prepared Statements**, **CSRF-Schutz**
+- **Policies nutzen**, **HTTPS erzwingen**
 
-- `storage/app/` (nur .gitignore und Verzeichnisstruktur)
-- `public/` (nur custom CSS/JS/Images, nicht Build-Ausgaben)
+## 🚀 Deployment
 
-### Ziele
+- Git-basierter Workflow mit **post-receive-Hook**
+- Automatische Ausführung von:
+  - `composer install`
+  - `npm run build`
+  - `php artisan config:cache`, etc.
+- `.env` bleibt unberührt, Dev nutzt `.env.prod`
 
-- Das Verhalten des Programms darf sich bei Refactoring niemals ändern.
-- Reduziere Redundanz – nutze Hilfsklassen, Collections und Laravel-Komponenten.
-- Nutze Laravel-Standards wie Eloquent, FormRequests, Middleware, Policies.
-- Vermeide Logik in Blade-Views und Controllern – verwende Services.
-- Implementiere immer sicheres Coding: keine Mass-Assignment-Lücken, kein unsicherer Input.
-- Erzeuge Code, der direkt einsatzbereit ist – keine Platzhalter, keine Mocks.
-- Funktioniere stabil auf Mac (dev) und VPS (prod) – keine plattformabhängigen Pfade.
-
-### Refactoring
-
-- **Definition**: Refactoring ist das Ändern der internen Struktur des Codes bei absolut identischem Verhalten.
-- **Grundsatz**: Bei 'Refactoring' darf sich das äußere Verhalten (Inputs, Outputs, Ablauf) in keiner Weise ändern.
-- **Grenzen**: Ändere keine Logik, keine Bedingungen, keine Seiteneffekte – nur Struktur, Lesbarkeit, Wiederverwendbarkeit.
-- **Erlaubt**: Neue Methoden, kleinere Services, bessere Namen – aber keine neue Funktionalität.
-- **Validierung**: Jede Refaktorierung muss durch Tests oder Codevergleich validiert werden.
-
-### Umgebungsvariablen
-
-- Bearbeite niemals die .env-Datei direkt ohne explizit zu fragen.
-- Frage immer explizit nach, wenn Umgebungsvariablen geändert werden sollen.
-
-### Deployment-Überlegungen
-
-- Der Code muss auf macOS (Entwicklung) und Linux VPS (Produktion) ohne Änderungen lauffähig sein.
-- Vermeide systemabhängige Pfade, File-Permissions oder Sonderbefehle (z. B. brew-only Tools).
-
-### Coding-Standards
-
-- Verwende PSR-12-konformen Code mit strict_types und PHP 8.2 Features.
-- Vermeide Ein-Buchstaben-Variablen – nutze sprechende Namen.
-- Halte dich an Laravel-Konventionen: Controller-, Model-, Request-Benennung etc.
-
-### Vermeidung von Redundanz
-
-- Wiederhole keinen Code – extrahiere ihn in Services, Traits oder Helper.
-- Nutze Laravel Collections (map, filter, reduce), statt klassische Schleifen.
-
-## Dateimanagement und Codeorganisation
-
-### Maximale Dateigrößen für KI-Verarbeitbarkeit
-
-Begrenze Dateien nach Typ, um optimale KI-Verarbeitbarkeit zu gewährleisten:
-
-- **Controller**: Maximum 100-150 Zeilen (nur Routing-Logik)
-- **Service-Klassen**: Maximum 200-250 Zeilen
-- **Models**: Maximum 100-200 Zeilen (inkl. Scopes, Accessors, Beziehungen)
-- **Repositories**: Maximum 150-200 Zeilen
-- **Middleware**: Maximum 50-100 Zeilen
-- **Traits**: Maximum 100-150 Zeilen
-- **Interfaces**: Maximum 30-50 Zeilen
-- **Allgemeine Regel**: Idealerweise unter 200 Zeilen, niemals über 300 Zeilen
-
-#### Vorteile kleiner Dateien für KI-Assistenten:
-
-- Vollständige Erfassung im Kontextfenster
-- Präzisere Code-Vorschläge und Analyse
-- Bessere Erfassung von Zusammenhängen
-
-### SOLID-Prinzipien
-
-- **S: Single Responsibility Principle**: Jede Klasse hat nur eine Verantwortung
-  - Große Services in funktionale Komponenten aufteilen (z.B. PaymentService → PaymentProcessor, PaymentValidator, etc.)
-  - Ein Grund für Änderung = Eine Klasse
-- **O: Open/Closed Principle**: Offen für Erweiterung, geschlossen für Modifikation
-- **L: Liskov Substitution Principle**: Unterklassen müssen überall für ihre Basisklassen einsetzbar sein
-- **I: Interface Segregation**: Kleine, spezifische Interfaces statt großer, allgemeiner
-- **D: Dependency Inversion**: Abhängigkeit von Abstraktionen, nicht von Implementierungen
-
-### Strukturierung
-
-- Klare, eindeutige Schnittstellen für alle Services und Komponenten definieren
-- Services in logische Einheiten mit zusammenhängender Funktionalität aufteilen
-- Zusammengehörige Komponenten in passenden Namespaces gruppieren
-- Controller enthalten nur Routinglogik – alles andere gehört in Services
-- Nutze Folder-by-Feature statt Folder-by-Type für bessere Kohäsion
-
-### Laravel Best Practices
-
-- Nutze Dependency Injection statt Facades.
-- Verwende Middleware für Auth/Role-Checks.
-- Nutze FormRequest-Klassen für Validierung.
-- Vermeide DB::table() – nutze Eloquent mit Scopes & Beziehungen.
-- Implementiere Repository Pattern für komplexe Datenzugriffslogik.
-- Verwende Events und Listeners für entkoppelte Kommunikation zwischen Komponenten.
-- Nutze Laravel's Queue-System für zeitintensive Aufgaben.
-- Setze Caching für häufig abgerufene Daten ein.
-
-### Code-Generierung
-
-- Kein Beispielcode oder Halbfertiges – alles muss direkt produktiv einsetzbar sein.
-- Alle Methoden und Services müssen vollständig implementiert sein.
-- Edge Cases, Error Handling, Rückgabewerte und Tests müssen berücksichtigt sein.
-
-### Tests
-
-- Generiere nach Möglichkeit testbaren Code (entkoppelt, deterministisch, ohne globale Zustände).
-- Verwende Laravel-Teststruktur: Feature- und Unit-Tests im tests/-Verzeichnis.
-- Jede neu erzeugte Serviceklasse sollte eine zugehörige Testklasse erhalten, sofern sinnvoll.
-- Nutze Factories und Seeder für Testdaten.
-- Implementiere sowohl Unit-Tests für isolierte Funktionalität als auch Feature-Tests für Endpunkte.
-- Verwende Mocks nur wenn unbedingt nötig, bevorzuge echte Implementierungen.
-- Nutze DatabaseTransactions oder RefreshDatabase für Tests mit Datenbankzugriffen.
-
-## Git-Repositories
-
-- Für jedes Projekt muss ein Repository auf Bitbucket angelegt werden
-- Format: `https://ma8nk@bitbucket.org/ma8nk/PROJEKTNAME.git`
-- Git-Remote benennen nach dem Muster: `bitbucket-PROJEKTNAME`
-- Remote einrichten: `git remote add bitbucket-PROJEKTNAME https://ma8nk@bitbucket.org/ma8nk/PROJEKTNAME.git`
-- Regelmäßige Backups durch Push zu Bitbucket sicherstellen
-
-## Git-Deployment
-
-### Beschreibung
-
-Git-Deployment-Konfiguration für Laravel-Projekte auf Plesk-Servern
-
-### Server-Typ
-
-Plesk
-
-## Laravel Tinker Befehle
-
-### Effektive Verwendung von Tinker für Datenbankabfragen
+## 🛠️ Tinker Quick-Use (Beispiel)
 
 ```bash
-# Zählen aller Artikel (einfache Ausgabe)
-php artisan tinker --execute="echo \App\Models\Article::count().' Artikel insgesamt';"
-
-# Prüfen des Artikelstatus
-php artisan tinker --execute="echo \App\Models\Article::where('status', 0)->count().' veröffentlichte Artikel';"
-php artisan tinker --execute="echo \App\Models\Article::where('status', 1)->count().' unveröffentlichte Artikel';"
-
-# Anzeigen der neuesten Artikel (übersichtlich formatiert)
-php artisan tinker --execute="print_r(\App\Models\Article::latest()->take(3)->get(['id', 'title', 'category', 'created_at'])->toArray());"
-
-# Kategorie-Verteilung anzeigen
-php artisan tinker --execute="echo 'Kategorie-Verteilung: '.PHP_EOL.implode(PHP_EOL, array_map(function(\$row){ return 'Kategorie '.\$row['category'].': '.\$row['count'].' Artikel'; }, \App\Models\Article::selectRaw('category, count(*) as count')->groupBy('category')->get()->toArray()));"
-
-# Suchen nach Artikeln mit bestimmtem Stichwort im Titel
-php artisan tinker --execute="print_r(\App\Models\Article::where('title', 'like', '%IA%')->latest()->take(3)->get(['id', 'title'])->toArray());"
-
-# Prüfen vorhandener Themes
-php artisan tinker --execute="echo \App\Models\NewArticleTheme::where('used', 0)->count().' ungenutzte Themes';"
-php artisan tinker --execute="print_r(\App\Models\NewArticleTheme::where('used', 0)->latest()->take(3)->get(['id', 'category', 'theme'])->toArray());"
+php artisan tinker --execute="App\Models\Article::count()"
 ```
 
-### Regeln
+## 🧪 Testrichtlinien
 
-- Verwende SSH-Schlüsselauthentifizierung für passwortloses Deployment.
-- Benenne Git-Remotes aussagekräftig (z.B. s22-PROJEKTNAME-web statt 'origin').
-- Nutze post-receive-Hooks für automatisches Deployment und Laravel-Optimierungen.
-- Bewahre wichtige Dateien (.env, storage-Verzeichnis) bei Deployments.
-- Führe nach jedem Deployment die Laravel-Artisan-Befehle für Caching und Optimierung aus.
-
-### SSH-Setup
-
-- Schlüsselgenerierung: `ssh-keygen -t ed25519 -C "PROJEKTNAME git access"`
-- Server-Installation: `echo "[SSH-KEY]" >> ~/.ssh/authorized_keys`
-
-### Post-Receive-Hook
-
-#### Features
-
-- Automatisches Deployment ins Webverzeichnis
-- Laravel Artisan-Befehle (cache:clear, config:cache, route:cache, view:cache, etc.)
-- Composer-Dependency-Management
-- Auf produktivem Server gibt es eine eigene .env Datei.
-- Spiegle die .env des produktiven Servers auf dem dev Server als .env.prod
-- Korrekte Berechtigungen für Produktionsumgebung
-
-#### Script
-
-- Pfad: `~/PROJEKTNAME/post-receive-hook.sh`
-- Installation: Der Hook muss in `~/git/repository.git/hooks/post-receive` auf dem Server platziert werden
-
-#### Beispiel-Post-Receive-Hook
-
-#!/bin/bash
-# Post-receive hook für Laravel-Deployment
-
-TARGET="/var/www/html/PROJEKTNAME"
-GIT_DIR="/home/user/git/PROJEKTNAME.git"
-BRANCH="main"
-
-while read oldrev newrev ref
-do
-# Nur den main/master Branch deployen
-if [[ $ref = refs/heads/$BRANCH ]];
-then
-echo "Deploying $BRANCH branch to $TARGET"
-
-        # Git checkout in das Zielverzeichnis
-        git --work-tree=$TARGET --git-dir=$GIT_DIR checkout -f $BRANCH
-
-        # In das Projektverzeichnis wechseln
-        cd $TARGET
-
-        # Composer-Dependencies installieren (ohne Dev-Dependencies in Produktion)
-        composer install --no-dev --optimize-autoloader
-
-        # NPM installieren und Assets kompilieren (falls nötig)
-        npm ci
-        npm run build
-
-        # Laravel-Optimierungen
-        php artisan cache:clear
-        php artisan config:cache
-        php artisan route:cache
-        php artisan view:cache
-
-        # Berechtigungen setzen
-        chown -R www-data:www-data $TARGET/storage
-        chown -R www-data:www-data $TARGET/bootstrap/cache
-
-        echo "Deployment completed"
-    else
-        echo "Ref $ref received. Doing nothing: only $BRANCH branch is deployed."
-    fi
-done
-
-### Workflow
-
-- **Entwicklung**: Lokale Entwicklung in PHPStorm
-- **Versionskontrolle**: Regelmäßige Commits mit aussagekräftigen Commit-Messages
-- **Backup**: Push zu Bitbucket (`git push bitbucket-PROJEKTNAME`)
-- **Deployment**: Commit und Push zum Produktionsserver
-- **Produktion**: Automatisches Update auf dem Server durch post-receive-Hook
-
-## API-Standards
-
-- Folge RESTful-Prinzipien für alle API-Endpunkte
-- Verwende Ressourcen-orientierte Endpunkte (z.B. `/users`, `/users/{id}`)
-- Implementiere korrekte HTTP-Statuscodes und Methoden
-- Setze API-Versionierung ein (z.B. `/api/v1/resource`)
-- Nutze API Resources für konsistente JSON-Antworten
-- Dokumentiere APIs mit OpenAPI/Swagger
-- Implementiere API-Authentifizierung mit Sanctum oder Passport
-- Rate Limiting für alle öffentlichen APIs
-- Validiere alle Eingabedaten streng über FormRequests
-
-## Sicherheitsrichtlinien
-
-- Aktiviere CSRF-Schutz für alle Webformulare
-- Benutze Prepared Statements für alle Datenbankabfragen
-- Setze Content Security Policy headers ein
-- Sanitize und validiere jegliche Benutzereingabe
-- Implementiere Throttling für Login-Versuche
-- Verwende Laravel's Encryption für sensible Daten
-- Nutze Policies für Autorisierungsprüfungen
-- Setze auf HTTPS in allen Umgebungen
-- Aktiviere HTTP-Header für Sicherheit (X-Frame-Options, etc.)
-
-## Fehlerbehandlung
-
-- Erfasse alle Exceptions zentral
-- Log alle Fehler mit aussagekräftigen Meldungen
-- Unterscheide zwischen System- und Benutzerfehlern
-- Biete hilfreiche Fehlermeldungen für Benutzer
-- Verwende try-catch nur wo nötig, bevorzuge Exception-Handler
-- Implementiere Monitoring für Produktionsfehler
-
-## Frontend-Integration
-
-- Verwende Vite für Asset-Kompilierung
-- Halte dich an festgelegte JS-Framework-Standards (Vue/React/etc.)
-- Implementiere responsive Design als Standard
-- Separiere JS-Logik von Templates
-- Stelle Barrierefreiheit (WCAG) sicher
-- Vermeide direkte DOM-Manipulation, nutze komponentenbasierte Ansätze
-
-## Datenbank-Best-Practices
-
-- Migrations müssen idempotent sein
-- Erstelle immer down()-Methoden für Migrations
-- Indiziere alle Fremdschlüssel und häufig abgefragte Felder
-- Verwende explizite Spaltendefinitionen (kein "change()")
-- Nutze Seeders für Stammdaten und Testdaten
-- Implementiere Soft-Deletes für wichtige Entitäten
-- Setze Models mit Factories für Tests
-- Vermeide rohe Abfragen, nutze Eloquent oder Query Builder
-
-## Projektdokumentation
-
-- Halte README.md aktuell mit Setup-Anweisungen
-- Dokumentiere wichtige Architekturentscheidungen
-- Erstelle inline PHPDoc für alle Klassen und Methoden
-- Füge Kontext-Kommentare für komplexe Logik hinzu
-- Verwende Diagramme für komplexere Workflows
-
-
-## Production Deployment
-
-### Allgemeine Deployment-Prinzipien
-
-- **Automatisierung First**: Nutze Git-basierte Deployment-Workflows mit post-receive hooks
-- **Keine manuellen Schritte**: Alles was nach `git push` passiert, muss automatisch ablaufen
-- **PHP-Version-Bewusstsein**: Prüfe Package-Requirements vs. Server-PHP-Version vor Deployment
-- **Dependency-Management**: `composer install` und `npm build` müssen Teil des Deployment-Prozesses sein
-- **Laravel-Optimierung**: Cache-Clearing und Rebuilding muss automatisch erfolgen
-
-### Post-Receive Hook Setup (Plesk Server)
-
-#### Basis-Struktur für alle Laravel-Projekte:
-
-```bash
-#!/bin/bash
-set -e
-trap 'log_message "Error occurred. Deployment failed at line $LINENO"; exit 1' ERR
-
-# Projektspezifische Pfade anpassen:
-TARGET="/var/www/vhosts/[DOMAIN]/httpdocs"
-GIT_DIR="/var/www/vhosts/[DOMAIN]/git/[REPO].git"
-TMP_GIT_CLONE="/var/www/vhosts/[DOMAIN]/tmp_git_clone"
-
-# PHP-Version basierend auf Package-Requirements:
-PHP="/opt/plesk/php/8.3/bin/php"  # Für moderne Laravel + Packages
-# PHP="/opt/plesk/php/8.2/bin/php"  # Für ältere Projekte
-
-# Composer mit expliziter PHP-Version:
-$PHP /usr/local/psa/var/modules/composer/composer.phar install --no-dev --optimize-autoloader
-
-
-
+- Services = testbar & entkoppelt
+- Kein globaler Zustand
+- Datenbanktests mit `RefreshDatabase`
+- **Faktoren: Klarheit, Stabilität, Vorhersagbarkeit**

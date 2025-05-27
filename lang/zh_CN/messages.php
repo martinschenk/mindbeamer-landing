@@ -175,6 +175,7 @@ return [
     // Footer
     'created_by' => '创建者',
     'all_rights_reserved' => '版权所有。',
+    'cookie_settings' => 'Cookie设置',
     'footer_copyright' => '2025 MindBeamer.io，由Martin Schenk创建。版权所有。',
     'footer_privacy' => '隐私',
     'footer_terms' => '条款',
