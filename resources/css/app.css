@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Alpine.js Utilities */
+[x-cloak] { display: none !important; }
+
 /* Custom styles */
 .section-title { 
     font-weight: bold;

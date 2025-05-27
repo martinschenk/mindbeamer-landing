@@ -9,6 +9,7 @@ use App\Http\Controllers\TestErrorController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\CookieController;
+use App\Http\Controllers\AnalyticsController;
 use Illuminate\Support\Facades\Mail;
 
 /*
@@ -109,6 +110,14 @@ Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{
 Route::get('/debug/locale', [\App\Http\Controllers\DebugController::class, 'localeDebug'])->name('debug.locale');
 Route::get('/debug/locale/{test_locale}', [\App\Http\Controllers\DebugController::class, 'localeDebug'])->name('debug.locale.specific');
 Route::get('/debug/chinese', [\App\Http\Controllers\DebugController::class, 'testChinese'])->name('debug.chinese');
+
+// Kontakt-API-Routen
+Route::post('/api/demo-request', [\App\Http\Controllers\Api\DemoRequestController::class, 'store'])
+    ->middleware('throttle:6,1') // Maximal 6 Anfragen pro Minute
+    ->name('api.demo-request');
+
+// Google Analytics Route - wird nur aufgerufen, wenn Consent vorhanden ist
+Route::get('/load-analytics', [AnalyticsController::class, 'loadAnalytics'])->name('load.analytics');
 
 // Fallback route
 Route::fallback(function () {

@@ -2,6 +2,12 @@
  * Main JavaScript file for MindBeamer Landing Page
  */
 
+// Import Alpine.js
+import Alpine from 'alpinejs';
+
+// Make Alpine available globally
+window.Alpine = Alpine;
+
 // Import our CSS file which includes Tailwind CSS
 import '../css/app.css';
 
@@ -10,6 +16,9 @@ import './notifications.js';
 
 // Import the contact form handler
 import './contact-form.js';
+
+// Initialize Alpine
+Alpine.start();
 
 // Global translations object based on current locale
 window.translations = {

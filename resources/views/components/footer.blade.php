@@ -14,7 +14,7 @@
             <a href="{{ route('legal.terms', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-teal-400 transition-colors">
                 {{ __('legal.terms_title') }}
             </a>
-            <a href="javascript:void(0);" class="text-gray-400 hover:text-teal-400 transition-colors">
+            <a href="javascript:void(0);" onclick="window.openCookieSettings()" class="text-gray-400 hover:text-teal-400 transition-colors">
                 {{ __('messages.cookie_settings') }}
             </a>
         </div>
