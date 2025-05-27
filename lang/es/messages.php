@@ -161,6 +161,7 @@ return [
     'demo_subtitle' => 'Únete a freelancers y PYMEs que ahorran horas con MindBeamer. Introduce tu email, y Martin Schenk te mostrará cómo funciona en una videollamada personal – ¡desarrollado por un programador con más de 20 años de experiencia!',
     'your_email' => 'Tu Email',
     'ask_for_demo' => 'Solicitar Demo Gratuita',
+    'sending' => 'Enviando...',
     'form_success' => '¡Gracias! Te contactaremos pronto.',
     'form_error' => 'Algo salió mal. Por favor, inténtalo de nuevo.',
     'form_validation_error' => 'Por favor, verifica tu información e inténtalo de nuevo.',

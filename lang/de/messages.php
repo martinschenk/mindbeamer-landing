@@ -161,6 +161,7 @@ return [
     'demo_subtitle' => 'Schließen Sie sich Freelancern und KMUs an, die mit MindBeamer viel Zeit sparen. Geben Sie Ihre E-Mail ein, und Martin Schenk zeigt Ihnen in einem persönlichen Videoanruf, wie es funktioniert – entwickelt von einem Entwickler mit über 20 Jahren Erfahrung!',
     'your_email' => 'Ihre E-Mail',
     'ask_for_demo' => 'Kostenlose Demo anfragen',
+    'sending' => 'Wird gesendet...',
     'form_success' => 'Vielen Dank! Wir werden Sie in Kürze kontaktieren.',
     'form_error' => 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
     'form_validation_error' => 'Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.',

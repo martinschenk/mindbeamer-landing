@@ -62,6 +62,14 @@
             }
             
             async function handleFormSubmission(form) {
+                // Nutze native HTML5-Validierung
+                if (!form.checkValidity()) {
+                    // Zeige native Browser-Validierungsmeldungen
+                    form.reportValidity();
+                    formIsSubmitting = false; // Wichtig: Zurücksetzen des Flags
+                    return false;
+                }
+                
                 const formData = new FormData(form);
                 const submitButton = form.querySelector('button[type="submit"]');
                 const originalButtonText = submitButton.textContent;
@@ -75,7 +83,7 @@
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Wird gesendet...
+                    {{ __('messages.sending') }}
                 `;
                 
                 // Hide existing messages
@@ -97,9 +105,7 @@
                     
                     // Record start time for minimum loading duration
                     const startTime = Date.now();
-                    const minimumLoadingTime = 2000; // 2 seconds minimum
-                    
-
+                    const minimumLoadingTime = 1000; // 1 second minimum
                     
                     const response = await fetch(form.action, {
                         method: 'POST',
@@ -131,10 +137,7 @@
                                 successElement.classList.add('hidden');
                             }, 5000);
                         }
-                        
-
                     } else {
-
                         showError(errorElement, data);
                     }
                 } catch (error) {
