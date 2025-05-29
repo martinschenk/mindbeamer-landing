@@ -46,7 +46,7 @@
                     <h3 class="text-2xl font-bold mb-2">{{ __('messages.standard_plan') }}</h3>
                     <p class="text-gray-600 mb-6">{{ __('messages.standard_plan_subtitle') }}</p>
                     <div class="text-center mb-6">
-                        <span class="text-4xl font-bold text-pink-500">€35</span>
+                        <span class="text-4xl font-bold text-pink-500">€49</span>
                         <span class="text-gray-600">/{{ __('messages.month') }}</span>
                     </div>
                     <ul class="text-left space-y-4 mb-8">
@@ -85,7 +85,7 @@
                     <h3 class="text-2xl font-bold mb-2">{{ __('messages.news_plan') }}</h3>
                     <p class="text-gray-600 mb-6">{{ __('messages.news_plan_subtitle') }}</p>
                     <div class="text-center mb-6">
-                        <span class="text-4xl font-bold text-pink-500">€60</span>
+                        <span class="text-4xl font-bold text-pink-500">€75</span>
                         <span class="text-gray-600">/{{ __('messages.month') }}</span>
                     </div>
                     <ul class="text-left space-y-4 mb-8">
