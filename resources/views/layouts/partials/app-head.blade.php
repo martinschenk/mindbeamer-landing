@@ -18,9 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <!-- Filament Assets entfernt -->
-    
-    <!-- Livewire Styles entfernt -->
+
     <!-- Additional Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -101,9 +99,9 @@
     @php
         use Devrabiul\CookieConsent\Facades\CookieConsent;
     @endphp
-    
-    <!-- Filament Styles entfernt -->
-    
+
+
+
     @if(class_exists(\Devrabiul\CookieConsent\Facades\CookieConsent::class))
         {!! CookieConsent::styles() !!}
     @endif

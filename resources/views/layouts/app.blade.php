@@ -25,9 +25,9 @@
     @include('layouts.partials.app-notification-system')
     
     @include('layouts.partials.app-contact-form-js')
-    
-    <!-- Livewire und Filament entfernt -->
-    
+
+
+
     <!-- Cookie-Consent-Banner -->
     @include('components.cookie-consent')
 </body>
