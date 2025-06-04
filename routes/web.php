@@ -8,7 +8,6 @@ use App\Http\Controllers\TranslationController;
 use App\Http\Controllers\TestErrorController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\LegalController;
-use App\Http\Controllers\CookieController;
 use App\Http\Controllers\AnalyticsController;
 use Illuminate\Support\Facades\Mail;
 
@@ -30,9 +29,19 @@ Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
 
 // Root route with browser language detection
 Route::get('/', function () {
+    // Prüfen, ob wir bereits von einer Weiterleitung kommen (Referer enthält unsere Domain)
+    $referer = request()->header('referer');
+    $host = request()->getHost();
+
+    // Wenn der Referer unsere Domain enthält, könnten wir in einer Schleife sein
+    if ($referer && strpos($referer, $host) !== false) {
+        // Notfall-Fallback: Direkt zur englischen Version weiterleiten ohne weitere Prüfungen
+        return redirect('/en');
+    }
+    
     // Detailliertes Debugging für Root-Route
     \Illuminate\Support\Facades\Log::info("=== ROOT ROUTE TRIGGERED ===", [
-        'referer' => request()->header('referer'),
+        'referer' => $referer,
         'user_agent' => request()->header('user-agent'), 
         'session_locale' => session('locale'),
         'cookie_locale' => request()->cookie('app_locale'),
@@ -112,7 +121,7 @@ Route::get('/debug/locale/{test_locale}', [\App\Http\Controllers\DebugController
 Route::get('/debug/chinese', [\App\Http\Controllers\DebugController::class, 'testChinese'])->name('debug.chinese');
 
 // Kontakt-API-Routen
-Route::post('/api/demo-request', [\App\Http\Controllers\Api\DemoRequestController::class, 'store'])
+Route::post('/api/demo-request', [\App\Http\Controllers\Api\DemoRequestController::class, 'requestDemo'])
     ->middleware('throttle:6,1') // Maximal 6 Anfragen pro Minute
     ->name('api.demo-request');
 
