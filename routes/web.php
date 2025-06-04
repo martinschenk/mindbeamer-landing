@@ -27,82 +27,47 @@ Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
     ->name('language.switch')
     ->where('locale', '[a-z]{2}([_-][A-Z]{2})?');
 
-// Root route with browser language detection
+// Einfache Root-Route, die direkt zur englischen Version weiterleitet, wenn keine Sprache gesetzt ist
 Route::get('/', function () {
-    // Notfall-Lösung für Redirect-Loops
-    // Wenn wir einen Cookie setzen können, der anzeigt, dass wir bereits weitergeleitet haben,
-    // können wir Endlosschleifen verhindern
+    // Prüfe, ob bereits ein Weiterleitungsversuch stattgefunden hat
     if (request()->cookie('redirect_attempt')) {
-        // Wir haben bereits versucht weiterzuleiten, also gehen wir direkt zur englischen Version
+        // Wenn ja, direkt zur englischen Version weiterleiten
         return redirect('/en');
     }
     
-    // Prüfen, ob wir bereits von einer Weiterleitung kommen (Referer enthält unsere Domain)
-    $referer = request()->header('referer');
-    $host = request()->getHost();
-
-    // Wenn der Referer unsere Domain enthält, könnten wir in einer Schleife sein
-    if ($referer && strpos($referer, $host) !== false) {
-        // Notfall-Fallback: Direkt zur englischen Version weiterleiten ohne weitere Prüfungen
-        return redirect('/en');
+    // Prüfe, ob eine Sprache in der Session gesetzt ist
+    $locale = session('locale');
+    
+    // Wenn keine Sprache in der Session gesetzt ist, prüfe den Cookie
+    if (!$locale) {
+        $locale = request()->cookie('app_locale');
     }
     
-    // Detailliertes Debugging für Root-Route
-    \Illuminate\Support\Facades\Log::info("=== ROOT ROUTE TRIGGERED ===", [
-        'referer' => $referer,
-        'user_agent' => request()->header('user-agent'), 
-        'session_locale' => session('locale'),
-        'cookie_locale' => request()->cookie('app_locale'),
-        'session_id' => session()->getId(),
-        'url' => request()->url(),
-        'full_url' => request()->fullUrl(),
-        'method' => request()->method(),
-        'ajax' => request()->ajax(),
-        'time' => now()->format('Y-m-d H:i:s.u')
-    ]);
-    
-    $supportedLocales = config('languages.available_locales', []);
-    $defaultLocale = config('languages.default_locale', 'en');
-    
-    // VERBESSERT: Prüfe immer zuerst die Session und das Cookie
-    $sessionLocale = session('locale');
-    $cookieLocale = request()->cookie('app_locale');
-    
-    // Benutze die Session-Locale, dann Cookie, dann Browser-Erkennung
-    if ($sessionLocale && in_array($sessionLocale, $supportedLocales)) {
-        \Illuminate\Support\Facades\Log::info("Root-Redirect aus Session: {$sessionLocale}");
-        return redirect("/{$sessionLocale}")->withCookie(cookie('redirect_attempt', true, 1));
-    } elseif ($cookieLocale && in_array($cookieLocale, $supportedLocales)) {
-        \Illuminate\Support\Facades\Log::info("Root-Redirect aus Cookie: {$cookieLocale}");
-        return redirect("/{$cookieLocale}")->withCookie(cookie('redirect_attempt', true, 1));
-    }
-    
-    // Detect browser language
-    $browserLang = request()->server('HTTP_ACCEPT_LANGUAGE');
-    $locale = $defaultLocale;
-    
-    if ($browserLang) {
-        // Extrahiere Sprachcode (unterstützt auch Formate wie zh-CN)
-        $browserLangParts = explode(',', $browserLang);
-        $primaryLang = explode(';', $browserLangParts[0])[0];
+    // Wenn immer noch keine Sprache gesetzt ist, verwende die Browser-Sprache
+    if (!$locale) {
+        $browserLang = request()->server('HTTP_ACCEPT_LANGUAGE');
+        $locale = $defaultLocale = config('languages.default_locale', 'en');
         
-        // Überprüfe vollständige Sprachcodes (z.B. zh-CN)
-        if (in_array($primaryLang, $supportedLocales)) {
-            $locale = $primaryLang;
-        } else {
-            // Fallback: Prüfe Basis-Sprachcode (z.B. nur 'zh')
-            $baseLang = substr($primaryLang, 0, 2);
-            if (in_array($baseLang, $supportedLocales)) {
-                $locale = $baseLang;
+        if ($browserLang) {
+            // Extrahiere Sprachcode (unterstützt auch Formate wie zh-CN)
+            $browserLangParts = explode(',', $browserLang);
+            $primaryLang = explode(';', $browserLangParts[0])[0];
+            
+            // Überprüfe vollständige Sprachcodes (z.B. zh-CN)
+            if (in_array($primaryLang, config('languages.available_locales', []))) {
+                $locale = $primaryLang;
+            } else {
+                // Fallback: Prüfe Basis-Sprachcode (z.B. nur 'zh')
+                $baseLang = substr($primaryLang, 0, 2);
+                if (in_array($baseLang, config('languages.available_locales', []))) {
+                    $locale = $baseLang;
+                }
             }
         }
     }
     
-    // Set session and redirect
-    session(['locale' => $locale]);
-    session()->save(); // Explizites Speichern der Session
-    \Illuminate\Support\Facades\Log::info("Root-Redirect aus Browser-Detection: {$locale}");
-    return redirect("/{$locale}")->withCookie(cookie('redirect_attempt', true, 1));
+    // Setze einen Cookie, um Weiterleitungsschleifen zu erkennen
+    return redirect("/{$locale}")->withCookie(cookie('redirect_attempt', '1', 1));
 });
 
 // Localized routes with locale prefix
