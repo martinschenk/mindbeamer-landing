@@ -2,6 +2,7 @@
 
 # Deployment-Skript für MindBeamer.io Landing Page
 # Führt einen git pull durch und pusht auf GitHub und den Produktivserver
+# Test für den aktualisierten Git-Hook mit Force-Push auf GitHub
 
 # Farben für bessere Lesbarkeit
 GREEN='\033[0;32m'
