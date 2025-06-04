@@ -27,49 +27,6 @@ Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
     ->name('language.switch')
     ->where('locale', '[a-z]{2}([_-][A-Z]{2})?');
 
-// Einfache Root-Route, die direkt zur englischen Version weiterleitet, wenn keine Sprache gesetzt ist
-Route::get('/', function () {
-    // Prüfe, ob bereits ein Weiterleitungsversuch stattgefunden hat
-    if (request()->cookie('redirect_attempt')) {
-        // Wenn ja, direkt zur englischen Version weiterleiten
-        return redirect('/en');
-    }
-    
-    // Prüfe, ob eine Sprache in der Session gesetzt ist
-    $locale = session('locale');
-    
-    // Wenn keine Sprache in der Session gesetzt ist, prüfe den Cookie
-    if (!$locale) {
-        $locale = request()->cookie('app_locale');
-    }
-    
-    // Wenn immer noch keine Sprache gesetzt ist, verwende die Browser-Sprache
-    if (!$locale) {
-        $browserLang = request()->server('HTTP_ACCEPT_LANGUAGE');
-        $locale = $defaultLocale = config('languages.default_locale', 'en');
-        
-        if ($browserLang) {
-            // Extrahiere Sprachcode (unterstützt auch Formate wie zh-CN)
-            $browserLangParts = explode(',', $browserLang);
-            $primaryLang = explode(';', $browserLangParts[0])[0];
-            
-            // Überprüfe vollständige Sprachcodes (z.B. zh-CN)
-            if (in_array($primaryLang, config('languages.available_locales', []))) {
-                $locale = $primaryLang;
-            } else {
-                // Fallback: Prüfe Basis-Sprachcode (z.B. nur 'zh')
-                $baseLang = substr($primaryLang, 0, 2);
-                if (in_array($baseLang, config('languages.available_locales', []))) {
-                    $locale = $baseLang;
-                }
-            }
-        }
-    }
-    
-    // Setze einen Cookie, um Weiterleitungsschleifen zu erkennen
-    return redirect("/{$locale}")->withCookie(cookie('redirect_attempt', '1', 1));
-});
-
 // Localized routes with locale prefix
 Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{2}([_-][A-Z]{2})?'])->group(function () {
     // Main landing page route
