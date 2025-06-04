@@ -29,6 +29,14 @@ Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
 
 // Root route with browser language detection
 Route::get('/', function () {
+    // Notfall-Lösung für Redirect-Loops
+    // Wenn wir einen Cookie setzen können, der anzeigt, dass wir bereits weitergeleitet haben,
+    // können wir Endlosschleifen verhindern
+    if (request()->cookie('redirect_attempt')) {
+        // Wir haben bereits versucht weiterzuleiten, also gehen wir direkt zur englischen Version
+        return redirect('/en');
+    }
+    
     // Prüfen, ob wir bereits von einer Weiterleitung kommen (Referer enthält unsere Domain)
     $referer = request()->header('referer');
     $host = request()->getHost();
@@ -63,10 +71,10 @@ Route::get('/', function () {
     // Benutze die Session-Locale, dann Cookie, dann Browser-Erkennung
     if ($sessionLocale && in_array($sessionLocale, $supportedLocales)) {
         \Illuminate\Support\Facades\Log::info("Root-Redirect aus Session: {$sessionLocale}");
-        return redirect("/{$sessionLocale}");
+        return redirect("/{$sessionLocale}")->withCookie(cookie('redirect_attempt', true, 1));
     } elseif ($cookieLocale && in_array($cookieLocale, $supportedLocales)) {
         \Illuminate\Support\Facades\Log::info("Root-Redirect aus Cookie: {$cookieLocale}");
-        return redirect("/{$cookieLocale}");
+        return redirect("/{$cookieLocale}")->withCookie(cookie('redirect_attempt', true, 1));
     }
     
     // Detect browser language
@@ -94,7 +102,7 @@ Route::get('/', function () {
     session(['locale' => $locale]);
     session()->save(); // Explizites Speichern der Session
     \Illuminate\Support\Facades\Log::info("Root-Redirect aus Browser-Detection: {$locale}");
-    return redirect("/{$locale}");
+    return redirect("/{$locale}")->withCookie(cookie('redirect_attempt', true, 1));
 });
 
 // Localized routes with locale prefix
