@@ -22,6 +22,50 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
+// Prüfe auf www und leite zu non-www weiter
+Route::domain('www.mindbeamer.io')->group(function () {
+    Route::get('{any}', function ($any = null) {
+        $path = $any ? $any : '';
+        return redirect('https://mindbeamer.io/' . $path, 301);
+    })->where('any', '.*');
+});
+
+// Root-Route mit Browsersprachen-Erkennung
+Route::get('/', function () {
+    // Prüfe, ob eine Sprache in der Session gesetzt ist
+    $locale = session('locale');
+    
+    // Wenn keine Sprache in der Session gesetzt ist, prüfe den Cookie
+    if (!$locale) {
+        $locale = request()->cookie('app_locale');
+    }
+    
+    // Wenn immer noch keine Sprache gesetzt ist, verwende die Browser-Sprache
+    if (!$locale) {
+        $browserLang = request()->server('HTTP_ACCEPT_LANGUAGE');
+        $locale = config('languages.default_locale', 'en');
+        
+        if ($browserLang) {
+            // Extrahiere Sprachcode (unterstützt auch Formate wie zh-CN)
+            $browserLangParts = explode(',', $browserLang);
+            $primaryLang = explode(';', $browserLangParts[0])[0];
+            
+            // Überprüfe vollständige Sprachcodes (z.B. zh-CN)
+            if (in_array($primaryLang, config('languages.available_locales', []))) {
+                $locale = $primaryLang;
+            } else {
+                // Fallback: Prüfe Basis-Sprachcode (z.B. nur 'zh')
+                $baseLang = substr($primaryLang, 0, 2);
+                if (in_array($baseLang, config('languages.available_locales', []))) {
+                    $locale = $baseLang;
+                }
+            }
+        }
+    }
+    
+    return redirect("/{$locale}");
+});
+
 // Language switching route
 Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
     ->name('language.switch')
