@@ -6,7 +6,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 use Symfony\Component\HttpFoundation\Response;
 
 class RedirectMiddleware
@@ -20,14 +20,22 @@ class RedirectMiddleware
      */
     public function handle(Request $request, Closure $next): mixed
     {
+        // Direktes Logging in eine Datei, falls Log-Facade nicht funktioniert
+        $logPath = storage_path('logs/redirect.log');
+        $logDir = dirname($logPath);
+        
+        // Stelle sicher, dass das Log-Verzeichnis existiert und beschreibbar ist
+        if (!File::exists($logDir)) {
+            File::makeDirectory($logDir, 0755, true);
+        }
+        
+        $logMessage = date('Y-m-d H:i:s') . ' - ' . $request->getHost() . ' - ' . $request->path() . ' - ' . $request->fullUrl();
+        File::append($logPath, $logMessage . PHP_EOL);
+        
         // Wenn wir auf der Root-Route sind und www.mindbeamer.io aufrufen
         if ($request->getHost() === 'www.mindbeamer.io' && $request->path() === '/') {
-            Log::info('RedirectMiddleware: www zu non-www Weiterleitung', [
-                'host' => $request->getHost(),
-                'path' => $request->path(),
-                'url' => $request->url(),
-                'referer' => $request->header('referer')
-            ]);
+            $logMessage = date('Y-m-d H:i:s') . ' - RedirectMiddleware: www zu non-www Weiterleitung - ' . $request->fullUrl();
+            File::append($logPath, $logMessage . PHP_EOL);
             
             // Direkt zu https://mindbeamer.io weiterleiten
             return redirect()->to('https://mindbeamer.io', 301);
@@ -39,13 +47,12 @@ class RedirectMiddleware
             $referer = $request->header('referer');
             $redirectAttempt = $request->cookie('redirect_attempt');
             
+            $logMessage = date('Y-m-d H:i:s') . ' - Root-Route auf mindbeamer.io - Referer: ' . ($referer ?? 'none') . ' - Cookie: ' . ($redirectAttempt ? 'yes' : 'no');
+            File::append($logPath, $logMessage . PHP_EOL);
+            
             if ($redirectAttempt || ($referer && strpos($referer, 'mindbeamer.io') !== false)) {
-                Log::info('RedirectMiddleware: Weiterleitungsschleife erkannt, direkt zu /en', [
-                    'host' => $request->getHost(),
-                    'path' => $request->path(),
-                    'referer' => $referer,
-                    'redirect_attempt' => $redirectAttempt
-                ]);
+                $logMessage = date('Y-m-d H:i:s') . ' - RedirectMiddleware: Weiterleitungsschleife erkannt, direkt zu /en';
+                File::append($logPath, $logMessage . PHP_EOL);
                 
                 // Direkt zur englischen Version weiterleiten
                 return redirect()->to('https://mindbeamer.io/en', 302);
@@ -55,9 +62,8 @@ class RedirectMiddleware
             $response = $next($request);
             
             if ($response instanceof Response && $response->isRedirection()) {
-                Log::info('RedirectMiddleware: Cookie für Weiterleitungserkennung gesetzt', [
-                    'target' => $response->headers->get('Location')
-                ]);
+                $logMessage = date('Y-m-d H:i:s') . ' - RedirectMiddleware: Cookie für Weiterleitungserkennung gesetzt - Target: ' . $response->headers->get('Location');
+                File::append($logPath, $logMessage . PHP_EOL);
                 
                 return $response->withCookie(cookie('redirect_attempt', '1', 1));
             }
