@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://mindbeamer.io/en</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/de</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/es</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/zh_CN</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/en/privacy-policy</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/privacy-policy"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/datenschutz-richtlinie"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/politica-privacidad"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/privacy-policy"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/de/datenschutz-richtlinie</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/privacy-policy"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/datenschutz-richtlinie"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/politica-privacidad"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/privacy-policy"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/es/politica-privacidad</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/privacy-policy"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/datenschutz-richtlinie"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/politica-privacidad"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/privacy-policy"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/zh_CN/privacy-policy</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/privacy-policy"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/datenschutz-richtlinie"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/politica-privacidad"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/privacy-policy"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/en/legal-notice</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/legal-notice"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/impressum"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/aviso-legal"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/legal-notice"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/de/impressum</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/legal-notice"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/impressum"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/aviso-legal"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/legal-notice"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/es/aviso-legal</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/legal-notice"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/impressum"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/aviso-legal"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/legal-notice"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/zh_CN/legal-notice</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/legal-notice"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/impressum"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/aviso-legal"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/legal-notice"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/en/terms</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/terms"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/agb"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/terminos"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/terms"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/de/agb</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/terms"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/agb"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/terminos"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/terms"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/es/terminos</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/terms"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/agb"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/terminos"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/terms"/>
+    </url>
+    <url>
+        <loc>https://mindbeamer.io/zh_CN/terms</loc>
+        <lastmod>2025-06-17T19:52:58+02:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://mindbeamer.io/en/terms"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://mindbeamer.io/de/agb"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://mindbeamer.io/es/terminos"/>
+        <xhtml:link rel="alternate" hreflang="zh_CN" href="https://mindbeamer.io/zh_CN/terms"/>
+    </url>
+</urlset>
