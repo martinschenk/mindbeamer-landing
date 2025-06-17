@@ -2,7 +2,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="@yield('meta_description', __('messages.hero_subtitle'))">
-    <meta name="keywords" content="autonomous AI content, automated blog posts, autonomous social media, automated content creation, MindBeamer, free demo">
+    <meta name="keywords"
+          content="autonomous AI content, automated blog posts, autonomous social media, automated content creation, multilingual AI, MindBeamer, free demo">
+    {{-- SEO Essentials (canonical, hreflang, OG, Twitter) --}}
+    @include('layouts.partials.seo')
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
