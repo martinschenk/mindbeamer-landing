@@ -108,6 +108,12 @@ class GenerateSitemap extends Command
         // Ensure directory exists (should for Laravel default), then write file
         file_put_contents($publicPath, implode("\n", $xml));
 
+        // Remove any legacy sitemap that might still live in storage/app/public to avoid confusion
+        $legacyPath = storage_path('app/public/sitemap.xml');
+        if (file_exists($legacyPath)) {
+            @unlink($legacyPath);
+        }
+
         $this->info('Sitemap generated at ' . $publicPath);
 
         return self::SUCCESS;
