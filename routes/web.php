@@ -9,7 +9,6 @@ use App\Http\Controllers\TestErrorController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\AnalyticsController;
-use App\Http\Controllers\FaviconController;
 use Illuminate\Support\Facades\Mail;
 
 /*
@@ -23,9 +22,6 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-// Favicon routes - serve SVG content directly to bypass Git LFS issues
-Route::get('/favicon.ico', [FaviconController::class, 'favicon']);
-Route::get('/favicon.svg', [FaviconController::class, 'favicon']);
 
 // Prüfe auf www und leite zu non-www weiter
 Route::domain('www.mindbeamer.io')->group(function () {
