@@ -6,6 +6,9 @@
           content="autonomous AI content, automated blog posts, autonomous social media, automated content creation, multilingual AI, MindBeamer, free demo">
     {{-- SEO Essentials (canonical, hreflang, OG, Twitter) --}}
     @include('layouts.partials.seo')
+    
+    {{-- Structured Data (JSON-LD) --}}
+    @include('layouts.partials.structured-data')
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
@@ -122,7 +125,6 @@
         .fade-in { animation: fadeIn 1s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
-    <link rel="canonical" href="https://mindbeamer.io">
     
     @vite(['resources/js/app.js'])
     

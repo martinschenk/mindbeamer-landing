@@ -102,6 +102,12 @@ Route::post('/api/demo-request', [\App\Http\Controllers\Api\DemoRequestControlle
 // Google Analytics Route - wird nur aufgerufen, wenn Consent vorhanden ist
 Route::get('/load-analytics', [AnalyticsController::class, 'loadAnalytics'])->name('load.analytics');
 
+// Robots.txt route - Fix für 302 Redirect Problem
+Route::get('/robots.txt', function () {
+    $content = "User-agent: *\nDisallow: /sendmail.php\nSitemap: https://mindbeamer.io/sitemap.xml";
+    return response($content)->header('Content-Type', 'text/plain');
+})->name('robots');
+
 // Fallback route
 Route::fallback(function () {
     return redirect('/');
