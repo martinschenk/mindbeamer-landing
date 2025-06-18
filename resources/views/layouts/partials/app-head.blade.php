@@ -20,13 +20,11 @@
     
     <!-- Vite Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Local Fonts (DSGVO compliant, better performance) -->
+    <link href="{{ asset('css/local-fonts.css') }}" rel="stylesheet">
+    
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-    <!-- Additional Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Einfacher Locale-Helper ohne Sonderbehandlung -->
     <script>
