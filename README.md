@@ -14,11 +14,14 @@ We welcome contributions that improve code quality or documentation. See [CONTRI
 
 ## Features
 
-- 🌍 **Multilingual Support**: German, English, Spanish
-- 🛡️ **GDPR Compliant**: Cookie consent with granular controls
+- 🌍 **Multilingual Support**: German, English, Spanish, Simplified Chinese
+- 🛡️ **GDPR Compliant**: Cookie consent with granular controls, locally hosted fonts
 - 🎨 **Modern Design**: Pink-purple-teal gradient theme
 - 📱 **Responsive**: Mobile-first design
 - ⚡ **Performance**: Optimized for speed and SEO
+- 🔍 **SEO Enhanced**: Multilingual sitemap with image support, structured data (JSON-LD)
+- 🚀 **Browser Caching**: Smart cache headers for optimal performance
+- 📊 **Structured Data**: Organization, WebSite, and BreadcrumbList schemas
 
 ## Tech Stack
 

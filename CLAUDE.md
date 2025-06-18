@@ -44,6 +44,14 @@ vendor/bin/pint
 php artisan config:clear && php artisan cache:clear && php artisan view:clear && php artisan route:clear
 ```
 
+### Performance Optimization
+```bash
+# Enable browser caching (already implemented via SetCacheHeaders middleware)
+# Static assets: 1 year cache with immutable flag
+# HTML pages: 5 minutes cache
+# XML files: 5 minutes cache
+```
+
 ### Production Optimization
 ```bash
 # Cache for production
@@ -154,6 +162,7 @@ GDPR-compliant cookie management with granular categories.
 
 ### Middleware
 - `app/Http/Middleware/SetLocale.php` - Automatic locale detection and setting
+- `app/Http/Middleware/SetCacheHeaders.php` - Smart browser caching for performance
 
 ## Testing Guidelines
 
@@ -214,12 +223,21 @@ php artisan optimize        # Cache framework bootstrap
 - Rate limiting on API endpoints (6 requests/minute)
 - GDPR-compliant cookie consent
 - No sensitive data in version control
+- Fonts hosted locally for GDPR compliance (no Google Fonts tracking)
 
 ### SEO Features
-- Automatic sitemap generation with multilingual support
+- Automatic sitemap generation with multilingual support and image tags
 - Canonical URLs for each language
 - Meta tags optimized per language
-- Structured data markup
+- JSON-LD structured data (Organization, WebSite, BreadcrumbList)
+- Robots.txt properly served (no 302 redirects)
+- hreflang tags with x-default fallback
+
+### Performance Features
+- Browser caching via `SetCacheHeaders` middleware
+- Static assets cached for 1 year with immutable flag
+- Locally hosted fonts (Poppins, Inter) for faster loading
+- Works reliably on Nginx+Apache (Plesk) environments
 
 ## Directory Structure Highlights
 

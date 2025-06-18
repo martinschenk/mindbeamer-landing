@@ -1,9 +1,35 @@
 # Changelog
 
-Alle wichtigen Änderungen am MindBeamer Landing Page Projekt werden in dieser Datei dokumentiert.
+All notable changes to the MindBeamer Landing Page project will be documented in this file.
 
-Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.0.0/),
-und dieses Projekt folgt der [Semantischen Versionierung](https://semver.org/lang/de/).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [v1.3.0] - 2025-06-18
+
+### Added
+- JSON-LD structured data for enhanced SEO (Organization, WebSite, BreadcrumbList schemas)
+- Browser caching middleware (`SetCacheHeaders`) for optimal performance
+- Local font hosting for GDPR compliance and better performance
+- Image support in XML sitemap generation
+- CLAUDE.md documentation file for Claude Code AI assistance
+- Robots.txt route to fix 302 redirect issue
+
+### Changed
+- Sitemap generation now includes image namespace and SEO image tags
+- Font loading switched from Google Fonts CDN to local hosting
+- Cache headers now set via Laravel middleware instead of .htaccess
+
+### Fixed
+- Duplicate canonical tags removed from app-head.blade.php
+- Robots.txt now returns 200 OK instead of 302 redirect
+- Browser caching now works reliably on Nginx+Apache (Plesk) environments
+
+### Performance
+- Static assets cached for 1 year with immutable flag
+- HTML pages cached for 5 minutes
+- Reduced external font requests from 2 to 0
+- Font files now served with optimal caching headers
 
 ## [v1.2.0] - 2025-05-25
 
