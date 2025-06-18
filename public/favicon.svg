@@ -8,6 +8,6 @@
   </defs>
   <!-- Rounded rectangle background -->
   <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#mbGrad)"/>
-  <!-- Stylized M -->
-  <path d="M 8 22 L 8 10 L 12 10 L 16 18 L 20 10 L 24 10 L 24 22 L 20 22 L 20 14 L 16 22 L 12 14 L 12 22 Z" fill="white" stroke="white" stroke-width="0.5"/>
+  <!-- Bold Poppins-style M -->
+  <path d="M 6 22 L 6 10 L 10 10 L 16 19 L 22 10 L 26 10 L 26 22 L 22 22 L 22 15 L 18 22 L 14 22 L 10 15 L 10 22 L 6 22 Z" fill="white" stroke="none"/>
 </svg>
