@@ -15,7 +15,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='mbGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23EC4899'/%3E%3Cstop offset='50%25' style='stop-color:%239F7AEA'/%3E%3Cstop offset='100%25' style='stop-color:%234ECDC4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='28' height='28' rx='6' fill='url(%23mbGrad)'/%3E%3Cpath d='M 6 22 L 6 10 L 10 10 L 16 19 L 22 10 L 26 10 L 26 22 L 22 22 L 22 15 L 18 22 L 14 22 L 10 15 L 10 22 L 6 22 Z' fill='white' stroke='none'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='mbGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23EC4899'/%3E%3Cstop offset='50%25' style='stop-color:%239F7AEA'/%3E%3Cstop offset='100%25' style='stop-color:%234ECDC4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='28' height='28' rx='6' fill='url(%23mbGrad)'/%3E%3Cpath d='M 6 22 L 6 10 L 10 10 L 14 16 L 18 16 L 22 10 L 26 10 L 26 22 L 22 22 L 22 17 L 18 17 L 18 22 L 14 22 L 14 17 L 10 17 L 10 22 L 6 22 Z' fill='white' stroke='none'/%3E%3C/svg%3E">
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <meta name="theme-color" content="#9F7AEA">
     
