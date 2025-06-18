@@ -5,6 +5,43 @@ All notable changes to the MindBeamer Landing Page project will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.0] - 2025-06-18
+
+### 🔄 **BREAKING CHANGES**
+- **Git LFS Removed**: Completely removed Git LFS from project to simplify deployment and fix production server issues
+- **Pre-push Hook Updated**: Modified to work without LFS dependencies
+
+### ✨ **Added**
+- **Custom Favicon System**: Professional SVG favicon with Poppins Bold M design
+  - Gradient background matching site theme (pink-purple-teal)
+  - True Poppins Bold font converted to SVG paths for consistent rendering
+  - 2025 best practices with data URLs for maximum compatibility
+- **Enhanced Typography**: Explicit Poppins font family for MindBeamer logo in header
+- **Improved Git Workflow**: Streamlined deployment without LFS complexities
+
+### 🔧 **Changed**
+- **Font Management**: Moved all fonts from Git LFS to regular Git tracking
+- **Favicon Implementation**: Switched from static files to inline SVG data URLs
+- **Development Workflow**: Simplified local development without LFS requirements
+
+### 🐛 **Fixed**
+- **Production Deployment**: Resolved `git-lfs-authenticate` command not found errors
+- **Font Loading**: Fixed fallback to system fonts issue in favicon
+- **Favicon Orientation**: Corrected upside-down M display
+- **Favicon Proportions**: Adjusted M width to match proper Poppins spacing
+
+### 🗑️ **Removed**
+- All Git LFS configurations and tracking
+- Static favicon files (favicon.ico, favicon.svg, icon.svg)
+- Unused FaviconController and related routes
+- LFS dependencies from pre-push hook
+
+### 🏗️ **Technical Improvements**
+- Cleaner repository structure without LFS artifacts
+- Faster cloning and deployment
+- Better cross-platform compatibility
+- Reduced server requirements (no LFS support needed)
+
 ## [v1.3.0] - 2025-06-18
 
 ### Added
@@ -50,48 +87,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - How-it-works-Abschnitt mit Hover-Effekten und Gradient-Styling
 
 ### Behoben
-- Doppeltes Alpine.js-Laden vermieden, um "multiple instances" Fehler zu beheben
-- Testimonial-Profilbilder korrigiert für bessere Geschlechterdarstellung
-- Horizontales Scrollen auf mobilen Geräten verhindert
-- Header- und Footer-Layout verbessert
-- Anpassung des responsiven Breakpoints von md zu lg für die Header-Navigation
+- Session-basierte Weiterleitung für chinesische Sprache
+- Cookie-Handling beim Sprachwechsel
+- Responsive Design-Probleme
+- Performance-Optimierungen bei Spracherkennung
 
-### Entfernt
-- Überflüssige console.log-Einträge aus JavaScript-Dateien
-- Persönliche Namensreferenzen aus dem Hero-Untertitel in allen Sprachen
+### Geändert
+- Sprachcode-Format von zh-CN zu zh_CN für bessere URL-Kompatibilität
+- Verbesserte Error-Handling-Strategien
+- Aktualisierte Tests für neue Sprachfunktionen
 
-### Sicherheit
-- Privacy-First-Messaging in allen Sprachen
-
-## [v1.1.0] - 2025-04-21
+## [v1.1.0] - 2025-04-15
 
 ### Hinzugefügt
-- Mehrsprachigkeitsunterstützung (Deutsch, Englisch)
-- Kontaktformular mit Validierung und Feedback
-- Filament Admin-Panel für Content-Management
-- Integration mit Laravel Mail für Benachrichtigungen
-- Responsive Layout basierend auf Tailwind CSS
-- Cookie-Consent-Modul mit vollständiger DSGVO-Konformität
-- Animierte UI-Elemente für bessere Benutzererfahrung
+- Demo-Anfrageformular mit E-Mail-Benachrichtigungen
+- Cookie-Consent-System mit anpassbaren Einstellungen
+- Mehrsprachige Unterstützung (DE, EN, ES)
+- Responsive Navigationsmenü
+- Social Media Integration
 
 ### Verbessert
-- SEO-Optimierungen für bessere Suchmaschinenplatzierung
-- Ladezeiten durch Asset-Minimierung und -Kompression
-- Barrierefreiheit (Accessibility) nach WCAG-Richtlinien
+- Performance-Optimierungen
+- SEO-Verbesserungen
+- Mobile Benutzerfreundlichkeit
 
-### Behoben
-- Mobile Navigation für kleine Bildschirme
-- Formular-Handling bei schwachen Internetverbindungen
-
-## [v1.0.0] - 2025-03-15
+## [v1.0.0] - 2025-03-20
 
 ### Hinzugefügt
-- Initiale Version der MindBeamer Landing Page
-- Statische Inhalte mit Fokus auf Produkt-Features
-- Hero-Sektion mit Call-to-Action
-- Feature-Übersicht mit Icons und Beschreibungen
-- Testimonials-Sektion mit Kundenbewertungen
-- Footer mit wichtigen Links und Kontaktinformationen
-- Einfaches Kontaktformular
-- Grundlegende SEO-Optimierungen
-- Deployment-Pipeline für automatisierte Veröffentlichung
+- Initiale Veröffentlichung der MindBeamer Landing Page
+- Laravel 11 Framework
+- Grundlegende mehrsprachige Unterstützung
+- Modern UI mit Gradient-Designs
+- GDPR-konforme Cookie-Verwaltung

@@ -16,12 +16,14 @@ We welcome contributions that improve code quality or documentation. See [CONTRI
 
 - 🌍 **Multilingual Support**: German, English, Spanish, Simplified Chinese
 - 🛡️ **GDPR Compliant**: Cookie consent with granular controls, locally hosted fonts
-- 🎨 **Modern Design**: Pink-purple-teal gradient theme
+- 🎨 **Modern Design**: Pink-purple-teal gradient theme with custom Poppins favicon
 - 📱 **Responsive**: Mobile-first design
 - ⚡ **Performance**: Optimized for speed and SEO
 - 🔍 **SEO Enhanced**: Multilingual sitemap with image support, structured data (JSON-LD)
 - 🚀 **Browser Caching**: Smart cache headers for optimal performance
 - 📊 **Structured Data**: Organization, WebSite, and BreadcrumbList schemas
+- 🎯 **Custom Favicon**: SVG-based Poppins Bold M with gradient background
+- 🔧 **Git LFS Free**: Streamlined development without LFS dependencies
 
 ## Tech Stack
 
