@@ -1,0 +1,16 @@
+{
+    "name": "MindBeamer",
+    "short_name": "MindBeamer",
+    "description": "Autonomous AI Content Creation Platform",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#9F7AEA",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}
