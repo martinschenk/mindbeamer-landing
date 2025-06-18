@@ -1,7 +1,7 @@
 <!-- Header -->
 <header class="bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 shadow fixed top-0 w-full z-20" x-data="{ open: false }">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center w-full">
-        <a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="text-3xl font-bold text-white">MindBeamer</a>
+        <a href="{{ route('home', ['locale' => app()->getLocale()]) }}" class="text-3xl font-bold text-white" style="font-family: 'Poppins', sans-serif;">MindBeamer</a>
         <nav class="hidden lg:flex space-x-8">
             <a href="{{ route('home', ['locale' => app()->getLocale()]) }}#how-it-works" class="text-white hover:text-gray-200 font-medium">{{ __('messages.nav_how_it_works') }}</a>
             <a href="{{ route('home', ['locale' => app()->getLocale()]) }}#features" class="text-white hover:text-gray-200 font-medium">{{ __('messages.nav_features') }}</a>
