@@ -13,7 +13,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{{ asset('icon.svg') }}">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='mbGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23EC4899'/%3E%3Cstop offset='50%25' style='stop-color:%239F7AEA'/%3E%3Cstop offset='100%25' style='stop-color:%234ECDC4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='28' height='28' rx='6' fill='url(%23mbGrad)'/%3E%3Cpath d='M 8 22 L 8 10 L 12 10 L 16 18 L 20 10 L 24 10 L 24 22 L 20 22 L 20 14 L 16 22 L 12 14 L 12 22 Z' fill='white' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E">
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <meta name="theme-color" content="#9F7AEA">
     
