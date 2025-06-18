@@ -22,9 +22,37 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-// Favicon route - must come before catch-all routes
+// Favicon routes - serve SVG content directly to bypass Git LFS issues
 Route::get('/favicon.ico', function () {
-    return response(file_get_contents(public_path('favicon.ico')))
+    $svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="mbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899" />
+      <stop offset="50%" style="stop-color:#9F7AEA" />
+      <stop offset="100%" style="stop-color:#4ECDC4" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#mbGrad)"/>
+  <path d="M 6 22 L 6 10 L 10 10 L 14 16 L 18 16 L 22 10 L 26 10 L 26 22 L 22 22 L 22 17 L 18 17 L 18 22 L 14 22 L 14 17 L 10 17 L 10 22 L 6 22 Z" fill="white" stroke="none"/>
+</svg>';
+    return response($svg)
+        ->header('Content-Type', 'image/svg+xml')
+        ->header('Cache-Control', 'public, max-age=31536000');
+});
+
+Route::get('/favicon.svg', function () {
+    $svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="mbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899" />
+      <stop offset="50%" style="stop-color:#9F7AEA" />
+      <stop offset="100%" style="stop-color:#4ECDC4" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#mbGrad)"/>
+  <path d="M 6 22 L 6 10 L 10 10 L 14 16 L 18 16 L 22 10 L 26 10 L 26 22 L 22 22 L 22 17 L 18 17 L 18 22 L 14 22 L 14 17 L 10 17 L 10 22 L 6 22 Z" fill="white" stroke="none"/>
+</svg>';
+    return response($svg)
         ->header('Content-Type', 'image/svg+xml')
         ->header('Cache-Control', 'public, max-age=31536000');
 });
