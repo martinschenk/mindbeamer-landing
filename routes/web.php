@@ -22,6 +22,13 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
+// Favicon route - must come before catch-all routes
+Route::get('/favicon.ico', function () {
+    return response(file_get_contents(public_path('favicon.ico')))
+        ->header('Content-Type', 'image/svg+xml')
+        ->header('Cache-Control', 'public, max-age=31536000');
+});
+
 // Prüfe auf www und leite zu non-www weiter
 Route::domain('www.mindbeamer.io')->group(function () {
     Route::get('{any}', function ($any = null) {
@@ -66,12 +73,6 @@ Route::get('/', function () {
     return redirect("/{$locale}");
 });
 
-// Favicon route - serve SVG directly
-Route::get('/favicon.ico', function () {
-    return response(file_get_contents(public_path('favicon.ico')))
-        ->header('Content-Type', 'image/svg+xml')
-        ->header('Cache-Control', 'public, max-age=31536000');
-});
 
 // Language switching route
 Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])
