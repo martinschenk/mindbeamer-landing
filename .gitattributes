@@ -3,19 +3,6 @@
 *.scss linguist-vendored
 *.js linguist-vendored
 
-# Define binary file attributes
-# Treat these files as binary for Git operations and suggest using Git LFS
-*.png binary filter=lfs diff=lfs merge=lfs -text
-*.jpg binary filter=lfs diff=lfs merge=lfs -text
-*.jpeg binary filter=lfs diff=lfs merge=lfs -text
-*.gif binary filter=lfs diff=lfs merge=lfs -text
-*.ico binary filter=lfs diff=lfs merge=lfs -text
-*.woff binary filter=lfs diff=lfs merge=lfs -text
-*.woff2 binary filter=lfs diff=lfs merge=lfs -text
-*.ttf binary filter=lfs diff=lfs merge=lfs -text
-*.eot binary filter=lfs diff=lfs merge=lfs -text
-*.pdf binary filter=lfs diff=lfs merge=lfs -text
-
 # Files and directories to exclude from exports (archives)
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
@@ -29,7 +16,6 @@ TESTS.md export-ignore
 CONTRIBUTING.md export-ignore
 
 # Filter für selektives Pushen zu unterschiedlichen Remotes
-# Build-Assets werden zu Produktionsserver gepusht, aber nicht zu GitHub
 /public/build/** filter=production-assets
 /public/build/assets/** filter=production-assets
 /public/build/manifest.json filter=production-assets
