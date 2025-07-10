@@ -5,6 +5,33 @@ All notable changes to the MindBeamer Landing Page project will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.1.0] - 2025-07-10
+
+### ✨ **Added**
+- **LocalizedUrlHelper**: New helper class for centralized URL management
+  - Generates language-specific URLs (e.g., `/de/datenschutz-richtlinie` instead of `/de/privacy-policy`)
+  - Maintains current page when switching languages
+  - Ensures consistency between sitemap.xml and actual site URLs
+- **Localized Routes**: All legal pages now support translated URLs
+  - German: `datenschutz-richtlinie`, `impressum`, `agb`
+  - Spanish: `politica-privacidad`, `aviso-legal`, `terminos`
+  - English/Chinese: `privacy-policy`, `legal-notice`, `terms`
+
+### 🔧 **Changed**
+- Updated footer and header components to use LocalizedUrlHelper
+- Language switcher now maintains the current page when switching languages
+- Chinese language option only available in footer (as requested)
+- Added comprehensive code comments explaining the URL localization system
+
+### 📚 **Documentation**
+- Updated CLAUDE.md with new URL structure and LocalizedUrlHelper information
+- Added instructions for adding new languages with localized URLs
+- Enhanced multilingual routing documentation
+
+### 🐛 **Fixed**
+- URL inconsistency between sitemap.xml and actual site links
+- Language switcher now correctly switches to localized URLs
+
 ## [v2.0.0] - 2025-06-18
 
 ### 🔄 **BREAKING CHANGES**

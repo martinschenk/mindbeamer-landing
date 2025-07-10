@@ -6,9 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 MindBeamer.io is a multilingual Laravel 11 landing page with GDPR-compliant cookie consent. It supports German, English, Spanish, and Simplified Chinese with automatic browser language detection and SEO optimization.
 
-**Current Version**: v2.0.0 (Major Release - Git LFS Free & Professional Favicon)
+**Current Version**: v2.1.0 (Minor Release - Localized URLs)
 
-### Key Features (v2.0.0)
+### Key Features (v2.1.0)
+- **Localized URLs**: All pages now use translated URLs (e.g., /de/datenschutz-richtlinie)
+- **Smart Language Switching**: Maintains current page when switching languages
+- **LocalizedUrlHelper**: New helper class for centralized URL management
+
+### Previous Features (v2.0.0)
 - **Git LFS Free**: Completely removed for simpler deployment
 - **Professional Favicon**: Custom SVG favicon with Poppins Bold M design
 - **Enhanced Typography**: Explicit Poppins font family throughout
