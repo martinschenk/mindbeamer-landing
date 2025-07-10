@@ -78,12 +78,25 @@ Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{
     // Main landing page route
     Route::get('/', [HomeController::class, 'index'])->name('home');
     
-    // Privacy Policy route
+    // Privacy Policy routes (with all language-specific slugs)
+    // WICHTIG: Alle URL-Varianten zeigen auf denselben Controller, aber nur die englische
+    // Route hat einen Namen für die Rückwärtskompatibilität. Dies ermöglicht lokalisierte
+    // URLs wie /de/datenschutz-richtlinie statt /de/privacy-policy
     Route::get('/privacy-policy', [PrivacyController::class, 'index'])->name('privacy.policy');
+    Route::get('/datenschutz-richtlinie', [PrivacyController::class, 'index']); // Deutsch
+    Route::get('/politica-privacidad', [PrivacyController::class, 'index']); // Spanisch
     
-    // Legal pages routes
-    Route::get('/impressum', [LegalController::class, 'impressum'])->name('legal.impressum');
-    Route::get('/terms', [LegalController::class, 'terms'])->name('legal.terms');
+    // Legal notice/Impressum routes (with all language-specific slugs)
+    // Die deutsche Route 'impressum' erhält den Route-Namen, da dies die Hauptbezeichnung ist
+    Route::get('/legal-notice', [LegalController::class, 'impressum']); // Englisch
+    Route::get('/impressum', [LegalController::class, 'impressum'])->name('legal.impressum'); // Deutsch
+    Route::get('/aviso-legal', [LegalController::class, 'impressum']); // Spanisch
+    
+    // Terms routes (with all language-specific slugs)
+    // Englische Route behält den Namen für Kompatibilität mit bestehenden Links
+    Route::get('/terms', [LegalController::class, 'terms'])->name('legal.terms'); // Englisch
+    Route::get('/agb', [LegalController::class, 'terms']); // Deutsch
+    Route::get('/terminos', [LegalController::class, 'terms']); // Spanisch
     
     // Test error pages route
     Route::get('/test-error/{code}', [TestErrorController::class, 'show'])

@@ -4,14 +4,16 @@
         <p class="mb-2">&copy; 2025 <a href="https://martin-schenk.es" class="text-teal-400 hover:underline">Martin Schenk S.L.</a> {{ __('messages.all_rights_reserved') }}</p>
         
         <!-- Links -->
+        {{-- Verwendet LocalizedUrlHelper für sprachspezifische URLs --}}
+        {{-- Beispiel: /de/datenschutz-richtlinie statt /de/privacy-policy --}}
         <div class="flex flex-wrap justify-center mt-4 mb-4 gap-4 md:gap-6 px-2">
-            <a href="{{ route('privacy.policy', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-teal-400 transition-colors">
+            <a href="{{ \App\Helpers\LocalizedUrlHelper::privacyUrl() }}" class="text-gray-400 hover:text-teal-400 transition-colors">
                 {{ __('messages.footer_privacy') }}
             </a>
-            <a href="{{ route('legal.impressum', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-teal-400 transition-colors">
+            <a href="{{ \App\Helpers\LocalizedUrlHelper::impressumUrl() }}" class="text-gray-400 hover:text-teal-400 transition-colors">
                 {{ __('legal.impressum_title') }}
             </a>
-            <a href="{{ route('legal.terms', ['locale' => app()->getLocale()]) }}" class="text-gray-400 hover:text-teal-400 transition-colors">
+            <a href="{{ \App\Helpers\LocalizedUrlHelper::termsUrl() }}" class="text-gray-400 hover:text-teal-400 transition-colors">
                 {{ __('legal.terms_title') }}
             </a>
             <a href="javascript:void(0);" onclick="window.openCookieSettings()" class="text-gray-400 hover:text-teal-400 transition-colors">
@@ -37,20 +39,17 @@
         </div>
         
         <!-- Language Switcher -->
+        {{-- Language Switcher behält die aktuelle Seite bei und wechselt nur die Sprache --}}
+        {{-- LocalizedUrlHelper::currentPageInLocale() erkennt automatisch die richtige URL --}}
         <div class="flex justify-center space-x-4">
             <div class="flex items-center space-x-2">
-                @php
-                    $currentRoute = request()->route()->getName();
-                    $currentParams = request()->route()->parameters();
-                    unset($currentParams['locale']); // Remove current locale to replace it
-                @endphp
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'en'])) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'en' ? 'font-bold text-white' : '' }}">EN</a>
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('en') }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'en' ? 'font-bold text-white' : '' }}">EN</a>
                 <span class="text-gray-500">|</span>
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'de'])) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'de' ? 'font-bold text-white' : '' }}">DE</a>
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('de') }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'de' ? 'font-bold text-white' : '' }}">DE</a>
                 <span class="text-gray-500">|</span>
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'es'])) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'es' ? 'font-bold text-white' : '' }}">ES</a>
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('es') }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'es' ? 'font-bold text-white' : '' }}">ES</a>
                 <span class="text-gray-500">|</span>
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'zh_CN'])) }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'zh_CN' ? 'font-bold text-white' : '' }}">ZH</a>
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('zh_CN') }}" class="text-gray-400 hover:text-white {{ app()->getLocale() == 'zh_CN' ? 'font-bold text-white' : '' }}">ZH</a>
             </div>
         </div>
     </div>

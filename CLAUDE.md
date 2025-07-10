@@ -108,6 +108,12 @@ Handles locale switching and translation state management.
 #### CookieConsentService (`app/Services/CookieConsentService.php`)
 GDPR-compliant cookie management with granular categories.
 
+#### LocalizedUrlHelper (`app/Helpers/LocalizedUrlHelper.php`)
+Manages localized URLs for all pages:
+- Generates language-specific URLs (e.g., `/de/datenschutz-richtlinie` instead of `/de/privacy-policy`)
+- Maintains current page when switching languages
+- Ensures consistency between sitemap.xml and actual site URLs
+
 ### Configuration-Driven Architecture
 - **Central language config**: `config/languages.php` - Single source of truth for all multilingual features
 - **No hardcoded values**: All settings configurable via config files
@@ -117,9 +123,25 @@ GDPR-compliant cookie management with granular categories.
 ```
 / → Browser language detection → /{locale}/
 /{locale}/ → Main landing page
-/{locale}/privacy-policy
-/{locale}/impressum
-/{locale}/terms
+
+# Privacy Policy (localized URLs)
+/en/privacy-policy
+/de/datenschutz-richtlinie
+/es/politica-privacidad
+/zh_CN/privacy-policy
+
+# Legal Notice/Impressum (localized URLs)
+/en/legal-notice
+/de/impressum
+/es/aviso-legal
+/zh_CN/legal-notice
+
+# Terms (localized URLs)
+/en/terms
+/de/agb
+/es/terminos
+/zh_CN/terms
+
 /language/{locale} → Language switching endpoint
 ```
 
@@ -156,10 +178,11 @@ GDPR-compliant cookie management with granular categories.
 - `config/backup.php` - Backup system settings
 - `phpunit.xml` - Test configuration with SQLite in-memory DB
 
-### Services
+### Services & Helpers
 - `app/Services/LocaleService.php` - Core language management
 - `app/Services/TranslationService.php` - Translation state management
 - `app/Services/CookieConsentService.php` - GDPR cookie handling
+- `app/Helpers/LocalizedUrlHelper.php` - Localized URL generation
 
 ### Language Files
 - `lang/{locale}/` - Translation files for each supported language
@@ -203,8 +226,10 @@ vendor/bin/phpunit tests/Feature/  # Feature tests only
 2. Add display name to `locale_names` array
 3. Add flag emoji to `locale_flags` array
 4. Create translation files in `lang/{locale}/`
-5. Update middleware regex pattern if needed
-6. Run tests to ensure configuration consistency
+5. Add URL translations to `app/Helpers/LocalizedUrlHelper.php`
+6. Add corresponding routes in `routes/web.php`
+7. Update sitemap generation in `app/Console/Commands/GenerateSitemap.php`
+8. Run tests to ensure configuration consistency
 
 ### Debugging Locale Issues
 - Use `/debug/locale` route to inspect current locale state

@@ -8,17 +8,13 @@
             <a href="{{ route('home', ['locale' => app()->getLocale()]) }}#why-us" class="text-white hover:text-gray-200 font-medium">{{ __('messages.nav_why_us') }}</a>
             <a href="{{ route('home', ['locale' => app()->getLocale()]) }}#pricing" class="text-white hover:text-gray-200 font-medium">{{ __('messages.nav_pricing') }}</a>
             <a href="{{ route('home', ['locale' => app()->getLocale()]) }}#contact" class="text-white hover:text-gray-200 font-medium">{{ __('messages.nav_demo') }}</a>
+            {{-- Desktop Language Switcher (ohne Chinesisch wie gewünscht) --}}
             <div class="flex items-center space-x-2">
-                @php
-                    $currentRoute = request()->route()->getName();
-                    $currentParams = request()->route()->parameters();
-                    unset($currentParams['locale']); // Remove current locale to replace it
-                @endphp
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'en'])) }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'en' ? 'font-bold underline' : '' }}">EN</a>
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('en') }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'en' ? 'font-bold underline' : '' }}">EN</a>
                 <span class="text-white">|</span>
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'de'])) }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'de' ? 'font-bold underline' : '' }}">DE</a>
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('de') }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'de' ? 'font-bold underline' : '' }}">DE</a>
                 <span class="text-white">|</span>
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'es'])) }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'es' ? 'font-bold underline' : '' }}">ES</a>
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('es') }}" class="text-white hover:text-gray-200 font-medium {{ app()->getLocale() == 'es' ? 'font-bold underline' : '' }}">ES</a>
             </div>
         </nav>
         <button class="lg:hidden" @click="open = !open">
@@ -73,30 +69,26 @@
             </a>
             
             <!-- Language switcher with glowing effect -->
+            {{-- Mobile Language Switcher (ohne Chinesisch, nur im Footer verfügbar) --}}
             <div class="flex items-center space-x-4 pt-4 mt-2 border-t border-gray-700 relative">
-                @php
-                    $currentRoute = request()->route()->getName();
-                    $currentParams = request()->route()->parameters();
-                    unset($currentParams['locale']); // Remove current locale to replace it
-                @endphp
                 <!-- Animated dot for active language -->
                 <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'en'])) }}" @click="open = false" class="relative text-white font-medium {{ app()->getLocale() == 'en' ? 'font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500' : '' }} transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500">
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('en') }}" @click="open = false" class="relative text-white font-medium {{ app()->getLocale() == 'en' ? 'font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500' : '' }} transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500">
                     @if(app()->getLocale() == 'en')
                         <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 animate-pulse"></span>
                     @endif
                     EN
                 </a>
                 <span class="text-gray-500">|</span>
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'de'])) }}" @click="open = false" class="relative text-white font-medium {{ app()->getLocale() == 'de' ? 'font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500' : '' }} transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500">
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('de') }}" @click="open = false" class="relative text-white font-medium {{ app()->getLocale() == 'de' ? 'font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500' : '' }} transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500">
                     @if(app()->getLocale() == 'de')
                         <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 animate-pulse"></span>
                     @endif
                     DE
                 </a>
                 <span class="text-gray-500">|</span>
-                <a href="{{ route($currentRoute, array_merge($currentParams, ['locale' => 'es'])) }}" @click="open = false" class="relative text-white font-medium {{ app()->getLocale() == 'es' ? 'font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500' : '' }} transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500">
+                <a href="{{ \App\Helpers\LocalizedUrlHelper::currentPageInLocale('es') }}" @click="open = false" class="relative text-white font-medium {{ app()->getLocale() == 'es' ? 'font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500' : '' }} transition-all duration-300 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink-500 hover:via-purple-500 hover:to-teal-500">
                     @if(app()->getLocale() == 'es')
                         <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 animate-pulse"></span>
                     @endif
