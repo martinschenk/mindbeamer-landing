@@ -22,7 +22,7 @@ class GitPushBackup extends Command
      *
      * @var string
      */
-    protected $description = 'Track git pushes and create backup every 10th push';
+    protected $description = 'Track git pushes and create backup with every commit';
 
     /**
      * Execute the console command.
@@ -47,27 +47,22 @@ class GitPushBackup extends Command
         
         $this->info("Git push #{$newCount} recorded");
         
-        // Check if it's time for backup (every 10th push)
-        if ($newCount % 10 === 0) {
-            $this->info(" 10th push reached! Creating backup...");
+        // Create backup with every commit
+        $this->info(" Creating backup...");
+        
+        try {
+            Artisan::call('backup:run');
+            $this->info(" Backup completed successfully!");
             
-            try {
-                Artisan::call('backup:run');
-                $this->info(" Backup completed successfully!");
-                
-                // Automatically clean old backups after successful backup
-                $this->info(" Cleaning old backups...");
-                Artisan::call('backup:clean');
-                $this->info(" Cleanup completed!");
-                
-                $this->line(" This was push #{$newCount} - backup created and cleaned");
-            } catch (\Exception $e) {
-                $this->error(" Backup failed: " . $e->getMessage());
-                return 1;
-            }
-        } else {
-            $remaining = 10 - ($newCount % 10);
-            $this->line(" {$remaining} more pushes until next backup");
+            // Automatically clean old backups after successful backup
+            $this->info(" Cleaning old backups...");
+            Artisan::call('backup:clean');
+            $this->info(" Cleanup completed!");
+            
+            $this->line(" Push #{$newCount} - backup created and cleaned");
+        } catch (\Exception $e) {
+            $this->error(" Backup failed: " . $e->getMessage());
+            return 1;
         }
         
         return 0;
