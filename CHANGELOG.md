@@ -5,6 +5,31 @@ All notable changes to the MindBeamer Landing Page project will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.2.1] - 2025-07-10
+
+### ✨ **Added**
+- **XSL Stylesheet for Sitemap**: Human-readable sitemap display in browsers
+  - Professional table layout with MindBeamer branding
+  - Shows URLs, last modified dates, priorities, and language versions
+  - No impact on search engine indexing
+- **Automated Backup System**: Complete backup automation
+  - Pre-commit hook for automatic sitemap regeneration
+  - Post-commit hook for backup creation and iCloud sync
+  - Backups now created with EVERY commit (changed from every 10th)
+- **Enhanced iCloud Sync Script**: Improved sync_backups.sh
+  - Colored output for better visibility
+  - Pre-sync and post-sync statistics
+  - Dry run preview showing files to be synced
+  - Important notes about iCloud upload delays
+
+### 🔧 **Changed**
+- **GitPushBackup Command**: Modified to create backups on every commit
+- **Post-commit Hook**: Added automatic iCloud sync after backup:clean
+
+### 📚 **Documentation**
+- Updated CLAUDE.md with Git hooks documentation
+- Added backup automation details to essential commands
+
 ## [v2.2.0] - 2025-07-10
 
 ### ✨ **Added**

@@ -6,9 +6,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 MindBeamer.io is a multilingual Laravel 11 landing page with GDPR-compliant cookie consent. It supports German, English, Spanish, and Simplified Chinese with automatic browser language detection and SEO optimization.
 
-**Current Version**: v2.2.0 (Minor Release - SEO-Optimized Root Domain)
+**Current Version**: v2.2.1 (Patch Release - Enhanced Backup System & Sitemap)
 
-### Key Features (v2.2.0)
+### Key Features (v2.2.1)
+- **Human-Readable Sitemap**: Added XSL stylesheet for formatted sitemap display in browsers
+- **Automatic Backup on Every Commit**: Changed from every 10th push to every single commit
+- **iCloud Backup Sync**: Automatic synchronization of backups to iCloud after each commit
+- **Enhanced sync_backups.sh**: Colored output, statistics, and progress reporting
+- **Pre-commit Sitemap Generation**: Sitemap automatically regenerates before each commit
+
+### Previous Features (v2.2.0)
 - **SEO-Optimized Root Domain**: mindbeamer.io now serves content without redirects
 - **Smart Cookie System**: Differentiates between first-time and returning visitors
 - **Language Preference Banner**: Non-intrusive language switching for international users
@@ -88,15 +95,33 @@ npm run build
 
 ### Backup & SEO
 ```bash
-# Generate sitemap
+# Generate sitemap (also runs automatically on every commit)
 php artisan seo:generate-sitemap
 
-# Run backup
+# Run backup manually (also runs automatically on every commit)
 php artisan backup:run
 
 # List backups
 php artisan backup:list
+
+# Sync backups to iCloud
+./sync_backups.sh
+
+# Track git pushes and create backup (used by post-commit hook)
+php artisan backup:git-push
 ```
+
+### Git Hooks (Automated Tasks)
+The project includes automated Git hooks for consistency:
+
+1. **Pre-commit Hook** (`/.git/hooks/pre-commit`):
+   - Automatically regenerates sitemap.xml
+   - Ensures sitemap is always current with latest changes
+
+2. **Post-commit Hook** (`/.git/hooks/post-commit`):
+   - Creates backup with every commit
+   - Cleans old backups automatically
+   - Syncs backups to iCloud for offsite storage
 
 ## Architecture Overview
 

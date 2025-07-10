@@ -70,6 +70,9 @@ class GenerateSitemap extends Command
 
         $xml = [];
         $xml[] = '<?xml version="1.0" encoding="UTF-8"?>';
+        // Added XSL stylesheet reference for human-readable display in browsers
+        // The sitemap.xsl file transforms the XML into a formatted HTML table
+        // This has no impact on search engines - they read the raw XML
         $xml[] = '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>';
         $xml[] = '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" ' .
             'xmlns:xhtml="http://www.w3.org/1999/xhtml" ' .
