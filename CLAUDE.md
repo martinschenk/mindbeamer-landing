@@ -6,12 +6,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 MindBeamer.io is a multilingual Laravel 11 landing page with GDPR-compliant cookie consent. It supports German, English, Spanish, and Simplified Chinese with automatic browser language detection and SEO optimization.
 
-**Current Version**: v2.1.0 (Minor Release - Localized URLs)
+**Current Version**: v2.2.0 (Minor Release - SEO-Optimized Root Domain)
 
-### Key Features (v2.1.0)
-- **Localized URLs**: All pages now use translated URLs (e.g., /de/datenschutz-richtlinie)
+### Key Features (v2.2.0)
+- **SEO-Optimized Root Domain**: mindbeamer.io now serves content without redirects
+- **Smart Cookie System**: Differentiates between first-time and returning visitors
+- **Language Preference Banner**: Non-intrusive language switching for international users
+- **Improved Sitemap**: x-default hreflang correctly points to root domain
+- **RootController**: New controller for handling root domain requests with SEO strategy
+
+### Previous Features (v2.1.0)
+- **Localized URLs**: All pages use translated URLs (e.g., /de/datenschutz-richtlinie)
 - **Smart Language Switching**: Maintains current page when switching languages
-- **LocalizedUrlHelper**: New helper class for centralized URL management
+- **LocalizedUrlHelper**: Helper class for centralized URL management
 
 ### Previous Features (v2.0.0)
 - **Git LFS Free**: Completely removed for simpler deployment
@@ -126,8 +133,8 @@ Manages localized URLs for all pages:
 
 ### Multilingual Routing Structure
 ```
-/ → Browser language detection → /{locale}/
-/{locale}/ → Main landing page
+/ → Serves English content (no redirect) + optional language banner
+/{locale}/ → Main landing page in specific language
 
 # Privacy Policy (localized URLs)
 /en/privacy-policy
@@ -182,6 +189,10 @@ Manages localized URLs for all pages:
 - `config/languages.php` - Central multilingual configuration
 - `config/backup.php` - Backup system settings
 - `phpunit.xml` - Test configuration with SQLite in-memory DB
+
+### Controllers
+- `app/Http/Controllers/RootController.php` - SEO-optimized root domain handler
+- `app/Http/Controllers/HomeController.php` - Language-specific home pages
 
 ### Services & Helpers
 - `app/Services/LocaleService.php` - Core language management
@@ -265,12 +276,14 @@ php artisan optimize        # Cache framework bootstrap
 - Fonts hosted locally for GDPR compliance (no Google Fonts tracking)
 
 ### SEO Features
+- **Root domain serves content**: mindbeamer.io is now indexable (no redirects)
+- **Smart Cookie approach**: First-time visitors see content, returning users get their language
 - Automatic sitemap generation with multilingual support and image tags
 - Canonical URLs for each language
 - Meta tags optimized per language
 - JSON-LD structured data (Organization, WebSite, BreadcrumbList)
-- Robots.txt properly served (no 302 redirects)
-- hreflang tags with x-default fallback
+- Robots.txt properly served
+- hreflang tags with x-default pointing to root domain for homepage
 
 ### Performance Features
 - Browser caching via `SetCacheHeaders` middleware
@@ -299,5 +312,6 @@ lang/                  # Translation files
 docs/                  # Comprehensive documentation
 ├── DEVELOPMENT.md     # Architecture and coding standards
 ├── TESTING.md         # Testing guidelines and coverage
-└── LOCALIZATION.md    # Multilingual implementation guide
+├── LOCALIZATION.md    # Multilingual implementation guide
+└── SEO-MULTILINGUAL-STRATEGY.md  # SEO strategy and root domain handling
 ```

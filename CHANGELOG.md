@@ -5,6 +5,50 @@ All notable changes to the MindBeamer Landing Page project will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.2.0] - 2025-07-10
+
+### ✨ **Added**
+- **RootController**: New controller for SEO-optimized root domain handling
+  - Serves English content on mindbeamer.io without redirects
+  - Implements "Smart Cookie" approach for returning visitors
+  - Differentiates between first-time and returning visitors
+- **Language Preference Banner**: Non-intrusive banner for language switching
+  - Shows only for supported non-English browser languages
+  - Sets permanent cookie for future automatic redirects
+  - GDPR-compliant (technical necessity cookie)
+- **SEO Documentation**: Comprehensive SEO strategy guide in `docs/SEO-MULTILINGUAL-STRATEGY.md`
+  - Explains the root domain approach
+  - Documents user flows and Google behavior
+  - Provides maintenance guidelines
+
+### 🔧 **Changed**
+- **Root Domain Behavior**: mindbeamer.io now serves content instead of redirecting
+  - First-time visitors see English content with optional language banner
+  - Returning visitors with language preference get redirected
+- **Sitemap Generation**: Improved x-default hreflang handling
+  - Homepage x-default points to root domain (not /en)
+  - Subpages x-default points to English version
+  - Uses LocalizedUrlHelper for consistency
+- **Header Spacing**: Dynamic adjustment for language banner
+  - Smooth transitions when banner appears/disappears
+  - Proper stacking of banner, header, and content
+
+### 🐛 **Fixed**
+- Removed orphaned JavaScript code fragments in app-head.blade.php
+- Fixed header overlap issues when language banner is displayed
+- Cleaned up legacy files (old PHP layouts, unused controllers)
+- Removed references to non-existent sendmail.php
+
+### 🗑️ **Removed**
+- Legacy files: app.php layout, LandingPageController
+- Test/debug routes now only available in development environment
+- Duplicate robots.txt from root directory
+
+### 📚 **Documentation**
+- Updated CLAUDE.md with v2.2.0 features and SEO improvements
+- Added comprehensive SEO strategy documentation
+- Enhanced code comments in RootController and GenerateSitemap
+
 ## [v2.1.0] - 2025-07-10
 
 ### ✨ **Added**

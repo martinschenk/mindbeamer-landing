@@ -6,9 +6,12 @@
 <html lang="{{ app(\App\Services\LocaleService::class)->getHtmlLangAttribute() }}">
 @include('layouts.partials.app-head')
 <body class="bg-gray-50 text-gray-900">
+    @include('layouts.partials.header-spacing')
     <!-- Container für Google Analytics (wird dynamisch gefüllt wenn Consent vorhanden) -->
     <div id="google-analytics-container"></div>
 
+    @include('components.language-preference-banner')
+    
     @include('components.header')
 
     @yield('content')

@@ -28,7 +28,7 @@ class LocalizedUrlHelper
      * Chinesisch (zh_CN) verwendet die englischen Begriffe als Fallback,
      * da chinesische URLs in lateinischen Zeichen problematisch sein können.
      */
-    private static function getSlugTranslations(): array
+    public static function getSlugTranslations(): array
     {
         return [
             'privacy-policy' => [

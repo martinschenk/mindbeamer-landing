@@ -32,8 +32,15 @@
 
     $pageKey = $pageKey ?? '';
     $currentLocale = app()->getLocale();
-    $slugForLocale = $slugTranslations[$pageKey][$currentLocale] ?? $pageKey;
-    $canonical = rtrim($base, '/') . '/' . $currentLocale . ($slugForLocale ? '/' . $slugForLocale : '');
+    $isRootDomain = $isRootDomain ?? false;
+    
+    // If we're on the root domain, canonical should be the root URL
+    if ($isRootDomain && $pageKey === '') {
+        $canonical = $base;
+    } else {
+        $slugForLocale = $slugTranslations[$pageKey][$currentLocale] ?? $pageKey;
+        $canonical = rtrim($base, '/') . '/' . $currentLocale . ($slugForLocale ? '/' . $slugForLocale : '');
+    }
 @endphp
 
         <!-- Canonical URL -->
@@ -47,8 +54,11 @@
     @endphp
     <link rel="alternate" hreflang="{{ $loc }}" href="{{ $url }}">
 @endforeach
-<link rel="alternate" hreflang="x-default"
-      href="{{ rtrim($base, '/') . '/en' . ($slugTranslations[$pageKey]['en'] ? '/' . $slugTranslations[$pageKey]['en'] : '') }}">
+@if($pageKey === '')
+    <link rel="alternate" hreflang="x-default" href="{{ $base }}">
+@else
+    <link rel="alternate" hreflang="x-default" href="{{ rtrim($base, '/') . '/en' . ($slugTranslations[$pageKey]['en'] ? '/' . $slugTranslations[$pageKey]['en'] : '') }}">
+@endif
 
 <!-- Robots -->
 <meta name="robots" content="index,follow">

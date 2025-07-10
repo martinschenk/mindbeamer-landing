@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RootController;
 use App\Http\Controllers\TranslationController;
-use App\Http\Controllers\TestErrorController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\LegalController;
 use App\Http\Controllers\AnalyticsController;
@@ -31,41 +31,9 @@ Route::domain('www.mindbeamer.io')->group(function () {
     })->where('any', '.*');
 });
 
-// Root-Route mit Browsersprachen-Erkennung
-Route::get('/', function () {
-    // Prüfe, ob eine Sprache in der Session gesetzt ist
-    $locale = session('locale');
-    
-    // Wenn keine Sprache in der Session gesetzt ist, prüfe den Cookie
-    if (!$locale) {
-        $locale = request()->cookie('app_locale');
-    }
-    
-    // Wenn immer noch keine Sprache gesetzt ist, verwende die Browser-Sprache
-    if (!$locale) {
-        $browserLang = request()->server('HTTP_ACCEPT_LANGUAGE');
-        $locale = config('languages.default_locale', 'en');
-        
-        if ($browserLang) {
-            // Extrahiere Sprachcode (unterstützt auch Formate wie zh-CN)
-            $browserLangParts = explode(',', $browserLang);
-            $primaryLang = explode(';', $browserLangParts[0])[0];
-            
-            // Überprüfe vollständige Sprachcodes (z.B. zh-CN)
-            if (in_array($primaryLang, config('languages.available_locales', []))) {
-                $locale = $primaryLang;
-            } else {
-                // Fallback: Prüfe Basis-Sprachcode (z.B. nur 'zh')
-                $baseLang = substr($primaryLang, 0, 2);
-                if (in_array($baseLang, config('languages.available_locales', []))) {
-                    $locale = $baseLang;
-                }
-            }
-        }
-    }
-    
-    return redirect("/{$locale}");
-});
+// Root-Route with SEO-optimized handling (no redirect)
+// Serves default language content at the root domain for better SEO
+Route::get('/', [RootController::class, 'index'])->name('root');
 
 
 // Language switching route
@@ -98,16 +66,20 @@ Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{
     Route::get('/agb', [LegalController::class, 'terms']); // Deutsch
     Route::get('/terminos', [LegalController::class, 'terms']); // Spanisch
     
-    // Test error pages route
-    Route::get('/test-error/{code}', [TestErrorController::class, 'show'])
-        ->name('test.error')
-        ->where('code', '403|404|500|503');
+    // Test error pages route - ONLY AVAILABLE IN LOCAL/DEVELOPMENT
+    if (app()->environment(['local', 'development'])) {
+        Route::get('/test-error/{code}', [\App\Http\Controllers\TestErrorController::class, 'show'])
+            ->name('test.error')
+            ->where('code', '403|404|500|503');
+    }
 });
 
-// Debug-Routen - WICHTIG für Sprachprobleme mit zh_CN
-Route::get('/debug/locale', [\App\Http\Controllers\DebugController::class, 'localeDebug'])->name('debug.locale');
-Route::get('/debug/locale/{test_locale}', [\App\Http\Controllers\DebugController::class, 'localeDebug'])->name('debug.locale.specific');
-Route::get('/debug/chinese', [\App\Http\Controllers\DebugController::class, 'testChinese'])->name('debug.chinese');
+// Debug-Routen - ONLY AVAILABLE IN LOCAL/DEVELOPMENT
+if (app()->environment(['local', 'development'])) {
+    Route::get('/debug/locale', [\App\Http\Controllers\DebugController::class, 'localeDebug'])->name('debug.locale');
+    Route::get('/debug/locale/{test_locale}', [\App\Http\Controllers\DebugController::class, 'localeDebug'])->name('debug.locale.specific');
+    Route::get('/debug/chinese', [\App\Http\Controllers\DebugController::class, 'testChinese'])->name('debug.chinese');
+}
 
 // Kontakt-API-Routen
 Route::post('/api/demo-request', [\App\Http\Controllers\Api\DemoRequestController::class, 'requestDemo'])
@@ -117,9 +89,17 @@ Route::post('/api/demo-request', [\App\Http\Controllers\Api\DemoRequestControlle
 // Google Analytics Route - wird nur aufgerufen, wenn Consent vorhanden ist
 Route::get('/load-analytics', [AnalyticsController::class, 'loadAnalytics'])->name('load.analytics');
 
-// Robots.txt route - Fix für 302 Redirect Problem
+// Robots.txt route - Fallback falls die statische Datei nicht existiert
 Route::get('/robots.txt', function () {
-    $content = "User-agent: *\nDisallow: /sendmail.php\nSitemap: https://mindbeamer.io/sitemap.xml";
+    // Check if static file exists first
+    $staticPath = public_path('robots.txt');
+    if (file_exists($staticPath)) {
+        return response(file_get_contents($staticPath))
+            ->header('Content-Type', 'text/plain');
+    }
+    
+    // Fallback content
+    $content = "User-agent: *\nAllow: /\n\n# Sitemap location\nSitemap: https://mindbeamer.io/sitemap.xml\n\n# Crawl-delay\nCrawl-delay: 1";
     return response($content)->header('Content-Type', 'text/plain');
 })->name('robots');
 

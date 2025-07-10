@@ -20,10 +20,6 @@
     
     <title>@yield('title', 'MindBeamer - ' . __('messages.hero_title'))</title>
     
-            }
-        });
-    </script>
-    
     <!-- Vite Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Local Fonts (DSGVO compliant, better performance) -->

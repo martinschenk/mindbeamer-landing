@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mindbeamer.io/sitemap.xml
+
+# Crawl-delay (optional, but helpful for server load)
+Crawl-delay: 1
