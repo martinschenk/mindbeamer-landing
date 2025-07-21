@@ -2,60 +2,92 @@
 <span id="how-it-works" class="invisible block" style="position: relative; top: -40px; height: 1px;"></span>
 
 <!-- How It Works Section -->
-<section class="bg-white py-16">
+<section class="bg-white py-20">
     <div class="container mx-auto px-6 fade-in">
-        <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-pink-500 via-purple-400 to-teal-400 text-transparent bg-clip-text">{{ __('messages.how_it_works_title') }}</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-gray-900">{{ __('messages.how_it_works_title') }}</h2>
+        
+        <!-- Steps Container -->
+        <div class="max-w-5xl mx-auto">
             <!-- Step 1 -->
-            <div class="text-center bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                <div class="text-pink-500 text-4xl mb-4 flex justify-center">
-                    <i class="ri-settings-3-line bg-pink-100 p-4 rounded-full transition-all duration-300 hover:bg-pink-200 hover:scale-110"></i>
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="bg-emerald-100 rounded-full p-8 inline-flex items-center justify-center">
+                        <span class="text-5xl">⚡</span>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-800">{{ __('messages.step1_title') }}</h3>
-                <p class="text-gray-600">{{ __('messages.step1_description') }}</p>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">{{ __('messages.step1_title') }}</h3>
+                    <p class="text-lg text-gray-700">{{ __('messages.step1_description') }}</p>
+                </div>
             </div>
             
             <!-- Step 2 -->
-            <div class="text-center bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                <div class="text-teal-500 text-4xl mb-4 flex justify-center">
-                    <i class="ri-lightbulb-flash-line bg-teal-100 p-4 rounded-full transition-all duration-300 hover:bg-teal-200 hover:scale-110"></i>
+            <div class="flex flex-col md:flex-row-reverse items-center mb-16">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="bg-blue-100 rounded-full p-8 inline-flex items-center justify-center">
+                        <span class="text-5xl">🚀</span>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-800">{{ __('messages.step2_title') }}</h3>
-                <p class="text-gray-600">{{ __('messages.step2_description') }}</p>
+                <div class="md:w-2/3 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">{{ __('messages.step2_title') }}</h3>
+                    <p class="text-lg text-gray-700 mb-4">{{ __('messages.step2_description') }}</p>
+                    
+                    <!-- Business Type Content Examples -->
+                    <div class="bg-gray-50 rounded-lg p-6 space-y-4">
+                        <div>
+                            <p class="font-semibold text-gray-800 mb-2">{{ __('messages.step2_product') }}</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 mb-2">{{ __('messages.step2_service') }}</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 mb-2">{{ __('messages.step2_local') }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- Step 3 -->
-            <div class="text-center bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                <div class="text-pink-500 text-4xl mb-4 flex justify-center">
-                    <i class="ri-file-edit-line bg-pink-100 p-4 rounded-full transition-all duration-300 hover:bg-pink-200 hover:scale-110"></i>
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="bg-emerald-100 rounded-full p-8 inline-flex items-center justify-center">
+                        <span class="text-5xl">✋</span>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-800">{{ __('messages.step3_title') }}</h3>
-                <p class="text-gray-600">{{ __('messages.step3_description') }}</p>
-            </div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- Step 4 -->
-            <div class="text-center bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                <div class="text-teal-500 text-4xl mb-4 flex justify-center">
-                    <i class="ri-edit-line bg-teal-100 p-4 rounded-full transition-all duration-300 hover:bg-teal-200 hover:scale-110"></i>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">{{ __('messages.step3_title') }}</h3>
+                    <p class="text-lg text-gray-700">{{ __('messages.step3_description') }}</p>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-800">{{ __('messages.step4_title') }}</h3>
-                <p class="text-gray-600">{{ __('messages.step4_description') }}</p>
             </div>
             
-            <!-- Step 5 -->
-            <div class="text-center bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
-                <div class="text-pink-500 text-4xl mb-4 flex justify-center">
-                    <i class="ri-rocket-line bg-pink-100 p-4 rounded-full transition-all duration-300 hover:bg-pink-200 hover:scale-110"></i>
+            <!-- Step 4 -->
+            <div class="flex flex-col md:flex-row-reverse items-center mb-16">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <div class="bg-blue-100 rounded-full p-8 inline-flex items-center justify-center">
+                        <span class="text-5xl">📈</span>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-gray-800">{{ __('messages.step5_title') }}</h3>
-                <p class="text-gray-600">{{ __('messages.step5_description') }}</p>
+                <div class="md:w-2/3 md:pr-8">
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900">{{ __('messages.step4_title') }}</h3>
+                    <p class="text-lg text-gray-700">{{ __('messages.step4_description') }}</p>
+                </div>
             </div>
         </div>
         
-        <div class="text-center mt-14">
-            <a href="#contact" class="btn-primary bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:from-pink-600 hover:to-purple-600">{{ __('messages.hero_cta') }}</a>
+        <!-- Result Box -->
+        <div class="bg-gradient-to-r from-emerald-50 to-blue-50 rounded-2xl p-8 max-w-4xl mx-auto text-center">
+            <p class="text-xl font-semibold text-gray-800">
+                {{ __('messages.how_it_works_result') }}
+            </p>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="#contact" class="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-5 px-10 rounded-lg shadow-xl transform transition hover:scale-105 hover:shadow-2xl text-lg">
+                {{ __('messages.hero_cta') }}
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                </svg>
+            </a>
         </div>
     </div>
 </section>
