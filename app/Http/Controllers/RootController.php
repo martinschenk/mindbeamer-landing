@@ -77,7 +77,7 @@ class RootController extends Controller
         ]);
         
         // Pass both default and preferred locale to the view
-        return view('landing', [
+        return view('app', [
             'currentLocale' => $defaultLocale,
             'preferredLocale' => $preferredLocale,
             'isRootDomain' => true

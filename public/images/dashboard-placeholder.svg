@@ -1,0 +1,27 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" rx="16" fill="#F3F4F6"/>
+  <rect x="20" y="20" width="760" height="560" rx="12" fill="white"/>
+  
+  <!-- Header -->
+  <rect x="20" y="20" width="760" height="60" fill="#4F46E5"/>
+  <text x="40" y="55" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">MindBeamer Dashboard</text>
+  
+  <!-- Stats Cards -->
+  <rect x="40" y="100" width="170" height="100" rx="8" fill="#EFF6FF"/>
+  <rect x="230" y="100" width="170" height="100" rx="8" fill="#F0FDF4"/>
+  <rect x="420" y="100" width="170" height="100" rx="8" fill="#FEF3C7"/>
+  <rect x="610" y="100" width="170" height="100" rx="8" fill="#FEE2E2"/>
+  
+  <!-- Chart Area -->
+  <rect x="40" y="220" width="480" height="300" rx="8" fill="#F9FAFB"/>
+  
+  <!-- Posts List -->
+  <rect x="540" y="220" width="240" height="300" rx="8" fill="#F9FAFB"/>
+  
+  <!-- Placeholder elements -->
+  <rect x="60" y="120" width="100" height="12" rx="6" fill="#DBEAFE"/>
+  <rect x="60" y="140" width="80" height="24" rx="4" fill="#3B82F6"/>
+  
+  <rect x="250" y="120" width="100" height="12" rx="6" fill="#D1FAE5"/>
+  <rect x="250" y="140" width="80" height="24" rx="4" fill="#10B981"/>
+</svg>
