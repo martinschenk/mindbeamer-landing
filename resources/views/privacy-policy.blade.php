@@ -3,10 +3,10 @@
         <div class="max-w-4xl mx-auto px-6 lg:px-8">
             <!-- Header -->
             <div class="text-center mb-12">
-                <h1 class="section-title text-4xl md:text-5xl font-bold bg-gradient-to-r from-pink-500 via-purple-400 to-teal-400 text-transparent bg-clip-text mb-6">
+                <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 text-transparent bg-clip-text mb-6">
                     {{ __('privacy.title') }}
                 </h1>
-                <p class="text-gray-600 text-lg">
+                <p class="text-surface-600 text-lg">
                     {{ __('privacy.last_updated') }}: {{ now()->format('d.m.Y') }}
                 </p>
             </div>
@@ -20,8 +20,8 @@
                             <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                         </svg>
                         <div>
-                            <h3 class="text-lg font-semibold text-gray-900">{{ __('messages.gdpr_compliant') }}</h3>
-                            <p class="text-sm text-gray-600">{{ __('privacy.gdpr_notice') }}</p>
+                            <h3 class="text-lg font-semibold text-surface-900">{{ __('messages.gdpr_compliant') }}</h3>
+                            <p class="text-sm text-surface-600">{{ __('privacy.gdpr_notice') }}</p>
                         </div>
                     </div>
                 </div>
@@ -30,19 +30,19 @@
                     
                     <!-- Company Information -->
                     <section class="mb-8">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ __('privacy.company_info_title') }}</h2>
+                        <h2 class="text-2xl font-bold text-surface-900 mb-4">{{ __('privacy.company_info_title') }}</h2>
                         <div class="bg-gray-50 p-4 rounded-lg">
                             <p><strong>{{ __('privacy.company') }}:</strong> Martin Schenk S.L.</p>
                             <p><strong>{{ __('privacy.address') }}:</strong> Calle Claudio Coello 14, 5G, 28001 Madrid, España</p>
                             <p><strong>{{ __('legal.vat_number') }}:</strong> ESB84645654</p>
-                            <p><strong>{{ __('legal.phone') }}:</strong> <a href="tel:+34669686832" class="text-pink-600 hover:text-pink-800">(+34) 669 686 832</a></p>
+                            <p><strong>{{ __('legal.phone') }}:</strong> <a href="tel:+34669686832" class="text-primary hover:text-primary-700">(+34) 669 686 832</a></p>
                             <p><strong>{{ __('privacy.contact') }}:</strong> m.schenk@mindbeamer.io</p>
                         </div>
                     </section>
 
                     <!-- Data Collection -->
                     <section class="mb-8">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ __('privacy.data_collection_title') }}</h2>
+                        <h2 class="text-2xl font-bold text-surface-900 mb-4">{{ __('privacy.data_collection_title') }}</h2>
                         <p class="mb-4">{{ __('privacy.data_collection_desc') }}</p>
                         <ul class="list-disc pl-6 space-y-2">
                             <li>{{ __('privacy.data_contact_forms') }}</li>
@@ -53,7 +53,7 @@
 
                     <!-- Cookies -->
                     <section class="mb-8">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ __('privacy.cookies_title') }}</h2>
+                        <h2 class="text-2xl font-bold text-surface-900 mb-4">{{ __('privacy.cookies_title') }}</h2>
                         <p class="mb-4">{{ __('privacy.cookies_desc') }}</p>
                         <div class="bg-blue-50 p-6 rounded-lg">
                             <h3 class="font-semibold mb-2">{{ __('privacy.cookies_types') }}:</h3>
@@ -67,7 +67,7 @@
 
                     <!-- Your Rights -->
                     <section class="mb-8">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ __('privacy.rights_title') }}</h2>
+                        <h2 class="text-2xl font-bold text-surface-900 mb-4">{{ __('privacy.rights_title') }}</h2>
                         <p class="mb-4">{{ __('privacy.rights_desc') }}</p>
                         <ul class="list-disc pl-6 space-y-2">
                             <li>{{ __('privacy.right_access') }}</li>
@@ -80,9 +80,9 @@
 
                     <!-- Contact -->
                     <section class="mb-8">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ __('privacy.contact_title') }}</h2>
+                        <h2 class="text-2xl font-bold text-surface-900 mb-4">{{ __('privacy.contact_title') }}</h2>
                         <p class="mb-4">{{ __('privacy.contact_desc') }}</p>
-                        <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-lg">
+                        <div class="bg-gradient-to-r from-primary-50 to-primary-100 p-6 rounded-lg">
                             <p class="font-semibold">{{ __('privacy.contact_email') }}: m.schenk@mindbeamer.io</p>
                         </div>
                     </section>
@@ -93,7 +93,7 @@
             <!-- Back to Home -->
             <div class="text-center mt-12">
                 <a href="{{ route('home', ['locale' => app()->getLocale()]) }}" 
-                   class="inline-flex items-center px-6 py-3 bg-pink-500 text-white font-medium rounded-lg hover:bg-pink-600 transition-colors duration-200">
+                   class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200">
                     ← {{ __('privacy.back_to_home') }}
                 </a>
             </div>

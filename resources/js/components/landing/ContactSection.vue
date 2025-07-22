@@ -1,18 +1,18 @@
 <template>
-  <section id="contact" class="py-20 bg-gradient-to-br from-indigo-50 to-white relative overflow-hidden">
+  <section id="contact" class="py-20 bg-gradient-to-br from-primary-50 to-white relative overflow-hidden">
     <!-- Background Animation -->
     <div class="absolute inset-0">
-      <div class="absolute -top-20 -right-20 w-80 h-80 bg-indigo-200 rounded-full opacity-20 blur-3xl animate-float"></div>
-      <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl animate-float" style="animation-delay: 2s;"></div>
+      <div class="absolute -top-20 -right-20 w-80 h-80 bg-primary-200 rounded-full opacity-20 blur-3xl animate-float"></div>
+      <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-primary-300 rounded-full opacity-20 blur-3xl animate-float" style="animation-delay: 2s;"></div>
     </div>
     
     <div class="container mx-auto px-6 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-surface-900 mb-4">
           {{ t('contact_headline') }}
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-surface-600 max-w-3xl mx-auto">
           {{ t('contact_subheadline') }}
         </p>
       </div>
@@ -21,12 +21,12 @@
         <!-- Contact Form -->
         <div class="fade-in" style="animation-delay: 0.1s;">
           <div class="bg-white rounded-2xl shadow-xl p-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">{{ t('contact_form_title') }}</h3>
+            <h3 class="text-2xl font-bold text-surface-900 mb-6">{{ t('contact_form_title') }}</h3>
             
             <form @submit.prevent="handleSubmit" class="space-y-6">
               <!-- Name Field -->
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                <label for="name" class="block text-sm font-medium text-surface-700 mb-2">
                   {{ t('contact_name') }} <span class="text-red-500">*</span>
                 </label>
                 <InputText 
@@ -41,7 +41,7 @@
               
               <!-- Email Field -->
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                <label for="email" class="block text-sm font-medium text-surface-700 mb-2">
                   {{ t('contact_email') }} <span class="text-red-500">*</span>
                 </label>
                 <InputText 
@@ -57,7 +57,7 @@
               
               <!-- Company Field -->
               <div>
-                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                <label for="company" class="block text-sm font-medium text-surface-700 mb-2">
                   {{ t('contact_company') }}
                 </label>
                 <InputText 
@@ -70,7 +70,7 @@
               
               <!-- Message Field -->
               <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                <label for="message" class="block text-sm font-medium text-surface-700 mb-2">
                   {{ t('contact_message') }}
                 </label>
                 <Textarea 
@@ -90,9 +90,9 @@
                   :binary="true"
                   :class="{ 'p-invalid': errors.privacy }"
                 />
-                <label for="privacy" class="ml-3 text-sm text-gray-600">
+                <label for="privacy" class="ml-3 text-sm text-surface-600">
                   {{ t('contact_privacy_consent') }}
-                  <router-link :to="getLocalizedUrl('privacy')" class="text-indigo-600 hover:text-indigo-700">
+                  <router-link :to="getLocalizedUrl('privacy')" class="text-primary hover:text-primary-600">
                     {{ t('footer_privacy') }}
                   </router-link>
                 </label>

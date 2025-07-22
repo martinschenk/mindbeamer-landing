@@ -38,7 +38,9 @@
             </div>
           </div>
           <div class="flex-1 md:pl-8">
-            <img src="/images/step-1-placeholder.svg" alt="Step 1" class="w-full h-auto rounded-lg shadow-md">
+            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-8 flex items-center justify-center h-64">
+              <i class="pi pi-upload text-8xl text-indigo-400"></i>
+            </div>
           </div>
         </div>
         
@@ -61,7 +63,9 @@
             </div>
           </div>
           <div class="flex-1 md:pr-8">
-            <img src="/images/step-2-placeholder.svg" alt="Step 2" class="w-full h-auto rounded-lg shadow-md">
+            <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 flex items-center justify-center h-64">
+              <i class="pi pi-sparkles text-8xl text-green-400"></i>
+            </div>
           </div>
         </div>
         
@@ -84,7 +88,9 @@
             </div>
           </div>
           <div class="flex-1 md:pl-8">
-            <img src="/images/step-3-placeholder.svg" alt="Step 3" class="w-full h-auto rounded-lg shadow-md">
+            <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 flex items-center justify-center h-64">
+              <i class="pi pi-sliders-h text-8xl text-purple-400"></i>
+            </div>
           </div>
         </div>
         
@@ -107,7 +113,9 @@
             </div>
           </div>
           <div class="flex-1 md:pr-8">
-            <img src="/images/step-4-placeholder.svg" alt="Step 4" class="w-full h-auto rounded-lg shadow-md">
+            <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 flex items-center justify-center h-64">
+              <i class="pi pi-chart-line text-8xl text-orange-400"></i>
+            </div>
           </div>
         </div>
       </div>

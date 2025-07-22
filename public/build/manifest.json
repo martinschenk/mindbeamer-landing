@@ -1,16 +1,37 @@
 {
+  "_primevue-YL5fG36o.js": {
+    "file": "assets/primevue-YL5fG36o.js",
+    "name": "primevue",
+    "imports": [
+      "_vendor-07WBDmhw.js"
+    ]
+  },
+  "_utils-Dq7h7Pqt.js": {
+    "file": "assets/utils-Dq7h7Pqt.js",
+    "name": "utils"
+  },
+  "_vendor-07WBDmhw.js": {
+    "file": "assets/vendor-07WBDmhw.js",
+    "name": "vendor"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-J9cMivkA.css",
+    "file": "css/app-3mDf4jxD.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-xfLJEMNW.js",
+    "file": "assets/app-B_22reT9.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
+    "imports": [
+      "_vendor-07WBDmhw.js",
+      "_primevue-YL5fG36o.js",
+      "_utils-Dq7h7Pqt.js"
+    ],
     "css": [
-      "assets/app-J9cMivkA.css"
+      "css/app-BCghqOAW.css",
+      "css/app-3mDf4jxD.css"
     ]
   }
 }

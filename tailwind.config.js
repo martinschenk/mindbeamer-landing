@@ -1,33 +1,29 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import PrimeUI from 'tailwindcss-primeui';
+
+export default {
+  darkMode: ['selector', '[class*="app-dark"]'],
   content: [
+    "./index.html",
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.php",
     "./resources/**/*.vue",
+    "./src/**/*.{vue,js,ts,jsx,tsx}"
   ],
+  plugins: [PrimeUI],
   theme: {
+    screens: {
+      sm: '576px',
+      md: '768px',
+      lg: '992px',
+      xl: '1200px',
+      '2xl': '1920px'
+    },
     extend: {
       colors: {
-        // Keep existing colors for compatibility
-        pink: {
-          100: '#FFF5F7',
-          500: '#EC4899',  // True pink color matching production site
-          600: '#DB2777',
-          700: '#BE185D',
-        },
-        teal: {
-          100: '#E6FFFA',
-          400: '#4ECDC4',  // Keep this consistent teal color
-          500: '#38B2AC',
-        },
-        purple: {
-          400: '#9F7AEA',  // Keep this consistent purple color
-          500: '#805AD5',
-          600: '#6B46C1',
-        },
-        // New business-focused colors
-        blue: {
+        // MindBeamer Primary Colors
+        primary: {
           50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',
@@ -38,6 +34,7 @@ module.exports = {
           700: '#1d4ed8',
           800: '#1e40af',
           900: '#1e3a8a',
+          950: '#172554'
         },
         emerald: {
           50: '#ecfdf5',
@@ -66,5 +63,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 }

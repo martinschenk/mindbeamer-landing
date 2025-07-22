@@ -2,34 +2,22 @@
   <header class="bg-white shadow-md fixed top-0 w-full z-20 border-b border-gray-100" :style="headerStyle">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center w-full">
       <!-- Logo -->
-      <router-link :to="homeRoute" class="flex items-center space-x-2">
-        <!-- MindBeamer Logo Icon -->
-        <svg width="32" height="32" viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-icon">
-          <g>
-            <circle cx="5" cy="40" r="6" fill="#6366f1" class="text-primary"></circle>
-            <path d="M5 25 A15 15 0 0 1 20 40 A15 15 0 0 1 5 55" stroke="#6366f1" stroke-width="3" fill="none" class="text-primary"></path>
-            <path d="M5 15 A25 25 0 0 1 30 40 A25 25 0 0 1 5 65" stroke="#6366f1" stroke-width="2" fill="none" class="text-primary" opacity="0.7"></path>
-            <path d="M5 5 A35 35 0 0 1 40 40 A35 35 0 0 1 5 75" stroke="#6366f1" stroke-width="2" fill="none" class="text-primary" opacity="0.4"></path>
-          </g>
-        </svg>
-        <div class="text-2xl font-bold">
-          <span class="text-indigo-500" style="font-family: 'Inter', sans-serif;">Mind</span>
-          <span class="text-gray-900" style="font-family: 'Inter', sans-serif;">Beamer</span>
-        </div>
+      <router-link :to="homeRoute">
+        <MindBeamerLogo size="sm" />
       </router-link>
       
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center space-x-8">
-        <a :href="`${homeRoute}#how-it-works`" class="text-gray-700 hover:text-indigo-500 font-medium transition-colors">
+        <a :href="`${homeRoute}#how-it-works`" class="text-surface-900 hover:text-primary font-medium transition-colors">
           {{ t('nav_how_it_works') }}
         </a>
-        <a :href="`${homeRoute}#features`" class="text-gray-700 hover:text-indigo-500 font-medium transition-colors">
+        <a :href="`${homeRoute}#features`" class="text-surface-900 hover:text-primary font-medium transition-colors">
           {{ t('nav_features') }}
         </a>
-        <a :href="`${homeRoute}#why-us`" class="text-gray-700 hover:text-indigo-500 font-medium transition-colors">
+        <a :href="`${homeRoute}#why-us`" class="text-surface-900 hover:text-primary font-medium transition-colors">
           {{ t('nav_why_us') }}
         </a>
-        <a :href="`${homeRoute}#pricing`" class="text-gray-700 hover:text-indigo-500 font-medium transition-colors">
+        <a :href="`${homeRoute}#pricing`" class="text-surface-900 hover:text-primary font-medium transition-colors">
           {{ t('nav_pricing') }}
         </a>
         <Button 
@@ -52,7 +40,7 @@
     </div>
     
     <!-- Mobile Menu -->
-    <Sidebar 
+    <Drawer 
       v-model:visible="mobileMenuOpen"
       position="right"
       :showCloseIcon="false"
@@ -76,28 +64,28 @@
         <a 
           :href="`${homeRoute}#how-it-works`" 
           @click="closeMobileMenu"
-          class="text-gray-700 hover:text-indigo-500 font-medium text-lg py-2 transition-colors"
+          class="text-surface-900 hover:text-primary font-medium text-lg py-2 transition-colors"
         >
           {{ t('nav_how_it_works') }}
         </a>
         <a 
           :href="`${homeRoute}#features`" 
           @click="closeMobileMenu"
-          class="text-gray-700 hover:text-indigo-500 font-medium text-lg py-2 transition-colors"
+          class="text-surface-900 hover:text-primary font-medium text-lg py-2 transition-colors"
         >
           {{ t('nav_features') }}
         </a>
         <a 
           :href="`${homeRoute}#why-us`" 
           @click="closeMobileMenu"
-          class="text-gray-700 hover:text-indigo-500 font-medium text-lg py-2 transition-colors"
+          class="text-surface-900 hover:text-primary font-medium text-lg py-2 transition-colors"
         >
           {{ t('nav_why_us') }}
         </a>
         <a 
           :href="`${homeRoute}#pricing`" 
           @click="closeMobileMenu"
-          class="text-gray-700 hover:text-indigo-500 font-medium text-lg py-2 transition-colors"
+          class="text-surface-900 hover:text-primary font-medium text-lg py-2 transition-colors"
         >
           {{ t('nav_pricing') }}
         </a>
@@ -110,7 +98,7 @@
           class="w-full"
         />
       </nav>
-    </Sidebar>
+    </Drawer>
   </header>
 </template>
 
@@ -120,7 +108,8 @@ import { storeToRefs } from 'pinia';
 import { useUIStore } from '@/stores/ui';
 import { useLocaleStore } from '@/stores/locale';
 import Button from 'primevue/button';
-import Sidebar from 'primevue/sidebar';
+import Drawer from 'primevue/drawer';
+import MindBeamerLogo from '@/components/common/MindBeamerLogo.vue';
 
 const uiStore = useUIStore();
 const localeStore = useLocaleStore();

@@ -41,7 +41,7 @@ export default defineConfig({
             output: {
                 manualChunks: {
                     'vendor': ['vue', 'pinia', 'vue-router'],
-                    'primevue': ['primevue', 'primeicons', '@primeuix/themes'],
+                    'primevue': ['primevue', '@primeuix/themes'],
                     'utils': ['axios']
                 },
                 assetFileNames: (assetInfo) => {

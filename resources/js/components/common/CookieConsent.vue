@@ -65,7 +65,7 @@
               <p class="text-sm text-gray-600 mt-1">{{ t('cookie-consent.analytics_description') }}</p>
             </div>
             <div class="ml-4">
-              <InputSwitch 
+              <ToggleSwitch 
                 v-model="consent.analytics"
                 :pt="{
                   slider: { class: consent.analytics ? 'bg-indigo-500' : 'bg-gray-200' }
@@ -83,7 +83,7 @@
               <p class="text-sm text-gray-600 mt-1">{{ t('cookie-consent.preferences_description') }}</p>
             </div>
             <div class="ml-4">
-              <InputSwitch 
+              <ToggleSwitch 
                 v-model="consent.preferences"
                 :pt="{
                   slider: { class: consent.preferences ? 'bg-indigo-500' : 'bg-gray-200' }
@@ -127,7 +127,7 @@ import { useCookieConsentStore } from '@/stores/cookieConsent';
 import { useLocaleStore } from '@/stores/locale';
 import Dialog from 'primevue/dialog';
 import Button from 'primevue/button';
-import InputSwitch from 'primevue/inputswitch';
+import ToggleSwitch from 'primevue/toggleswitch';
 
 const cookieConsentStore = useCookieConsentStore();
 const localeStore = useLocaleStore();

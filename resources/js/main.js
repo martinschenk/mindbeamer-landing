@@ -6,14 +6,14 @@ import router from './router';
 // PrimeVue
 import PrimeVue from 'primevue/config';
 import { definePreset } from '@primeuix/themes';
-import Aura from '@primeuix/themes/aura';
+import Lara from '@primeuix/themes/lara';
 import ConfirmationService from 'primevue/confirmationservice';
 import ToastService from 'primevue/toastservice';
 
 // Styles
 import '../css/app.css';
 import './assets/styles/main.scss';
-import 'primeicons/primeicons.css';
+// Primeicons CSS import moved to app.blade.php to avoid build issues
 
 // Create app
 const app = createApp(App);
@@ -22,7 +22,7 @@ const app = createApp(App);
 const pinia = createPinia();
 
 // Diamond Theme Configuration - MindBeamer Blue
-const MindBeamerPreset = definePreset(Aura, {
+const MindBeamerPreset = definePreset(Lara, {
     semantic: {
         primary: {
             50: '#eff6ff',

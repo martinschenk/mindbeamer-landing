@@ -40,6 +40,9 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    {{-- PrimeIcons --}}
+    <link rel="stylesheet" href="https://unpkg.com/primeicons@7.0.0/primeicons.css">
+    
     {{-- Structured Data --}}
     <script type="application/ld+json">
     {
@@ -69,6 +72,7 @@
             translations: @json(__('messages')),
             cookieTranslations: @json(__('cookie-consent')),
             legalTranslations: @json(__('legal')),
+            privacyTranslations: @json(__('privacy')),
             routes: @json([
                 'api.demo-request' => route('api.demo-request')
             ]),

@@ -28,7 +28,7 @@
     <GuaranteeSection />
     
     <!-- Contact/Demo -->
-    <ContactSection />
+    <DemoRequestSection />
   </div>
 </template>
 
@@ -42,5 +42,5 @@ import RoiCalculator from '@/components/landing/RoiCalculator.vue';
 import PricingSection from '@/components/landing/PricingSection.vue';
 import UrgencySection from '@/components/landing/UrgencySection.vue';
 import GuaranteeSection from '@/components/landing/GuaranteeSection.vue';
-import ContactSection from '@/components/landing/ContactSection.vue';
+import DemoRequestSection from '@/components/landing/DemoRequestSection.vue';
 </script>

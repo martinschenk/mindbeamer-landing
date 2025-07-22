@@ -1,11 +1,13 @@
 <template>
   <RouterView />
+  <Toast />
 </template>
 
 <script setup>
 import { onMounted } from 'vue';
 import { useLocaleStore } from '@/stores/locale';
 import { useCookieConsentStore } from '@/stores/cookieConsent';
+import Toast from 'primevue/toast';
 
 // Initialize stores
 const localeStore = useLocaleStore();

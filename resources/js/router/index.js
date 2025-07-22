@@ -19,6 +19,25 @@ const routes = [
         name: 'root',
         component: LandingView,
         meta: { locale: 'en' }
+      },
+      // English legal pages (without locale prefix)
+      {
+        path: 'privacy-policy',
+        name: 'privacy-policy-en',
+        component: PrivacyView,
+        meta: { locale: 'en' }
+      },
+      {
+        path: 'legal-notice',
+        name: 'legal-notice-en',
+        component: ImpressumView,
+        meta: { locale: 'en' }
+      },
+      {
+        path: 'terms',
+        name: 'terms-en',
+        component: TermsView,
+        meta: { locale: 'en' }
       }
     ]
   },
@@ -102,10 +121,17 @@ const router = createRouter({
 
 // Navigation guard to sync with Laravel locale
 router.beforeEach((to, from, next) => {
-  const locale = to.params.locale || 'en';
+  // Get locale from route params, meta, or default to 'en'
+  const locale = to.params.locale || to.meta?.locale || 'en';
   
   // Update document lang attribute
   document.documentElement.lang = locale === 'zh_CN' ? 'zh-CN' : locale;
+  
+  // Update locale store if available
+  const localeStore = window.pinia?.use?.('locale');
+  if (localeStore && localeStore.currentLocale !== locale) {
+    localeStore.setLocale(locale);
+  }
   
   next();
 });

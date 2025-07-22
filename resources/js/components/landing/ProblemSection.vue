@@ -2,16 +2,16 @@
   <section id="problem" class="py-20 bg-white relative overflow-hidden">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(99, 102, 241, 0.1) 35px, rgba(99, 102, 241, 0.1) 70px);"></div>
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(59, 130, 246, 0.1) 35px, rgba(59, 130, 246, 0.1) 70px);"></div>
     </div>
     
     <div class="container mx-auto px-6 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-surface-900 mb-4">
           {{ t('problem_headline') }}
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-surface-600 max-w-3xl mx-auto">
           {{ t('problem_subheadline') }}
         </p>
       </div>
@@ -27,8 +27,8 @@
               </div>
             </div>
             <div>
-              <h3 class="font-semibold text-lg text-gray-900 mb-2">{{ t('problem_time_title') }}</h3>
-              <p class="text-gray-600">{{ t('problem_time_desc') }}</p>
+              <h3 class="font-semibold text-lg text-surface-900 mb-2">{{ t('problem_time_title') }}</h3>
+              <p class="text-surface-600">{{ t('problem_time_desc') }}</p>
               <p class="text-red-600 font-bold mt-2">{{ t('problem_time_cost') }}</p>
             </div>
           </div>
@@ -43,8 +43,8 @@
               </div>
             </div>
             <div>
-              <h3 class="font-semibold text-lg text-gray-900 mb-2">{{ t('problem_consistency_title') }}</h3>
-              <p class="text-gray-600">{{ t('problem_consistency_desc') }}</p>
+              <h3 class="font-semibold text-lg text-surface-900 mb-2">{{ t('problem_consistency_title') }}</h3>
+              <p class="text-surface-600">{{ t('problem_consistency_desc') }}</p>
               <p class="text-orange-600 font-bold mt-2">{{ t('problem_consistency_cost') }}</p>
             </div>
           </div>
@@ -59,8 +59,8 @@
               </div>
             </div>
             <div>
-              <h3 class="font-semibold text-lg text-gray-900 mb-2">{{ t('problem_ideas_title') }}</h3>
-              <p class="text-gray-600">{{ t('problem_ideas_desc') }}</p>
+              <h3 class="font-semibold text-lg text-surface-900 mb-2">{{ t('problem_ideas_title') }}</h3>
+              <p class="text-surface-600">{{ t('problem_ideas_desc') }}</p>
               <p class="text-yellow-600 font-bold mt-2">{{ t('problem_ideas_cost') }}</p>
             </div>
           </div>
@@ -75,8 +75,8 @@
               </div>
             </div>
             <div>
-              <h3 class="font-semibold text-lg text-gray-900 mb-2">{{ t('problem_roi_title') }}</h3>
-              <p class="text-gray-600">{{ t('problem_roi_desc') }}</p>
+              <h3 class="font-semibold text-lg text-surface-900 mb-2">{{ t('problem_roi_title') }}</h3>
+              <p class="text-surface-600">{{ t('problem_roi_desc') }}</p>
               <p class="text-purple-600 font-bold mt-2">{{ t('problem_roi_cost') }}</p>
             </div>
           </div>
@@ -107,24 +107,39 @@
               </div>
             </div>
             <div>
-              <h3 class="font-semibold text-lg text-gray-900 mb-2">{{ t('problem_expertise_title') }}</h3>
-              <p class="text-gray-600">{{ t('problem_expertise_desc') }}</p>
+              <h3 class="font-semibold text-lg text-surface-900 mb-2">{{ t('problem_expertise_title') }}</h3>
+              <p class="text-surface-600">{{ t('problem_expertise_desc') }}</p>
               <p class="text-blue-600 font-bold mt-2">{{ t('problem_expertise_cost') }}</p>
             </div>
           </div>
         </div>
       </div>
       
+      <!-- Cost Summary -->
+      <div class="bg-red-50 border-2 border-red-200 rounded-2xl p-8 mt-16 fade-in" style="animation-delay: 0.7s;">
+        <h3 class="text-2xl font-bold text-red-900 mb-6 text-center">{{ t('problem_cost_title') }}</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="text-center">
+            <p class="text-red-700 font-medium">{{ t('problem_missed_opportunities') }}</p>
+          </div>
+          <div class="text-center">
+            <p class="text-red-700 font-medium">{{ t('problem_lower_trust') }}</p>
+          </div>
+          <div class="text-center">
+            <p class="text-red-700 font-medium">{{ t('problem_lost_leads') }}</p>
+          </div>
+        </div>
+      </div>
+      
       <!-- CTA -->
-      <div class="text-center mt-16 fade-in" style="animation-delay: 0.7s;">
-        <p class="text-xl text-gray-700 mb-6">{{ t('problem_cta_text') }}</p>
+      <div class="text-center mt-12 fade-in" style="animation-delay: 0.8s;">
+        <p class="text-xl text-surface-700 mb-6 font-semibold">{{ t('problem_cta_text') }}</p>
         <Button 
           :label="t('problem_cta_button')"
-          severity="primary"
+          severity="warning"
           size="large"
           @click="scrollToSolution"
-          icon="pi pi-arrow-down"
-          iconPos="right"
+          class="animate-bounce"
         />
       </div>
     </div>
