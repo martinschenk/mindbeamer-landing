@@ -1,17 +1,17 @@
 {
-  "_primevue-DQYjj33L.js": {
-    "file": "assets/primevue-DQYjj33L.js",
+  "_primevue-DByNXZFk.js": {
+    "file": "assets/primevue-DByNXZFk.js",
     "name": "primevue",
     "imports": [
-      "_vendor-CKmvIR-_.js"
+      "_vendor-CCjos8FF.js"
     ]
   },
   "_utils-Dq7h7Pqt.js": {
     "file": "assets/utils-Dq7h7Pqt.js",
     "name": "utils"
   },
-  "_vendor-CKmvIR-_.js": {
-    "file": "assets/vendor-CKmvIR-_.js",
+  "_vendor-CCjos8FF.js": {
+    "file": "assets/vendor-CCjos8FF.js",
     "name": "vendor"
   },
   "resources/css/app.css": {
@@ -20,13 +20,13 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-C3qIDJUA.js",
+    "file": "assets/app-DdhaoX_E.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_vendor-CKmvIR-_.js",
-      "_primevue-DQYjj33L.js",
+      "_vendor-CCjos8FF.js",
+      "_primevue-DByNXZFk.js",
       "_utils-Dq7h7Pqt.js"
     ],
     "css": [
