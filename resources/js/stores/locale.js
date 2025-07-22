@@ -44,6 +44,22 @@ export const useLocaleStore = defineStore('locale', () => {
   }
   
   function t(key, defaultValue = '') {
+    // Handle nested keys (e.g., 'cookie-consent.banner_title')
+    if (key.includes('.')) {
+      const parts = key.split('.');
+      let value = translations.value;
+      
+      for (const part of parts) {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return defaultValue || key;
+        }
+      }
+      
+      return value || defaultValue || key;
+    }
+    
     return translations.value[key] || defaultValue || key;
   }
   
@@ -57,7 +73,7 @@ export const useLocaleStore = defineStore('locale', () => {
     }
     // Also load cookie and legal translations
     if (window.__APP_DATA__.cookieTranslations) {
-      Object.assign(translations.value, window.__APP_DATA__.cookieTranslations);
+      translations.value['cookie-consent'] = window.__APP_DATA__.cookieTranslations;
     }
     if (window.__APP_DATA__.legalTranslations) {
       Object.assign(translations.value, window.__APP_DATA__.legalTranslations);

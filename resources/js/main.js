@@ -94,3 +94,42 @@ app.use(ConfirmationService);
 
 // Mount app
 app.mount('#app');
+
+// Handle anchor link scrolling with fixed header offset
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle all clicks on the document
+    document.addEventListener('click', (e) => {
+        // Check if clicked element is a hash link
+        const link = e.target.closest('a[href*="#"]');
+        if (!link) return;
+        
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        
+        // Extract hash from href
+        const hashIndex = href.indexOf('#');
+        if (hashIndex === -1) return;
+        
+        const hash = href.substring(hashIndex);
+        const target = document.querySelector(hash);
+        
+        if (target) {
+            e.preventDefault();
+            
+            // Calculate position with offset
+            const headerOffset = 50; // Adjust this value
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'auto'
+            });
+            
+            // Update URL without triggering router
+            if (history.pushState) {
+                history.pushState(null, null, href);
+            }
+        }
+    });
+});

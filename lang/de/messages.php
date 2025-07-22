@@ -10,48 +10,80 @@ return [
     'nav_demo' => 'Gratis Demo',
     
     // Hero Section
-    'hero_title' => 'Ihr vollautomatischer KI-Content-Agent',
-    'hero_subtitle' => 'MindBeamer erstellt und veröffentlicht eigenständig beeindruckende Blogbeiträge und Social-Media-Inhalte – einmal konfiguriert, arbeitet er komplett selbstständig. Buchen Sie eine kostenlose Demo und erleben Sie die Magie!',
-    'hero_cta' => 'Kostenlose Demo anfragen',
+    'hero_badge' => 'Deutsche Ingenieurskunst • 20+ Jahre Software-Excellence',
+    'hero_title' => 'Endlich, Social Media läuft von selbst',
+    'hero_title_line1' => 'Verschwenden Sie keine 15+ Stunden pro Woche mehr mit Social Media Posts',
+    'hero_title_line2' => 'Endlich, Social Media läuft von selbst',
+    'hero_subtitle' => 'Sehen Sie, wie MindBeamer täglich automatisch Inhalte erstellt und veröffentlicht. Entwickelt vom deutschen Ingenieur, der 1,4 Mio.+ Websites betrieben hat. Aktuell live im Einsatz - 100% autonomer Betrieb.',
+    'hero_cta' => 'Zeigen Sie mir, wie es funktioniert',
+    'hero_cta_primary' => 'Live-Demo ansehen →',
+    'hero_cta_secondary' => 'So funktioniert\'s',
+    'hero_credibility' => 'Entwickelt vom deutschen Ingenieur hinter einer Website-Builder-Plattform - vertraut von 1,4 Mio.+ Websites weltweit',
+    'hero_live_banner' => '🔴 LIVE: Postet aktuell automatisch für Startups Españolas • 90+ Tage autonom',
+    'hero_credentials' => 'Entwickelt von Martin Schenk • 1,4 Mio.+ Websites betrieben • KI + Laravel Experte',
+    'hero_view_profile' => 'Entwickler-Profil ansehen →',
+    'hero_save_time' => '15-20 Stunden pro Woche sparen',
+    'hero_stop_posting' => 'Schluss mit zufälligen Inhalten. Systematisches Wachstum starten.',
+    'hero_stat_label' => 'Engagement',
+    'hero_time_saved' => 'Zeit gespart',
+    'week' => 'Woche',
+    
+    // Hero Features
+    'hero_feature1' => '✅ Produktunternehmen: Verwandeln Sie Ihr Sortiment in Content-Gold',
+    'hero_feature2' => '✅ Dienstleister: Zeigen Sie Ihre Expertise automatisch',
+    'hero_feature3' => '✅ Wachsende Unternehmen: Bleiben Sie sichtbar ohne Aufwand',
+    
+    // Hero Target Badges
+    'hero_target_product' => 'Produktunternehmen: Verwandeln Sie Ihr Sortiment in Content-Gold',
+    'hero_target_service' => 'Dienstleister: Zeigen Sie Ihre Expertise automatisch',
+    'hero_target_local' => 'Lokale Unternehmen: Bleiben Sie sichtbar ohne Aufwand',
     
     // How It Works Section
-    'how_it_works_title' => 'Autonomer Content in 5 Schritten',
+    'how_it_works_title' => 'So läuft Ihr Content auf Autopilot',
+    'how_it_works_subtitle' => 'Vier einfache Schritte zu Ihrer automatisierten Social-Media-Präsenz',
     
-    'step1_title' => '1. Einmalige Einrichtung',
-    'step1_description' => 'Konfigurieren Sie Ihre Marke, Tonalität, Themen und Plattformen nur einmal.',
+    'step1_title' => 'Erzählen Sie uns von Ihrem Unternehmen',
+    'step1_description' => 'Laden Sie Ihre Website, Produktkatalog oder beschreiben Sie Ihre Dienstleistungen. MindBeamer lernt, was Ihr Unternehmen einzigartig macht.',
+    'step1_time' => 'Dauert nur 10 Minuten',
     
-    'step2_title' => '2. KI findet Themen',
-    'step2_description' => 'MindBeamer recherchiert und wählt eigenständig relevante Themen aus.',
+    'step2_title' => 'MindBeamer erstellt Ihren Content',
+    'step2_description' => 'Produkthighlights, Expertentipps, Fallstudien, Brancheneinblicke - alles maßgeschneidert für Ihr Unternehmen.',
+    'step2_feature' => 'KI-gestützte Content-Erstellung',
+    'step2_product' => 'Für Produktunternehmen: Produkthighlights und Vergleiche, Anwendungsanleitungen und Use Cases, Branchentrends und Einblicke',
+    'step2_service' => 'Für Dienstleister: Expertentipps und Beratung, Fallstudien und Erfolgsgeschichten, Markteinblicke und Analysen',
+    'step2_local' => 'Für lokale Unternehmen: Blicke hinter die Kulissen, Kundenhighlights, lokales Community-Engagement',
     
-    'step3_title' => '3. Content-Erstellung',
-    'step3_description' => 'Erstellt plattformspezifische Inhalte und Medien automatisch.',
+    'step3_title' => 'Wählen Sie Ihr Kontroll-Level',
+    'step3_description' => 'Alles vor Veröffentlichung prüfen? Oder MindBeamer automatisch posten lassen? Sie entscheiden.',
+    'step3_control' => 'Volle Kontrolle über Ihren Content',
     
-    'step4_title' => '4. Optionale Prüfung',
-    'step4_description' => 'Inhalte freigeben oder automatisch veröffentlichen lassen – Ihre Wahl.',
+    'step4_title' => 'Beobachten Sie Ihr Geschäft wachsen',
+    'step4_description' => 'Konsistenter Content schafft Vertrauen. Vertrauen generiert Leads. Leads werden zu Kunden.',
+    'step4_result' => 'Messbares Geschäftswachstum',
     
-    'step5_title' => '5. Auto-Publishing',
-    'step5_description' => 'Inhalte werden kontinuierlich und automatisch auf allen Plattformen veröffentlicht.',
+    'how_it_works_result' => 'Ergebnis: Ihre Online-Präsenz arbeitet 24/7, während Sie sich auf Ihre Kunden und Ihr Geschäftswachstum konzentrieren.',
+    'how_it_works_cta' => 'Kostenlose Demo starten',
     
     // Features Section
-    'features_title' => 'Warum Sie MindBeamer lieben werden',
+    'features_title' => 'Entwickelt für Geschäftswachstum',
     
-    'feature1_title' => '100% Selbstständig',
-    'feature1_description' => 'MindBeamer denkt, plant und handelt eigenständig – Themenrecherche, Content-Erstellung und Veröffentlichung ohne Ihr Zutun.',
+    'feature1_title' => 'Ihre Produkte werden zu Content-Gold',
+    'feature1_description' => 'MindBeamer erstellt keine zufälligen Posts. Jeder Inhalt ist darauf ausgelegt, Ihre Expertise, Produkte oder Dienstleistungen so zu präsentieren, dass sie Ihre idealen Kunden anziehen.',
     
-    'feature2_title' => 'Maßgeschneidert für jede Plattform',
-    'feature2_description' => 'Professionelle Inhalte für LinkedIn, visuelle Stories für Instagram, ansprechende Posts für Facebook, umfassende Artikel für WordPress – vollautomatisch.',
+    'feature2_title' => 'Jede Plattform bekommt perfekten Content',
+    'feature2_description' => 'LinkedIn: Professioneller Content, der Sie als Branchenexperten positioniert. Facebook: Community-Building-Posts für lokale Kunden. Instagram: Visueller Content, der Ihre Arbeit und Persönlichkeit zeigt. Blog: SEO-optimierte Artikel für organischen Traffic.',
     
-    'feature3_title' => 'Autonome Medienerstellung',
-    'feature3_description' => 'Erstellt automatisch Bilder, Infografiken, Slider, Comics und mehr – zugeschnitten auf jede Plattform und Zielgruppe.',
+    'feature3_title' => 'Entwickelt für IHREN Unternehmenstyp',
+    'feature3_description' => 'MindBeamer analysiert Ihren Unternehmenstyp und erstellt Content, der funktioniert. Produktunternehmen: Systematische Produktpräsentation. Dienstleister: Autoritätsaufbau durch Experteneinblicke. Lokale Unternehmen: Authentische Community-Verbindung.',
     
-    'feature4_title' => 'Kontinuierliche Veröffentlichung',
-    'feature4_description' => 'MindBeamer postet Ihre Inhalte regelmäßig auf allen Plattformen, ohne dass Sie etwas tun müssen.',
+    'feature4_title' => 'Nie wieder Ideen-Mangel',
+    'feature4_description' => 'Fortschrittliche KI sorgt für abwechslungsreichen und ansprechenden Content, der aus Ihrem gesamten Geschäftsumfang schöpft und jedes Mal einzigartige Posts erstellt.',
     
-    'feature5_title' => 'Sie behalten die Kontrolle',
-    'feature5_description' => 'Lassen Sie ihn vollständig autonom arbeiten oder prüfen Sie Inhalte vor der Veröffentlichung – ganz nach Ihrem Wunsch.',
+    'feature5_title' => 'Funktioniert während Sie schlafen',
+    'feature5_description' => 'Einmal konfiguriert, läuft MindBeamer eigenständig. Keine täglichen Aufgaben, keine Kreativblockaden, keine Posting-Pläne zum Pflegen.',
     
-    'feature6_title' => 'Für jedes Unternehmen geeignet',
-    'feature6_description' => 'Vom Friseursalon bis zum Tech-Blog oder Finanzportal – MindBeamer passt sich automatisch an Ihre spezifische Branche an.',
+    'feature6_title' => 'Sehen Sie, welche Posts Kunden bringen',
+    'feature6_description' => 'Verfolgen Sie, welcher Content Leads generiert und fokussieren Sie sich auf das, was für Ihr Unternehmen funktioniert.',
     
     // Advantages Section
     'advantages_title' => 'Sechs Schlüsselvorteile von MindBeamer',
@@ -91,6 +123,53 @@ return [
     'ready_to_see' => 'Bereit zu sehen, wie MindBeamers autonomer Content-Agent Ihre Online-Präsenz transformieren kann?',
     'ask_for_demo' => 'Kostenlose Demo anfragen',
     
+    // Social Proof Section
+    'proof_headline' => 'MindBeamer live im Einsatz - Keine Fake-Demos',
+    'proof_subheadline' => 'Glauben Sie nicht nur unseren Worten. Sehen Sie echte, autonome Content-Erstellung in Aktion.',
+    'proof_stat1_number' => '150+',
+    'proof_stat1_label' => 'Blog-Artikel automatisch erstellt',
+    'proof_stat1_detail' => 'Letzte 90 Tage',
+    'proof_stat2_number' => '500+',
+    'proof_stat2_label' => 'Social Media Posts veröffentlicht',
+    'proof_stat2_detail' => 'Auf 5 Plattformen',
+    'proof_stat3_number' => '0',
+    'proof_stat3_label' => 'Stunden manuelle Arbeit benötigt',
+    'proof_stat3_detail' => '100% autonom',
+    'proof_stat4_number' => '90+',
+    'proof_stat4_label' => 'Tage kontinuierlich im Betrieb',
+    'proof_stat4_detail' => 'Ohne Ausfälle',
+    'proof_live_indicator' => '🔴 LIVE',
+    'proof_demo1_title' => '📊 Auto-generierter Blog',
+    'proof_demo1_desc' => 'Neue Startup-Branchen-Artikel alle 2-3 Tage. SEO-optimiert, ansprechender Content.',
+    'proof_demo1_link' => 'Live-Blog ansehen →',
+    'proof_demo1_update' => 'Letzter Post: vor 2 Stunden',
+    'proof_demo2_title' => '📱 LinkedIn-Automatisierung',
+    'proof_demo2_desc' => 'Täglich professionelle B2B-Posts. Brancheneinblicke, Unternehmens-Spotlights.',
+    'proof_demo2_link' => 'LinkedIn ansehen →',
+    'proof_demo3_title' => '📸 Instagram Visual Stories',
+    'proof_demo3_desc' => 'Stories, Karussells und visuelle Posts - alles täglich automatisiert.',
+    'proof_demo3_link' => 'Instagram ansehen →',
+    'proof_demo4_title' => '📘 Facebook Community',
+    'proof_demo4_desc' => 'Community-Building-Posts, Startup-Highlights, spannende Diskussionen.',
+    'proof_demo4_link' => 'Facebook ansehen →',
+    'proof_demo5_title' => '🐦 Twitter/X Updates',
+    'proof_demo5_desc' => 'Schnelle Einblicke, Branchennews und Startup-Spotlights.',
+    'proof_demo5_link' => 'Twitter ansehen →',
+    
+    // Founder Story Section
+    'founder_headline' => 'Entwickelt von einem bewährten Software-Ingenieur',
+    'founder_subtitle' => 'Martin Schenk - Deutscher Ingenieur, 20+ Jahre Erfahrung',
+    'founder_track_record' => 'Erfolgsbilanz:',
+    'founder_track_record_text' => 'Website-Builder-Plattform entwickelt und skaliert, die 1,4 Mio.+ Websites weltweit betrieben hat.',
+    'founder_expertise' => 'Moderne Expertise:',
+    'founder_expertise_text' => 'KI-Automatisierung, Laravel-Entwicklung, skalierbare SaaS-Architektur.',
+    'founder_why' => 'Warum MindBeamer:',
+    'founder_why_text' => '"Nach 20 Jahren Entwicklung von Web-Plattformen sah ich, wie Unternehmen mit Content-Erstellung kämpfen. Also baute ich die Lösung, die ich mir gewünscht hätte - wirklich autonome Content-Generierung."',
+    'founder_credential1' => '🇩🇪 Basiert in Spanien, deutsche Ingenieursstandards',
+    'founder_credential2' => '🏗️ Laravel + KI Technologie-Experte',
+    'founder_credential3' => '📈 Bewährte Skalierung: 1,4 Mio.+ Websites',
+    'founder_profile_link' => 'Vollständiges Entwickler-Profil ansehen →',
+    
     // Testimonials Section
     'testimonials_title' => 'Was unsere Nutzer sagen',
     
@@ -109,63 +188,122 @@ return [
     'testimonial3_position' => 'Tech-Publikationsredakteur',
     'testimonial3_role' => 'Tech-Publikationsredakteur',
     
+    // Problem Section
+    'problem_headline' => 'Jeder Unternehmer kennt diesen Schmerz',
+    'problem_subheadline' => 'Sie wissen, dass Sie auf Social Media aktiv sein müssen, aber wer hat schon die Zeit?',
+    // Pain Points
+    'problem_time_title' => 'Sonntags-Panik',
+    'problem_time_desc' => '"Was soll ich diese Woche bloß posten?" - Der wöchentliche Stress der Content-Erstellung',
+    'problem_time_cost' => '15-20 Stunden/Woche verschwendet',
+    
+    'problem_consistency_title' => 'Unregelmäßiges Posten',
+    'problem_consistency_desc' => 'Eine Woche aktiv, drei Wochen still - das killt Ihre Algorithmus-Reichweite',
+    'problem_consistency_cost' => '70% weniger Sichtbarkeit',
+    
+    'problem_ideas_title' => 'Generischer Content',
+    'problem_ideas_desc' => 'Posts, die von jedem Unternehmen stammen könnten - nichts Einzigartiges über Sie',
+    'problem_ideas_cost' => 'Null Differenzierung',
+    
+    'problem_roi_title' => 'Zeitfresser',
+    'problem_roi_desc' => '3 Stunden für 5 mittelmäßige Posts - Zeit besser in Kunden investiert',
+    'problem_roi_cost' => '500-1000€/Woche an verlorener Produktivität',
+    
+    'problem_competition_title' => 'Wettbewerbsvorteil',
+    'problem_competition_desc' => 'Ihre Konkurrenz ist immer sichtbar, während Sie kämpfen mitzuhalten',
+    'problem_competition_cost' => 'Verlorene Marktanteile',
+    
+    'problem_expertise_title' => 'Fehlende Expertise',
+    'problem_expertise_desc' => 'Social Media ändert sich ständig - unmöglich aktuell zu bleiben',
+    'problem_expertise_cost' => 'Veraltete Strategien',
+    
+    'problem_cta_text' => 'Das kostet Sie echtes Geld durch verpasste Chancen und verlorene Leads',
+    'problem_cta_button' => 'So löst MindBeamer das ↓',
+    'problem_cost_title' => 'Das kostet Sie echtes Geld:',
+    'problem_missed_opportunities' => '❌ Verpasste Chancen - Interessenten finden Sie nicht online',
+    'problem_lower_trust' => '❌ Weniger Vertrauen - inaktive Profile wirken unprofessionell',
+    'problem_lost_leads' => '❌ Verlorene Leads - Konkurrenten fangen Kunden ab, während Sie unsichtbar sind',
+    
     // Pricing Section
-    'pricing_title' => 'Einfache, transparente Preise',
+    'pricing_headline' => 'Early Access Beta-Programm',
+    'pricing_subheadline' => 'Seien Sie unter den ersten 100 Kunden. Erhalten Sie Gründer-Preise + direkten Support.',
+    'pricing_most_popular' => 'Beliebteste Wahl',
+    'pricing_per_month' => 'Monat',
+    'pricing_beta_benefit1' => '✅ 50% Beta-Rabatt',
+    'pricing_beta_benefit2' => '✅ Direkter Gründer-Zugang',
+    'pricing_beta_benefit3' => '✅ Preisgarantie für immer',
+    'pricing_beta_benefit4' => '✅ Prioritäts-Support',
     'most_popular' => 'Am beliebtesten',
     
-    'light_plan' => 'Light',
-    'light_plan_subtitle' => 'Für kleine Unternehmen oder Einsteiger',
-    'light_feature1' => 'Autonome Content-Erstellung',
-    'light_feature2' => 'Begrenzte Anzahl an Posts',
-    'light_feature3' => 'Ausgewählte Social-Media-Plattformen',
-    'light_feature4' => 'Grundlegende Medienerstellung',
+    // Starter Beta Plan
+    'pricing_starter_name' => 'Startup Beta',
+    'pricing_starter_desc' => 'Beta-Preise für die ersten 100 Kunden',
+    'pricing_starter_old_price' => '497€/Monat',
+    'pricing_starter_price' => '249',
+    'pricing_starter_savings' => 'Sparen Sie 248€/Monat',
+    'pricing_starter_feature1' => '40 Posts/Monat auf allen Plattformen',
+    'pricing_starter_feature2' => 'Produkt-/Service-Katalog Integration',
+    'pricing_starter_feature3' => 'Basis-Analytics',
+    'pricing_starter_feature4' => 'E-Mail-Support',
+    'pricing_cta_start' => 'Beta-Programm beitreten',
     
-    'standard_plan' => 'Standard',
-    'standard_plan_subtitle' => 'Für wachsende Unternehmen',
-    'standard_feature1' => 'Vollständig autonomer Content',
-    'standard_feature2' => 'Erweiterte Content-Menge',
-    'standard_feature3' => 'Mehrere Plattformen mit Blog-Integration',
-    'standard_feature4' => 'Erweiterte Medienerstellung',
-    'standard_feature5' => 'Plattformspezifische Optimierung',
-    'standard_feature6' => 'Content-Kalender-Integration',
+    // Growth Beta Plan
+    'pricing_pro_name' => 'Growth Beta',
+    'pricing_pro_desc' => 'Perfekt für wachsende Unternehmen',
+    'pricing_pro_old_price' => '997€/Monat',
+    'pricing_pro_price' => '497',
+    'pricing_pro_savings' => 'Sparen Sie 500€/Monat',
+    'pricing_pro_feature1' => '100 Posts/Monat + Blog-Artikel',
+    'pricing_pro_feature2' => 'Erweiterte Zielgruppen-Ausrichtung',
+    'pricing_pro_feature3' => 'Wettbewerber-Analyse',
+    'pricing_pro_feature4' => 'Prioritäts-Support + monatliche Calls',
+    'pricing_cta_popular' => 'Beta-Programm beitreten',
     
-    'news_plan' => 'News Portal',
-    'news_plan_subtitle' => 'Für Publisher mit hohem Volumen',
-    'news_feature1' => 'Vollständig autonomer Content',
-    'news_feature2' => 'Hochaktuelle News (minutengenau) für Finanzmärkte und Branchen-Events',
-    'news_feature3' => 'Umfassende Plattform-Abdeckung',
-    'news_feature4' => 'Premium-Medienerstellung',
-    'news_feature5' => 'Automatisierte Themenrecherche',
-    'news_feature6' => 'News- & Trend-Monitoring',
+    // Scale Beta Plan
+    'pricing_enterprise_name' => 'Scale Beta',
+    'pricing_enterprise_desc' => 'Für ernsthafte Content-Automatisierung',
+    'pricing_enterprise_old_price' => '1.997€/Monat',
+    'pricing_enterprise_price' => '997',
+    'pricing_enterprise_savings' => 'Sparen Sie 1.000€/Monat',
+    'pricing_enterprise_feature1' => 'Unbegrenzte Content-Erstellung',
+    'pricing_enterprise_feature2' => 'Multi-Brand-Management',
+    'pricing_enterprise_feature3' => 'Custom-Integrationen',
+    'pricing_enterprise_feature4' => 'Direkter Gründer-Support',
+    'pricing_cta_contact' => 'Beta-Programm beitreten',
+    
+    'pricing_beta_counter' => 'Beta-Plätze belegt: <strong>0/100</strong>',
+    'pricing_beta_note' => 'Preis steigt auf vollen Tarif bei: <strong>100 Kunden</strong>',
     
     'month' => 'Monat',
     'request_demo_button' => 'Demo anfragen',
     
     // FAQ Section
-    'faq_title' => 'Häufig gestellte Fragen',
+    'faq_title' => 'Ehrliche Antworten auf Ihre Fragen',
     
-    'faq1_question' => 'Wie autonom arbeitet MindBeamer wirklich?',
-    'faq1_answer' => 'MindBeamer ist nach der ersten Einrichtung zu 100% autonom. Er recherchiert branchenrelevante Themen, erstellt plattformspezifische Inhalte, generiert passende Medien, optimiert Posts für jede Plattform und veröffentlicht nach Ihrem Zeitplan - ohne dass Sie eingreifen müssen.',
+    'faq1_question' => 'Haben Sie schon echte Kunden?',
+    'faq1_answer' => 'Wir befinden uns aktuell in der Beta-Phase. Sie gehören zu unseren ersten 100 Kunden, was bedeutet, dass Sie die besten Preise erhalten und direkten Zugang zu mir (dem Gründer) für Support und Feature-Wünsche haben.',
     
-    'faq2_question' => 'Muss ich die generierten Inhalte überprüfen?',
-    'faq2_answer' => 'Das liegt ganz bei Ihnen. MindBeamer kann komplett autonom arbeiten und Inhalte direkt ohne Überprüfung veröffentlichen. Alternativ können Sie einstellen, dass Inhalte vor der Veröffentlichung zur Freigabe an Sie gesendet werden. Viele Nutzer beginnen mit der Überprüfungsoption und wechseln in den vollständig autonomen Modus, sobald sie von der Qualität überzeugt sind.',
+    'faq2_question' => 'Funktioniert das wirklich autonom?',
+    'faq2_answer' => 'Ja! Schauen Sie sich Startups Españolas an - es läuft seit 90+ Tagen zu 100% autonom. Neue Blog-Posts alle 2-3 Tage, täglich Social Media Posts auf 5 Plattformen, null manuelle Eingriffe.',
     
-    'faq3_question' => 'Wie passt MindBeamer Inhalte für verschiedene Plattformen an?',
-    'faq3_answer' => 'MindBeamer versteht die einzigartigen Anforderungen jeder Social-Media-Plattform. Für LinkedIn erstellt er professionelle, erkenntnisreiche Inhalte. Für Instagram generiert er visuelle Stories mit überzeugenden Bildunterschriften. Für Twitter erstellt er ansprechende Tweet-Threads. Für Blogs produziert er umfassende, SEO-optimierte Artikel - alles zum selben Kernthema, aber speziell auf das Publikum und Format jeder Plattform zugeschnitten.',
+    'faq3_question' => 'Warum sollte ich einem Beta-Produkt vertrauen?',
+    'faq3_answer' => 'Weil Sie es live in Aktion sehen können! Außerdem habe ich Software entwickelt und skaliert, die 1,4 Mio.+ Websites betrieben hat. Das ist nicht mein erstes Rodeo - ich weiß, wie man zuverlässige, skalierbare Systeme baut.',
     
-    'faq4_question' => 'Kann ich MindBeamer für jede Branche nutzen?',
-    'faq4_answer' => 'Ja! MindBeamer wurde bereits erfolgreich in verschiedenen Branchen eingesetzt - von professionellen Dienstleistungen wie Recht und Buchhaltung bis hin zu Einzelhandelsunternehmen, Gesundheitsdienstleistern, Tech-Startups, Bildungseinrichtungen und Kreativagenturen. Die anfängliche Einrichtung ermöglicht es MindBeamer, Ihre spezifische Branche, Zielgruppe und Content-Ziele zu verstehen.',
+    'faq4_question' => 'Was passiert, wenn Sie später die Preise ändern?',
+    'faq4_answer' => 'Beta-Kunden behalten ihre Preise für immer. Wenn wir 100 Kunden erreichen, steigen die Preise auf den vollen Tarif, aber Sie bleiben bei Ihrem Beta-Preis eingefroren.',
+    
+    'faq5_question' => 'Was, wenn ich nicht technikaffin bin?',
+    'faq5_answer' => 'Perfekt! MindBeamer ist für Unternehmer entwickelt, nicht für Technik-Experten. Wenn Sie eine E-Mail senden können, können Sie MindBeamer nutzen.',
     
     // Contact Section
-    'demo_title' => 'Buchen Sie Ihre kostenlose MindBeamer-Demo',
-    'demo_subtitle' => 'Schließen Sie sich Freelancern und KMUs an, die mit MindBeamer viel Zeit sparen. Geben Sie Ihre E-Mail ein, und Martin Schenk zeigt Ihnen in einem persönlichen Videoanruf, wie es funktioniert – entwickelt von einem Entwickler mit über 20 Jahren Erfahrung!',
+    'demo_title' => 'Bereit, Ihren Content auf Autopilot zu setzen?',
+    'demo_subtitle' => 'Sehen Sie genau, wie MindBeamer Content für IHR Unternehmen erstellt. Martin zeigt Ihnen eine personalisierte Demo mit Ihrem tatsächlichen Unternehmen als Beispiel.',
     'your_email' => 'Ihre E-Mail',
     'ask_for_demo' => 'Kostenlose Demo anfragen',
     'sending' => 'Wird gesendet...',
     'form_success' => 'Vielen Dank! Wir werden Sie in Kürze kontaktieren.',
     'form_error' => 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
     'form_validation_error' => 'Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.',
-    'demo_note' => 'Sie hören bald von Martin, um Ihre persönliche Demo zu vereinbaren.',
+    'demo_note' => 'Demo mit Martin Schenk, deutscher Ingenieur, der eine Website-Builder-Plattform aufgebaut hat - vertraut von 1,4 Mio.+ Websites weltweit. 20+ Jahre bewährter Software-Erfolg.',
     
     // Footer
     'created_by' => 'erstellt von',
@@ -210,6 +348,17 @@ return [
     
     // Marketing consent
     'marketing_consent_text' => 'Ich bin damit einverstanden, dass meine Daten für Marketingzwecke gespeichert und verwendet werden.',
+    
+    // Final CTA Section
+    'final_cta_headline' => 'Bereit, zu unseren ersten 100 Kunden zu gehören?',
+    'final_cta_subheadline' => 'Treten Sie dem Beta-Programm mit 50% Gründer-Rabatt bei. Sehen Sie die Live-Demo, dann sichern Sie sich Ihren Platz.',
+    'final_cta_primary' => 'Live-Demo ansehen + Beta beitreten',
+    'final_cta_secondary' => 'Termin mit Gründer vereinbaren',
+    'final_cta_guarantee1' => '✅ Keine Verträge',
+    'final_cta_guarantee2' => '✅ Jederzeit kündbar',
+    'final_cta_guarantee3' => '✅ 30 Tage Geld zurück',
+    'final_cta_guarantee4' => '✅ Direkter Gründer-Support',
+    'final_cta_founder_note' => 'Persönliche Nachricht von Martin: "Sie bekommen nicht nur Software, Sie bekommen meine 20+ Jahre Erfahrung im Aufbau und der Skalierung von Web-Plattformen. Ich bin persönlich für Ihren Erfolg engagiert."',
     
     // JavaScript error messages
     'js_default_error' => 'Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten.',

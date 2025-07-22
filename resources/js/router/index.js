@@ -109,10 +109,8 @@ const router = createRouter({
     if (savedPosition) {
       return savedPosition;
     } else if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth'
-      };
+      // Prevent Vue Router from handling hash navigation
+      return false;
     } else {
       return { top: 0 };
     }

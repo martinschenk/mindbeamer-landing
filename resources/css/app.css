@@ -51,3 +51,8 @@
 .grid > [class*="col-"] {
   padding: 0.5rem;
 }
+
+/* Disable smooth scrolling globally for instant jumps */
+html {
+  scroll-behavior: auto !important;
+}

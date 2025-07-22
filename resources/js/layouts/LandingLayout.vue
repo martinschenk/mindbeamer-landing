@@ -56,6 +56,6 @@ onMounted(() => {
 
 .main-content {
   flex: 1;
-  padding-top: 80px; // Account for fixed header
+  padding-top: 0; // Remove padding - sections will handle their own spacing
 }
 </style>

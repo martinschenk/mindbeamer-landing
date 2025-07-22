@@ -14,19 +14,19 @@
         <a :href="`${homeRoute}#features`" class="text-surface-900 hover:text-primary font-medium transition-colors">
           {{ t('nav_features') }}
         </a>
-        <a :href="`${homeRoute}#why-us`" class="text-surface-900 hover:text-primary font-medium transition-colors">
+        <a :href="`${homeRoute}#problem`" class="text-surface-900 hover:text-primary font-medium transition-colors">
           {{ t('nav_why_us') }}
         </a>
         <a :href="`${homeRoute}#pricing`" class="text-surface-900 hover:text-primary font-medium transition-colors">
           {{ t('nav_pricing') }}
         </a>
-        <Button 
-          :label="t('nav_demo')"
-          severity="primary"
-          @click="scrollToContact"
-          icon="pi pi-arrow-right"
-          iconPos="right"
-        />
+        <a 
+          :href="`${homeRoute}#demo`"
+          class="p-button p-component p-button-primary text-white"
+        >
+          <span class="p-button-label text-white">{{ t('nav_demo') }}</span>
+          <i class="pi pi-arrow-right p-button-icon-right text-white"></i>
+        </a>
       </nav>
       
       <!-- Mobile Menu Button -->
@@ -76,7 +76,7 @@
           {{ t('nav_features') }}
         </a>
         <a 
-          :href="`${homeRoute}#why-us`" 
+          :href="`${homeRoute}#problem`" 
           @click="closeMobileMenu"
           class="text-surface-900 hover:text-primary font-medium text-lg py-2 transition-colors"
         >
@@ -89,14 +89,14 @@
         >
           {{ t('nav_pricing') }}
         </a>
-        <Button 
-          :label="t('nav_demo')"
-          severity="primary"
-          @click="() => { scrollToContact(); closeMobileMenu(); }"
-          icon="pi pi-arrow-right"
-          iconPos="right"
-          class="w-full"
-        />
+        <a 
+          :href="`${homeRoute}#demo`"
+          @click="closeMobileMenu"
+          class="p-button p-component p-button-primary w-full text-center text-white"
+        >
+          <span class="p-button-label text-white">{{ t('nav_demo') }}</span>
+          <i class="pi pi-arrow-right p-button-icon-right text-white"></i>
+        </a>
       </nav>
     </Drawer>
   </header>
@@ -131,9 +131,16 @@ const headerStyle = computed(() => ({
 }));
 
 function scrollToContact() {
-  const element = document.querySelector('#contact');
+  const element = document.querySelector('#demo');
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    const headerHeight = 120; // Height of fixed header + padding
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerHeight;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'instant'
+    });
   }
 }
 
