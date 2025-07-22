@@ -107,7 +107,7 @@
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
                 </div>
-                <p class="text-gray-600">Loading MindBeamer...</p>
+                <p class="text-gray-600">Loading <span translate="no">MindBeamer</span>...</p>
             </div>
         </div>
     </div>
@@ -117,7 +117,7 @@
         <div class="min-h-screen bg-white">
             <div class="container mx-auto px-6 py-12 text-center">
                 <h1 class="text-3xl font-bold mb-4">JavaScript Required</h1>
-                <p class="text-gray-600 mb-8">MindBeamer requires JavaScript to be enabled in your browser.</p>
+                <p class="text-gray-600 mb-8"><span translate="no">MindBeamer</span> requires JavaScript to be enabled in your browser.</p>
                 <p class="text-gray-600">Please enable JavaScript and reload the page to continue.</p>
             </div>
         </div>

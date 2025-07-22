@@ -63,7 +63,7 @@
     @endif
 
     <div class="header">
-        <h1>MindBeamer.io</h1>
+        <h1 translate="no">MindBeamer.io</h1>
         <h2>{{ __('emails.demo_received_title', [], $locale) }}</h2>
     </div>
     

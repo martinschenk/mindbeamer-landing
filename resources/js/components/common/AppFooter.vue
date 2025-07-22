@@ -1,7 +1,7 @@
 <template>
   <footer class="bg-gray-900 text-white py-8 w-full overflow-hidden">
     <div class="container mx-auto px-6 text-center w-full">
-      <p class="mb-2">&copy; 2025 MindBeamer. {{ t('all_rights_reserved') }}</p>
+      <p class="mb-2">&copy; 2025 <span translate="no">MindBeamer</span>. {{ t('all_rights_reserved') }}</p>
       
       <!-- Links -->
       <div class="flex flex-wrap justify-center mt-4 mb-4 gap-4 md:gap-6 px-2">

@@ -65,7 +65,7 @@
         <!-- Multi-Platform Visual Placeholder -->
         <div class="mt-16 bg-gray-200 rounded-xl p-12 text-center max-w-5xl mx-auto">
             <p class="text-gray-600 font-medium">
-                [MULTI-PLATFORM-MOCKUP]: Modern device mockup showing MindBeamer dashboard on laptop, with floating previews of the same content optimized for LinkedIn (professional post), Facebook (engaging community post), Instagram (visual story), and a blog (SEO article). Shows how one piece of content adapts to each platform's best practices.
+                [MULTI-PLATFORM-MOCKUP]: Modern device mockup showing <span translate="no">MindBeamer</span> dashboard on laptop, with floating previews of the same content optimized for LinkedIn (professional post), Facebook (engaging community post), Instagram (visual story), and a blog (SEO article). Shows how one piece of content adapts to each platform's best practices.
             </p>
         </div>
     </div>

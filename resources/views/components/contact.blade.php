@@ -106,7 +106,7 @@
         <!-- Demo Preview Video Placeholder -->
         <div class="mt-16 bg-gray-200 rounded-xl p-12 text-center max-w-4xl mx-auto">
             <p class="text-gray-600 font-medium">
-                [DEMO-PREVIEW-VIDEO]: 30-second preview video showing MindBeamer in action. Split screen: left shows business owner inputting their company info, right shows the AI creating posts in real-time. Shows posts being published across LinkedIn, Facebook, Instagram. Ends with happy business owner looking at increased engagement stats.
+                [DEMO-PREVIEW-VIDEO]: 30-second preview video showing <span translate="no">MindBeamer</span> in action. Split screen: left shows business owner inputting their company info, right shows the AI creating posts in real-time. Shows posts being published across LinkedIn, Facebook, Instagram. Ends with happy business owner looking at increased engagement stats.
             </p>
         </div>
     </div>

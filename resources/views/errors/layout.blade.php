@@ -29,7 +29,7 @@
     <div class="bg-gradient-to-r from-pink-500 via-purple-500 to-teal-500 py-2">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
-                <a href="{{ url('/') }}" class="text-white font-bold text-xl">MindBeamer</a>
+                <a href="{{ url('/') }}" class="text-white font-bold text-xl"><span translate="no">MindBeamer</span></a>
             </div>
         </div>
     </div>
@@ -69,7 +69,7 @@
 
     <footer class="bg-gray-100 py-8">
         <div class="container mx-auto px-4 text-center text-gray-600 text-sm">
-            <p>  {{ date('Y') }} MindBeamer.io. {{ __('messages.all_rights_reserved') }}</p>
+            <p>  {{ date('Y') }} <span translate="no">MindBeamer.io</span>. {{ __('messages.all_rights_reserved') }}</p>
         </div>
     </footer>
 </body>

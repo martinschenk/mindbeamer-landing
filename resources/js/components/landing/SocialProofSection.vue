@@ -17,26 +17,26 @@
       </div>
       
       <!-- Live Stats -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
-        <div class="text-center fade-in" style="animation-delay: 0.1s;">
-          <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">{{ t('proof_stat1_number') }}</h3>
-          <p class="text-surface-700 font-semibold">{{ t('proof_stat1_label') }}</p>
-          <p class="text-sm text-surface-600">{{ t('proof_stat1_detail') }}</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-16">
+        <div class="text-center fade-in p-4" style="animation-delay: 0.1s;">
+          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-2">{{ t('proof_stat1_number') }}</h3>
+          <p class="text-sm sm:text-base text-surface-700 font-semibold leading-tight min-h-[3rem] flex items-center justify-center">{{ t('proof_stat1_label') }}</p>
+          <p class="text-xs sm:text-sm text-surface-600 mt-1">{{ t('proof_stat1_detail') }}</p>
         </div>
-        <div class="text-center fade-in" style="animation-delay: 0.2s;">
-          <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">{{ t('proof_stat2_number') }}</h3>
-          <p class="text-surface-700 font-semibold">{{ t('proof_stat2_label') }}</p>
-          <p class="text-sm text-surface-600">{{ t('proof_stat2_detail') }}</p>
+        <div class="text-center fade-in p-4" style="animation-delay: 0.2s;">
+          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-2">{{ t('proof_stat2_number') }}</h3>
+          <p class="text-sm sm:text-base text-surface-700 font-semibold leading-tight min-h-[3rem] flex items-center justify-center">{{ t('proof_stat2_label') }}</p>
+          <p class="text-xs sm:text-sm text-surface-600 mt-1">{{ t('proof_stat2_detail') }}</p>
         </div>
-        <div class="text-center fade-in" style="animation-delay: 0.3s;">
-          <h3 class="text-4xl md:text-5xl font-bold text-green-600 mb-2">{{ t('proof_stat3_number') }}</h3>
-          <p class="text-surface-700 font-semibold">{{ t('proof_stat3_label') }}</p>
-          <p class="text-sm text-surface-600">{{ t('proof_stat3_detail') }}</p>
+        <div class="text-center fade-in p-4" style="animation-delay: 0.3s;">
+          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-green-600 mb-2">{{ t('proof_stat3_number') }}</h3>
+          <p class="text-sm sm:text-base text-surface-700 font-semibold leading-tight min-h-[3rem] flex items-center justify-center">{{ t('proof_stat3_label') }}</p>
+          <p class="text-xs sm:text-sm text-surface-600 mt-1">{{ t('proof_stat3_detail') }}</p>
         </div>
-        <div class="text-center fade-in" style="animation-delay: 0.4s;">
-          <h3 class="text-4xl md:text-5xl font-bold text-primary-600 mb-2">{{ t('proof_stat4_number') }}</h3>
-          <p class="text-surface-700 font-semibold">{{ t('proof_stat4_label') }}</p>
-          <p class="text-sm text-surface-600">{{ t('proof_stat4_detail') }}</p>
+        <div class="text-center fade-in p-4" style="animation-delay: 0.4s;">
+          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-2">{{ t('proof_stat4_number') }}</h3>
+          <p class="text-sm sm:text-base text-surface-700 font-semibold leading-tight min-h-[3rem] flex items-center justify-center">{{ t('proof_stat4_label') }}</p>
+          <p class="text-xs sm:text-sm text-surface-600 mt-1">{{ t('proof_stat4_detail') }}</p>
         </div>
       </div>
       
@@ -44,11 +44,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
         <!-- Featured Demo Card -->
         <div class="diamond-card group hover:shadow-xl transition-all duration-300 fade-in relative overflow-hidden bg-gradient-to-br from-primary-50 to-white lg:col-span-3" style="animation-delay: 0.5s;">
-          <div class="absolute top-4 right-4">
-            <span class="text-red-600 font-bold animate-pulse">{{ t('proof_live_indicator') }}</span>
+          <div class="absolute top-2 right-2">
+            <span class="inline-flex items-center px-2 py-1 bg-red-100 text-red-600 font-bold animate-pulse text-xs sm:text-sm rounded-full">{{ t('proof_live_indicator') }}</span>
           </div>
-          <h3 class="text-xl font-bold text-surface-900 mb-3">{{ t('proof_demo1_title') }}</h3>
-          <p class="text-surface-600 mb-4">{{ t('proof_demo1_desc') }}</p>
+          <h3 class="text-lg sm:text-xl font-bold text-surface-900 mb-3 pr-20 mt-8">{{ t('proof_demo1_title') }}</h3>
+          <p class="text-sm sm:text-base text-surface-600 mb-4">{{ t('proof_demo1_desc') }}</p>
           <a 
             href="https://startups-espanolas.es" 
             target="_blank"
@@ -62,11 +62,11 @@
         
         <!-- LinkedIn Demo Card -->
         <div class="diamond-card group hover:shadow-xl transition-all duration-300 fade-in relative overflow-hidden" style="animation-delay: 0.6s;">
-          <div class="absolute top-4 right-4">
-            <span class="text-red-600 font-bold animate-pulse">{{ t('proof_live_indicator') }}</span>
+          <div class="absolute top-2 right-2">
+            <span class="inline-flex items-center px-2 py-1 bg-red-100 text-red-600 font-bold animate-pulse text-xs sm:text-sm rounded-full">{{ t('proof_live_indicator') }}</span>
           </div>
-          <h3 class="text-xl font-bold text-surface-900 mb-3">{{ t('proof_demo2_title') }}</h3>
-          <p class="text-surface-600 mb-4">{{ t('proof_demo2_desc') }}</p>
+          <h3 class="text-lg sm:text-xl font-bold text-surface-900 mb-3 pr-20 mt-8">{{ t('proof_demo2_title') }}</h3>
+          <p class="text-sm sm:text-base text-surface-600 mb-4">{{ t('proof_demo2_desc') }}</p>
           <a 
             href="https://linkedin.com/company/startups-espanolas" 
             target="_blank"
@@ -79,11 +79,11 @@
         
         <!-- Instagram Demo Card -->
         <div class="diamond-card group hover:shadow-xl transition-all duration-300 fade-in relative overflow-hidden" style="animation-delay: 0.7s;">
-          <div class="absolute top-4 right-4">
-            <span class="text-red-600 font-bold animate-pulse">{{ t('proof_live_indicator') }}</span>
+          <div class="absolute top-2 right-2">
+            <span class="inline-flex items-center px-2 py-1 bg-red-100 text-red-600 font-bold animate-pulse text-xs sm:text-sm rounded-full">{{ t('proof_live_indicator') }}</span>
           </div>
-          <h3 class="text-xl font-bold text-surface-900 mb-3">{{ t('proof_demo3_title') }}</h3>
-          <p class="text-surface-600 mb-4">{{ t('proof_demo3_desc') }}</p>
+          <h3 class="text-lg sm:text-xl font-bold text-surface-900 mb-3 pr-20 mt-8">{{ t('proof_demo3_title') }}</h3>
+          <p class="text-sm sm:text-base text-surface-600 mb-4">{{ t('proof_demo3_desc') }}</p>
           <a 
             href="https://instagram.com/start_up_esp" 
             target="_blank"
@@ -96,11 +96,11 @@
         
         <!-- Facebook Demo Card -->
         <div class="diamond-card group hover:shadow-xl transition-all duration-300 fade-in relative overflow-hidden" style="animation-delay: 0.8s;">
-          <div class="absolute top-4 right-4">
-            <span class="text-red-600 font-bold animate-pulse">{{ t('proof_live_indicator') }}</span>
+          <div class="absolute top-2 right-2">
+            <span class="inline-flex items-center px-2 py-1 bg-red-100 text-red-600 font-bold animate-pulse text-xs sm:text-sm rounded-full">{{ t('proof_live_indicator') }}</span>
           </div>
-          <h3 class="text-xl font-bold text-surface-900 mb-3">{{ t('proof_demo4_title') }}</h3>
-          <p class="text-surface-600 mb-4">{{ t('proof_demo4_desc') }}</p>
+          <h3 class="text-lg sm:text-xl font-bold text-surface-900 mb-3 pr-20 mt-8">{{ t('proof_demo4_title') }}</h3>
+          <p class="text-sm sm:text-base text-surface-600 mb-4">{{ t('proof_demo4_desc') }}</p>
           <a 
             href="https://www.facebook.com/startups.espanolas" 
             target="_blank"
@@ -113,11 +113,11 @@
         
         <!-- Twitter Demo Card -->
         <div class="diamond-card group hover:shadow-xl transition-all duration-300 fade-in relative overflow-hidden lg:col-span-2" style="animation-delay: 0.9s;">
-          <div class="absolute top-4 right-4">
-            <span class="text-red-600 font-bold animate-pulse">{{ t('proof_live_indicator') }}</span>
+          <div class="absolute top-2 right-2">
+            <span class="inline-flex items-center px-2 py-1 bg-red-100 text-red-600 font-bold animate-pulse text-xs sm:text-sm rounded-full">{{ t('proof_live_indicator') }}</span>
           </div>
-          <h3 class="text-xl font-bold text-surface-900 mb-3">{{ t('proof_demo5_title') }}</h3>
-          <p class="text-surface-600 mb-4">{{ t('proof_demo5_desc') }}</p>
+          <h3 class="text-lg sm:text-xl font-bold text-surface-900 mb-3 pr-20 mt-8">{{ t('proof_demo5_title') }}</h3>
+          <p class="text-sm sm:text-base text-surface-600 mb-4">{{ t('proof_demo5_desc') }}</p>
           <a 
             href="https://x.com/StartupsEsp" 
             target="_blank"
@@ -151,6 +151,42 @@ const { t } = useLocaleStore();
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Ensure consistent card heights */
+.diamond-card {
+  padding: 1.5rem;
+  padding-top: 1rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Stats grid responsive adjustments */
+@media (max-width: 640px) {
+  .grid.grid-cols-2 > div {
+    padding: 0.75rem;
+  }
+  
+  .grid.grid-cols-2 h3 {
+    font-size: 2rem;
+  }
+}
+
+/* Prevent text overflow on small screens */
+@media (max-width: 768px) {
+  .diamond-card h3 {
+    word-break: break-word;
+    hyphens: auto;
+  }
+  
+  .diamond-card p {
+    font-size: 0.875rem;
   }
 }
 </style>

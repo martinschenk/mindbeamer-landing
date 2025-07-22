@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="bg-gray-900 text-white py-8 w-full overflow-hidden">
     <div class="container mx-auto px-6 text-center w-full">
-        <p class="mb-2">&copy; 2025 MindBeamer. {{ __('messages.all_rights_reserved') }}</p>
+        <p class="mb-2">&copy; 2025 <span translate="no">MindBeamer</span>. {{ __('messages.all_rights_reserved') }}</p>
         
         <!-- Links -->
         {{-- Verwendet LocalizedUrlHelper für sprachspezifische URLs --}}

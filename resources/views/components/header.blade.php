@@ -12,7 +12,7 @@
                     <path d="M5 5 A35 35 0 0 1 40 40 A35 35 0 0 1 5 75" stroke="#6366f1" stroke-width="2" fill="none" class="text-primary" opacity="0.4"></path>
                 </g>
             </svg>
-            <div class="text-2xl font-bold">
+            <div class="text-2xl font-bold" translate="no">
                 <span class="text-indigo-500" style="font-family: 'Inter', sans-serif;">Mind</span><span class="text-gray-900" style="font-family: 'Inter', sans-serif;">Beamer</span>
             </div>
         </a>

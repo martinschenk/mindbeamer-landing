@@ -29,21 +29,21 @@
             size="large"
             icon="pi pi-check"
             iconPos="right"
-            class="font-semibold w-full sm:w-auto"
+            class="font-semibold w-full sm:w-auto px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
           />
           <Button 
             @click="declineAll" 
             :label="t('cookie-consent.reject_all')"
             severity="secondary"
             size="large"
-            class="w-full sm:w-auto"
+            class="w-full sm:w-auto px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
           />
           <Button 
             @click="showSettings" 
             :label="t('cookie-consent.settings')"
             outlined
             size="large"
-            class="text-surface-700 w-full sm:w-auto"
+            class="text-surface-700 w-full sm:w-auto px-6 py-3 border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 rounded-lg transition-all duration-200"
           />
         </div>
       </template>
@@ -125,6 +125,7 @@
             severity="secondary"
             size="large"
             outlined
+            class="px-6 py-3 border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 text-gray-700 rounded-lg transition-all duration-200"
           />
           <Button 
             @click="saveSettings" 
@@ -133,7 +134,7 @@
             size="large"
             icon="pi pi-save"
             iconPos="right"
-            class="font-semibold"
+            class="font-semibold px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
           />
         </div>
       </template>
@@ -158,3 +159,49 @@ const { acceptAll, declineAll, showSettings, cancelSettings, saveSettings } = co
 // Use locale store's translation function
 const { t } = localeStore;
 </script>
+
+<style scoped>
+/* Ensure button visibility and proper styling */
+:deep(.p-button) {
+  font-weight: 600;
+  text-transform: none;
+  transition: all 0.2s ease;
+}
+
+:deep(.p-button:not(.p-button-outlined)) {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+:deep(.p-button:not(.p-button-outlined):hover) {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+:deep(.p-button.p-button-outlined) {
+  background-color: white;
+}
+
+:deep(.p-button.p-button-outlined:hover) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Dialog footer padding for better button spacing */
+:deep(.p-dialog-footer) {
+  padding: 1.25rem;
+  background-color: #f9fafb;
+}
+
+/* Diamond card style for settings */
+.diamond-card {
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.diamond-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+</style>
