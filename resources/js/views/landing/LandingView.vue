@@ -3,6 +3,9 @@
     <!-- Hero Section -->
     <HeroSection />
     
+    <!-- Social Proof Section -->
+    <SocialProofSection />
+    
     <!-- Problem Section -->
     <ProblemSection />
     
@@ -12,20 +15,17 @@
     <!-- Features -->
     <FeaturesSection />
     
-    <!-- Trust & Credibility -->
-    <TrustCredibility />
-    
-    <!-- ROI Calculator -->
-    <RoiCalculator />
+    <!-- Founder Story -->
+    <FounderSection />
     
     <!-- Pricing -->
     <PricingSection />
     
-    <!-- Urgency -->
-    <UrgencySection />
+    <!-- FAQ -->
+    <FaqSection />
     
-    <!-- Guarantee -->
-    <GuaranteeSection />
+    <!-- Final CTA -->
+    <FinalCTASection />
     
     <!-- Contact/Demo -->
     <DemoRequestSection />
@@ -34,13 +34,13 @@
 
 <script setup>
 import HeroSection from '@/components/landing/HeroSection.vue';
+import SocialProofSection from '@/components/landing/SocialProofSection.vue';
 import ProblemSection from '@/components/landing/ProblemSection.vue';
 import HowItWorks from '@/components/landing/HowItWorks.vue';
 import FeaturesSection from '@/components/landing/FeaturesSection.vue';
-import TrustCredibility from '@/components/landing/TrustCredibility.vue';
-import RoiCalculator from '@/components/landing/RoiCalculator.vue';
+import FounderSection from '@/components/landing/FounderSection.vue';
 import PricingSection from '@/components/landing/PricingSection.vue';
-import UrgencySection from '@/components/landing/UrgencySection.vue';
-import GuaranteeSection from '@/components/landing/GuaranteeSection.vue';
+import FaqSection from '@/components/landing/FaqSection.vue';
+import FinalCTASection from '@/components/landing/FinalCTASection.vue';
 import DemoRequestSection from '@/components/landing/DemoRequestSection.vue';
 </script>

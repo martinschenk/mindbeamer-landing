@@ -27,32 +27,16 @@
             {{ t('hero_subtitle') }}
           </p>
           
-          <!-- Trust Indicators -->
-          <div class="flex flex-wrap gap-4 items-center justify-center lg:justify-start mb-8">
-            <div class="flex items-center">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-surface-700">{{ t('hero_feature1') }}</span>
-            </div>
-            <div class="flex items-center">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-surface-700">{{ t('hero_feature2') }}</span>
-            </div>
-            <div class="flex items-center">
-              <i class="pi pi-check-circle text-green-500 mr-2"></i>
-              <span class="text-surface-700">{{ t('hero_feature3') }}</span>
-            </div>
-          </div>
-          
           <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
             <Button 
               :label="t('hero_cta_primary')"
               severity="warning"
               size="large"
-              icon="pi pi-rocket"
+              icon="pi pi-arrow-right"
               iconPos="right"
               class="animate-wiggle font-semibold shadow-lg"
-              @click="scrollToContact"
+              @click="scrollToProof"
             />
             <Button 
               :label="t('hero_cta_secondary')"
@@ -64,14 +48,24 @@
             />
           </div>
           
-          <!-- Credibility -->
-          <div class="mt-8 flex items-center justify-center lg:justify-start space-x-4 text-sm text-surface-600">
-            <img 
-              src="/images/palimpalem-logo.svg" 
-              alt="palimpalem.com" 
-              class="h-8 opacity-70"
+          <!-- Live Proof Banner -->
+          <div class="bg-red-50 border-2 border-red-200 rounded-lg p-4 mb-6 animate-pulse">
+            <p class="text-red-900 font-semibold text-center lg:text-left">
+              {{ t('hero_live_banner') }}
+            </p>
+          </div>
+          
+          <!-- Credentials -->
+          <div class="space-y-2">
+            <p class="text-surface-700 font-medium">{{ t('hero_credentials') }}</p>
+            <a 
+              href="https://martin-schenk.es/en" 
+              target="_blank"
+              class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold"
             >
-            <span>{{ t('hero_credibility') }}</span>
+              {{ t('hero_view_profile') }}
+              <i class="pi pi-external-link ml-1 text-sm"></i>
+            </a>
           </div>
         </div>
         
@@ -118,8 +112,8 @@ import Button from 'primevue/button';
 
 const { t } = useLocaleStore();
 
-function scrollToContact() {
-  const element = document.querySelector('#contact');
+function scrollToProof() {
+  const element = document.querySelector('#social-proof');
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
   }

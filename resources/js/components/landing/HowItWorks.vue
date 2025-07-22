@@ -55,6 +55,19 @@
                 <h3 class="text-2xl font-bold text-gray-900">{{ t('step2_title') }}</h3>
               </div>
               <p class="text-gray-600 mb-4">{{ t('step2_description') }}</p>
+              
+              <!-- Platforms List -->
+              <div class="mb-4">
+                <h4 class="font-semibold text-gray-900 mb-2">Every Platform Gets Perfect Content:</h4>
+                <ul class="space-y-1 text-sm text-gray-600">
+                  <li><span class="mr-2">📊</span><strong>Blog:</strong> SEO-optimized articles</li>
+                  <li><span class="mr-2">📱</span><strong>LinkedIn:</strong> Professional B2B insights</li>
+                  <li><span class="mr-2">📸</span><strong>Instagram:</strong> Visual stories & carousels</li>
+                  <li><span class="mr-2">📘</span><strong>Facebook:</strong> Community-building posts</li>
+                  <li><span class="mr-2">🐦</span><strong>Twitter/X:</strong> Quick insights & updates</li>
+                </ul>
+              </div>
+              
               <div class="bg-green-50 rounded-lg p-4">
                 <p class="text-sm text-green-700 font-medium">
                   <i class="pi pi-sparkles mr-2"></i>{{ t('step2_feature') }}

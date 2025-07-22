@@ -17,6 +17,22 @@
         </p>
       </div>
       
+      <!-- Beta Benefits -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12 fade-in" style="animation-delay: 0.1s;">
+        <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">
+          {{ t('pricing_beta_benefit1') }}
+        </div>
+        <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">
+          {{ t('pricing_beta_benefit2') }}
+        </div>
+        <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">
+          {{ t('pricing_beta_benefit3') }}
+        </div>
+        <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">
+          {{ t('pricing_beta_benefit4') }}
+        </div>
+      </div>
+      
       <!-- Pricing Cards -->
       <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Starter Plan -->
@@ -27,11 +43,14 @@
           </div>
           
           <div class="mb-8">
-            <div class="flex items-baseline">
-              <span class="text-5xl font-bold text-surface-900">${{ t('pricing_starter_price') }}</span>
-              <span class="text-surface-600 ml-2">/{{ t('pricing_per_month') }}</span>
+            <div class="text-center">
+              <div class="text-surface-500 line-through text-xl mb-2">{{ t('pricing_starter_old_price') }}</div>
+              <div class="flex items-baseline justify-center">
+                <span class="text-5xl font-bold text-surface-900">${{ t('pricing_starter_price') }}</span>
+                <span class="text-surface-600 ml-2">/{{ t('pricing_per_month') }}</span>
+              </div>
+              <p class="text-green-600 text-sm font-semibold mt-2">{{ t('pricing_starter_savings') }}</p>
             </div>
-            <p class="text-orange-600 text-sm font-semibold mt-2">{{ t('pricing_starter_roi') }}</p>
           </div>
           
           <ul class="space-y-3 mb-8">
@@ -74,12 +93,14 @@
           </div>
           
           <div class="mb-8">
-            <div class="flex items-baseline">
-              <span class="text-5xl font-bold">${{ t('pricing_pro_price') }}</span>
-              <span class="text-primary-200 ml-2">/{{ t('pricing_per_month') }}</span>
+            <div class="text-center">
+              <div class="text-primary-200 line-through text-xl mb-2">{{ t('pricing_pro_old_price') }}</div>
+              <div class="flex items-baseline justify-center">
+                <span class="text-5xl font-bold">${{ t('pricing_pro_price') }}</span>
+                <span class="text-primary-200 ml-2">/{{ t('pricing_per_month') }}</span>
+              </div>
+              <p class="text-yellow-300 text-sm font-semibold mt-2">{{ t('pricing_pro_savings') }}</p>
             </div>
-            <p class="text-yellow-300 text-sm font-semibold mt-2">{{ t('pricing_pro_roi') }}</p>
-            <p class="text-yellow-300 text-sm mt-1">{{ t('pricing_pro_savings') }}</p>
           </div>
           
           <ul class="space-y-3 mb-8">
@@ -122,12 +143,14 @@
           </div>
           
           <div class="mb-8">
-            <div class="flex items-baseline">
-              <span class="text-5xl font-bold text-surface-900">${{ t('pricing_enterprise_price') }}</span>
-              <span class="text-surface-600 ml-2">/{{ t('pricing_per_month') }}</span>
+            <div class="text-center">
+              <div class="text-surface-500 line-through text-xl mb-2">{{ t('pricing_enterprise_old_price') }}</div>
+              <div class="flex items-baseline justify-center">
+                <span class="text-5xl font-bold text-surface-900">${{ t('pricing_enterprise_price') }}</span>
+                <span class="text-surface-600 ml-2">/{{ t('pricing_per_month') }}</span>
+              </div>
+              <p class="text-green-600 text-sm font-semibold mt-2">{{ t('pricing_enterprise_savings') }}</p>
             </div>
-            <p class="text-orange-600 text-sm font-semibold mt-2">{{ t('pricing_enterprise_roi') }}</p>
-            <p class="text-surface-600 text-sm mt-1">{{ t('pricing_enterprise_subtitle') }}</p>
           </div>
           
           <ul class="space-y-3 mb-8">
@@ -174,8 +197,16 @@
         </div>
       </div>
       
+      <!-- Beta Counter -->
+      <div class="text-center mt-12 fade-in" style="animation-delay: 0.5s;">
+        <div class="bg-surface-100 rounded-lg p-6 inline-block">
+          <p class="text-surface-700 mb-2" v-html="t('pricing_beta_counter')"></p>
+          <p class="text-surface-600" v-html="t('pricing_beta_note')"></p>
+        </div>
+      </div>
+      
       <!-- FAQ Link -->
-      <div class="text-center mt-8 fade-in" style="animation-delay: 0.5s;">
+      <div class="text-center mt-8 fade-in" style="animation-delay: 0.6s;">
         <p class="text-gray-600">
           {{ t('pricing_questions') }} 
           <a href="#contact" class="text-indigo-600 hover:text-indigo-700 font-semibold">{{ t('pricing_contact_us') }}</a>
