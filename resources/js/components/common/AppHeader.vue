@@ -130,19 +130,6 @@ const headerStyle = computed(() => ({
   transition: 'top 0.3s ease'
 }));
 
-function scrollToContact() {
-  const element = document.querySelector('#demo');
-  if (element) {
-    const headerHeight = 120; // Height of fixed header + padding
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - headerHeight;
-    
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'instant'
-    });
-  }
-}
 
 function updateHeaderOffset() {
   const banner = document.getElementById('language-preference-banner');
