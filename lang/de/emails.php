@@ -19,7 +19,10 @@ return [
     'greeting' => 'Hallo!',
     'thank_you_message' => 'Vielen Dank für Ihr Interesse an MindBeamer.io! Wir haben Ihre Demo-Anfrage erfolgreich erhalten.',
     'what_next_title' => 'Was passiert als nächstes?',
-    'what_next_description' => 'Martin wird sich in Kürze persönlich mit Ihnen in Verbindung setzen, um Ihre Demo zu planen.',
+    'what_next_description' => 'Ich werde Ihre Anfrage persönlich prüfen und mich innerhalb von 24 Stunden bei Ihnen melden.',
+    'schedule_demo_title' => 'Demo-Termin Optionen',
+    'schedule_demo_description' => 'Wir vereinbaren einen 30-minütigen Video-Call (Zoom/Google Meet) zu einer Zeit, die für Ihre Zeitzone optimal ist.',
+    'video_call_available' => 'Video-Calls verfügbar (Zoom/Google Meet)',
     'founder_ceo' => 'Gründer & CEO, MindBeamer.io',
     'email_sent_reason' => 'Diese E-Mail wurde an <strong>:email</strong> gesendet, weil Sie eine Demo von MindBeamer.io angefordert haben.',
     

@@ -34,7 +34,8 @@
       </div>
       
       <!-- Pricing Cards -->
-      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 justify-center">
         <!-- Starter Plan -->
         <div class="bg-white rounded-2xl shadow-lg p-8 relative overflow-hidden fade-in" style="animation-delay: 0.1s;">
           <div class="mb-8">
@@ -183,6 +184,7 @@
             size="large"
             @click="scrollToDemo"
           />
+        </div>
         </div>
       </div>
       

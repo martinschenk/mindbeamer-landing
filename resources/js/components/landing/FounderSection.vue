@@ -9,8 +9,27 @@
               <div class="absolute inset-0 bg-gradient-to-br from-primary-100 to-primary-50 rounded-2xl transform rotate-3"></div>
               <div class="relative bg-white rounded-2xl shadow-xl p-8">
                 <div class="text-center">
-                  <div class="w-48 h-48 mx-auto mb-6 bg-gradient-to-br from-primary-100 to-primary-50 rounded-full flex items-center justify-center">
-                    <i class="pi pi-user text-6xl text-primary-600"></i>
+                  <div class="w-48 h-48 mx-auto mb-6 overflow-hidden rounded-full border-4 border-primary-100 shadow-xl">
+                    <picture>
+                      <source 
+                        srcset="/images/profile-images/martin-schenk-founder-mindbeamer-400x400.webp 1x,
+                                /images/profile-images/martin-schenk-founder-mindbeamer-600x600.webp 2x,
+                                /images/profile-images/martin-schenk-founder-mindbeamer-800x800.webp 3x" 
+                        type="image/webp">
+                      <source 
+                        srcset="/images/profile-images/martin-schenk-founder-mindbeamer-400x400.jpg 1x,
+                                /images/profile-images/martin-schenk-founder-mindbeamer-600x600.jpg 2x,
+                                /images/profile-images/martin-schenk-founder-mindbeamer-800x800.jpg 3x" 
+                        type="image/jpeg">
+                      <img 
+                        src="/images/profile-images/martin-schenk-founder-mindbeamer-400x400.jpg" 
+                        alt="Martin Schenk - Founder & CEO of MindBeamer - German Software Engineer"
+                        class="w-full h-full object-cover object-top"
+                        width="400"
+                        height="400"
+                        loading="lazy"
+                      >
+                    </picture>
                   </div>
                   <h3 class="text-2xl font-bold text-surface-900 mb-2">Martin Schenk</h3>
                   <p class="text-surface-600">Founder & Developer</p>

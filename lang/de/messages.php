@@ -296,7 +296,21 @@ return [
     
     // Contact Section
     'demo_title' => 'Bereit, Ihren Content auf Autopilot zu setzen?',
-    'demo_subtitle' => 'Sehen Sie genau, wie MindBeamer Content für IHR Unternehmen erstellt. Martin zeigt Ihnen eine personalisierte Demo mit Ihrem tatsächlichen Unternehmen als Beispiel.',
+    'demo_subtitle' => 'Wählen Sie, wie Sie MindBeamer kennenlernen möchten - schauen Sie sich eine kurze Demo an oder buchen Sie ein persönliches Strategiegespräch.',
+    
+    // Demo Form Option
+    'demo_form_badge' => 'Am beliebtesten',
+    'demo_form_title' => 'Schnelles Demo-Video',
+    'demo_form_subtitle' => 'Sehen Sie MindBeamers Hauptfunktionen in unter 5 Minuten',
+    
+    // Calendly Option
+    'calendly_badge' => '15 Min. Gespräch',
+    'calendly_title' => 'Strategiegespräch buchen',
+    'calendly_subtitle' => 'Lassen Sie uns über Ihre Content-Ziele sprechen',
+    'calendly_benefit1' => 'Persönliche 1-zu-1 Beratung',
+    'calendly_benefit2' => 'Maßgeschneiderte Strategie für Ihr Unternehmen',
+    'calendly_benefit3' => 'Verfügbar in Ihrer Zeitzone',
+    'calendly_cta' => 'Termin vereinbaren',
     'your_email' => 'Ihre E-Mail',
     'ask_for_demo' => 'Kostenlose Demo anfragen',
     'sending' => 'Wird gesendet...',

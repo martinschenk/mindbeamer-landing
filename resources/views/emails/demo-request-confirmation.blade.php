@@ -5,24 +5,26 @@
     <title>{{ __('emails.demo_confirmation_title', [], $locale) }}</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1f2937;
             max-width: 600px;
             margin: 0 auto;
+            background-color: #f9fafb;
         }
         .header {
-            background: linear-gradient(to right, #ec4899, #8b5cf6, #14b8a6);
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
-            border-radius: 5px 5px 0 0;
+            border-radius: 8px 8px 0 0;
         }
         .content {
-            padding: 20px;
-            border: 1px solid #ddd;
+            padding: 30px;
+            background: white;
+            border: 1px solid #e5e7eb;
             border-top: none;
-            border-radius: 0 0 5px 5px;
+            border-radius: 0 0 8px 8px;
         }
         .footer {
             margin-top: 20px;
@@ -31,11 +33,11 @@
             text-align: center;
         }
         .highlight {
-            background-color: #fdf2f8;
-            border-left: 4px solid #ec4899;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 4px;
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 6px;
         }
         .contact-info {
             background-color: #f9fafb;
@@ -78,7 +80,9 @@
 
         <div class="highlight">
             <strong>{{ __('emails.what_next_title', [], $locale) }}</strong><br>
-            {{ __('emails.what_next_description', [], $locale) }}
+            {{ __('emails.what_next_description', [], $locale) }}<br><br>
+            <strong>{{ __('emails.schedule_demo_title', [], $locale) }}</strong><br>
+            {{ __('emails.schedule_demo_description', [], $locale) }}
         </div>
 
         <div class="contact-info">
@@ -86,7 +90,7 @@
             {{ __('emails.founder_ceo', [], $locale) }}
             <br><br>
             📧 <a href="mailto:m.schenk@mindbeamer.io">m.schenk@mindbeamer.io</a><br>
-            📱 <a href="tel:+34669686832">(+34) 669 686 832</a><br>
+            💬 {{ __('emails.video_call_available', [], $locale) }}<br>
             🌐 <a href="https://mindbeamer.io">mindbeamer.io</a>
         </div>
     </div>

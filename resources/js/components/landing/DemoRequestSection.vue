@@ -12,14 +12,35 @@
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-surface-900 mb-4">
           {{ t('demo_title') }}
         </h2>
-        <p class="text-xl text-surface-600 max-w-3xl mx-auto">
+        <p class="text-xl text-surface-600 max-w-3xl mx-auto mb-8">
           {{ t('demo_subtitle') }}
         </p>
+        <!-- Visual separator -->
+        <div class="flex items-center justify-center gap-4">
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-primary-300"></div>
+          <i class="pi pi-sparkles text-primary-500 text-xl"></i>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-primary-300"></div>
+        </div>
       </div>
       
-      <div class="max-w-2xl mx-auto">
-        <!-- Simple Demo Request Form -->
-        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+      <!-- Two-column layout for demo options -->
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- Option 1: Quick Demo Form -->
+          <div class="bg-white rounded-2xl shadow-xl p-8 relative overflow-hidden fade-in" style="animation-delay: 0.1s;">
+            <!-- Badge -->
+            <div class="absolute top-0 right-0 bg-gradient-to-br from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-bl-2xl rounded-tr-2xl">
+              <span class="text-sm font-semibold">{{ t('demo_form_badge') }}</span>
+            </div>
+            
+            <div class="text-center mb-6">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
+                <i class="pi pi-play-circle text-3xl text-primary-600"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-surface-900 mb-2">{{ t('demo_form_title') }}</h3>
+              <p class="text-surface-600">{{ t('demo_form_subtitle') }}</p>
+            </div>
           <form @submit.prevent="handleSubmit" class="space-y-6">
             <!-- Email Field -->
             <div>
@@ -31,24 +52,25 @@
                 v-model="formData.email"
                 type="email"
                 :placeholder="'you@company.com'"
-                class="w-full"
-                :class="{ 'p-invalid': errors.email }"
+                class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-colors"
+                :class="{ 'p-invalid': errors.email, 'border-red-500': errors.email }"
                 :disabled="loading"
               />
               <small v-if="errors.email" class="p-error">{{ errors.email }}</small>
             </div>
             
             <!-- Marketing Consent -->
-            <div class="flex items-start">
-              <Checkbox 
-                id="marketing-consent"
-                v-model="formData.marketing_consent"
-                :binary="true"
-                :disabled="loading"
-              />
-              <label for="marketing-consent" class="ml-3 text-sm text-surface-600 cursor-pointer">
-                {{ t('marketing_consent_text') }}
-              </label>
+            <div class="field">
+              <div class="flex items-center justify-between">
+                <label class="text-sm text-surface-600 flex-1 mr-4">
+                  {{ t('marketing_consent_text') }}
+                </label>
+                <InputSwitch 
+                  v-model="formData.marketing_consent"
+                  :disabled="loading"
+                  class="flex-shrink-0"
+                />
+              </div>
             </div>
             
             <!-- Submit Button -->
@@ -57,7 +79,7 @@
               :label="loading ? t('sending') : t('ask_for_demo')"
               severity="warning"
               size="large"
-              class="w-full"
+              class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
               :loading="loading"
               icon="pi pi-arrow-right"
               iconPos="right"
@@ -79,10 +101,63 @@
               <p class="text-red-800">{{ errorMessage || t('form_error') }}</p>
             </div>
           </div>
+          </div>
+          
+          <!-- Option 2: Book Live Call -->
+          <div class="bg-white rounded-2xl shadow-xl p-8 relative overflow-hidden fade-in" style="animation-delay: 0.2s;">
+            <!-- Badge -->
+            <div class="absolute top-0 right-0 bg-gradient-to-br from-green-400 to-teal-400 text-white px-4 py-2 rounded-bl-2xl rounded-tr-2xl">
+              <span class="text-sm font-semibold">{{ t('calendly_badge') }}</span>
+            </div>
+            
+            <div class="text-center mb-6">
+              <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <i class="pi pi-video text-3xl text-green-600"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-surface-900 mb-2">{{ t('calendly_title') }}</h3>
+              <p class="text-surface-600 mb-6">{{ t('calendly_subtitle') }}</p>
+            </div>
+            
+            <!-- Calendly Benefits -->
+            <div class="space-y-3 mb-8">
+              <div class="flex items-start">
+                <i class="pi pi-check-circle text-green-500 mt-0.5 mr-3"></i>
+                <span class="text-surface-700">{{ t('calendly_benefit1') }}</span>
+              </div>
+              <div class="flex items-start">
+                <i class="pi pi-check-circle text-green-500 mt-0.5 mr-3"></i>
+                <span class="text-surface-700">{{ t('calendly_benefit2') }}</span>
+              </div>
+              <div class="flex items-start">
+                <i class="pi pi-check-circle text-green-500 mt-0.5 mr-3"></i>
+                <span class="text-surface-700">{{ t('calendly_benefit3') }}</span>
+              </div>
+            </div>
+            
+            <!-- Calendly Button -->
+            <Button 
+              :label="t('calendly_cta')"
+              severity="success"
+              size="large"
+              class="w-full"
+              icon="pi pi-calendar"
+              iconPos="right"
+              @click="openCalendly"
+            />
+            
+            <!-- Optional: Direct Calendly embed could go here -->
+            <div v-if="showCalendlyEmbed" class="mt-6">
+              <!-- Calendly inline widget will be dynamically inserted here -->
+              <div class="calendly-inline-widget" 
+                data-url="https://calendly.com/mindbeamer/demo?hide_gdpr_banner=1" 
+                style="min-width:320px;height:630px;">
+              </div>
+            </div>
+          </div>
         </div>
         
         <!-- Trust Note -->
-        <div class="text-center mt-8">
+        <div class="text-center mt-12">
           <p class="text-sm text-surface-600">
             <i class="pi pi-lock mr-2"></i>
             {{ t('demo_note') }}
@@ -98,7 +173,7 @@ import { ref, reactive } from 'vue';
 import { useLocaleStore } from '@/stores/locale';
 import { useToast } from 'primevue/usetoast';
 import InputText from 'primevue/inputtext';
-import Checkbox from 'primevue/checkbox';
+import InputSwitch from 'primevue/inputswitch';
 import Button from 'primevue/button';
 import axios from 'axios';
 
@@ -118,6 +193,9 @@ const errors = ref({});
 const showSuccess = ref(false);
 const showError = ref(false);
 const errorMessage = ref('');
+
+// Calendly state
+const showCalendlyEmbed = ref(false);
 
 // Form validation
 const validateForm = () => {
@@ -213,11 +291,69 @@ const handleSubmit = async () => {
     loading.value = false;
   }
 };
+
+// Open Calendly in a new window/popup
+const openCalendly = () => {
+  // You can replace this URL with your actual Calendly link
+  const calendlyUrl = 'https://calendly.com/mindbeamer/demo';
+  
+  // Option 1: Open in a popup window (recommended)
+  const width = 1000;
+  const height = 700;
+  const left = (window.innerWidth - width) / 2;
+  const top = (window.innerHeight - height) / 2;
+  
+  window.open(
+    calendlyUrl,
+    'calendly-popup',
+    `width=${width},height=${height},left=${left},top=${top},toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes`
+  );
+  
+  // Option 2: If you prefer to open in a new tab instead:
+  // window.open(calendlyUrl, '_blank');
+  
+  // Option 3: If you want to show inline embed
+  // showCalendlyEmbed.value = true;
+  // loadCalendlyScript();
+};
+
+// Load Calendly script for inline widget (if using embed option)
+const loadCalendlyScript = () => {
+  if (!document.querySelector('script[src*="calendly.com"]')) {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }
+};
 </script>
 
 <style scoped>
 .fade-in {
   animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Style for InputSwitch */
+:deep(.p-inputswitch) {
+  width: 3rem !important;
+  height: 1.75rem !important;
+}
+
+:deep(.p-inputswitch .p-inputswitch-slider) {
+  background: #e5e7eb !important;
+  transition: background-color 0.2s, transform 0.2s !important;
+}
+
+:deep(.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider) {
+  background: #3b82f6 !important;
+}
+
+:deep(.p-inputswitch:hover .p-inputswitch-slider) {
+  background: #d1d5db !important;
+}
+
+:deep(.p-inputswitch.p-inputswitch-checked:hover .p-inputswitch-slider) {
+  background: #2563eb !important;
 }
 
 @keyframes fadeInUp {
@@ -229,5 +365,30 @@ const handleSubmit = async () => {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Equal height cards */
+@media (min-width: 1024px) {
+  .grid > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Hover effects for cards */
+.bg-white:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+/* Badge styling */
+.absolute.top-0.right-0 {
+  font-size: 0.875rem;
+}
+
+/* Calendly widget styling if used */
+.calendly-inline-widget {
+  border-radius: 8px;
+  overflow: hidden;
 }
 </style>
