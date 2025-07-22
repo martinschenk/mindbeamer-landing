@@ -66,24 +66,37 @@ return [
     
     // Features Section
     'features_title' => '专为业务增长而设计',
+    'features_subtitle' => 'MindBeamer不仅创建内容——它创建能将潜在客户转化为客户的内容',
     
     'feature1_title' => '您的产品变成内容金矿',
     'feature1_description' => 'MindBeamer不创建随机帖子。每一件内容都旨在以吸引理想客户的方式展示您的专业知识、产品或服务。',
+    'feature1_benefit1' => '每周自动突出不同的产品',
+    'feature1_benefit2' => '创建推动销售的应用指南和使用案例',
     
     'feature2_title' => '每个平台都获得完美内容',
     'feature2_description' => 'LinkedIn：将您定位为行业专家的专业内容。Facebook：为本地客户建立社区的帖子。Instagram：展示您工作和个性的视觉内容。博客：带来自然流量的SEO优化文章。',
+    'feature2_benefit1' => 'LinkedIn通过行业专业知识推动B2B潜在客户',
+    'feature2_benefit2' => 'Instagram通过幕后内容视觉化展示您的工作',
     
     'feature3_title' => '专为您的业务类型设计',
     'feature3_description' => 'MindBeamer分析您的业务类型并创建有效的内容。产品公司：系统化产品展示。服务提供商：通过专家洞察建立权威性。本地企业：与您的社区真诚连接。',
+    'feature3_benefit1' => '制造业：技术规格变成引人入胜的故事',
+    'feature3_benefit2' => '专业服务：复杂主题变成客户友好的洞察',
     
     'feature4_title' => '再也不会缺少创意',
     'feature4_description' => '先进的AI确保您的内容保持多样化和引人入胜，利用您业务的全部范围每次创建独特的帖子。',
+    'feature4_benefit1' => 'AI分析您的行业趋势和竞争对手差距',
+    'feature4_benefit2' => '围绕您的受众关心的热门话题创建内容',
     
     'feature5_title' => '在您睡觉时工作',
     'feature5_description' => '一旦配置完成，MindBeamer独立运行。没有日常任务，没有创意障碍，没有需要维护的发布日程。',
+    'feature5_benefit1' => '无需每日内容规划或创意障碍',
+    'feature5_benefit2' => 'MindBeamer全天候24/7维护您的发布日程，包括周末',
     
     'feature6_title' => '看看哪些帖子带来客户',
     'feature6_description' => '跟踪哪些内容产生潜在客户，专注于对您业务有效的内容。',
+    'feature6_benefit1' => '内置分析显示哪些产品/服务产生最多的参与度',
+    'feature6_benefit2' => '根据与您的受众产生共鸣的内容优化您的产品',
     
     // Advantages Section
     'advantages_title' => 'MindBeamer的六大核心优势',

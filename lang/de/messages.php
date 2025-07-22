@@ -66,24 +66,37 @@ return [
     
     // Features Section
     'features_title' => 'Entwickelt für Geschäftswachstum',
+    'features_subtitle' => 'MindBeamer erstellt nicht nur Content – sondern Content, der Interessenten zu Kunden macht',
     
     'feature1_title' => 'Ihre Produkte werden zu Content-Gold',
     'feature1_description' => 'MindBeamer erstellt keine zufälligen Posts. Jeder Inhalt ist darauf ausgelegt, Ihre Expertise, Produkte oder Dienstleistungen so zu präsentieren, dass sie Ihre idealen Kunden anziehen.',
+    'feature1_benefit1' => 'Hebt automatisch jede Woche andere Produkte hervor',
+    'feature1_benefit2' => 'Erstellt Anwendungsleitfäden und Use Cases, die Verkäufe ankurbeln',
     
     'feature2_title' => 'Jede Plattform bekommt perfekten Content',
     'feature2_description' => 'LinkedIn: Professioneller Content, der Sie als Branchenexperten positioniert. Facebook: Community-Building-Posts für lokale Kunden. Instagram: Visueller Content, der Ihre Arbeit und Persönlichkeit zeigt. Blog: SEO-optimierte Artikel für organischen Traffic.',
+    'feature2_benefit1' => 'LinkedIn generiert B2B-Leads durch Branchen-Expertise',
+    'feature2_benefit2' => 'Instagram präsentiert Ihre Arbeit visuell mit Behind-the-Scenes-Content',
     
     'feature3_title' => 'Entwickelt für IHREN Unternehmenstyp',
     'feature3_description' => 'MindBeamer analysiert Ihren Unternehmenstyp und erstellt Content, der funktioniert. Produktunternehmen: Systematische Produktpräsentation. Dienstleister: Autoritätsaufbau durch Experteneinblicke. Lokale Unternehmen: Authentische Community-Verbindung.',
+    'feature3_benefit1' => 'Fertigung: Technische Specs werden zu packenden Stories',
+    'feature3_benefit2' => 'Dienstleister: Komplexe Themen werden zu kundenfreundlichen Einblicken',
     
     'feature4_title' => 'Nie wieder Ideen-Mangel',
     'feature4_description' => 'Fortschrittliche KI sorgt für abwechslungsreichen und ansprechenden Content, der aus Ihrem gesamten Geschäftsumfang schöpft und jedes Mal einzigartige Posts erstellt.',
+    'feature4_benefit1' => 'KI analysiert Ihre Branchentrends und Wettbewerbslücken',
+    'feature4_benefit2' => 'Erstellt Content zu Trendthemen, die Ihre Zielgruppe interessieren',
     
     'feature5_title' => 'Funktioniert während Sie schlafen',
     'feature5_description' => 'Einmal konfiguriert, läuft MindBeamer eigenständig. Keine täglichen Aufgaben, keine Kreativblockaden, keine Posting-Pläne zum Pflegen.',
+    'feature5_benefit1' => 'Keine tägliche Content-Planung oder Kreativblockaden',
+    'feature5_benefit2' => 'MindBeamer hält Ihren Posting-Plan 24/7 ein, auch am Wochenende',
     
     'feature6_title' => 'Sehen Sie, welche Posts Kunden bringen',
     'feature6_description' => 'Verfolgen Sie, welcher Content Leads generiert und fokussieren Sie sich auf das, was für Ihr Unternehmen funktioniert.',
+    'feature6_benefit1' => 'Integrierte Analytics zeigen, welche Produkte/Services am meisten Engagement erzeugen',
+    'feature6_benefit2' => 'Optimieren Sie Ihr Angebot basierend auf dem, was bei Ihrer Zielgruppe ankommt',
     
     // Advantages Section
     'advantages_title' => 'Sechs Schlüsselvorteile von MindBeamer',

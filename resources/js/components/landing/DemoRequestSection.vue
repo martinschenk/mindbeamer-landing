@@ -65,7 +65,7 @@
                 <label class="text-sm text-surface-600 flex-1 mr-4">
                   {{ t('marketing_consent_text') }}
                 </label>
-                <InputSwitch 
+                <ToggleSwitch 
                   v-model="formData.marketing_consent"
                   :disabled="loading"
                   class="flex-shrink-0"
@@ -173,7 +173,7 @@ import { ref, reactive } from 'vue';
 import { useLocaleStore } from '@/stores/locale';
 import { useToast } from 'primevue/usetoast';
 import InputText from 'primevue/inputtext';
-import InputSwitch from 'primevue/inputswitch';
+import ToggleSwitch from 'primevue/toggleswitch';
 import Button from 'primevue/button';
 import axios from 'axios';
 
@@ -359,26 +359,26 @@ const loadCalendlyScript = () => {
   animation: fadeInUp 0.8s ease-out both;
 }
 
-/* Style for InputSwitch */
-:deep(.p-inputswitch) {
+/* Style for ToggleSwitch */
+:deep(.p-toggleswitch) {
   width: 3rem !important;
   height: 1.75rem !important;
 }
 
-:deep(.p-inputswitch .p-inputswitch-slider) {
+:deep(.p-toggleswitch .p-toggleswitch-slider) {
   background: #e5e7eb !important;
   transition: background-color 0.2s, transform 0.2s !important;
 }
 
-:deep(.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider) {
+:deep(.p-toggleswitch.p-toggleswitch-checked .p-toggleswitch-slider) {
   background: #3b82f6 !important;
 }
 
-:deep(.p-inputswitch:hover .p-inputswitch-slider) {
+:deep(.p-toggleswitch:hover .p-toggleswitch-slider) {
   background: #d1d5db !important;
 }
 
-:deep(.p-inputswitch.p-inputswitch-checked:hover .p-inputswitch-slider) {
+:deep(.p-toggleswitch.p-toggleswitch-checked:hover .p-toggleswitch-slider) {
   background: #2563eb !important;
 }
 

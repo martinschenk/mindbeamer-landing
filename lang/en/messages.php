@@ -66,24 +66,37 @@ return [
     
     // Features Section
     'features_title' => 'Built for Business Growth',
+    'features_subtitle' => 'MindBeamer doesn\'t just create content – it creates content that converts prospects into customers',
     
     'feature1_title' => 'Your Products Become Content Gold',
     'feature1_description' => 'MindBeamer doesn\'t create random posts. Every piece of content is designed to showcase your expertise, products, or services in a way that attracts your ideal customers.',
+    'feature1_benefit1' => 'Automatically highlights different products each week',
+    'feature1_benefit2' => 'Creates application guides and use cases that drive sales',
     
     'feature2_title' => 'Every Platform Gets Perfect Content',
     'feature2_description' => 'LinkedIn: Professional content that positions you as the industry expert. Facebook: Community-building posts that engage local customers. Instagram: Visual content that showcases your work and personality. Blog: SEO-optimized articles that bring in organic traffic.',
+    'feature2_benefit1' => 'LinkedIn drives B2B leads with industry expertise',
+    'feature2_benefit2' => 'Instagram showcases your work visually with behind-the-scenes content',
     
     'feature3_title' => 'Built for YOUR Business Type',
     'feature3_description' => 'MindBeamer analyzes your business type and creates content that works. Product companies: Feature different products systematically. Service providers: Build authority through expert insights. Local businesses: Connect with your community authentically.',
+    'feature3_benefit1' => 'Manufacturing: Technical specs become engaging stories',
+    'feature3_benefit2' => 'Professional services: Complex topics become client-friendly insights',
     
     'feature4_title' => 'Never Run Out of Ideas Again',
     'feature4_description' => 'Advanced AI ensures your content stays varied and engaging, drawing from your full business scope to create unique posts every time.',
+    'feature4_benefit1' => 'AI analyzes your industry trends and competitor gaps',
+    'feature4_benefit2' => 'Creates content around trending topics your audience cares about',
     
     'feature5_title' => 'Works While You Sleep',
     'feature5_description' => 'Once configured, MindBeamer runs independently. No daily tasks, no creative blocks, no posting schedules to maintain.',
+    'feature5_benefit1' => 'No daily content planning or creative blocks',
+    'feature5_benefit2' => 'MindBeamer maintains your posting schedule 24/7, even on weekends',
     
     'feature6_title' => 'See Which Posts Bring Customers',
     'feature6_description' => 'Track which content brings in leads and focus on what works for your business.',
+    'feature6_benefit1' => 'Built-in analytics show which products/services generate most engagement',
+    'feature6_benefit2' => 'Optimize your offerings based on what resonates with your audience',
     
     // Advantages Section
     'advantages_title' => 'Six Key Advantages of MindBeamer',

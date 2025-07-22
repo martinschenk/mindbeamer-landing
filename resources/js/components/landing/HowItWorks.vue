@@ -156,7 +156,7 @@ import Button from 'primevue/button';
 const { t } = useLocaleStore();
 
 function scrollToDemo() {
-  const element = document.querySelector('#contact');
+  const element = document.querySelector('#demo');
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
   }

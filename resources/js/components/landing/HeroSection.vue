@@ -33,10 +33,8 @@
               :label="t('hero_cta_primary')"
               severity="warning"
               size="large"
-              icon="pi pi-arrow-right"
-              iconPos="right"
               class="animate-wiggle font-semibold shadow-lg"
-              @click="scrollToProof"
+              @click="jumpToDemo"
             />
             <Button 
               :label="t('hero_cta_secondary')"
@@ -81,16 +79,24 @@ import Button from 'primevue/button';
 const { t } = useLocaleStore();
 const { totalOffset } = useHeaderOffset();
 
-function scrollToProof() {
-  const element = document.querySelector('#social-proof');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
+function jumpToDemo() {
+  // Direct jump to demo section without smooth scrolling
+  window.location.hash = 'demo';
 }
 
 function playDemo() {
-  // TODO: Implement demo video modal
-  console.log('Play demo video');
+  // Smooth scroll to how-it-works section with header offset
+  const element = document.querySelector('#how-it-works');
+  if (element) {
+    const headerHeight = 80; // Approximate header height
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerHeight;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
 }
 </script>
 

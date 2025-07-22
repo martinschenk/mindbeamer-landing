@@ -66,24 +66,37 @@ return [
     
     // Features Section
     'features_title' => 'Diseñado para el Crecimiento Empresarial',
+    'features_subtitle' => 'MindBeamer no solo crea contenido – crea contenido que convierte prospectos en clientes',
     
     'feature1_title' => 'Tus Productos se Convierten en Oro de Contenido',
     'feature1_description' => 'MindBeamer no crea posts aleatorios. Cada pieza de contenido está diseñada para mostrar tu experiencia, productos o servicios de una manera que atraiga a tus clientes ideales.',
+    'feature1_benefit1' => 'Destaca automáticamente diferentes productos cada semana',
+    'feature1_benefit2' => 'Crea guías de aplicación y casos de uso que impulsan ventas',
     
     'feature2_title' => 'Cada Plataforma Recibe Contenido Perfecto',
     'feature2_description' => 'LinkedIn: Contenido profesional que te posiciona como experto del sector. Facebook: Posts que construyen comunidad con clientes locales. Instagram: Contenido visual que muestra tu trabajo y personalidad. Blog: Artículos SEO-optimizados que traen tráfico orgánico.',
+    'feature2_benefit1' => 'LinkedIn genera leads B2B con experiencia de la industria',
+    'feature2_benefit2' => 'Instagram muestra tu trabajo visualmente con contenido detrás de cámaras',
     
     'feature3_title' => 'Diseñado para TU Tipo de Negocio',
     'feature3_description' => 'MindBeamer analiza tu tipo de negocio y crea contenido que funciona. Empresas de productos: Presentación sistemática de productos. Proveedores de servicios: Construye autoridad con insights de expertos. Negocios locales: Conecta auténticamente con tu comunidad.',
+    'feature3_benefit1' => 'Manufactura: Las especificaciones técnicas se convierten en historias atractivas',
+    'feature3_benefit2' => 'Servicios profesionales: Temas complejos se vuelven insights amigables para clientes',
     
     'feature4_title' => 'Nunca Más te Quedarás sin Ideas',
     'feature4_description' => 'La IA avanzada asegura que tu contenido se mantenga variado y atractivo, aprovechando todo el alcance de tu negocio para crear posts únicos cada vez.',
+    'feature4_benefit1' => 'IA analiza las tendencias de tu industria y brechas de competencia',
+    'feature4_benefit2' => 'Crea contenido sobre temas de tendencia que le importan a tu audiencia',
     
     'feature5_title' => 'Funciona Mientras Duermes',
     'feature5_description' => 'Una vez configurado, MindBeamer funciona de forma independiente. Sin tareas diarias, sin bloqueos creativos, sin calendarios de publicación que mantener.',
+    'feature5_benefit1' => 'Sin planificación diaria de contenido ni bloqueos creativos',
+    'feature5_benefit2' => 'MindBeamer mantiene tu calendario de publicación 24/7, incluso los fines de semana',
     
     'feature6_title' => 'Ve Qué Posts Traen Clientes',
     'feature6_description' => 'Rastrea qué contenido genera leads y enfócate en lo que funciona para tu negocio.',
+    'feature6_benefit1' => 'Analíticas integradas muestran qué productos/servicios generan más engagement',
+    'feature6_benefit2' => 'Optimiza tus ofertas basándote en lo que resuena con tu audiencia',
     
     // Advantages Section
     'advantages_title' => 'Seis Ventajas Clave de MindBeamer',

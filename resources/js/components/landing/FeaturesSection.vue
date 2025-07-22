@@ -21,7 +21,7 @@
         <!-- Feature 1 -->
         <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 fade-in group" style="animation-delay: 0.1s;">
           <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <i class="pi pi-brain text-3xl text-indigo-600"></i>
+            <i class="pi pi-sparkles text-3xl text-indigo-600"></i>
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">{{ t('feature1_title') }}</h3>
           <p class="text-gray-600 mb-4">{{ t('feature1_description') }}</p>
