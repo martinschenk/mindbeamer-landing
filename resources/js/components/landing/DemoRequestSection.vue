@@ -139,7 +139,7 @@
               :label="t('calendly_cta')"
               severity="success"
               size="large"
-              class="w-full"
+              class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
               icon="pi pi-calendar"
               iconPos="right"
               @click="openCalendly"
@@ -149,7 +149,7 @@
             <div v-if="showCalendlyEmbed" class="mt-6">
               <!-- Calendly inline widget will be dynamically inserted here -->
               <div class="calendly-inline-widget" 
-                data-url="https://calendly.com/mindbeamer/demo?hide_gdpr_banner=1" 
+                data-url="https://calendly.com/m-schenk-mindbeamer/30min?hide_gdpr_banner=1" 
                 style="min-width:320px;height:630px;">
               </div>
             </div>
@@ -292,29 +292,55 @@ const handleSubmit = async () => {
   }
 };
 
-// Open Calendly in a new window/popup
+// Open Calendly using official popup widget
 const openCalendly = () => {
-  // You can replace this URL with your actual Calendly link
-  const calendlyUrl = 'https://calendly.com/mindbeamer/demo';
+  // First, ensure Calendly script is loaded
+  loadCalendlyScript();
   
-  // Option 1: Open in a popup window (recommended)
-  const width = 1000;
-  const height = 700;
-  const left = (window.innerWidth - width) / 2;
-  const top = (window.innerHeight - height) / 2;
+  // Check if Calendly is available and open popup
+  const attemptOpen = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/m-schenk-mindbeamer/30min'
+      });
+      
+      // Simple click-outside-to-close functionality
+      setTimeout(() => {
+        const calendlyOverlay = document.querySelector('.calendly-overlay');
+        
+        if (calendlyOverlay) {
+          // Add click handler to overlay
+          calendlyOverlay.addEventListener('click', (e) => {
+            // Only close if clicking the overlay itself, not the popup content
+            if (e.target === calendlyOverlay) {
+              closeCalendlyPopup();
+            }
+          });
+        }
+      }, 500);
+    } else {
+      // If Calendly not loaded yet, wait a bit and try again
+      setTimeout(attemptOpen, 200);
+    }
+  };
   
-  window.open(
-    calendlyUrl,
-    'calendly-popup',
-    `width=${width},height=${height},left=${left},top=${top},toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes`
-  );
-  
-  // Option 2: If you prefer to open in a new tab instead:
-  // window.open(calendlyUrl, '_blank');
-  
-  // Option 3: If you want to show inline embed
-  // showCalendlyEmbed.value = true;
-  // loadCalendlyScript();
+  // Small delay to ensure script loads
+  setTimeout(attemptOpen, 100);
+};
+
+// Close Calendly popup
+const closeCalendlyPopup = () => {
+  const calendlyClose = document.querySelector('.calendly-close-overlay') || 
+                       document.querySelector('.calendly-popup-close');
+  if (calendlyClose) {
+    calendlyClose.click();
+  } else {
+    // Fallback: remove the popup elements
+    const overlay = document.querySelector('.calendly-overlay');
+    const popup = document.querySelector('.calendly-popup');
+    if (overlay) overlay.remove();
+    if (popup) popup.remove();
+  }
 };
 
 // Load Calendly script for inline widget (if using embed option)

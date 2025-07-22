@@ -43,6 +43,9 @@
     {{-- PrimeIcons --}}
     <link rel="stylesheet" href="https://unpkg.com/primeicons@7.0.0/primeicons.css">
     
+    {{-- Calendly Widget CSS --}}
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    
     {{-- Structured Data --}}
     <script type="application/ld+json">
     {
