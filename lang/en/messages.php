@@ -326,8 +326,8 @@ return [
     
     // Demo Form Option
     'demo_form_badge' => 'Most Popular',
-    'demo_form_title' => 'Quick Demo Video',
-    'demo_form_subtitle' => 'See MindBeamer\'s key features in under 5 minutes',
+    'demo_form_title' => 'Live Demo Call',
+    'demo_form_subtitle' => 'Get a personal demo from the founder in just 15 minutes',
     
     // Calendly Option
     'calendly_badge' => '15 Min Call',
@@ -347,7 +347,7 @@ return [
     'demo_no_pressure' => 'Zero Sales Pressure - Just Real Examples',
     'demo_see_results' => 'See How It Works Before You Decide',
     'your_email' => 'Your Email',
-    'ask_for_demo' => 'Show Me My Content Strategy',
+    'ask_for_demo' => 'Book My Demo Call',
     'sending' => 'Sending...',
     'form_success' => 'Thank you! We\'ll contact you soon.',
     'form_error' => 'Something went wrong. Please try again.',

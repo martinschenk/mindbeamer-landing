@@ -238,8 +238,14 @@ return [
     // Contact Section
     'demo_title' => '¿Listo para Poner tu Contenido en Piloto Automático?',
     'demo_subtitle' => 'Ve exactamente cómo MindBeamer crea contenido para TU negocio. Martin te mostrará una demo personalizada usando tu negocio real como ejemplo.',
+    
+    // Demo Form Option
+    'demo_form_badge' => 'Más Popular',
+    'demo_form_title' => 'Llamada Demo en Vivo',
+    'demo_form_subtitle' => 'Obtén una demo personal del fundador en solo 15 minutos',
+    
     'your_email' => 'Tu Email',
-    'ask_for_demo' => 'Solicitar Demo Gratuita',
+    'ask_for_demo' => 'Reservar Mi Llamada Demo',
     'sending' => 'Enviando...',
     'form_success' => '¡Gracias! Te contactaremos pronto.',
     'form_error' => 'Algo salió mal. Por favor, inténtalo de nuevo.',

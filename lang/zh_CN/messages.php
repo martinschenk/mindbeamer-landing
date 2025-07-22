@@ -303,8 +303,14 @@ return [
     // Contact Section
     'demo_title' => '准备让您的内容进入自动驾驶模式吗？',
     'demo_subtitle' => '准确查看MindBeamer如何为您的企业创建内容。Martin将向您展示一个个性化演示，以您的实际业务为例。',
+    
+    // Demo Form Option
+    'demo_form_badge' => '最受欢迎',
+    'demo_form_title' => '现场演示通话',
+    'demo_form_subtitle' => '在15分钟内获得创始人的个人演示',
+    
     'your_email' => '您的电子邮件',
-    'ask_for_demo' => '申请免费演示',
+    'ask_for_demo' => '预约演示通话',
     'sending' => '发送中...',
     'form_success' => '谢谢！我们将很快联系您。',
     'form_error' => '出现错误。请重试。',

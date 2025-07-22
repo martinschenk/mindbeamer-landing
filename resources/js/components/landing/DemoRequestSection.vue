@@ -36,7 +36,7 @@
             
             <div class="text-center mb-6">
               <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
-                <i class="pi pi-play-circle text-3xl text-primary-600"></i>
+                <i class="pi pi-video text-3xl text-primary-600"></i>
               </div>
               <h3 class="text-2xl font-bold text-surface-900 mb-2">{{ t('demo_form_title') }}</h3>
               <p class="text-surface-600">{{ t('demo_form_subtitle') }}</p>

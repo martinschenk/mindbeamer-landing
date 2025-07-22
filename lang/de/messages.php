@@ -121,7 +121,7 @@ return [
     'vs_contentstudio_description' => 'ContentStudio erfordert ständige Überwachung und Anleitung. MindBeamer arbeitet nach der ersten Einrichtung vollkommen selbstständig und generiert automatisch Themen und Inhalte, die für jede Plattform maßgeschneidert sind.',
     
     'ready_to_see' => 'Bereit zu sehen, wie MindBeamers autonomer Content-Agent Ihre Online-Präsenz transformieren kann?',
-    'ask_for_demo' => 'Kostenlose Demo anfragen',
+    'ask_for_demo' => 'Demo-Gespräch buchen',
     
     // Social Proof Section
     'proof_headline' => 'MindBeamer live im Einsatz - Keine Fake-Demos',
@@ -300,8 +300,8 @@ return [
     
     // Demo Form Option
     'demo_form_badge' => 'Am beliebtesten',
-    'demo_form_title' => 'Schnelles Demo-Video',
-    'demo_form_subtitle' => 'Sehen Sie MindBeamers Hauptfunktionen in unter 5 Minuten',
+    'demo_form_title' => 'Live Demo-Gespräch',
+    'demo_form_subtitle' => 'Persönliche Demo vom Gründer in nur 15 Minuten',
     
     // Calendly Option
     'calendly_badge' => '15 Min. Gespräch',
@@ -312,7 +312,7 @@ return [
     'calendly_benefit3' => 'Verfügbar in Ihrer Zeitzone',
     'calendly_cta' => 'Termin vereinbaren',
     'your_email' => 'Ihre E-Mail',
-    'ask_for_demo' => 'Kostenlose Demo anfragen',
+    'ask_for_demo' => 'Demo-Gespräch buchen',
     'sending' => 'Wird gesendet...',
     'form_success' => 'Vielen Dank! Wir werden Sie in Kürze kontaktieren.',
     'form_error' => 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
