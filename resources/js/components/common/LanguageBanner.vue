@@ -1,6 +1,7 @@
 <template>
   <div 
     v-if="languageBannerVisible && preferredLocale && isRootDomain"
+    id="language-preference-banner"
     class="fixed top-0 left-0 right-0 bg-blue-600 text-white p-3 shadow-lg z-50"
   >
     <div class="max-w-7xl mx-auto flex items-center justify-between">

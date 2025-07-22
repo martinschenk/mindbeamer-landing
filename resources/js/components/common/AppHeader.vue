@@ -103,7 +103,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, onUnmounted } from 'vue';
+import { computed, ref, onMounted, onUnmounted, watch, nextTick } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useUIStore } from '@/stores/ui';
 import { useLocaleStore } from '@/stores/locale';
@@ -139,6 +139,12 @@ function updateHeaderOffset() {
     headerOffset.value = 0;
   }
 }
+
+// Watch for language banner visibility changes
+watch(languageBannerVisible, async () => {
+  await nextTick();
+  updateHeaderOffset();
+});
 
 onMounted(() => {
   updateHeaderOffset();

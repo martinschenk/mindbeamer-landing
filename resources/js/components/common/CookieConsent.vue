@@ -53,6 +53,7 @@
     <Dialog 
       v-model:visible="showSettingsModal" 
       modal
+      :dismissableMask="true"
       :style="{ width: '90vw', maxWidth: '600px' }"
       :pt="{
         root: { class: 'border-0' },
@@ -117,7 +118,14 @@
       </div>
       
       <template #footer>
-        <div class="flex justify-end">
+        <div class="flex justify-end gap-3">
+          <Button 
+            @click="cancelSettings" 
+            :label="t('cookie-consent.cancel')"
+            severity="secondary"
+            size="large"
+            outlined
+          />
           <Button 
             @click="saveSettings" 
             :label="t('cookie-consent.save_settings')"
@@ -145,7 +153,7 @@ const cookieConsentStore = useCookieConsentStore();
 const localeStore = useLocaleStore();
 
 const { showModal, showSettingsModal, consent } = storeToRefs(cookieConsentStore);
-const { acceptAll, declineAll, showSettings, saveSettings } = cookieConsentStore;
+const { acceptAll, declineAll, showSettings, cancelSettings, saveSettings } = cookieConsentStore;
 
 // Use locale store's translation function
 const { t } = localeStore;

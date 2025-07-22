@@ -116,8 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (target) {
             e.preventDefault();
             
-            // Calculate position with offset
-            const headerOffset = 50; // Adjust this value
+            // Calculate position with dynamic offset
+            const header = document.querySelector('header');
+            const languageBanner = document.getElementById('language-preference-banner');
+            let headerOffset = 50; // Default offset
+            
+            if (header) {
+                headerOffset = header.offsetHeight - 30; // Subtract some padding
+            }
+            
+            if (languageBanner && window.getComputedStyle(languageBanner).display !== 'none') {
+                headerOffset += languageBanner.offsetHeight;
+            }
+            
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
             

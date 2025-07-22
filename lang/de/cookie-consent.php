@@ -11,6 +11,7 @@ return [
     'settings' => 'Einstellungen',
     'close' => 'Schließen',
     'save_settings' => 'Einstellungen speichern',
+    'cancel' => 'Abbrechen',
     
     // Cookie-Kategorien
     'essential_title' => 'Notwendige Cookies',

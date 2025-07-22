@@ -34,7 +34,7 @@
     <link rel="alternate" hreflang="zh-CN" href="{{ url('/zh_CN') }}">
     
     {{-- Favicon --}}
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' x='50' text-anchor='middle' font-size='80' font-weight='700' fill='%236366f1' font-family='Poppins,sans-serif'>M</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     
     {{-- Preload fonts --}}
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">

@@ -1,5 +1,5 @@
 <template>
-  <section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50 pt-32 pb-32">
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-primary-50 pb-32" :style="{ paddingTop: `${totalOffset + 48}px` }">
     <!-- Diamond Theme Animated Background -->
     <div class="hero-bg-animation">
       <div class="hero-bg-shape-1"></div>
@@ -75,9 +75,11 @@
 
 <script setup>
 import { useLocaleStore } from '@/stores/locale';
+import { useHeaderOffset } from '@/composables/useHeaderOffset';
 import Button from 'primevue/button';
 
 const { t } = useLocaleStore();
+const { totalOffset } = useHeaderOffset();
 
 function scrollToProof() {
   const element = document.querySelector('#social-proof');

@@ -11,6 +11,7 @@ return [
     'settings' => '设置',
     'close' => '关闭',
     'save_settings' => '保存设置',
+    'cancel' => '取消',
     
     // Cookie categories
     'essential_title' => '必要 Cookie',

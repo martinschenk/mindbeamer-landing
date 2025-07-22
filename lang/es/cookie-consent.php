@@ -11,6 +11,7 @@ return [
     'settings' => 'Configuración',
     'close' => 'Cerrar',
     'save_settings' => 'Guardar configuración',
+    'cancel' => 'Cancelar',
     
     // Categorías de cookies
     'essential_title' => 'Cookies esenciales',
