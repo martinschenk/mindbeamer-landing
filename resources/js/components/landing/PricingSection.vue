@@ -211,7 +211,7 @@
       <div class="text-center mt-8 fade-in" style="animation-delay: 0.6s;">
         <p class="text-gray-600">
           {{ t('pricing_questions') }} 
-          <a href="#contact" class="text-indigo-600 hover:text-indigo-700 font-semibold">{{ t('pricing_contact_us') }}</a>
+          <a href="#demo" class="text-indigo-600 hover:text-indigo-700 font-semibold">{{ t('pricing_contact_us') }}</a>
         </p>
       </div>
     </div>
@@ -225,9 +225,15 @@ import Button from 'primevue/button';
 const { t } = useLocaleStore();
 
 function scrollToDemo() {
-  const element = document.querySelector('#contact');
+  const element = document.querySelector('#demo');
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    const headerHeight = 80;
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerHeight;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   }
 }
 </script>

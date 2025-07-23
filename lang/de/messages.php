@@ -286,6 +286,12 @@ return [
     'pricing_beta_counter' => 'Beta-Plätze belegt: <strong>0/100</strong>',
     'pricing_beta_note' => 'Preis steigt auf vollen Tarif bei: <strong>100 Kunden</strong>',
     
+    // Pricing extras
+    'pricing_guarantee_title' => '30 Tage Geld-zurück-Garantie',
+    'pricing_guarantee_desc' => 'Testen Sie MindBeamer ohne Risiko. Nicht zufrieden? Volle Rückerstattung.',
+    'pricing_questions' => 'Haben Sie Fragen?',
+    'pricing_contact_us' => 'Kontaktieren Sie uns',
+    
     'month' => 'Monat',
     'request_demo_button' => 'Demo anfragen',
     

@@ -83,4 +83,14 @@ return [
     // Contact
     'contact_title' => 'Contact',
     'contact_for_questions' => 'If you have questions about these Terms, please contact us:',
+    
+    // Trademark Disclaimers
+    'trademark_disclaimer_title' => 'Trademark Disclaimers',
+    'trademark_disclaimer_intro' => 'All trademarks, service marks, trade names, and logos referenced on this website are the property of their respective owners:',
+    'trademark_wordpress' => 'WordPress® is a registered trademark of the WordPress Foundation.',
+    'trademark_linkedin' => 'LinkedIn® is a registered trademark of LinkedIn Corporation.',
+    'trademark_instagram' => 'Instagram® is a registered trademark of Meta Platforms, Inc.',
+    'trademark_facebook' => 'Facebook® is a registered trademark of Meta Platforms, Inc.',
+    'trademark_twitter' => 'Twitter® and X® are registered trademarks of X Corp.',
+    'trademark_disclaimer_outro' => 'The use of these trademarks does not imply any affiliation with or endorsement by the respective trademark owners. All references to these services are used solely for identification purposes.',
 ];

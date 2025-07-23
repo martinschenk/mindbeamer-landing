@@ -286,6 +286,12 @@ return [
     'pricing_beta_counter' => '测试名额已占用：<strong>0/100</strong>',
     'pricing_beta_note' => '价格上涨至全价时间：<strong>100个客户</strong>',
     
+    // Pricing extras
+    'pricing_guarantee_title' => '30天退款保证',
+    'pricing_guarantee_desc' => '无风险试用MindBeamer。不满意？全额退款。',
+    'pricing_questions' => '有疑问？',
+    'pricing_contact_us' => '联系我们',
+    
     'month' => '月',
     'request_demo_button' => '申请演示',
     

@@ -15,12 +15,12 @@
     "name": "vendor"
   },
   "resources/css/app.css": {
-    "file": "css/app-DoTnRCIz.css",
+    "file": "css/app-BzN0SfeQ.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DioWnDwv.js",
+    "file": "assets/app-B6t_1aFF.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -30,8 +30,8 @@
       "_utils-Dq7h7Pqt.js"
     ],
     "css": [
-      "css/app-CUuS-4cc.css",
-      "css/app-DoTnRCIz.css"
+      "css/app-H7W92XSG.css",
+      "css/app-BzN0SfeQ.css"
     ]
   }
 }

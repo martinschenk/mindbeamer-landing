@@ -89,6 +89,24 @@
                     <p>{{ __('legal.copyright_content') }}</p>
                 </div>
             </section>
+
+            <!-- Trademark Disclaimers -->
+            <section>
+                <h2 class="text-2xl font-bold text-surface-800 mb-4 border-b border-gray-200 pb-2">
+                    {{ __('legal.trademark_disclaimer_title') }}
+                </h2>
+                <div class="space-y-4 text-surface-700">
+                    <p>{{ __('legal.trademark_disclaimer_intro') }}</p>
+                    <ul class="space-y-2 ml-6 list-disc">
+                        <li>{{ __('legal.trademark_wordpress') }}</li>
+                        <li>{{ __('legal.trademark_linkedin') }}</li>
+                        <li>{{ __('legal.trademark_instagram') }}</li>
+                        <li>{{ __('legal.trademark_facebook') }}</li>
+                        <li>{{ __('legal.trademark_twitter') }}</li>
+                    </ul>
+                    <p>{{ __('legal.trademark_disclaimer_outro') }}</p>
+                </div>
+            </section>
         </div>
     </div>
 </div>

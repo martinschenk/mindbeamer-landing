@@ -83,4 +83,14 @@ return [
     // Contact
     'contact_title' => '联系',
     'contact_for_questions' => '如果您对这些条款有任何疑问，请联系我们：',
+    
+    // 商标声明
+    'trademark_disclaimer_title' => '商标声明',
+    'trademark_disclaimer_intro' => '本网站提及的所有商标、服务标志、商号和标识均为其各自所有者的财产：',
+    'trademark_wordpress' => 'WordPress® 是 WordPress Foundation 的注册商标。',
+    'trademark_linkedin' => 'LinkedIn® 是 LinkedIn Corporation 的注册商标。',
+    'trademark_instagram' => 'Instagram® 是 Meta Platforms, Inc. 的注册商标。',
+    'trademark_facebook' => 'Facebook® 是 Meta Platforms, Inc. 的注册商标。',
+    'trademark_twitter' => 'Twitter® 和 X® 是 X Corp. 的注册商标。',
+    'trademark_disclaimer_outro' => '使用这些商标并不意味着与相应商标所有者有任何关联或得到其认可。所有对这些服务的引用仅用于识别目的。',
 ];

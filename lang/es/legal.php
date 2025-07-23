@@ -83,4 +83,14 @@ return [
     // Contact
     'contact_title' => 'Contacto',
     'contact_for_questions' => 'Si tiene preguntas sobre estos Términos, por favor contáctenos:',
+    
+    // Avisos sobre Marcas Registradas
+    'trademark_disclaimer_title' => 'Avisos sobre Marcas Registradas',
+    'trademark_disclaimer_intro' => 'Todas las marcas comerciales, marcas de servicio, nombres comerciales y logotipos mencionados en este sitio web son propiedad de sus respectivos propietarios:',
+    'trademark_wordpress' => 'WordPress® es una marca registrada de WordPress Foundation.',
+    'trademark_linkedin' => 'LinkedIn® es una marca registrada de LinkedIn Corporation.',
+    'trademark_instagram' => 'Instagram® es una marca registrada de Meta Platforms, Inc.',
+    'trademark_facebook' => 'Facebook® es una marca registrada de Meta Platforms, Inc.',
+    'trademark_twitter' => 'Twitter® y X® son marcas registradas de X Corp.',
+    'trademark_disclaimer_outro' => 'El uso de estas marcas no implica afiliación con o respaldo por parte de los respectivos propietarios de las marcas. Todas las referencias a estos servicios se utilizan únicamente con fines de identificación.',
 ];

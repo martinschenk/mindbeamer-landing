@@ -83,4 +83,14 @@ return [
     // Contact
     'contact_title' => 'Kontakt',
     'contact_for_questions' => 'Bei Fragen zu diesen AGB wenden Sie sich bitte an uns:',
+    
+    // Markenrechtliche Hinweise
+    'trademark_disclaimer_title' => 'Markenrechtliche Hinweise',
+    'trademark_disclaimer_intro' => 'Alle auf dieser Website genannten Marken, Dienstleistungsmarken, Handelsnamen und Logos sind Eigentum ihrer jeweiligen Inhaber:',
+    'trademark_wordpress' => 'WordPress® ist eine eingetragene Marke der WordPress Foundation.',
+    'trademark_linkedin' => 'LinkedIn® ist eine eingetragene Marke der LinkedIn Corporation.',
+    'trademark_instagram' => 'Instagram® ist eine eingetragene Marke von Meta Platforms, Inc.',
+    'trademark_facebook' => 'Facebook® ist eine eingetragene Marke von Meta Platforms, Inc.',
+    'trademark_twitter' => 'Twitter® und X® sind eingetragene Marken der X Corp.',
+    'trademark_disclaimer_outro' => 'Die Verwendung dieser Marken impliziert keine Zugehörigkeit zu oder Befürwortung durch die jeweiligen Markeninhaber. Alle Verweise auf diese Dienste dienen ausschließlich zu Identifikationszwecken.',
 ];
