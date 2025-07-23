@@ -17,6 +17,8 @@ return [
         'de',
         'es',
         'zh_CN',
+        'pt_BR',
+        'fr',
     ],
 
     /*
@@ -53,6 +55,8 @@ return [
         'de' => 'Deutsch',
         'es' => 'Español',
         'zh_CN' => '简体中文',
+        'pt_BR' => 'Português',
+        'fr' => 'Français',
     ],
 
     /*
@@ -68,5 +72,7 @@ return [
         'de' => '🇩🇪', 
         'es' => '🇪🇸',
         'zh_CN' => '🇨🇳',
+        'pt_BR' => '🇧🇷',
+        'fr' => '🇫🇷',
     ],
 ];
