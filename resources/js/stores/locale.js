@@ -4,7 +4,7 @@ import { ref, computed } from 'vue';
 export const useLocaleStore = defineStore('locale', () => {
   // State
   const currentLocale = ref('en');
-  const availableLocales = ref(['en', 'de', 'es', 'zh_CN']);
+  const availableLocales = ref(['en', 'de', 'es', 'zh_CN', 'pt_BR', 'fr']);
   const translations = ref({});
   
   // Locale display names
@@ -12,7 +12,9 @@ export const useLocaleStore = defineStore('locale', () => {
     en: 'English',
     de: 'Deutsch',
     es: 'Español',
-    zh_CN: '中文'
+    zh_CN: '中文',
+    pt_BR: 'Português',
+    fr: 'Français'
   };
   
   // Locale flags
@@ -20,7 +22,9 @@ export const useLocaleStore = defineStore('locale', () => {
     en: '🇺🇸',
     de: '🇩🇪',
     es: '🇪🇸',
-    zh_CN: '🇨🇳'
+    zh_CN: '🇨🇳',
+    pt_BR: '🇧🇷',
+    fr: '🇫🇷'
   };
   
   // Getters

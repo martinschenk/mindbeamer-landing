@@ -79,19 +79,25 @@ function getLocalizedUrl(page) {
       en: '/privacy-policy',
       de: '/de/datenschutz-richtlinie',
       es: '/es/politica-privacidad',
-      zh_CN: '/zh_CN/privacy-policy'
+      zh_CN: '/zh_CN/privacy-policy',
+      pt_BR: '/pt_BR/politica-privacidade',
+      fr: '/fr/politique-confidentialite'
     },
     impressum: {
       en: '/legal-notice',
       de: '/de/impressum',
       es: '/es/aviso-legal',
-      zh_CN: '/zh_CN/legal-notice'
+      zh_CN: '/zh_CN/legal-notice',
+      pt_BR: '/pt_BR/aviso-legal',
+      fr: '/fr/mentions-legales'
     },
     terms: {
       en: '/terms',
       de: '/de/agb',
       es: '/es/terminos',
-      zh_CN: '/zh_CN/terms'
+      zh_CN: '/zh_CN/terms',
+      pt_BR: '/pt_BR/termos',
+      fr: '/fr/conditions'
     }
   };
   
