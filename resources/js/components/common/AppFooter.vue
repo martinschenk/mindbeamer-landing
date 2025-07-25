@@ -32,34 +32,70 @@
         </a>
       </div>
       
-      <!-- Language Switcher -->
-      <div class="flex justify-center space-x-4">
-        <div class="flex items-center space-x-2">
-          <a 
-            v-for="(locale, index) in availableLocales" 
-            :key="locale"
-            :href="getLanguageUrl(locale)"
-            class="text-gray-400 hover:text-white transition-colors"
-            :class="{ 'font-bold text-white': currentLocale === locale }"
-          >
-            {{ locale.toUpperCase() }}
-            <span v-if="index < availableLocales.length - 1" class="text-gray-500 mx-2">|</span>
-          </a>
-        </div>
+      <!-- Language Dropdown -->
+      <div class="flex justify-center mt-4">
+        <Dropdown v-model="selectedLocale" :options="localeOptions" optionLabel="label" optionValue="value"
+          @change="changeLanguage" 
+          class="language-dropdown"
+          :pt="{
+            root: { class: 'inline-flex' },
+            input: { class: 'bg-gray-800 text-gray-300 border-gray-700 rounded-md px-3 py-2 text-sm hover:bg-gray-700 transition-colors cursor-pointer' },
+            trigger: { class: 'text-gray-400' },
+            panel: { class: 'bg-gray-800 border border-gray-700 rounded-md shadow-lg mt-1' },
+            item: { class: 'text-gray-300 hover:bg-gray-700 px-3 py-2 text-sm cursor-pointer transition-colors' },
+            itemGroup: { class: 'text-gray-400' },
+            emptyMessage: { class: 'text-gray-500 px-3 py-2' }
+          }"
+        >
+          <template #value="slotProps">
+            <div v-if="slotProps.value" class="flex items-center gap-2">
+              <span class="text-lg">{{ getLocaleFlag(slotProps.value) }}</span>
+              <span>{{ getLocaleName(slotProps.value) }}</span>
+            </div>
+          </template>
+          <template #option="slotProps">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">{{ slotProps.option.flag }}</span>
+              <span>{{ slotProps.option.label }}</span>
+            </div>
+          </template>
+        </Dropdown>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useLocaleStore } from '@/stores/locale';
 import { useCookieConsentStore } from '@/stores/cookieConsent';
+import Dropdown from 'primevue/dropdown';
 
 const localeStore = useLocaleStore();
 const cookieConsentStore = useCookieConsentStore();
 
-const { t, currentLocale, availableLocales } = localeStore;
+const { t, currentLocale, availableLocales, localeNames, localeFlags } = localeStore;
+
+// Selected locale for dropdown
+const selectedLocale = ref(currentLocale);
+
+// Prepare options for dropdown
+const localeOptions = computed(() => {
+  return availableLocales.map(locale => ({
+    value: locale,
+    label: localeNames[locale] || locale,
+    flag: localeFlags[locale] || '🏳️'
+  }));
+});
+
+// Helper functions for template
+function getLocaleName(locale) {
+  return localeNames[locale] || locale;
+}
+
+function getLocaleFlag(locale) {
+  return localeFlags[locale] || '🏳️';
+}
 
 // Fix legal translations access
 function getLegalTranslation(key) {
@@ -72,8 +108,8 @@ function openCookieSettings() {
   openSettings();
 }
 
-function getLocalizedUrl(page) {
-  const locale = currentLocale;
+function getLocalizedUrl(page, locale = null) {
+  const targetLocale = locale || currentLocale;
   const urlMap = {
     privacy: {
       en: '/privacy-policy',
@@ -101,7 +137,12 @@ function getLocalizedUrl(page) {
     }
   };
   
-  return urlMap[page]?.[locale] || urlMap[page]?.en || '#';
+  return urlMap[page]?.[targetLocale] || urlMap[page]?.en || '#';
+}
+
+function changeLanguage(event) {
+  const newLocale = event.value;
+  window.location.href = getLanguageUrl(newLocale);
 }
 
 function getLanguageUrl(locale) {
@@ -115,12 +156,12 @@ function getLanguageUrl(locale) {
   
   // Extract the page from current path and return localized version
   // This is simplified - in production you'd want more robust logic
-  if (currentPath.includes('privacy') || currentPath.includes('datenschutz')) {
-    return getLocalizedUrl('privacy').replace(currentLocale, locale);
-  } else if (currentPath.includes('legal') || currentPath.includes('impressum') || currentPath.includes('aviso')) {
-    return getLocalizedUrl('impressum').replace(currentLocale, locale);
-  } else if (currentPath.includes('terms') || currentPath.includes('agb') || currentPath.includes('terminos')) {
-    return getLocalizedUrl('terms').replace(currentLocale, locale);
+  if (currentPath.includes('privacy') || currentPath.includes('datenschutz') || currentPath.includes('politica-privacidade') || currentPath.includes('politique-confidentialite')) {
+    return getLocalizedUrl('privacy', locale);
+  } else if (currentPath.includes('legal') || currentPath.includes('impressum') || currentPath.includes('aviso') || currentPath.includes('mentions-legales')) {
+    return getLocalizedUrl('impressum', locale);
+  } else if (currentPath.includes('terms') || currentPath.includes('agb') || currentPath.includes('terminos') || currentPath.includes('termos') || currentPath.includes('conditions')) {
+    return getLocalizedUrl('terms', locale);
   }
   
   // Default to home page for the locale
