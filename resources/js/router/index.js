@@ -44,7 +44,7 @@ const routes = [
   
   // Localized routes
   {
-    path: '/:locale(en|de|es|zh_CN)',
+    path: '/:locale(en|de|es|zh_CN|pt_BR|fr)',
     component: LandingLayout,
     children: [
       {
@@ -69,6 +69,16 @@ const routes = [
         component: PrivacyView
       },
       {
+        path: 'politica-privacidade',
+        alias: 'privacy-policy',
+        component: PrivacyView
+      },
+      {
+        path: 'politique-confidentialite',
+        alias: 'privacy-policy',
+        component: PrivacyView
+      },
+      {
         path: 'legal-notice',
         name: 'legal-notice',
         component: ImpressumView
@@ -84,6 +94,11 @@ const routes = [
         component: ImpressumView
       },
       {
+        path: 'mentions-legales',
+        alias: 'legal-notice',
+        component: ImpressumView
+      },
+      {
         path: 'terms',
         name: 'terms',
         component: TermsView
@@ -95,6 +110,16 @@ const routes = [
       },
       {
         path: 'terminos',
+        alias: 'terms',
+        component: TermsView
+      },
+      {
+        path: 'termos',
+        alias: 'terms',
+        component: TermsView
+      },
+      {
+        path: 'conditions',
         alias: 'terms',
         component: TermsView
       }

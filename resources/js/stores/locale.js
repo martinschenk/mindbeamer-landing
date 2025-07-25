@@ -21,13 +21,15 @@ export const useLocaleStore = defineStore('locale', () => {
   };
   
   // Locale flags - use config if available, fallback to defaults
-  const localeFlags = ref(localeConfig.localeFlags || {
-    en: '🇺🇸',
-    de: '🇩🇪',
-    es: '🇪🇸',
-    zh_CN: '🇨🇳',
-    pt_BR: '🇧🇷',
-    fr: '🇫🇷'
+  // Force US flag for English to avoid browser rendering issues
+  const configFlags = localeConfig.localeFlags || {};
+  const localeFlags = ref({
+    en: '🇺🇸', // Explicitly set US flag
+    de: configFlags.de || '🇩🇪',
+    es: configFlags.es || '🇪🇸',
+    zh_CN: configFlags.zh_CN || '🇨🇳',
+    pt_BR: configFlags.pt_BR || '🇧🇷',
+    fr: configFlags.fr || '🇫🇷'
   });
   
   // Getters

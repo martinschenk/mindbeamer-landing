@@ -4,6 +4,14 @@ import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 
 export default defineConfig({
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler', // Use modern Sass API
+                silenceDeprecations: ['legacy-js-api'], // Silence the deprecation warnings
+            }
+        }
+    },
     plugins: [
         laravel({
             input: [

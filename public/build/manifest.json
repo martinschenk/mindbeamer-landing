@@ -20,7 +20,7 @@
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-D9KCS2gA.js",
+    "file": "assets/app--wEgIp7c.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -30,7 +30,7 @@
       "_utils-Dq7h7Pqt.js"
     ],
     "css": [
-      "css/app-De1pygpT.css",
+      "css/app-CE67zH5-.css",
       "css/app-B380txEP.css"
     ]
   }

@@ -32,6 +32,8 @@
     <link rel="alternate" hreflang="de" href="{{ url('/de') }}">
     <link rel="alternate" hreflang="es" href="{{ url('/es') }}">
     <link rel="alternate" hreflang="zh-CN" href="{{ url('/zh_CN') }}">
+    <link rel="alternate" hreflang="pt-BR" href="{{ url('/pt_BR') }}">
+    <link rel="alternate" hreflang="fr" href="{{ url('/fr') }}">
     
     {{-- Favicon --}}
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">

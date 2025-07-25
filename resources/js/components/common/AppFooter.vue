@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-gray-900 text-white py-8 w-full overflow-hidden">
-    <div class="container mx-auto px-6 text-center w-full">
+  <footer class="bg-gray-900 text-white pt-8 pb-20 w-full relative">
+    <div class="container mx-auto px-6 text-center w-full relative overflow-visible">
       <p class="mb-2">&copy; 2025 <span translate="no">MindBeamer</span>. {{ t('all_rights_reserved') }}</p>
       
       <!-- Links -->
@@ -32,60 +32,73 @@
         </a>
       </div>
       
-      <!-- Language Dropdown -->
-      <div class="flex justify-center mt-4">
-        <Dropdown v-model="selectedLocale" :options="localeOptions" optionLabel="label" optionValue="value"
-          @change="changeLanguage" 
-          class="language-dropdown"
-          :pt="{
-            root: { class: 'inline-flex' },
-            input: { class: 'bg-gray-700 text-gray-200 border border-gray-600 rounded-lg px-4 py-2.5 text-sm hover:bg-gray-600 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all cursor-pointer shadow-md' },
-            trigger: { class: 'text-gray-300 hover:text-gray-100 ml-2' },
-            panel: { class: 'bg-gray-800 border border-gray-700 rounded-lg shadow-2xl mt-2 overflow-hidden' },
-            item: { class: 'text-gray-300 hover:bg-indigo-600 hover:text-white px-4 py-2.5 text-sm cursor-pointer transition-all duration-200' },
-            itemGroup: { class: 'text-gray-400' },
-            emptyMessage: { class: 'text-gray-500 px-4 py-2.5' }
-          }"
-        >
-          <template #value="slotProps">
-            <div v-if="slotProps.value" class="flex items-center gap-2">
-              <span class="text-lg">{{ getLocaleFlag(slotProps.value) }}</span>
-              <span>{{ getLocaleName(slotProps.value) }}</span>
+      <!-- Language Dropdown - Custom Implementation -->
+      <div class="flex justify-center mt-4 relative z-50">
+        <div class="relative">
+          <!-- Custom Dropdown Button -->
+          <button 
+            @click="dropdownOpen = !dropdownOpen"
+            class="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white border border-gray-600 hover:border-gray-500 rounded-lg px-4 py-2.5 text-sm transition-all cursor-pointer shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            <span class="text-lg">{{ getLocaleFlag(currentLocale) }}</span>
+            <span>{{ getLocaleName(currentLocale) }}</span>
+            <svg class="w-4 h-4 ml-2 transition-transform" :class="{ 'rotate-180': !dropdownOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <!-- Custom Dropdown Menu -->
+          <div 
+            v-if="dropdownOpen" 
+            class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 min-w-[200px] bg-gray-800 border border-gray-700 rounded-lg shadow-2xl"
+            style="z-index: 9999;"
+          >
+            <div class="py-1">
+              <button
+                v-for="locale in availableLocales"
+                :key="locale"
+                @click="changeLanguageCustom(locale)"
+                class="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-700 hover:text-white transition-all"
+                :class="{ 'bg-indigo-600 text-white': locale === currentLocale }"
+              >
+                <span class="text-lg">{{ getLocaleFlag(locale) }}</span>
+                <span>{{ getLocaleName(locale) }}</span>
+              </button>
             </div>
-          </template>
-          <template #option="slotProps">
-            <div class="flex items-center gap-2">
-              <span class="text-lg">{{ slotProps.option.flag }}</span>
-              <span>{{ slotProps.option.label }}</span>
-            </div>
-          </template>
-        </Dropdown>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useLocaleStore } from '@/stores/locale';
 import { useCookieConsentStore } from '@/stores/cookieConsent';
-import Dropdown from 'primevue/dropdown';
 
 const localeStore = useLocaleStore();
 const cookieConsentStore = useCookieConsentStore();
 
 const { t, currentLocale, availableLocales, localeNames, localeFlags } = localeStore;
 
-// Selected locale for dropdown
-const selectedLocale = ref(currentLocale);
+// Dropdown state
+const dropdownOpen = ref(false);
 
-// Prepare options for dropdown
-const localeOptions = computed(() => {
-  return availableLocales.map(locale => ({
-    value: locale,
-    label: localeNames[locale] || locale,
-    flag: localeFlags.value?.[locale] || localeFlags[locale] || '🏳️'
-  }));
+// Handle click outside
+function handleClickOutside(event) {
+  const dropdown = event.target.closest('.relative');
+  if (!dropdown && dropdownOpen.value) {
+    dropdownOpen.value = false;
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside);
 });
 
 // Helper functions for template
@@ -94,7 +107,9 @@ function getLocaleName(locale) {
 }
 
 function getLocaleFlag(locale) {
-  return localeFlags.value?.[locale] || localeFlags[locale] || '🏳️';
+  // localeFlags is already a ref, access its value properly
+  const flags = localeFlags.value || localeFlags;
+  return flags[locale] || '🏳️';
 }
 
 // Fix legal translations access
@@ -140,9 +155,9 @@ function getLocalizedUrl(page, locale = null) {
   return urlMap[page]?.[targetLocale] || urlMap[page]?.en || '#';
 }
 
-function changeLanguage(event) {
-  const newLocale = event.value;
-  window.location.href = getLanguageUrl(newLocale);
+function changeLanguageCustom(locale) {
+  dropdownOpen.value = false;
+  window.location.href = getLanguageUrl(locale);
 }
 
 function getLanguageUrl(locale) {
@@ -170,34 +185,67 @@ function getLanguageUrl(locale) {
 </script>
 
 <style scoped>
-/* Custom styling for dropdown in dark footer */
+/* Force dark theme for dropdown in footer */
+.language-dropdown :deep(.p-dropdown) {
+  background-color: rgb(31 41 55) !important;
+  border-color: rgb(55 65 81) !important;
+  color: white !important;
+}
+
+.language-dropdown :deep(.p-dropdown:hover) {
+  background-color: rgb(55 65 81) !important;
+  border-color: rgb(75 85 99) !important;
+}
+
+.language-dropdown :deep(.p-dropdown-label) {
+  color: white !important;
+}
+
 .language-dropdown :deep(.p-dropdown-trigger) {
-  border-left: 1px solid rgb(107 114 128);
+  color: rgb(209 213 219) !important;
+  border-left: 1px solid rgb(75 85 99) !important;
   padding-left: 0.5rem;
 }
 
+.language-dropdown :deep(.p-dropdown-trigger svg) {
+  color: rgb(209 213 219) !important;
+}
+
+/* Dropdown panel */
 .language-dropdown :deep(.p-dropdown-panel) {
-  max-height: 320px;
-  overflow-y: auto;
-  background-color: rgb(31 41 55);
-  border-color: rgb(55 65 81);
-}
-
-.language-dropdown :deep(.p-dropdown-item.p-highlight) {
-  background-color: rgb(79 70 229);
-  color: white;
-}
-
-.language-dropdown :deep(.p-dropdown-item.p-focus) {
-  background-color: rgb(55 65 81);
-  color: white;
+  background-color: rgb(31 41 55) !important;
+  border: 1px solid rgb(55 65 81) !important;
+  margin-top: 0.25rem;
 }
 
 .language-dropdown :deep(.p-dropdown-items-wrapper) {
-  background-color: rgb(31 41 55);
+  background-color: rgb(31 41 55) !important;
 }
 
-.language-dropdown :deep(.p-dropdown-trigger svg) {
-  color: rgb(209 213 219);
+.language-dropdown :deep(.p-dropdown-item) {
+  background-color: rgb(31 41 55) !important;
+  color: white !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.language-dropdown :deep(.p-dropdown-item:not(.p-highlight):not(.p-disabled).p-focus) {
+  background-color: rgb(55 65 81) !important;
+  color: white !important;
+}
+
+.language-dropdown :deep(.p-dropdown-item:not(.p-highlight):not(.p-disabled):hover) {
+  background-color: rgb(55 65 81) !important;
+  color: white !important;
+}
+
+.language-dropdown :deep(.p-dropdown-item.p-highlight) {
+  background-color: rgb(79 70 229) !important;
+  color: white !important;
+}
+
+/* Force dark background on all dropdown elements */
+.language-dropdown :deep(*) {
+  background-color: inherit;
+  color: inherit;
 }
 </style>
