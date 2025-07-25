@@ -39,10 +39,10 @@
           class="language-dropdown"
           :pt="{
             root: { class: 'inline-flex' },
-            input: { class: 'bg-gray-800 text-gray-300 border-gray-700 rounded-md px-3 py-2 text-sm hover:bg-gray-700 transition-colors cursor-pointer' },
-            trigger: { class: 'text-gray-400' },
-            panel: { class: 'bg-gray-800 border border-gray-700 rounded-md shadow-lg mt-1' },
-            item: { class: 'text-gray-300 hover:bg-gray-700 px-3 py-2 text-sm cursor-pointer transition-colors' },
+            input: { class: 'bg-gray-800 text-gray-300 border border-gray-600 rounded-md px-3 py-2 text-sm hover:bg-gray-700 hover:border-gray-500 transition-all cursor-pointer' },
+            trigger: { class: 'text-gray-400 hover:text-gray-300' },
+            panel: { class: 'bg-gray-800 border border-gray-600 rounded-md shadow-xl mt-1' },
+            item: { class: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm cursor-pointer transition-colors' },
             itemGroup: { class: 'text-gray-400' },
             emptyMessage: { class: 'text-gray-500 px-3 py-2' }
           }"
@@ -168,3 +168,20 @@ function getLanguageUrl(locale) {
   return locale === 'en' ? '/' : `/${locale}`;
 }
 </script>
+
+<style scoped>
+/* Custom styling for dropdown in dark footer */
+.language-dropdown :deep(.p-dropdown-trigger) {
+  border-left: 1px solid rgb(75 85 99);
+}
+
+.language-dropdown :deep(.p-dropdown-panel) {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.language-dropdown :deep(.p-dropdown-item.p-highlight) {
+  background-color: rgb(55 65 81);
+  color: white;
+}
+</style>
