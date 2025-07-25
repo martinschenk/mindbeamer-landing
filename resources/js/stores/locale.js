@@ -2,13 +2,16 @@ import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 
 export const useLocaleStore = defineStore('locale', () => {
+  // Get config from backend
+  const localeConfig = window.__APP_DATA__?.localeConfig || {};
+  
   // State
   const currentLocale = ref('en');
-  const availableLocales = ref(['en', 'de', 'es', 'zh_CN', 'pt_BR', 'fr']);
+  const availableLocales = ref(localeConfig.availableLocales || ['en', 'de', 'es', 'zh_CN', 'pt_BR', 'fr']);
   const translations = ref({});
   
-  // Locale display names
-  const localeNames = {
+  // Locale display names - use config if available, fallback to defaults
+  const localeNames = localeConfig.localeNames || {
     en: 'English',
     de: 'Deutsch',
     es: 'Español',
@@ -17,8 +20,8 @@ export const useLocaleStore = defineStore('locale', () => {
     fr: 'Français'
   };
   
-  // Locale flags
-  const localeFlags = {
+  // Locale flags - use config if available, fallback to defaults
+  const localeFlags = localeConfig.localeFlags || {
     en: '🇺🇸',
     de: '🇩🇪',
     es: '🇪🇸',

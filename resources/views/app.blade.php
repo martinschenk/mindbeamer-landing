@@ -80,6 +80,11 @@
                 'api.demo-request' => route('api.demo-request')
             ]),
             csrfToken: "{{ csrf_token() }}",
+            localeConfig: @json([
+                'availableLocales' => config('languages.available_locales'),
+                'localeNames' => config('languages.locale_names'),
+                'localeFlags' => config('languages.locale_flags')
+            ]),
             @if(isset($preferredLocale))
             preferredLocale: "{{ $preferredLocale }}",
             @endif
