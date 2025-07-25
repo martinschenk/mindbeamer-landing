@@ -21,18 +21,18 @@ export const useLocaleStore = defineStore('locale', () => {
   };
   
   // Locale flags - use config if available, fallback to defaults
-  const localeFlags = localeConfig.localeFlags || {
+  const localeFlags = ref(localeConfig.localeFlags || {
     en: '🇺🇸',
     de: '🇩🇪',
     es: '🇪🇸',
     zh_CN: '🇨🇳',
     pt_BR: '🇧🇷',
     fr: '🇫🇷'
-  };
+  });
   
   // Getters
   const displayName = computed(() => localeNames[currentLocale.value] || currentLocale.value);
-  const flag = computed(() => localeFlags[currentLocale.value] || '🏳️');
+  const flag = computed(() => localeFlags.value[currentLocale.value] || '🏳️');
   const htmlLang = computed(() => currentLocale.value === 'zh_CN' ? 'zh-CN' : currentLocale.value);
   
   // Actions

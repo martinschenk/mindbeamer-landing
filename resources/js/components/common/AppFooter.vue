@@ -39,12 +39,12 @@
           class="language-dropdown"
           :pt="{
             root: { class: 'inline-flex' },
-            input: { class: 'bg-gray-800 text-gray-300 border border-gray-600 rounded-md px-3 py-2 text-sm hover:bg-gray-700 hover:border-gray-500 transition-all cursor-pointer' },
-            trigger: { class: 'text-gray-400 hover:text-gray-300' },
-            panel: { class: 'bg-gray-800 border border-gray-600 rounded-md shadow-xl mt-1' },
-            item: { class: 'text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 text-sm cursor-pointer transition-colors' },
+            input: { class: 'bg-gray-700 text-gray-200 border border-gray-600 rounded-lg px-4 py-2.5 text-sm hover:bg-gray-600 hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all cursor-pointer shadow-md' },
+            trigger: { class: 'text-gray-300 hover:text-gray-100 ml-2' },
+            panel: { class: 'bg-gray-800 border border-gray-700 rounded-lg shadow-2xl mt-2 overflow-hidden' },
+            item: { class: 'text-gray-300 hover:bg-indigo-600 hover:text-white px-4 py-2.5 text-sm cursor-pointer transition-all duration-200' },
             itemGroup: { class: 'text-gray-400' },
-            emptyMessage: { class: 'text-gray-500 px-3 py-2' }
+            emptyMessage: { class: 'text-gray-500 px-4 py-2.5' }
           }"
         >
           <template #value="slotProps">
@@ -84,7 +84,7 @@ const localeOptions = computed(() => {
   return availableLocales.map(locale => ({
     value: locale,
     label: localeNames[locale] || locale,
-    flag: localeFlags[locale] || '🏳️'
+    flag: localeFlags.value?.[locale] || localeFlags[locale] || '🏳️'
   }));
 });
 
@@ -94,7 +94,7 @@ function getLocaleName(locale) {
 }
 
 function getLocaleFlag(locale) {
-  return localeFlags[locale] || '🏳️';
+  return localeFlags.value?.[locale] || localeFlags[locale] || '🏳️';
 }
 
 // Fix legal translations access
@@ -172,16 +172,32 @@ function getLanguageUrl(locale) {
 <style scoped>
 /* Custom styling for dropdown in dark footer */
 .language-dropdown :deep(.p-dropdown-trigger) {
-  border-left: 1px solid rgb(75 85 99);
+  border-left: 1px solid rgb(107 114 128);
+  padding-left: 0.5rem;
 }
 
 .language-dropdown :deep(.p-dropdown-panel) {
-  max-height: 300px;
+  max-height: 320px;
   overflow-y: auto;
+  background-color: rgb(31 41 55);
+  border-color: rgb(55 65 81);
 }
 
 .language-dropdown :deep(.p-dropdown-item.p-highlight) {
+  background-color: rgb(79 70 229);
+  color: white;
+}
+
+.language-dropdown :deep(.p-dropdown-item.p-focus) {
   background-color: rgb(55 65 81);
   color: white;
+}
+
+.language-dropdown :deep(.p-dropdown-items-wrapper) {
+  background-color: rgb(31 41 55);
+}
+
+.language-dropdown :deep(.p-dropdown-trigger svg) {
+  color: rgb(209 213 219);
 }
 </style>
