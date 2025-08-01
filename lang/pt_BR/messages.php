@@ -20,6 +20,8 @@ return [
     'hero_problem_repeat' => 'Soa familiar?',
     'hero_solution' => 'Existe um jeito melhor.',
     'hero_cta_primary' => 'Me Mostre o Jeito Melhor →',
+    'hero_cta_secondary' => 'Eu preciso disso',
+    'week' => 'semana',
     
     // Maria Case Study
     'maria_headline' => 'Conheça Maria: Ela Recuperou Seus Fins de Semana',
@@ -40,29 +42,85 @@ return [
     'maria_result2' => 'Maria adora seus fins de semana livres.',
     'maria_cta' => 'Quero o que a Maria tem',
     
-    // How It Works Section
-    'how_it_works_title' => 'De "O Que Vou Postar?" para "Uau, Já Está Feito!"',
-    'how_it_works_subtitle' => 'MindBeamer transforma seu negócio em conteúdo que atrai clientes - sem você.',
+    // How It Works Section - Simplified
+    'how_it_works_title' => 'Esqueça Tudo Que Você Pensa Sobre Redes Sociais',
+    'how_it_works_subtitle' => 'Processo Simples de 3 Passos',
     
-    'step1_title' => 'Conte Sobre Seu Negócio',
-    'step1_description' => 'Apenas 10 minutos. Compartilhe seu site, produtos ou descreva seus serviços. MindBeamer aprende o que te faz especial.',
-    'step1_time' => 'Apenas 10 minutos',
+    'step1_emoji' => '1️⃣',
+    'step1_title' => 'Uma conversa de 10 minutos sobre seu negócio',
+    'step1_point1' => 'O que você vende?',
+    'step1_point2' => 'Quem compra de você?',
+    'step1_point3' => 'Com que frequência quer postar? (Diário? 3 vezes por semana? Você decide!)',
+    'step1_point4' => 'Quais plataformas importam para você? (Só LinkedIn? Instagram também? Totalmente sua escolha)',
     
-    'step2_title' => 'MindBeamer Cria Sua Estratégia',
-    'step2_description' => 'Nossa IA analisa seu negócio, estuda sua concorrência e cria um plano de conteúdo que realmente atrai clientes.',
-    'step2_feature' => 'Estratégia personalizada, não genérica',
+    'step2_emoji' => '2️⃣',
+    'step2_title' => 'MindBeamer aprende seu mundo',
+    'step2_point1' => 'Descobre quais tópicos seus clientes realmente se importam',
+    'step2_point2' => 'Encontra tendências na sua indústria que você nem sabia que existiam',
+    'step2_point3' => 'Aprende a escrever na sua voz (não com voz de robô)',
     
-    'step3_title' => 'O Conteúdo Se Cria Sozinho',
-    'step3_description' => 'Todo dia, MindBeamer cria conteúdo novo: posts, artigos, stories. Tudo na sua voz, tudo para vender.',
-    'step3_control' => 'Você escolhe: aprovar antes ou publicar direto',
+    'step3_emoji' => '3️⃣',
+    'step3_title' => 'Conteúdo aparece como mágica',
+    'step3_point1' => 'Olhe seu celular: novo post foi ao ar',
+    'step3_point2' => 'Você não escreveu, mas parece exatamente com você',
+    'step3_point3' => 'Seus clientes interagem, seu negócio cresce',
+    'step3_note' => '(Você pode revisar tudo primeiro, ou só deixar rolar - sua escolha)',
     
-    'step4_title' => 'Publicado Enquanto Você Dorme',
-    'step4_description' => 'Acorde com seu conteúdo já publicado. LinkedIn, Facebook, Instagram, seu blog - tudo ativo, tudo trabalhando por você.',
-    'step4_result' => 'Seu negócio visível 24/7',
+    'how_it_works_cta' => 'Isso parece bom demais para ser verdade - me mostre',
     
-    'how_it_works_cta' => 'Quero Minha Demo Pessoal',
+    // Features Section - Business Types
+    'features_title' => 'Perfeito Para Seu Tipo de Negócio',
+    'features_subtitle' => '',
     
-    // Features Section
+    'business_type1_title' => 'Consultores e Consultores',
+    'business_type1_hook' => 'Pare de explicar a mesma coisa 50 vezes',
+    'business_type1_point1' => 'Compartilhe um insight → MindBeamer transforma em 20 posts diferentes',
+    'business_type1_point2' => 'Se posicione como especialista sem o stress constante de conteúdo',
+    'business_type1_point3' => 'Posts no LinkedIn que trazem leads qualificados enquanto você dorme',
+    'business_type1_example' => 'Exemplo: Consultora fiscal Sarah compartilha uma dica sobre deduções. MindBeamer cria posts sobre impostos para pequenas empresas, conselhos para freelancers, planejamento de fim de ano - tudo daquela única ideia.',
+    
+    'business_type2_title' => 'Varejistas Online e E-commerce',
+    'business_type2_hook' => 'Seus produtos se vendem sozinhos (quando as pessoas os veem)',
+    'business_type2_point1' => 'Showcases sistemáticos de produtos sem parecer muito vendedor',
+    'business_type2_point2' => 'Histórias de sucesso de clientes e casos de uso que impulsionam compras',
+    'business_type2_point3' => 'Conteúdo sazonal que combina com padrões de compra',
+    'business_type2_example' => 'Exemplo: Mike, dono de loja de decoração, tem 200 produtos. MindBeamer apresenta itens diferentes a cada semana, cria guias de estilo, compartilha transformações de quartos de clientes.',
+    
+    'business_type3_title' => 'Fabricantes e Criadores de Produtos',
+    'business_type3_hook' => 'Transforme especificações técnicas em ímãs de clientes',
+    'business_type3_point1' => 'Produtos complexos se tornam histórias simples e envolventes',
+    'business_type3_point2' => 'Conteúdo dos bastidores que constrói confiança',
+    'business_type3_point3' => 'Posts educativos que ajudam clientes a usar melhor seus produtos',
+    'business_type3_example' => 'Exemplo: Como a fábrica de frutas secas da Maria - benefícios nutricionais se tornam dicas de saúde envolventes, processo de produção vira storytelling de qualidade.',
+    
+    'business_type4_title' => 'Provedores de Serviços Locais',
+    'business_type4_hook' => 'Torne-se o especialista de referência na sua área',
+    'business_type4_point1' => 'Compartilhe expertise sem dar todos os seus segredos',
+    'business_type4_point2' => 'Conselhos sazonais que trazem clientes de volta',
+    'business_type4_point3' => 'Engajamento com a comunidade local que constrói reputação',
+    'business_type4_example' => 'Exemplo: Empreiteiro de HVAC recebe posts sobre "preparação para inverno", "dicas de refrigeração para verão", "economia de energia" - tudo trazendo chamadas de serviço.',
+    
+    // Advantages Section
+    'advantages_title' => 'Seis Vantagens-Chave do MindBeamer',
+    'advantages_subtitle' => 'Descubra os benefícios que fazem do MindBeamer a escolha mais inteligente para suas necessidades de marketing de conteúdo.',
+    
+    // Why MindBeamer Stands Out Section
+    'why_stands_out_title' => 'Por Que MindBeamer Supera Todo o Resto',
+    'why_stands_out_subtitle' => 'Pare de comparar ferramentas de conteúdo. Comece a comparar resultados.',
+    
+    'vs_hiring_title' => 'vs. Contratar Alguém',
+    'vs_hiring_description' => 'Contratação de marketing: R$15K-40K/mês + eles não conhecem seu negócio. MindBeamer: A partir de R$1.500/mês, aprende seu negócio profundamente.',
+    
+    'vs_diy_title' => 'vs. Criação de Conteúdo DIY',
+    'vs_diy_description' => 'DIY: 15-20 horas/semana + pressão criativa constante. MindBeamer: 10 minutos de configuração, depois funciona sozinho.',
+    
+    'vs_generic_title' => 'vs. Ferramentas Genéricas',
+    'vs_generic_description' => 'Outras ferramentas: Apenas templates e agendamento. MindBeamer: Cria, otimiza e publica automaticamente.',
+    
+    'vs_agencies_title' => 'vs. Agências de Redes Sociais',
+    'vs_agencies_description' => 'Agências: Caras, estratégias genéricas, contratos longos. MindBeamer: Conteúdo específico do negócio, acessível, cancele quando quiser.',
+    
+    'roi_makes_sense' => 'ROI Que Faz Sentido: A maioria dos negócios vê seu investimento retornado em 30-60 dias através de leads e visibilidade aumentados.',
     'features_title' => 'Tudo Que Você Odeia Fazer, Automatizado',
     'features_subtitle' => 'Porque seu tempo vale mais do que ficar criando posts.',
     

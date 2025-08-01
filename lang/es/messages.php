@@ -20,6 +20,8 @@ return [
     'hero_problem_repeat' => '¿Te suena familiar?',
     'hero_solution' => 'Hay una forma mejor.',
     'hero_cta_primary' => 'Muéstrame la Mejor Forma →',
+    'hero_cta_secondary' => 'Necesito esto',
+    'week' => 'semana',
     
     // Maria Case Study
     'maria_headline' => 'Conoce a María: Recuperó Sus Fines de Semana',
@@ -40,31 +42,85 @@ return [
     'maria_result2' => 'A María le encantan sus fines de semana libres.',
     'maria_cta' => 'Quiero lo que tiene María',
     
-    // How It Works Section
-    'how_it_works_title' => 'De "¿Qué Publico?" a "¡Wow, Ya Está Hecho!"',
-    'how_it_works_subtitle' => 'MindBeamer convierte tu negocio en contenido que atrae clientes - sin ti.',
+    // How It Works Section - Simplified
+    'how_it_works_title' => 'Olvida Todo Lo Que Crees Saber Sobre Redes Sociales',
+    'how_it_works_subtitle' => 'Proceso Simple de 3 Pasos',
     
-    'step1_title' => 'Cuéntanos Sobre Tu Negocio',
-    'step1_description' => 'Solo 10 minutos. Comparte tu sitio web, productos o describe tus servicios. MindBeamer aprende qué te hace especial.',
-    'step1_time' => 'Solo 10 minutos',
+    'step1_emoji' => '1️⃣',
+    'step1_title' => 'Una conversación de 10 minutos sobre tu negocio',
+    'step1_point1' => '¿Qué vendes?',
+    'step1_point2' => '¿Quién te compra?',
+    'step1_point3' => '¿Con qué frecuencia quieres publicar? (¿Diario? ¿3 veces por semana? ¡Tú decides!)',
+    'step1_point4' => '¿Qué plataformas te importan? (¿Solo LinkedIn? ¿Instagram también? Totalmente tu decisión)',
     
-    'step2_title' => 'MindBeamer Crea Tu Estrategia',
-    'step2_description' => 'Nuestra IA analiza tu negocio, estudia tu competencia y crea un plan de contenido que realmente atrae clientes.',
-    'step2_feature' => 'Estrategia personalizada, no genérica',
+    'step2_emoji' => '2️⃣',
+    'step2_title' => 'MindBeamer aprende tu mundo',
+    'step2_point1' => 'Descubre qué temas realmente les importan a tus clientes',
+    'step2_point2' => 'Encuentra tendencias en tu industria que ni sabías que existían',
+    'step2_point3' => 'Aprende a escribir con tu voz (no con voz de robot)',
     
-    'step3_title' => 'El Contenido Se Crea Solo',
-    'step3_description' => 'Cada día, MindBeamer crea contenido fresco: posts, artículos, historias. Todo en tu voz, todo diseñado para vender.',
-    'step3_control' => 'Tu eliges: aprobar primero o publicar directo',
+    'step3_emoji' => '3️⃣',
+    'step3_title' => 'El contenido aparece como por arte de magia',
+    'step3_point1' => 'Mira tu teléfono: nuevo post ya publicado',
+    'step3_point2' => 'No lo escribiste tú, pero suena exactamente como tú',
+    'step3_point3' => 'Tus clientes interactúan, tu negocio crece',
+    'step3_note' => '(Puedes revisar todo primero, o simplemente dejarlo funcionar - tu elección)',
     
-    'step4_title' => 'Publicado Mientras Duermes',
-    'step4_description' => 'Despierta con tu contenido ya publicado. LinkedIn, Facebook, Instagram, tu blog - todo activo, todo trabajando para ti.',
-    'step4_result' => 'Tu negocio visible 24/7',
+    'how_it_works_cta' => 'Esto suena demasiado bueno para ser verdad - muéstramelo',
     
-    'how_it_works_cta' => 'Quiero Mi Demo Personal',
+    // Features Section - Business Types
+    'features_title' => 'Perfecto para Tu Tipo de Negocio',
+    'features_subtitle' => '',
     
-    // Features Section
-    'features_title' => 'Todo Lo Que Odias Hacer, Automatizado',
-    'features_subtitle' => 'Porque tu tiempo vale más que estar creando posts.',
+    'business_type1_title' => 'Consultores y Asesores',
+    'business_type1_hook' => 'Deja de explicar lo mismo 50 veces',
+    'business_type1_point1' => 'Comparte una idea → MindBeamer la convierte en 20 posts diferentes',
+    'business_type1_point2' => 'Posiciónate como experto sin el estrés constante del contenido',
+    'business_type1_point3' => 'Posts de LinkedIn que traen leads calificados mientras duermes',
+    'business_type1_example' => 'Ejemplo: La consultora fiscal Sarah comparte un consejo sobre deducciones. MindBeamer crea posts sobre impuestos para pequeñas empresas, consejos para freelancers, planificación de fin de año - todo de esa única idea.',
+    
+    'business_type2_title' => 'Retailers Online y E-commerce',
+    'business_type2_hook' => 'Tus productos se venden solos (cuando la gente los ve)',
+    'business_type2_point1' => 'Showcases sistemáticos de productos sin parecer vendido',
+    'business_type2_point2' => 'Historias de éxito de clientes y casos de uso que impulsan compras',
+    'business_type2_point3' => 'Contenido estacional que coincide con patrones de compra',
+    'business_type2_example' => 'Ejemplo: Mike, dueño de tienda de decoración, tiene 200 productos. MindBeamer presenta diferentes artículos cada semana, crea guías de estilo, comparte transformaciones de habitaciones de clientes.',
+    
+    'business_type3_title' => 'Fabricantes y Creadores de Productos',
+    'business_type3_hook' => 'Convierte especificaciones técnicas en imanes de clientes',
+    'business_type3_point1' => 'Productos complejos se vuelven historias simples y atractivas',
+    'business_type3_point2' => 'Contenido detrás de cámaras que construye confianza',
+    'business_type3_point3' => 'Posts educativos que ayudan a los clientes a usar mejor tus productos',
+    'business_type3_example' => 'Ejemplo: Como la fábrica de frutos secos de María - los beneficios nutricionales se convierten en consejos de salud atractivos, el proceso de producción se vuelve storytelling de calidad.',
+    
+    'business_type4_title' => 'Proveedores de Servicios Locales',
+    'business_type4_hook' => 'Conviértete en el experto de referencia en tu área',
+    'business_type4_point1' => 'Comparte experiencia sin regalar todos tus secretos',
+    'business_type4_point2' => 'Consejos estacionales que traen clientes de vuelta',
+    'business_type4_point3' => 'Engagement con la comunidad local que construye reputación',
+    'business_type4_example' => 'Ejemplo: El contratista de HVAC obtiene posts sobre "preparación para invierno", "consejos de refrigeración para verano", "ahorro de energía" - todo trayendo llamadas de servicio.',
+    
+    // Advantages Section
+    'advantages_title' => 'Seis Ventajas Clave de MindBeamer',
+    'advantages_subtitle' => 'Descubre los beneficios que hacen de MindBeamer la elección más inteligente para tus necesidades de marketing de contenidos.',
+    
+    // Why MindBeamer Stands Out Section
+    'why_stands_out_title' => 'Por Qué MindBeamer Supera a Todo Lo Demás',
+    'why_stands_out_subtitle' => 'Deja de comparar herramientas de contenido. Empieza a comparar resultados.',
+    
+    'vs_hiring_title' => 'vs. Contratar a Alguien',
+    'vs_hiring_description' => 'Contratar marketing: €3K-8K/mes + no conocen tu negocio. MindBeamer: Desde €297/mes, aprende tu negocio profundamente.',
+    
+    'vs_diy_title' => 'vs. Crear Contenido Tú Mismo',
+    'vs_diy_description' => 'DIY: 15-20 horas/semana + presión creativa constante. MindBeamer: 10 minutos de configuración, luego funciona solo.',
+    
+    'vs_generic_title' => 'vs. Herramientas Genéricas',
+    'vs_generic_description' => 'Otras herramientas: Solo plantillas y programación. MindBeamer: Crea, optimiza y publica automáticamente.',
+    
+    'vs_agencies_title' => 'vs. Agencias de Redes Sociales',
+    'vs_agencies_description' => 'Agencias: Caras, estrategias genéricas, contratos largos. MindBeamer: Contenido específico para tu negocio, asequible, cancela cuando quieras.',
+    
+    'roi_makes_sense' => 'ROI Que Tiene Sentido: La mayoría de negocios ven su inversión recuperada en 30-60 días a través de mayor visibilidad y leads.',
     
     'feature1_title' => 'Creación 100% Automática',
     'feature1_description' => 'No más bloqueos creativos. No más domingos estresados. MindBeamer crea contenido único cada día basado en TU negocio.',
@@ -129,9 +185,160 @@ return [
     'proof_stat4_number' => '0',
     'proof_stat4_label' => 'Horas de Trabajo Manual',
     
-    // Problem/Pain Section
-    'problem_headline' => 'El Problema Real del Marketing de Contenidos',
-    'problem_subheadline' => 'No es que no sepas qué publicar. Es que no tienes tiempo.',
+    // Problem Section - Psychological Pain Points
+    'problem_headline' => '¿Te Suena Familiar?',
+    'problem_subheadline' => '',
+    
+    'problem_pain1_emoji' => '💭',
+    'problem_pain1_title' => '"¿Qué debería publicar?"',
+    'problem_pain1_desc' => 'Te quedas mirando la pantalla en blanco durante una hora. Tu mente se queda completamente vacía. Conoces tu negocio por dentro y por fuera, pero de alguna manera no puedes pensar en nada interesante que decir.',
+    
+    'problem_pain2_emoji' => '😰',
+    'problem_pain2_title' => '"Esto suena realmente estúpido..."',
+    'problem_pain2_desc' => 'Escribes algo, lo lees de nuevo, lo borras. Lo intentas otra vez. Borras otra vez. Todo se siente como mala publicidad o presunción.',
+    
+    'problem_pain3_emoji' => '📱',
+    'problem_pain3_title' => '"Todos los demás publican tan profesionalmente"',
+    'problem_pain3_desc' => 'Navegas por los feeds de la competencia. Sus posts se ven caros, pulidos. Sientes que tus fotos de teléfono y subtítulos básicos se ven amateur.',
+    
+    'problem_pain4_emoji' => '⏰',
+    'problem_pain4_title' => '"Mierda, se me olvidó publicar otra vez"',
+    'problem_pain4_desc' => 'La semana pasada: 0 posts. La semana anterior: 0 posts. Tus clientes probablemente piensan que cerraste el negocio. Mientras tanto, la competencia publica diario.',
+    
+    'problem_pain5_emoji' => '🎯',
+    'problem_pain5_title' => '"¿A quién le importa mi producto de todos modos?"',
+    'problem_pain5_desc' => 'Haces productos geniales, brindas excelente servicio. ¿Pero online? No tienes ni idea de qué realmente quiere escuchar la gente.',
+    
+    'problem_pain6_emoji' => '📈',
+    'problem_pain6_title' => '"No tengo tiempo para estas cosas de marketing"',
+    'problem_pain6_desc' => 'Estás dirigiendo un negocio. Clientes, proveedores, contabilidad, operaciones. ¿Cuándo exactamente se supone que te conviertas también en creador de contenido?',
+    
+    'problem_empathy' => 'Lo entendemos totalmente. Exactamente por eso construimos MindBeamer.',
+    
+    'ready_to_see' => '¿Listo para ver cómo el agente de contenido autónomo de MindBeamer puede transformar tu presencia online?',
+    'ask_for_demo' => 'Pedir una Demo Gratis',
+    
+    // Social Proof Section - Startups Españolas Focus
+    'proof_headline' => 'No Solo Confíes en Nuestra Palabra - Míralo Funcionando en Vivo',
+    'proof_intro' => 'Déjame mostrarte Startups Españolas - mi revista española de startups que funciona 100% en piloto automático con MindBeamer.',
+    'proof_what_is_title' => '¿Qué es exactamente Startups Españolas?',
+    'proof_what_is_desc' => 'Es una revista online completa sobre startups españolas. Un blog WordPress donde publico 5-6 artículos CADA DÍA sobre noticias de startups, historias de fundadores, estrategias empresariales e ideas de startups. Además, todos los canales de redes sociales que promocionan este contenido.',
+    'proof_running_time' => 'Aquí está la parte loca: Ha estado funcionando completamente automático durante 12 meses. No he escrito ni un solo artículo yo mismo.',
+    
+    'proof_how_title' => 'Cómo MindBeamer Hace Esta Magia:',
+    'proof_how_wordpress' => '📝 Blog WordPress: 5-6 artículos completos diarios en 6 categorías (perfiles de startups, estrategias, ideas, noticias, opiniones, análisis)',
+    'proof_how_linkedin' => '💼 LinkedIn: Cada artículo se condensa en posts profesionales B2B perfectos para ejecutivos',
+    'proof_how_instagram' => '📸 Instagram: Los artículos se convierten en carruseles de 6-8 imágenes con superposiciones de texto que cuentan la historia visualmente',
+    'proof_how_twitter' => '🐦 Twitter: Crea "hilos" (historias en threads) - 6 tweets conectados que construyen engagement',
+    'proof_how_facebook' => '👥 Facebook: Posts enfocados en la comunidad que generan discusiones sobre emprendimiento',
+    
+    'proof_results_title' => 'Los Números Reales (De Startups Españolas, No de MindBeamer):',
+    'proof_stat1' => '69,000 visitantes al blog cada mes (empezó desde cero)',
+    'proof_stat2' => '1,000+ seguidores en Twitter (creciendo diario)',
+    'proof_stat3' => '200+ conexiones LinkedIn (1-2 nuevas cada día)',
+    'proof_stat4' => 'Top rankings en Google para "Spanish Startups"',
+    
+    'proof_links_title' => 'Mírate Tú Mismo:',
+    'proof_link1_text' => '🌐 Blog en Vivo',
+    'proof_link1_desc' => 'Mira los posts de hoy',
+    'proof_link1_url' => 'https://startups-espanolas.es',
+    'proof_link2_text' => '🐦 Twitter',
+    'proof_link2_desc' => '1000+ seguidores, contenido diario',
+    'proof_link2_url' => 'https://twitter.com/StartupsEsp',
+    'proof_link3_text' => '💼 LinkedIn',
+    'proof_link3_desc' => 'Creciendo cada día',
+    'proof_link3_url' => 'https://linkedin.com/company/startups-espanolas',
+    
+    // New section for all platforms
+    'proof_platforms_headline' => 'Haz Clic en Cualquier Plataforma Para Ver Contenido EN VIVO:',
+    'proof_platforms_subheadline' => 'Estos son los canales reales de Startups Españolas - actualizados automáticamente cada pocas horas:',
+    'proof_important_note' => '⚠️ Importante: Estos son enlaces REALES y EN VIVO. Mira las marcas de tiempo - el contenido fue publicado HOY, no por mí, sino por MindBeamer.',
+    
+    // Blog platform
+    'proof_blog_title' => 'Blog WordPress (Hub Principal)',
+    'proof_blog_desc' => '📝 5-6 artículos completos DIARIOS sobre startups españolas, estrategias y tendencias',
+    'proof_blog_update' => 'Mira las marcas de tiempo - contenido nuevo cada pocas horas',
+    'proof_blog_link' => 'Ver Blog en Vivo',
+    'proof_blog_url' => 'https://startups-espanolas.es',
+    
+    // LinkedIn platform
+    'proof_linkedin_title' => 'Red de Negocios LinkedIn',
+    'proof_linkedin_desc' => '💼 Cada artículo del blog se convierte en un post B2B condensado para ejecutivos',
+    'proof_linkedin_link' => 'Ver Crecimiento en LinkedIn',
+    'proof_linkedin_url' => 'https://linkedin.com/company/startups-espanolas',
+    
+    // Instagram platform
+    'proof_instagram_title' => 'Historias Visuales Instagram',
+    'proof_instagram_desc' => '📸 Artículos transformados en carruseles de 6-8 imágenes con superposiciones de texto',
+    'proof_instagram_link' => 'Revisar Instagram',
+    'proof_instagram_url' => 'https://instagram.com/startups_espanolas',
+    
+    // Facebook platform
+    'proof_facebook_title' => 'Comunidad Facebook',
+    'proof_facebook_desc' => '👥 Posts enfocados en la comunidad diseñados para generar discusiones sobre startups',
+    'proof_facebook_link' => 'Ver Facebook',
+    'proof_facebook_url' => 'https://facebook.com/startups.espanolas',
+    
+    // Twitter platform
+    'proof_twitter_title' => 'Hilos Twitter/X',
+    'proof_twitter_desc' => '🐦 "Hilos" - threads de 6 tweets que cuentan historias completas de startups',
+    'proof_twitter_link' => 'Ver Feed de Twitter',
+    'proof_twitter_url' => 'https://twitter.com/StartupsEsp',
+    
+    'proof_live_indicator' => 'EN VIVO',
+    'proof_kicker' => 'No he escrito ni un solo post yo mismo en 6 meses.',
+    'proof_result' => 'Sin embargo: Tráfico constante, comunidad creciente, nuevos contactos comerciales diarios.',
+    'proof_question' => 'Si MindBeamer puede hacer esto por mi revista de nicho, ¿qué podría hacer por TU negocio?',
+    'proof_cta' => 'Muéstrame qué podría hacer por mi negocio',
+    
+    // Founder Story Section
+    'founder_headline' => 'Construido por un Ingeniero de Software Probado',
+    'founder_subtitle' => 'Martin Schenk - Ingeniero Alemán, 20+ Años de Experiencia',
+    'founder_track_record' => 'Historial:',
+    'founder_track_record_text' => 'Construyó y escaló plataforma web que impulsó 1.4M+ sitios web mundialmente.',
+    'founder_expertise' => 'Experiencia Moderna:',
+    'founder_expertise_text' => 'Automatización IA, desarrollo Laravel, arquitectura SaaS escalable.',
+    'founder_why' => 'Por qué MindBeamer:',
+    'founder_why_text' => '"Después de 20 años construyendo plataformas web, vi negocios luchando con la creación de contenido. Así que construí la solución que deseaba que existiera - generación de contenido verdaderamente autónoma."',
+    'founder_credential1' => '🇩🇪 Basado en España, Estándares de Ingeniería Alemana',
+    'founder_credential2' => '🏗️ Experto en Tecnología Laravel + IA',
+    'founder_credential3' => '📈 Escala Probada: 1.4M+ sitios web',
+    'founder_profile_link' => 'Ver Perfil Completo de Desarrollador →',
+    
+    // Trust & Testimonials Section
+    'trust_headline' => 'Negocios Reales, Resultados Reales',
+    'trust_subheadline' => 'Únete a miles de negocios que han transformado su presencia online',
+    
+    // Trust Metrics
+    'trust_years_number' => '10+',
+    'trust_years_text' => 'Años en el Negocio',
+    'trust_customers_number' => '1.4M+',
+    'trust_customers_text' => 'Sitios Web Impulsados',
+    'trust_posts_number' => '50M+',
+    'trust_posts_text' => 'Posts Creados',
+    'trust_roi_number' => '287%',
+    'trust_roi_text' => 'ROI Promedio',
+    
+    'trust_testimonials_title' => 'Historias de Éxito',
+    
+    'testimonial1_text' => 'Nuestra empresa manufacturera pasó de 0 a 500+ seguidores en LinkedIn en 3 meses. Los leads ahora vienen a nosotros.',
+    'testimonial1_name' => 'Miguel R.',
+    'testimonial1_company' => 'Fabricación de Herramientas de Precisión',
+    
+    'testimonial2_text' => 'Como asesora fiscal, siempre estaba retrasada con el contenido. Ahora los prospectos me ven como la experta local.',
+    'testimonial2_name' => 'Jennifer S.',
+    'testimonial2_company' => 'Práctica CPA',
+    
+    'testimonial3_text' => 'Las redes sociales de mi restaurante estaban muertas. Ahora estamos llenos los fines de semana gracias a las publicaciones constantes.',
+    'testimonial3_name' => 'Carlos M.',
+    'testimonial3_company' => 'Propietario de Restaurante Local',
+    
+    // Trust Badges
+    'trust_awards_title' => 'Reconocido por la Excelencia',
+    'trust_certified_partner' => 'Socio Certificado',
+    'trust_secure_platform' => 'Plataforma Segura',
+    'trust_award_winner' => 'Premio a la Innovación',
+    'trust_customer_choice' => 'Elección del Cliente',
     
     'problem_time_title' => 'El Domingo del Terror',
     'problem_time_desc' => 'Otro domingo planeando posts en lugar de descansar. La semana ni ha empezado y ya estás agotado.',
