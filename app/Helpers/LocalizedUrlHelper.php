@@ -38,6 +38,7 @@ class LocalizedUrlHelper
                 'zh_CN' => 'privacy-policy',
                 'pt_BR' => 'politica-privacidade',
                 'fr' => 'politique-confidentialite',
+                'hi' => 'gizla-niti',
             ],
             'impressum' => [
                 'en' => 'legal-notice',
@@ -46,6 +47,7 @@ class LocalizedUrlHelper
                 'zh_CN' => 'legal-notice',
                 'pt_BR' => 'aviso-legal',
                 'fr' => 'mentions-legales',
+                'hi' => 'vidhi-suchna',
             ],
             'terms' => [
                 'en' => 'terms',
@@ -54,6 +56,7 @@ class LocalizedUrlHelper
                 'zh_CN' => 'terms',
                 'pt_BR' => 'termos',
                 'fr' => 'conditions',
+                'hi' => 'sharten',
             ],
         ];
     }
@@ -135,15 +138,18 @@ class LocalizedUrlHelper
             'politica-privacidad' => 'privacy-policy',
             'politica-privacidade' => 'privacy-policy',
             'politique-confidentialite' => 'privacy-policy',
+            'gizla-niti' => 'privacy-policy',
             'legal-notice' => 'impressum',
             'impressum' => 'impressum',
             'aviso-legal' => 'impressum',
             'mentions-legales' => 'impressum',
+            'vidhi-suchna' => 'impressum',
             'terms' => 'terms',
             'agb' => 'terms',
             'terminos' => 'terms',
             'termos' => 'terms',
             'conditions' => 'terms',
+            'sharten' => 'terms',
         ];
         
         return $slugMap[$slug] ?? null;

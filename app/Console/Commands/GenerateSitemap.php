@@ -46,6 +46,7 @@ class GenerateSitemap extends Command
             'zh_CN' => 'zh-CN',  // Convert underscore to hyphen for hreflang
             'pt_BR' => 'pt-BR',  // Convert underscore to hyphen for hreflang
             'fr' => 'fr',
+            'hi' => 'hi',
         ];
 
         // Get slug translations from LocalizedUrlHelper to ensure consistency
@@ -60,6 +61,7 @@ class GenerateSitemap extends Command
             'zh_CN' => '',
             'pt_BR' => '',
             'fr' => '',
+            'hi' => '',
         ];
 
         // Define static page keys we want to include

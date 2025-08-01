@@ -55,6 +55,7 @@ Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{
     Route::get('/politica-privacidad', [PrivacyController::class, 'index']); // Spanisch
     Route::get('/politica-privacidade', [PrivacyController::class, 'index']); // Portugiesisch
     Route::get('/politique-confidentialite', [PrivacyController::class, 'index']); // Französisch
+    Route::get('/gizla-niti', [PrivacyController::class, 'index']); // Hindi
     
     // Legal notice/Impressum routes (with all language-specific slugs)
     // Die deutsche Route 'impressum' erhält den Route-Namen, da dies die Hauptbezeichnung ist
@@ -62,6 +63,7 @@ Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{
     Route::get('/impressum', [LegalController::class, 'impressum'])->name('legal.impressum'); // Deutsch
     Route::get('/aviso-legal', [LegalController::class, 'impressum']); // Spanisch & Portugiesisch
     Route::get('/mentions-legales', [LegalController::class, 'impressum']); // Französisch
+    Route::get('/vidhi-suchna', [LegalController::class, 'impressum']); // Hindi
     
     // Terms routes (with all language-specific slugs)
     // Englische Route behält den Namen für Kompatibilität mit bestehenden Links
@@ -70,6 +72,7 @@ Route::prefix('{locale}')->middleware(['setlocale'])->where(['locale' => '[a-z]{
     Route::get('/terminos', [LegalController::class, 'terms']); // Spanisch
     Route::get('/termos', [LegalController::class, 'terms']); // Portugiesisch
     Route::get('/conditions', [LegalController::class, 'terms']); // Französisch
+    Route::get('/sharten', [LegalController::class, 'terms']); // Hindi
     
     // Test error pages route - ONLY AVAILABLE IN LOCAL/DEVELOPMENT
     if (app()->environment(['local', 'development'])) {

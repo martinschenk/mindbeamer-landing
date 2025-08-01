@@ -1,6 +1,6 @@
 @php
     $base = 'https://mindbeamer.io';
-    $locales = config('languages.available_locales', ['en','de','es','zh_CN','pt_BR','fr']);
+    $locales = config('languages.available_locales', ['en','de','es','zh_CN','pt_BR','fr','hi']);
 
     // Mapping: canonical page key -> locale -> slug
     $slugTranslations = [
@@ -11,6 +11,7 @@
             'zh_CN' => '',
             'pt_BR' => '',
             'fr' => '',
+            'hi' => '',
         ],
         'privacy-policy' => [
             'en' => 'privacy-policy',
@@ -19,6 +20,7 @@
             'zh_CN' => 'privacy-policy',
             'pt_BR' => 'politica-privacidade',
             'fr' => 'politique-confidentialite',
+            'hi' => 'gizla-niti',
         ],
         'impressum' => [
             'en' => 'legal-notice',
@@ -27,6 +29,7 @@
             'zh_CN' => 'legal-notice',
             'pt_BR' => 'aviso-legal',
             'fr' => 'mentions-legales',
+            'hi' => 'vidhi-suchna',
         ],
         'terms' => [
             'en' => 'terms',
@@ -35,6 +38,7 @@
             'zh_CN' => 'terms',
             'pt_BR' => 'termos',
             'fr' => 'conditions',
+            'hi' => 'sharten',
         ],
     ];
 
