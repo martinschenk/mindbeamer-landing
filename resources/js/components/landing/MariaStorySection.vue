@@ -30,7 +30,7 @@
           <!-- Maria's Story Illustration -->
           <div class="my-8">
             <img 
-              src="/images/maria-story.png" 
+              src="/images/maria-story.webp" 
               alt="Maria's transformation from stressed to relaxed with MindBeamer" 
               class="w-full max-w-3xl mx-auto rounded-xl shadow-lg"
               loading="lazy"
