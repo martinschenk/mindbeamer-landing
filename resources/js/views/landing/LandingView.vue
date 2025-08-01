@@ -3,26 +3,26 @@
     <!-- Hero Section -->
     <HeroSection />
     
-    <!-- Social Proof Section -->
+    <!-- Maria Story Section (NEW) -->
+    <MariaStorySection />
+    
+    <!-- Social Proof Section (Startups Españolas Focus) -->
     <SocialProofSection />
     
-    <!-- Problem Section -->
+    <!-- Problem Section (Psychological Pain Points) -->
     <ProblemSection />
     
-    <!-- How It Works -->
+    <!-- How It Works (Simplified) -->
     <HowItWorks />
     
-    <!-- Features -->
+    <!-- Features (Business Types) -->
     <FeaturesSection />
-    
-    <!-- Founder Story -->
-    <FounderSection />
     
     <!-- Pricing -->
     <PricingSection />
     
-    <!-- FAQ -->
-    <FaqSection />
+    <!-- Objections Section (NEW) -->
+    <ObjectionsSection />
     
     <!-- Final CTA -->
     <FinalCTASection />
@@ -34,13 +34,13 @@
 
 <script setup>
 import HeroSection from '@/components/landing/HeroSection.vue';
+import MariaStorySection from '@/components/landing/MariaStorySection.vue';
 import SocialProofSection from '@/components/landing/SocialProofSection.vue';
 import ProblemSection from '@/components/landing/ProblemSection.vue';
 import HowItWorks from '@/components/landing/HowItWorks.vue';
 import FeaturesSection from '@/components/landing/FeaturesSection.vue';
-import FounderSection from '@/components/landing/FounderSection.vue';
 import PricingSection from '@/components/landing/PricingSection.vue';
-import FaqSection from '@/components/landing/FaqSection.vue';
+import ObjectionsSection from '@/components/landing/ObjectionsSection.vue';
 import FinalCTASection from '@/components/landing/FinalCTASection.vue';
 import DemoRequestSection from '@/components/landing/DemoRequestSection.vue';
 </script>

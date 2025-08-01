@@ -37,12 +37,17 @@
         // Re-adjust on window resize
         window.addEventListener('resize', adjustBodyPadding);
         
-        // Watch for banner dismissal
-        const dismissButton = document.querySelector('[onclick*="dismissLanguageBanner"]');
+        // Watch for banner dismissal - update selector to match new function signature
+        const dismissButton = document.querySelector('button[onclick*="dismissLanguageBanner"]');
         if (dismissButton) {
-            dismissButton.addEventListener('click', function() {
+            // Create a new click handler that calls adjustBodyPadding after dismissal
+            const originalOnclick = dismissButton.onclick;
+            dismissButton.onclick = function(event) {
+                if (originalOnclick) {
+                    originalOnclick.call(this, event);
+                }
                 setTimeout(adjustBodyPadding, 100);
-            });
+            };
         }
     });
 </script>

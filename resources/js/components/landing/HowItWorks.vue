@@ -1,148 +1,109 @@
 <template>
-  <section id="how-it-works" class="py-20 bg-gradient-to-br from-indigo-50 to-white relative overflow-hidden">
-    <!-- Background Animation -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute -top-40 -right-40 w-80 h-80 bg-indigo-200 rounded-full opacity-20 animate-float"></div>
-      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-300 rounded-full opacity-20 animate-float" style="animation-delay: 2s;"></div>
+  <section id="how-it-works" class="py-20 bg-gradient-to-br from-blue-50 to-purple-50 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(59, 130, 246, 0.1) 35px, rgba(59, 130, 246, 0.1) 70px);"></div>
     </div>
     
     <div class="container mx-auto px-6 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-surface-900 mb-4">
           {{ t('how_it_works_title') }}
         </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-xl text-surface-600">
           {{ t('how_it_works_subtitle') }}
         </p>
       </div>
       
-      <!-- Steps Timeline -->
-      <div class="max-w-5xl mx-auto">
+      <!-- 3 Steps -->
+      <div class="max-w-5xl mx-auto space-y-12">
         <!-- Step 1 -->
-        <div class="flex flex-col md:flex-row items-center mb-16 fade-in" style="animation-delay: 0.1s;">
-          <div class="flex-1 md:pr-8 mb-8 md:mb-0">
-            <div class="bg-white rounded-2xl shadow-lg p-8 diamond-card">
-              <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
-                  <span class="text-2xl font-bold text-indigo-600">1</span>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900">{{ t('step1_title') }}</h3>
-              </div>
-              <p class="text-gray-600 mb-4">{{ t('step1_description') }}</p>
-              <div class="bg-indigo-50 rounded-lg p-4">
-                <p class="text-sm text-indigo-700 font-medium">
-                  <i class="pi pi-clock mr-2"></i>{{ t('step1_time') }}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="flex-1 md:pl-8">
-            <div class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-8 flex items-center justify-center h-64">
-              <i class="pi pi-upload text-8xl text-indigo-400"></i>
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 fade-in" style="animation-delay: 0.1s;">
+          <div class="flex items-start">
+            <span class="text-4xl md:text-5xl mr-6 flex-shrink-0">{{ t('step1_emoji') }}</span>
+            <div class="flex-1">
+              <h3 class="text-2xl md:text-3xl font-bold text-surface-900 mb-6">{{ t('step1_title') }}</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step1_point1') }}</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step1_point2') }}</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step1_point3') }}</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step1_point4') }}</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
         
         <!-- Step 2 -->
-        <div class="flex flex-col md:flex-row-reverse items-center mb-16 fade-in" style="animation-delay: 0.2s;">
-          <div class="flex-1 md:pl-8 mb-8 md:mb-0">
-            <div class="bg-white rounded-2xl shadow-lg p-8 diamond-card">
-              <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                  <span class="text-2xl font-bold text-green-600">2</span>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900">{{ t('step2_title') }}</h3>
-              </div>
-              <p class="text-gray-600 mb-4">{{ t('step2_description') }}</p>
-              
-              <!-- Platforms List -->
-              <div class="mb-4">
-                <h4 class="font-semibold text-gray-900 mb-2">Every Platform Gets Perfect Content:</h4>
-                <ul class="space-y-1 text-sm text-gray-600">
-                  <li><span class="mr-2">📊</span><strong>Blog:</strong> SEO-optimized articles</li>
-                  <li><span class="mr-2">📱</span><strong>LinkedIn:</strong> Professional B2B insights</li>
-                  <li><span class="mr-2">📸</span><strong>Instagram:</strong> Visual stories & carousels</li>
-                  <li><span class="mr-2">📘</span><strong>Facebook:</strong> Community-building posts</li>
-                  <li><span class="mr-2">🐦</span><strong>Twitter/X:</strong> Quick insights & updates</li>
-                </ul>
-              </div>
-              
-              <div class="bg-green-50 rounded-lg p-4">
-                <p class="text-sm text-green-700 font-medium">
-                  <i class="pi pi-sparkles mr-2"></i>{{ t('step2_feature') }}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="flex-1 md:pr-8">
-            <div class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 flex items-center justify-center h-64">
-              <i class="pi pi-sparkles text-8xl text-green-400"></i>
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 fade-in" style="animation-delay: 0.2s;">
+          <div class="flex items-start">
+            <span class="text-4xl md:text-5xl mr-6 flex-shrink-0">{{ t('step2_emoji') }}</span>
+            <div class="flex-1">
+              <h3 class="text-2xl md:text-3xl font-bold text-surface-900 mb-6">{{ t('step2_title') }}</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step2_point1') }}</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step2_point2') }}</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step2_point3') }}</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
         
         <!-- Step 3 -->
-        <div class="flex flex-col md:flex-row items-center mb-16 fade-in" style="animation-delay: 0.3s;">
-          <div class="flex-1 md:pr-8 mb-8 md:mb-0">
-            <div class="bg-white rounded-2xl shadow-lg p-8 diamond-card">
-              <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <span class="text-2xl font-bold text-purple-600">3</span>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900">{{ t('step3_title') }}</h3>
-              </div>
-              <p class="text-gray-600 mb-4">{{ t('step3_description') }}</p>
-              <div class="bg-purple-50 rounded-lg p-4">
-                <p class="text-sm text-purple-700 font-medium">
-                  <i class="pi pi-shield mr-2"></i>{{ t('step3_control') }}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="flex-1 md:pl-8">
-            <div class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 flex items-center justify-center h-64">
-              <i class="pi pi-sliders-h text-8xl text-purple-400"></i>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Step 4 -->
-        <div class="flex flex-col md:flex-row-reverse items-center fade-in" style="animation-delay: 0.4s;">
-          <div class="flex-1 md:pl-8 mb-8 md:mb-0">
-            <div class="bg-white rounded-2xl shadow-lg p-8 diamond-card">
-              <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
-                  <span class="text-2xl font-bold text-orange-600">4</span>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900">{{ t('step4_title') }}</h3>
-              </div>
-              <p class="text-gray-600 mb-4">{{ t('step4_description') }}</p>
-              <div class="bg-orange-50 rounded-lg p-4">
-                <p class="text-sm text-orange-700 font-medium">
-                  <i class="pi pi-chart-line mr-2"></i>{{ t('step4_result') }}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="flex-1 md:pr-8">
-            <div class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 flex items-center justify-center h-64">
-              <i class="pi pi-chart-line text-8xl text-orange-400"></i>
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-xl p-8 md:p-12 fade-in" style="animation-delay: 0.3s;">
+          <div class="flex items-start">
+            <span class="text-4xl md:text-5xl mr-6 flex-shrink-0">{{ t('step3_emoji') }}</span>
+            <div class="flex-1">
+              <h3 class="text-2xl md:text-3xl font-bold text-surface-900 mb-6">{{ t('step3_title') }}</h3>
+              <ul class="space-y-3">
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step3_point1') }}</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step3_point2') }}</p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">•</span>
+                  <p class="text-lg text-surface-700">{{ t('step3_point3') }}</p>
+                </li>
+              </ul>
+              <p class="text-base text-surface-600 italic mt-6">{{ t('step3_note') }}</p>
             </div>
           </div>
         </div>
       </div>
       
       <!-- CTA -->
-      <div class="text-center mt-16 fade-in" style="animation-delay: 0.5s;">
+      <div class="text-center mt-16 fade-in" style="animation-delay: 0.4s;">
         <Button 
           :label="t('how_it_works_cta')"
           severity="warning"
           size="large"
           @click="scrollToDemo"
-          icon="pi pi-arrow-right"
-          iconPos="right"
-          class="animate-wiggle"
+          class="text-xl px-10 py-5 font-bold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all"
         />
       </div>
     </div>
@@ -158,7 +119,7 @@ const { t } = useLocaleStore();
 function scrollToDemo() {
   const element = document.querySelector('#demo');
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+    window.location.hash = 'demo';
   }
 }
 </script>
@@ -176,6 +137,18 @@ function scrollToDemo() {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Mobile adjustments
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  ul li {
+    font-size: 1rem;
   }
 }
 </style>
