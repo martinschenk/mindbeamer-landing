@@ -390,25 +390,19 @@ return [
     
     // Contact Section
     'demo_title' => 'Stop Dreading Sunday Evening Content Creation',
-    'demo_subtitle' => 'Let me show you how to get your weekends back - in just 10 minutes',
+    'demo_subtitle' => 'Let me show you how to get your weekends back - in just 20 minutes',
     
-    // Demo Form Option
-    'demo_form_badge' => 'Most Popular',
-    'demo_form_title' => 'Quick Demo - Your Business',
-    'demo_form_subtitle' => 'See how MindBeamer would work for YOUR specific business',
-    
-    // Calendly Option
-    'calendly_badge' => '15 Min Call',
-    'calendly_title' => 'Book a Strategy Call',
-    'calendly_subtitle' => 'Let\'s discuss your content goals',
-    'calendly_benefit1' => 'Personal 1-on-1 consultation',
-    'calendly_benefit2' => 'Custom strategy for your business',
-    'calendly_benefit3' => 'Available in your timezone',
-    'calendly_cta' => 'Schedule Your Call',
+    // Single Demo Option
+    'demo_badge' => 'Free Demo',
+    'demo_main_title' => 'Book Your Personal Demo',
+    'demo_main_subtitle' => 'See MindBeamer in action with YOUR business',
+    'demo_benefit1' => '20-minute personal demo tailored to your business',
+    'demo_benefit2' => 'See actual content samples for your industry',
+    'demo_benefit3' => 'Get a custom strategy for your social channels',
+    'demo_benefit4' => 'No pressure, no credit card, just helpful insights',
+    'demo_cta' => 'Book My Free Demo',
+    'demo_availability' => 'Available this week - Choose a time that works for you',
     'demo_what_you_see' => 'What You\'ll See in the 20-Minute Demo:',
-    'demo_benefit1' => 'Content samples created for YOUR specific business',
-    'demo_benefit2' => 'How your products/services become engaging posts',
-    'demo_benefit3' => 'The exact strategy for your industry and audience',
     'demo_benefit4' => 'ROI projections based on your business goals',
     'demo_personal' => 'Personal Demo with the Founder',
     'demo_available' => 'Available This Week',
