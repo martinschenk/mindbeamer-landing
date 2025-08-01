@@ -3,276 +3,500 @@
 return [
     // Navigation
     'nav_home' => 'Inicio',
-    'nav_how_it_works' => 'Proceso',
-    'nav_features' => 'Funciones', 
-    'nav_why_us' => 'Ventajas',
+    'nav_how_it_works' => 'Cómo Funciona',
+    'nav_features' => 'Características',
+    'nav_testimonials' => 'Testimonios',
+    'nav_why_us' => 'Por qué Nosotros',
     'nav_pricing' => 'Precios',
     'nav_demo' => 'Demo',
+    'nav_faq' => 'FAQ',
     
-    // Hero Section
-    'hero_badge' => 'Ingeniería Alemana • 20+ Años de Excelencia en Software',
-    'hero_title' => 'Por Fin, Redes Sociales que Funcionan Solas',
-    'hero_title_line1' => 'Deja de Perder 15+ Horas a la Semana en Posts de Redes Sociales',
-    'hero_title_line2' => 'Por Fin, Redes Sociales que Funcionan Solas',
-    'hero_subtitle' => 'Mira cómo MindBeamer crea y publica contenido diariamente de forma automática. Desarrollado por el ingeniero alemán que ha gestionado 1,4M+ sitios web en todo el mundo. Actualmente en funcionamiento - operación 100% autónoma.',
-    'hero_cta' => 'Muéstrame Cómo Funciona',
-    'hero_cta_primary' => 'Ver Demo en Vivo →',
-    'hero_cta_secondary' => 'Cómo Funciona',
-    'hero_credibility' => 'Desarrollado por el ingeniero alemán detrás de una plataforma de construcción web - confiado por 1,4M+ sitios web en todo el mundo',
-    'hero_live_banner' => '🔴 EN VIVO: Actualmente publicando automáticamente para Startups Españolas • 90+ días autónomo',
-    'hero_credentials' => 'Desarrollado por Martin Schenk • 1,4M+ sitios web gestionados • Experto en IA + Laravel',
-    'hero_view_profile' => 'Ver Perfil del Desarrollador →',
-    'hero_save_time' => 'Ahorra 15-20 Horas Por Semana',
-    'hero_stop_posting' => 'Deja de publicar contenido aleatorio. Empieza el crecimiento sistemático.',
-    'hero_stat_label' => 'Engagement',
-    'hero_time_saved' => 'Tiempo Ahorrado',
-    'week' => 'semana',
-    
-    // Hero Features
-    'hero_feature1' => '✅ Empresas de Productos: Convierte tu inventario en oro de contenido',
-    'hero_feature2' => '✅ Proveedores de Servicios: Muestra tu experiencia automáticamente',
-    'hero_feature3' => '✅ Empresas en Crecimiento: Mantente visible sin esfuerzo',
-    
-    // Hero Target Badges
-    'hero_target_product' => 'Empresas de Productos: Convierte tu inventario en oro de contenido',
-    'hero_target_service' => 'Proveedores de Servicios: Muestra tu experiencia automáticamente',
-    'hero_target_local' => 'Negocios Locales: Mantente visible sin esfuerzo',
+    // Hero Section - Sunday Laptop Problem
+    'hero_headline' => 'Domingo por la noche. Todos los demás se relajan.',
+    'hero_subheadline' => '¿Tú? Todavía en el portátil.',
+    'hero_subheadline2' => 'Otra vez.',
+    'hero_problem_setup' => '"Solo necesito crear algunos posts para esta semana..."',
+    'hero_problem_twist' => '3 horas después, 5 posts mediocres que probablemente ni publiques.',
+    'hero_problem_repeat' => '¿Te suena familiar?',
+    'hero_solution' => 'Hay una forma mejor.',
+    'hero_cta_primary' => 'Muéstrame la Mejor Forma →',
     
     // How It Works Section
-    'how_it_works_title' => 'Así Ponemos tu Contenido en Piloto Automático',
-    'how_it_works_subtitle' => 'Cuatro pasos simples para transformar tu presencia en redes sociales',
+    'how_it_works_title' => 'De "¿Qué Publico?" a "¡Wow, Ya Está Hecho!"',
+    'how_it_works_subtitle' => 'MindBeamer convierte tu negocio en contenido que atrae clientes - sin ti.',
     
-    'step1_title' => 'Cuéntanos sobre tu Negocio',
-    'step1_description' => 'Sube tu sitio web, catálogo de productos o describe tus servicios. MindBeamer aprende qué hace único a tu negocio.',
-    'step1_time' => 'Solo toma 10 minutos',
+    'step1_title' => 'Cuéntanos Sobre Tu Negocio',
+    'step1_description' => 'Solo 10 minutos. Comparte tu sitio web, productos o describe tus servicios. MindBeamer aprende qué te hace especial.',
+    'step1_time' => 'Solo 10 minutos',
     
-    'step2_title' => 'MindBeamer Crea tu Contenido',
-    'step2_description' => 'Destacados de productos, consejos de expertos, casos de estudio, insights del sector - todo adaptado a tu tipo de negocio.',
-    'step2_feature' => 'Generación de contenido con IA',
-    'step2_product' => 'Para Empresas de Productos: Destacados y comparaciones de productos, guías de aplicación y casos de uso, tendencias e insights del sector',
-    'step2_service' => 'Para Proveedores de Servicios: Consejos y asesoramiento experto, casos de estudio e historias de éxito, insights y análisis del mercado',
-    'step2_local' => 'Para Negocios Locales: Contenido detrás de cámaras, destacados de clientes, compromiso con la comunidad local',
+    'step2_title' => 'MindBeamer Crea Tu Estrategia',
+    'step2_description' => 'Nuestra IA analiza tu negocio, estudia tu competencia y crea un plan de contenido que realmente atrae clientes.',
+    'step2_feature' => 'Estrategia personalizada, no genérica',
     
-    'step3_title' => 'Elige tu Nivel de Control',
-    'step3_description' => '¿Revisar todo antes de publicar? ¿O dejar que MindBeamer publique automáticamente? Tú decides.',
-    'step3_control' => 'Control total sobre tu contenido',
+    'step3_title' => 'El Contenido Se Crea Solo',
+    'step3_description' => 'Cada día, MindBeamer crea contenido fresco: posts, artículos, historias. Todo en tu voz, todo diseñado para vender.',
+    'step3_control' => 'Tu eliges: aprobar primero o publicar directo',
     
-    'step4_title' => 'Observa Cómo Crece tu Negocio',
-    'step4_description' => 'El contenido consistente genera confianza. La confianza genera leads. Los leads se convierten en clientes.',
-    'step4_result' => 'Crecimiento empresarial medible',
+    'step4_title' => 'Publicado Mientras Duermes',
+    'step4_description' => 'Despierta con tu contenido ya publicado. LinkedIn, Facebook, Instagram, tu blog - todo activo, todo trabajando para ti.',
+    'step4_result' => 'Tu negocio visible 24/7',
     
-    'how_it_works_result' => 'Resultado: Tu presencia online trabaja 24/7 mientras te enfocas en servir a tus clientes y hacer crecer tu negocio.',
-    'how_it_works_cta' => 'Comienza tu Demo Gratuita',
+    'how_it_works_cta' => 'Quiero Mi Demo Personal',
     
     // Features Section
-    'features_title' => 'Diseñado para el Crecimiento Empresarial',
-    'features_subtitle' => 'MindBeamer no solo crea contenido – crea contenido que convierte prospectos en clientes',
+    'features_title' => 'Todo Lo Que Odias Hacer, Automatizado',
+    'features_subtitle' => 'Porque tu tiempo vale más que estar creando posts.',
     
-    'feature1_title' => 'Tus Productos se Convierten en Oro de Contenido',
-    'feature1_description' => 'MindBeamer no crea posts aleatorios. Cada pieza de contenido está diseñada para mostrar tu experiencia, productos o servicios de una manera que atraiga a tus clientes ideales.',
-    'feature1_benefit1' => 'Destaca automáticamente diferentes productos cada semana',
-    'feature1_benefit2' => 'Crea guías de aplicación y casos de uso que impulsan ventas',
+    'feature1_title' => 'Creación 100% Automática',
+    'feature1_description' => 'No más bloqueos creativos. No más domingos estresados. MindBeamer crea contenido único cada día basado en TU negocio.',
     
-    'feature2_title' => 'Cada Plataforma Recibe Contenido Perfecto',
-    'feature2_description' => 'LinkedIn: Contenido profesional que te posiciona como experto del sector. Facebook: Posts que construyen comunidad con clientes locales. Instagram: Contenido visual que muestra tu trabajo y personalidad. Blog: Artículos SEO-optimizados que traen tráfico orgánico.',
-    'feature2_benefit1' => 'LinkedIn genera leads B2B con experiencia de la industria',
-    'feature2_benefit2' => 'Instagram muestra tu trabajo visualmente con contenido detrás de cámaras',
+    'feature2_title' => 'Publicación Sin Intervención',
+    'feature2_description' => 'LinkedIn a las 8AM. Instagram al mediodía. Blog los martes. Todo publicado automáticamente en el momento perfecto.',
     
-    'feature3_title' => 'Diseñado para TU Tipo de Negocio',
-    'feature3_description' => 'MindBeamer analiza tu tipo de negocio y crea contenido que funciona. Empresas de productos: Presentación sistemática de productos. Proveedores de servicios: Construye autoridad con insights de expertos. Negocios locales: Conecta auténticamente con tu comunidad.',
-    'feature3_benefit1' => 'Manufactura: Las especificaciones técnicas se convierten en historias atractivas',
-    'feature3_benefit2' => 'Servicios profesionales: Temas complejos se vuelven insights amigables para clientes',
+    'feature3_title' => 'Contenido Que Vende',
+    'feature3_description' => 'No posts genéricos. Cada pieza está diseñada para mostrar tu expertise, resolver problemas de clientes y generar consultas.',
     
-    'feature4_title' => 'Nunca Más te Quedarás sin Ideas',
-    'feature4_description' => 'La IA avanzada asegura que tu contenido se mantenga variado y atractivo, aprovechando todo el alcance de tu negocio para crear posts únicos cada vez.',
-    'feature4_benefit1' => 'IA analiza las tendencias de tu industria y brechas de competencia',
-    'feature4_benefit2' => 'Crea contenido sobre temas de tendencia que le importan a tu audiencia',
+    'feature4_title' => 'Tu Voz, Tu Estilo',
+    'feature4_description' => 'MindBeamer aprende cómo hablas, qué valores tienes, cómo te diferencias. El contenido suena a ti, no a un robot.',
     
-    'feature5_title' => 'Funciona Mientras Duermes',
-    'feature5_description' => 'Una vez configurado, MindBeamer funciona de forma independiente. Sin tareas diarias, sin bloqueos creativos, sin calendarios de publicación que mantener.',
-    'feature5_benefit1' => 'Sin planificación diaria de contenido ni bloqueos creativos',
-    'feature5_benefit2' => 'MindBeamer mantiene tu calendario de publicación 24/7, incluso los fines de semana',
+    'feature5_title' => 'Multi-Plataforma Inteligente',
+    'feature5_description' => 'Un tema, múltiples formatos. Post profesional en LinkedIn, historia visual en Instagram, artículo SEO en tu blog.',
     
-    'feature6_title' => 'Ve Qué Posts Traen Clientes',
-    'feature6_description' => 'Rastrea qué contenido genera leads y enfócate en lo que funciona para tu negocio.',
-    'feature6_benefit1' => 'Analíticas integradas muestran qué productos/servicios generan más engagement',
-    'feature6_benefit2' => 'Optimiza tus ofertas basándote en lo que resuena con tu audiencia',
+    'feature6_title' => 'Resultados Que Puedes Medir',
+    'feature6_description' => 'Ve qué contenido trae más clientes. MindBeamer aprende y mejora, creando más de lo que funciona.',
     
-    // Advantages Section
-    'advantages_title' => 'Seis Ventajas Clave de MindBeamer',
-    'advantages_subtitle' => 'Descubre los beneficios que hacen de MindBeamer la opción más inteligente para tus necesidades de marketing de contenidos.',
+    // Social Proof Section with Startups Españolas
+    'proof_headline' => 'Ve MindBeamer En Acción AHORA MISMO',
+    'proof_subheadline' => 'No confíes en demos grabadas. Ve el sistema funcionando en vivo.',
+    'proof_live_badge' => '🔴 EN VIVO',
+    'proof_startups_espanolas_title' => 'Startups Españolas',
+    'proof_what_is' => '¿Qué es Startups Españolas?',
+    'proof_what_is_desc' => 'Un proyecto demo real que MindBeamer gestiona completamente solo desde hace 90+ días. Cubre el ecosistema startup español con contenido diario en 5 plataformas.',
+    'proof_how_powered' => '¿Cómo lo Potencia MindBeamer?',
+    'proof_how_powered_desc' => 'MindBeamer investiga, escribe, crea imágenes y publica automáticamente. Cero intervención humana. 100% piloto automático.',
+    'proof_see_yourself' => 'Míralo Tú Mismo:',
+    'proof_platforms_headline' => 'Haz Click en Cualquier Plataforma Para Ver el Contenido EN VIVO:',
     
-    // Why MindBeamer Stands Out Section
-    'why_stands_out_title' => 'Por Qué MindBeamer Destaca',
-    'why_stands_out_subtitle' => 'Tienes opciones para herramientas de contenido IA, pero MindBeamer es el único agente completamente autónomo que maneja todo, desde la selección de temas hasta la publicación – sin requerir ninguna intervención.',
+    // Platform-specific descriptions
+    'proof_platform_blog' => '📝 Blog WordPress',
+    'proof_how_wordpress' => '5-6 artículos completos diarios en 6 categorías. SEO optimizado, con imágenes, formateado - todo automático.',
+    'proof_view_blog' => 'Ver Blog en Vivo →',
     
-    'why1_title' => 'Automatización que Ahorra Tiempo',
-    'why1_description' => 'Elimina horas de creación y publicación de contenido cada semana con un sistema verdaderamente autónomo.',
+    'proof_platform_linkedin' => '💼 LinkedIn',
+    'proof_how_linkedin' => 'Posts profesionales diarios sobre startups, tecnología, innovación. Genera engagement B2B real.',
+    'proof_view_linkedin' => 'Ver LinkedIn →',
     
-    'why2_title' => 'Calidad Superior de Contenido',
-    'why2_description' => 'Nuestra IA especializada produce contenido atractivo y específico para cada audiencia que impulsa el engagement y las conversiones.',
+    'proof_platform_instagram' => '📸 Instagram',
+    'proof_how_instagram' => 'Stories, carruseles, posts - contenido visual diario que construye comunidad.',
+    'proof_view_instagram' => 'Ver Instagram →',
     
-    'why3_title' => 'Tranquilidad Total',
-    'why3_description' => 'Una vez configurado, MindBeamer se encarga de todo - puedes centrarte en otros aspectos de tu negocio.',
+    'proof_platform_facebook' => '📘 Facebook',
+    'proof_how_facebook' => 'Posts que generan discusión, comparten noticias, construyen audiencia.',
+    'proof_view_facebook' => 'Ver Facebook →',
     
-    'why4_title' => 'Solución Integral',
-    'why4_description' => 'Desde la investigación hasta la redacción, creación de medios y publicación - todo se gestiona en un sistema integrado.',
+    'proof_platform_twitter' => '🐦 Twitter/X',
+    'proof_how_twitter' => 'Updates rápidos, noticias al momento, engagement con la comunidad tech.',
+    'proof_view_twitter' => 'Ver Twitter →',
     
-    'why5_title' => 'Consistencia Confiable',
-    'why5_description' => 'Nunca más te perderás un día de publicación - MindBeamer mantiene tu calendario sin fallos.',
+    'proof_bottom_message' => 'Todo esto funciona 24/7 sin ninguna persona involucrada. Imagina esto para TU negocio.',
     
-    'why6_title' => 'ROI Medible',
-    'why6_description' => 'Observa resultados claros mientras MindBeamer impulsa tráfico, engagement y leads sin costos continuos.',
-    
-    'vs_jasper_title' => 'vs. Jasper AI',
-    'vs_jasper_description' => 'Mientras Jasper requiere que crees y distribuyas contenido manualmente, MindBeamer opera de forma completamente autónoma, generando y publicando contenido en todas las plataformas sin tu intervención.',
-    
-    'vs_buffer_title' => 'vs. Buffer/Hootsuite',
-    'vs_buffer_description' => 'A diferencia de las herramientas de programación que solo publican contenido que ya has creado, MindBeamer genera, optimiza y publica contenido de forma autónoma – eliminando todo el flujo de trabajo de creación de contenido.',
-    
-    'vs_contentstudio_title' => 'vs. ContentStudio',
-    'vs_contentstudio_description' => 'ContentStudio requiere supervisión y dirección constante. MindBeamer opera completamente independiente después de la configuración inicial, generando temas y contenido adaptados para cada plataforma automáticamente.',
-    
-    'ready_to_see' => '¿Listo para ver cómo el agente de contenido autónomo de MindBeamer puede transformar tu presencia online?',
-    'ask_for_demo' => 'Solicitar Demo Gratuita',
-    
-    // Social Proof Section
-    'proof_headline' => 'Ve MindBeamer Funcionando en Vivo - Sin Demos Falsas',
-    'proof_subheadline' => 'No te quedes solo con nuestra palabra. Observa la creación de contenido autónomo real en acción.',
+    // Stats
     'proof_stat1_number' => '150+',
-    'proof_stat1_label' => 'Artículos de blog creados automáticamente',
-    'proof_stat1_detail' => 'Últimos 90 días',
+    'proof_stat1_label' => 'Artículos Publicados',
     'proof_stat2_number' => '500+',
-    'proof_stat2_label' => 'Posts en redes sociales publicados',
-    'proof_stat2_detail' => 'En 5 plataformas',
-    'proof_stat3_number' => '0',
-    'proof_stat3_label' => 'Horas de trabajo manual necesarias',
-    'proof_stat3_detail' => '100% autónomo',
-    'proof_stat4_number' => '90+',
-    'proof_stat4_label' => 'Días funcionando continuamente',
-    'proof_stat4_detail' => 'Sin interrupciones',
-    'proof_live_indicator' => '🔴 EN VIVO',
-    'proof_demo1_title' => '📊 Blog Auto-Generado',
-    'proof_demo1_desc' => 'Nuevos artículos del sector de startups publicados cada 2-3 días. SEO optimizado, contenido atractivo.',
-    'proof_demo1_link' => 'Ver Blog en Vivo →',
-    'proof_demo1_update' => 'Último post: hace 2 horas',
-    'proof_demo2_title' => '📱 Automatización de LinkedIn',
-    'proof_demo2_desc' => 'Posts profesionales B2B publicados diariamente. Insights del sector, destacados de empresas.',
-    'proof_demo2_link' => 'Ver LinkedIn →',
-    'proof_demo3_title' => '📸 Instagram Visual Stories',
-    'proof_demo3_desc' => 'Stories, carruseles y posts visuales - todo automatizado diariamente.',
-    'proof_demo3_link' => 'Ver Instagram →',
-    'proof_demo4_title' => '📘 Comunidad Facebook',
-    'proof_demo4_desc' => 'Posts que construyen comunidad, destacados de startups, discusiones atractivas.',
-    'proof_demo4_link' => 'Ver Facebook →',
-    'proof_demo5_title' => '🐦 Actualizaciones Twitter/X',
-    'proof_demo5_desc' => 'Insights rápidos, noticias del sector y destacados de startups.',
-    'proof_demo5_link' => 'Ver Twitter →',
+    'proof_stat2_label' => 'Posts Sociales',
+    'proof_stat3_number' => '90+',
+    'proof_stat3_label' => 'Días Autónomo',
+    'proof_stat4_number' => '0',
+    'proof_stat4_label' => 'Horas de Trabajo Manual',
     
-    // Founder Story Section
-    'founder_headline' => 'Desarrollado por un Ingeniero de Software Probado',
-    'founder_subtitle' => 'Martin Schenk - Ingeniero Alemán, 20+ Años de Experiencia',
-    'founder_track_record' => 'Historial:',
-    'founder_track_record_text' => 'Construyó y escaló una plataforma de construcción web que gestionó 1,4M+ sitios web en todo el mundo.',
-    'founder_expertise' => 'Experiencia Moderna:',
-    'founder_expertise_text' => 'Automatización con IA, desarrollo Laravel, arquitectura SaaS escalable.',
-    'founder_why' => 'Por qué MindBeamer:',
-    'founder_why_text' => '"Después de 20 años construyendo plataformas web, vi cómo las empresas luchan con la creación de contenido. Así que construí la solución que desearía haber existido - generación de contenido verdaderamente autónoma."',
-    'founder_credential1' => '🇩🇪 Basado en España, estándares de ingeniería alemana',
-    'founder_credential2' => '🏗️ Experto en tecnología Laravel + IA',
-    'founder_credential3' => '📈 Escala probada: 1,4M+ sitios web',
-    'founder_profile_link' => 'Ver Perfil Completo del Desarrollador →',
+    // Problem/Pain Section
+    'problem_headline' => 'El Problema Real del Marketing de Contenidos',
+    'problem_subheadline' => 'No es que no sepas qué publicar. Es que no tienes tiempo.',
     
-    // Testimonials Section
-    'testimonials_title' => 'Lo Que Dicen Nuestros Usuarios',
+    'problem_time_title' => 'El Domingo del Terror',
+    'problem_time_desc' => 'Otro domingo planeando posts en lugar de descansar. La semana ni ha empezado y ya estás agotado.',
     
-    'testimonial1_text' => 'Desde que implementamos MindBeamer, nuestra producción de contenido se ha triplicado sin recursos adicionales. El agente maneja todo de forma completamente independiente – ¡verdaderamente configura y olvídate!',
-    'testimonial1_name' => 'Alex Johnson',
-    'testimonial1_position' => 'Director de Marketing',
-    'testimonial1_role' => 'Director de Marketing',
+    'problem_consistency_title' => 'El Síndrome On/Off',
+    'problem_consistency_desc' => 'Una semana super activo, tres semanas fantasma. Los algoritmos te castigan, los clientes te olvidan.',
     
-    'testimonial2_text' => 'Dirijo un pequeño salón de belleza y no tengo tiempo para redes sociales. MindBeamer crea y publica contenido perfecto para mi negocio – ¡no tengo que hacer nada después de la configuración!',
-    'testimonial2_name' => 'Sarah Miller',
-    'testimonial2_position' => 'Propietaria de Pequeña Empresa',
-    'testimonial2_role' => 'Propietaria de Pequeña Empresa',
+    'problem_quality_title' => 'Contenido "Meh"',
+    'problem_quality_desc' => 'Posts genéricos que podrían ser de cualquier empresa. Nada que realmente muestre por qué eres diferente.',
     
-    'testimonial3_text' => 'Nuestro blog tecnológico ahora recibe actualizaciones diarias en todas las plataformas, con publicaciones perfectamente formateadas para LinkedIn, hilos atractivos en Twitter y artículos completos para el blog – todo en piloto automático.',
-    'testimonial3_name' => 'David Chen',
-    'testimonial3_position' => 'Editor de Publicación Tecnológica',
-    'testimonial3_role' => 'Editor de Publicación Tecnológica',
+    'problem_multitasking_title' => 'Demasiados Sombreros',
+    'problem_multitasking_desc' => 'CEO, vendedor, servicio al cliente... ¿y ahora también community manager? Algo tiene que ceder.',
     
-    // Pricing Section
-    'pricing_title' => 'Precios Simples y Transparentes',
-    'most_popular' => 'Más Popular',
+    'problem_cost_title' => 'El Costo Oculto',
+    'problem_cost_desc' => 'Agencias: 2000€+/mes. Empleado: 3000€+/mes. Tu tiempo: invaluable. ¿El resultado? Cuestionable.',
     
-    'light_plan' => 'Light',
-    'light_plan_subtitle' => 'Para pequeñas empresas o principiantes',
-    'light_feature1' => 'Creación autónoma de contenido',
-    'light_feature2' => 'Número limitado de publicaciones',
-    'light_feature3' => 'Plataformas sociales seleccionadas',
-    'light_feature4' => 'Creación básica de medios',
+    'problem_solution_text' => 'MindBeamer elimina todo esto. Contenido profesional, publicación automática, resultados medibles.',
+    'problem_cta' => 'Ver Cómo Funciona →',
     
-    'standard_plan' => 'Estándar',
-    'standard_plan_subtitle' => 'Para negocios en crecimiento',
-    'standard_feature1' => 'Contenido completamente autónomo',
-    'standard_feature2' => 'Volumen mejorado de contenido',
-    'standard_feature3' => 'Múltiples plataformas con integración de blog',
-    'standard_feature4' => 'Creación avanzada de medios',
-    'standard_feature5' => 'Optimización específica por plataforma',
-    'standard_feature6' => 'Integración con calendario de contenido',
+    // Why Different Section
+    'why_different_title' => '¿Por Qué MindBeamer Es Diferente?',
+    'why_different_subtitle' => 'Porque no es otra herramienta más. Es un empleado digital completo.',
     
-    'news_plan' => 'Portal de Noticias',
-    'news_plan_subtitle' => 'Para editores de alto volumen',
-    'news_feature1' => 'Contenido completamente autónomo',
-    'news_feature2' => 'Noticias al minuto sobre mercados financieros y eventos de la industria',
-    'news_feature3' => 'Cobertura integral de plataformas',
-    'news_feature4' => 'Creación premium de medios',
-    'news_feature5' => 'Automatización de investigación de temas',
-    'news_feature6' => 'Monitoreo de noticias y tendencias',
+    'why1_title' => 'No Es Solo IA Genérica',
+    'why1_desc' => 'MindBeamer aprende TU negocio, TU voz, TUS clientes. Cada post está diseñado para vender tus servicios específicos.',
+    
+    'why2_title' => 'Publicación Real, No Solo Borradores',
+    'why2_desc' => 'Otras herramientas te dan ideas. MindBeamer publica directamente. Te despiertas con el trabajo hecho.',
+    
+    'why3_title' => 'Multi-Plataforma Inteligente',
+    'why3_desc' => 'Un concepto → Post LinkedIn + Historia Instagram + Artículo blog. Todo adaptado, todo optimizado.',
+    
+    'why4_title' => 'Aprende y Mejora Solo',
+    'why4_desc' => 'Ve qué contenido genera más interés. MindBeamer ajusta la estrategia automáticamente.',
+    
+    'why5_title' => 'Precio de Herramienta, Valor de Agencia',
+    'why5_desc' => 'Por menos que un freelancer junior, tienes un equipo completo de marketing trabajando 24/7.',
+    
+    // Testimonials
+    'testimonials_title' => 'Emprendedores Que Ya No Sufren los Domingos',
+    
+    'testimonial1_name' => 'Carlos Mendoza',
+    'testimonial1_role' => 'CEO, Importadora Industrial',
+    'testimonial1_text' => 'Antes perdía cada domingo creando posts mediocres. Ahora MindBeamer publica mejor contenido del que yo podría crear, y mis domingos son míos otra vez. Mejor inversión del año.',
+    
+    'testimonial2_name' => 'Ana Rodríguez',
+    'testimonial2_role' => 'Fundadora, Agencia Digital',
+    'testimonial2_text' => 'Soy experta en mi campo, no en redes sociales. MindBeamer convierte mi conocimiento en contenido que atrae clientes. Este mes, 5 nuevos leads directos de LinkedIn.',
+    
+    'testimonial3_name' => 'Miguel Torres',
+    'testimonial3_role' => 'Director, Consultoría Tecnológica',
+    'testimonial3_text' => 'Calculé: me ahorra 20 horas semanales. Pero lo mejor es la calidad - posts que realmente muestran nuestra expertise. Los clientes llegan ya convencidos.',
+    
+    // Pricing
+    'pricing_headline' => 'Invierte en Tu Libertad',
+    'pricing_subheadline' => 'Menos que un freelancer. Más efectivo que una agencia.',
+    
+    'pricing_currency' => '€',
+    'pricing_per_month' => '/mes',
+    
+    // Starter Plan
+    'plan_starter_name' => 'Emprendedor',
+    'plan_starter_subtitle' => 'Perfecto para empezar',
+    'plan_starter_price' => '197',
+    'plan_starter_feature1' => '30 posts al mes',
+    'plan_starter_feature2' => '3 plataformas sociales',
+    'plan_starter_feature3' => 'Aprobación antes de publicar',
+    'plan_starter_feature4' => 'Reportes mensuales',
+    'plan_starter_cta' => 'Empezar Ahora',
+    
+    // Professional Plan
+    'plan_professional_name' => 'Profesional',
+    'plan_professional_subtitle' => 'Para negocios en crecimiento',
+    'plan_professional_price' => '397',
+    'plan_professional_popular' => 'Más Popular',
+    'plan_professional_feature1' => '90 posts al mes',
+    'plan_professional_feature2' => '5 plataformas + blog',
+    'plan_professional_feature3' => 'Publicación automática',
+    'plan_professional_feature4' => 'Análisis semanal + optimización',
+    'plan_professional_feature5' => 'Contenido prioritario',
+    'plan_professional_cta' => 'Elegir Profesional',
+    
+    // Scale Plan
+    'plan_scale_name' => 'Escala',
+    'plan_scale_subtitle' => 'Domina tu mercado',
+    'plan_scale_price' => '797',
+    'plan_scale_feature1' => 'Posts ilimitados',
+    'plan_scale_feature2' => 'Todas las plataformas',
+    'plan_scale_feature3' => 'IA entrenada en tu voz',
+    'plan_scale_feature4' => 'Estratega dedicado',
+    'plan_scale_feature5' => 'API + integraciones',
+    'plan_scale_cta' => 'Hablar con Ventas',
+    
+    'pricing_guarantee' => '30 días de garantía • Cancela cuando quieras • Sin permanencia',
+    
+    // Pricing Beta Plans
+    'pricing_starter_desc' => 'Precio beta para los primeros 100 clientes',
+    'pricing_starter_old_price' => '497€/mes',
+    'pricing_starter_price' => '249',
+    'pricing_starter_savings' => 'Ahorra 248€/mes',
+    'pricing_cta_start' => 'Empezar prueba gratuita',
+    
+    'pricing_pro_desc' => 'Para negocios en crecimiento',
+    'pricing_pro_old_price' => '997€/mes',
+    'pricing_pro_price' => '97',
+    'pricing_pro_feature1' => 'Contenido ilimitado en todas las plataformas',
+    'pricing_pro_feature2' => 'Estrategias de contenido avanzadas',
+    'pricing_pro_feature3' => 'Soporte prioritario',
+    'pricing_pro_savings' => 'Ahorra 900€/mes',
+    'pricing_cta_popular' => 'Empezar prueba gratuita',
+    
+    // Scale Plan
+    'pricing_enterprise_name' => 'Escala',
+    'pricing_enterprise_desc' => 'Para operaciones más grandes',
+    'pricing_enterprise_price' => '197',
+    'pricing_enterprise_feature1' => 'Múltiples negocios/marcas',
+    'pricing_enterprise_feature2' => 'Contenido ilimitado en todas las plataformas',
+    'pricing_enterprise_feature3' => 'Acceso directo a Martin para estrategias personalizadas',
+    'pricing_cta_contact' => 'Empezar prueba gratuita',
+    
+    'pricing_includes_title' => 'Todos los planes incluyen:',
+    'pricing_include1' => '✅ 14 días de prueba gratuita (sin tarjeta de crédito)',
+    'pricing_include2' => '✅ Cancela cuando quieras',
+    'pricing_include3' => '✅ Control total de aprobación de contenido',
+    'pricing_include4' => '✅ Si no te ahorra 15+ horas/semana - devolución de dinero',
+    
+    'pricing_beta_note' => 'El precio beta termina pronto - Precio actual garantizado para early adopters',
+    
+    // Pricing extras
+    'pricing_guarantee_title' => 'Garantía de Devolución de 14 Días',
+    'pricing_guarantee_desc' => 'Prueba MindBeamer sin riesgo. Si no te ahorra 15+ horas/semana, reembolso completo.',
+    'pricing_questions' => '¿Tienes preguntas?',
+    'pricing_contact_us' => 'Contáctanos',
     
     'month' => 'mes',
     'request_demo_button' => 'Solicitar Demo',
     
-    // FAQ Section
-    'faq_title' => 'Preguntas Frecuentes',
+    // Objections Section
+    'objections_headline' => 'Pero Y Si...',
+    'objections_subheadline' => 'Abordando Miedos Comunes',
     
-    'faq1_question' => '¿Qué tan autónomo funciona realmente MindBeamer?',
-    'faq1_answer' => 'MindBeamer es 100% autónomo después de la configuración inicial. Investiga temas relevantes para tu industria, crea contenido específico para cada plataforma, genera medios correspondientes, optimiza publicaciones para cada plataforma y publica según tu calendario - todo sin necesidad de intervención por tu parte.',
+    'objection1_q' => '"¿Y si la IA escribe algo incorrecto?"',
+    'objection1_a' => 'Cada post te llega primero a ti. Lo ves, lo apruebas o lo cambias. Nada se publica sin tu OK. Mantienes el control completo.',
     
-    'faq2_question' => '¿Necesito revisar el contenido generado?',
-    'faq2_answer' => 'Es completamente tu elección. MindBeamer puede operar de forma totalmente autónoma, publicando contenido directamente sin revisión. Alternativamente, puedes configurarlo para que envíe contenido para tu aprobación antes de publicar. Muchos usuarios comienzan con la opción de revisión y cambian al modo completamente autónomo una vez que se sienten cómodos con la calidad.',
+    'objection2_q' => '"¿No sonará como un robot?"',
+    'objection2_a' => 'MindBeamer aprende TU voz de nuestra conversación. Tus clientes no notarán ninguna diferencia. Mira Startups Españolas - ¿puedes notar que está escrito por IA?',
     
-    'faq3_question' => '¿Cómo adapta MindBeamer el contenido para diferentes plataformas?',
-    'faq3_answer' => 'MindBeamer comprende los requisitos únicos de cada plataforma social. Para LinkedIn, crea contenido profesional basado en insights. Para Instagram, genera historias visuales con textos persuasivos. Para Twitter, elabora hilos atractivos. Para blogs, produce artículos completos optimizados para SEO - todo desde el mismo tema central, pero adaptado específicamente al formato y audiencia de cada plataforma.',
+    'objection3_q' => '"No entiendo los algoritmos de redes sociales"',
+    'objection3_a' => '¡Perfecto! No necesitas hacerlo. MindBeamer maneja todo ese material técnico. Tú solo diriges tu negocio, nosotros nos encargamos de que te veas bien online.',
     
-    'faq4_question' => '¿Puedo usar MindBeamer para cualquier nicho de negocio?',
-    'faq4_answer' => '¡Sí! MindBeamer ha sido implementado con éxito en diversas industrias - desde servicios profesionales como derecho y contabilidad hasta negocios minoristas, proveedores de salud, startups tecnológicas, instituciones educativas y agencias creativas. La configuración inicial permite a MindBeamer entender tu industria específica, audiencia objetivo y objetivos de contenido.',
+    'objection4_q' => '"¿Y si mi industria es demasiado especializada?"',
+    'objection4_a' => 'Hemos trabajado con fabricantes de frutos secos, contratistas HVAC, consultores fiscales, boutiques minoristas, empresas SaaS - MindBeamer se adapta a cualquier tipo de negocio.',
     
-    // Contact Section
-    'demo_title' => '¿Listo para Poner tu Contenido en Piloto Automático?',
-    'demo_subtitle' => 'Ve exactamente cómo MindBeamer crea contenido para TU negocio. Martin te mostrará una demo personalizada usando tu negocio real como ejemplo.',
+    'objection5_q' => '"No me siento cómodo con la tecnología"',
+    'objection5_a' => 'Después de la llamada de configuración inicial de 10 minutos, no tocas ninguna tecnología. Los posts simplemente aparecen. Piensa en ello como contratar a una persona de redes sociales, excepto que nunca toman vacaciones o se enferman.',
     
-    // Demo Form Option
-    'demo_form_badge' => 'Más Popular',
-    'demo_form_title' => 'Llamada Demo en Vivo',
-    'demo_form_subtitle' => 'Obtén una demo personal del fundador en solo 15 minutos',
+    // FAQ
+    'faq_title' => 'Preguntas Que Todos Hacen',
     
+    'faq1_question' => '¿Realmente es 100% automático?',
+    'faq1_answer' => 'Sí. Después de la configuración inicial (10 minutos), MindBeamer trabaja solo. Mira Startups Españolas - 90+ días publicando sin ninguna intervención humana. Tú decides si quieres revisar antes de publicar o dejar todo en automático.',
+    
+    'faq2_question' => '¿El contenido suena robótico?',
+    'faq2_answer' => 'Para nada. MindBeamer aprende tu tono, tu estilo, tus expresiones. Los clientes no notan que es IA - solo ven contenido profesional y consistente que suena exactamente como tú.',
+    
+    'faq3_question' => '¿Qué pasa si no me gusta un post?',
+    'faq3_answer' => 'Tienes control total. Puedes: 1) Revisar y editar antes de publicar, 2) Dejar que publique y ajustar después, 3) Dar feedback para que MindBeamer aprenda tus preferencias. La mayoría empieza revisando y después pasa a automático.',
+    
+    'faq4_question' => '¿Funciona para mi industria?',
+    'faq4_answer' => 'MindBeamer funciona para cualquier negocio B2B o B2C. Consultorías, ecommerce, SaaS, servicios locales, industria, salud, educación... Si tienes clientes, MindBeamer puede crear contenido que los atraiga.',
+    
+    'faq5_question' => '¿Cuánto tiempo toma ver resultados?',
+    'faq5_answer' => 'Resultados inmediatos: recuperas 15-20 horas semanales desde el día 1. Resultados de negocio: la mayoría ve aumento en engagement en 2-4 semanas, y nuevos leads en 30-60 días. La consistencia es clave - algo que MindBeamer garantiza.',
+    
+    'faq6_question' => '¿Puedo cancelar cuando quiera?',
+    'faq6_answer' => 'Por supuesto. Sin permanencia, sin penalizaciones. Aunque spoiler: una vez que pruebes tener tu marketing en piloto automático, no querrás volver a los domingos de estrés.',
+    
+    // Demo Section
+    'demo_title' => 'Deja de Temer la Creación de Contenido del Domingo',
+    'demo_subtitle' => 'Déjame mostrarte cómo recuperar tus fines de semana - en solo 20 minutos',
+    
+    // Single Demo Option
+    'demo_badge' => 'Demo Gratis',
+    'demo_main_title' => 'Reserva Tu Demo Personal',
+    'demo_main_subtitle' => 'Ve MindBeamer en acción con TU negocio',
+    'demo_benefit1' => 'Demo personal de 20 minutos adaptada a tu negocio',
+    'demo_benefit2' => 'Ve muestras de contenido real para tu industria',
+    'demo_benefit3' => 'Obtén una estrategia personalizada para tus canales sociales',
+    'demo_benefit4' => 'Sin presión, sin tarjeta de crédito, solo información útil',
+    'demo_cta' => 'Reservar Mi Demo Gratis',
+    'demo_availability' => 'Disponible esta semana - Elige un horario que te funcione',
+    'demo_what_you_see' => 'Lo Que Verás en la Demo de 20 Minutos:',
+    'demo_personal' => 'Demo Personal con el Fundador',
+    'demo_available' => 'Disponible Esta Semana',
+    'demo_no_pressure' => 'Cero Presión de Ventas - Solo Ejemplos Reales',
+    'demo_see_results' => 'Ve Cómo Funciona Antes de Decidir',
     'your_email' => 'Tu Email',
     'ask_for_demo' => 'Reservar Mi Llamada Demo',
     'sending' => 'Enviando...',
     'form_success' => '¡Gracias! Te contactaremos pronto.',
     'form_error' => 'Algo salió mal. Por favor, inténtalo de nuevo.',
     'form_validation_error' => 'Por favor, verifica tu información e inténtalo de nuevo.',
-    'demo_note' => 'Demo con Martin Schenk, ingeniero alemán que construyó una plataforma de construcción web - confiado por 1,4M+ sitios web en todo el mundo. 20+ años de éxito probado en software.',
+    'demo_note' => 'Demo con Martin Schenk, ingeniero alemán que construyó palimpalem.com - confiado por 1,4M+ sitios web en todo el mundo. 20+ años de éxito probado en software.',
+    
+    // Contact Section
+    'contact_headline' => '¿Listo para Poner tu Contenido en Piloto Automático?',
+    'contact_subheadline' => 'Ve exactamente cómo MindBeamer crea contenido para TU negocio',
+    'contact_form_title' => 'Solicita Tu Demo Gratis',
+    'contact_name' => 'Nombre',
+    'contact_name_placeholder' => 'Juan Pérez',
+    'contact_email' => 'Email',
+    'contact_email_placeholder' => 'juan@empresa.com',
+    'contact_company' => 'Empresa',
+    'contact_company_placeholder' => 'ABC Manufacturing Inc.',
+    'contact_message' => 'Cuéntanos sobre tu negocio (opcional)',
+    'contact_message_placeholder' => 'Fabricamos herramientas de precisión para la industria aeroespacial...',
+    'contact_privacy_consent' => 'Acepto la política de privacidad',
+    'contact_submit' => 'Obtener Mi Demo Gratis',
+    'contact_error_name_required' => 'Por favor, ingresa tu nombre',
+    'contact_error_email_required' => 'Por favor, ingresa tu email',
+    'contact_error_email_invalid' => 'Por favor, ingresa un email válido',
+    'contact_error_privacy_required' => 'Por favor, acepta la política de privacidad',
+    'contact_success_title' => '¡Éxito!',
+    'contact_success_message' => 'Te contactaremos en 24 horas para programar tu demo.',
+    'contact_error_title' => 'Error',
+    'contact_error_message' => 'Algo salió mal. Por favor, inténtalo de nuevo o envíanos un email directamente.',
+    'contact_what_to_expect_title' => 'Qué Esperar',
+    'contact_expect1' => 'Demo personal de 20 minutos adaptada a tu negocio',
+    'contact_expect2' => 'Ve contenido real creado para tus productos/servicios',
+    'contact_expect3' => 'Obtén una estrategia personalizada para tu industria',
+    'contact_expect4' => 'Sin presión - solo información útil',
+    'contact_other_ways_title' => 'Otras Formas de Contactar',
+    'contact_email_label' => 'Envíanos un Email',
+    'contact_phone_label' => 'Llámanos',
+    'contact_phone_hours' => 'Lun-Vie 9AM-5PM EST',
+    'contact_chat_label' => 'Chat en Vivo',
+    'contact_chat_desc' => 'Obtén respuestas instantáneas a tus preguntas',
+    
+    // Urgency Section
+    'urgency_limited_time' => 'Oferta por Tiempo Limitado',
+    'urgency_headline' => 'Iniciativa de Crecimiento Empresarial Q1 2025',
+    'urgency_subheadline' => 'Estamos aceptando nuevos negocios para incorporación personalizada. Plazas limitadas disponibles para configuración de guante blanco.',
+    'urgency_offer_ends' => 'El Precio de Lanzamiento Especial Termina En:',
+    'urgency_days' => 'Días',
+    'urgency_hours' => 'Horas',
+    'urgency_minutes' => 'Minutos',
+    'urgency_seconds' => 'Segundos',
+    'urgency_bonus1_title' => 'Configuración Gratis (Valor 997€)',
+    'urgency_bonus1_desc' => 'Sesión completa de incorporación y estrategia',
+    'urgency_bonus1_value' => 'Vale 997€',
+    'urgency_bonus2_title' => 'Biblioteca de Contenido',
+    'urgency_bonus2_desc' => '100+ plantillas específicas de la industria',
+    'urgency_bonus2_value' => 'Vale 497€',
+    'urgency_bonus3_title' => 'Soporte Prioritario',
+    'urgency_bonus3_desc' => 'Acceso directo a nuestro equipo',
+    'urgency_bonus3_value' => 'Vale 297€/mes',
+    'urgency_spots_remaining' => 'Solo {{spots}} plazas restantes este mes',
+    'urgency_spots_desc' => 'Una vez llenas, los nuevos clientes esperan hasta el próximo mes',
+    'urgency_cta' => 'Reclama Tu Plaza Ahora',
+    'urgency_no_credit_card' => 'No se requiere tarjeta de crédito para la demo',
+    
+    // Trust & Credibility
+    'trust_title' => 'Construido por Ingeniería Alemana Probada',
+    'trust1' => 'Precisión de ingeniería alemana - calidad y confiabilidad en las que puedes confiar',
+    'trust2' => 'Experiencia global, servicio personal - Cumple GDPR, favorable a los negocios',
+    'trust3' => 'Historial probado - 1,4M+ sitios web impulsados por nuestra plataforma anterior',
+    'trust4' => '20+ años de experiencia en software - entendemos la automatización empresarial',
+    'trust5' => 'Cancela en cualquier momento - sin contratos largos, sin tarifas ocultas',
+    
+    'track_record_title' => 'Historial en el Que Puedes Confiar',
+    'track_record1' => '1,4M+ sitios web construidos con nuestra plataforma anterior palimpalem.com',
+    'track_record2' => '20+ años de desarrollo de software exitoso',
+    'track_record3' => 'Estándares de ingeniería alemana aplicados a cada función',
+    'track_record4' => 'Construido por emprendedores - entendemos los desafíos empresariales de primera mano',
+    'track_record5' => 'Éxito bootstrap - rentable, estable y creciendo orgánicamente',
+    
+    // Guarantee Section
+    'guarantee_headline' => 'Garantía de Resultados de 30 Días',
+    'guarantee_subheadline' => 'Estamos tan seguros de que amarás MindBeamer',
+    'guarantee_promise' => 'Prueba MindBeamer durante 30 días. Si no ves una presencia online mejorada y más consultas comerciales, reembolsaremos cada centavo. Sin preguntas.',
+    'guarantee_point1_title' => 'Prueba Sin Riesgo',
+    'guarantee_point1_desc' => 'Acceso completo a todas las funciones durante 30 días',
+    'guarantee_point2_title' => 'Sin Preguntas',
+    'guarantee_point2_desc' => '¿No te gusta? Obtén un reembolso completo al instante',
+    'guarantee_point3_title' => 'Cancela Cuando Quieras',
+    'guarantee_point3_desc' => 'Sin contratos, sin tarifas ocultas, sin problemas',
+    'guarantee_point4_title' => 'Mantén Tu Contenido',
+    'guarantee_point4_desc' => 'Todo el contenido creado es tuyo para siempre',
+    'guarantee_risk_title' => '¿Por qué podemos hacer esta garantía?',
+    'guarantee_risk_desc' => 'Porque el contenido consistente y profesional siempre mejora los resultados empresariales. Tu experiencia merece ser vista - MindBeamer se asegura de que lo sea.',
+    'guarantee_cta' => 'Comenzar Prueba Sin Riesgo',
+    'guarantee_disclaimer' => 'Se aplican términos y condiciones',
+    'guarantee_trusted_by' => 'Confiado por negocios en todo el mundo',
+    'guarantee_badge1' => 'Certificado ISO',
+    'guarantee_badge2' => 'SSL Seguro',
+    'guarantee_badge3' => '5 Estrellas',
+    'guarantee_badge4' => 'Cumple GDPR',
+    
+    // ROI Calculator
+    'roi_headline' => 'Calcula Tu ROI',
+    'roi_subheadline' => 'Ve cuánto tiempo y dinero puede ahorrar MindBeamer a tu negocio',
+    'roi_input_title' => 'Tu Situación Actual',
+    'roi_hours_label' => 'Horas dedicadas a redes sociales por semana',
+    'roi_hours_help' => 'Incluye creación de contenido, publicación y engagement',
+    'roi_rate_label' => 'Tu tarifa por hora o costo de empleado',
+    'roi_rate_help' => '¿Cuánto vale tu tiempo por hora?',
+    'roi_team_label' => 'Miembros del equipo involucrados en redes sociales',
+    'roi_team_help' => '¿Cuántas personas trabajan en tus redes sociales?',
+    'roi_conversion_label' => 'Mejora de conversión esperada',
+    'roi_conversion_help' => 'La mayoría de los negocios ven una mejora del 20-50%',
+    'roi_results_title' => 'Tus Ahorros Potenciales',
+    'roi_monthly_savings' => 'Valor de Tiempo Ahorrado Mensualmente',
+    'roi_time_saved' => '{{hours}} horas ahorradas por mes',
+    'roi_annual_return' => 'ROI Anual',
+    'roi_return_rate' => 'retorno de inversión',
+    'roi_break_even' => 'Tiempo de Recuperación',
+    'roi_days' => 'días',
+    'roi_cta' => 'Comenzar a Ahorrar Ahora',
+    'roi_disclaimer' => 'Basado en resultados promedio de clientes',
+    
+    // Final CTA
+    'final_cta_headline' => '¿Listo Para Recuperar Tus Domingos?',
+    'final_cta_subheadline' => 'Demo Gratis con Tu Negocio Real',
+    'final_cta_intro' => 'Te mostraré exactamente cómo funcionaría MindBeamer para TU negocio específico:',
+    'final_cta_point1' => 'Ve posts de muestra creados para tu industria',
+    'final_cta_point2' => 'Observa cómo encuentra temas en los que nunca pensarías',
+    'final_cta_point3' => 'Sin presión, sin tarjeta de crédito necesaria',
+    'final_cta_point4' => 'Si no ves cómo te ahorra 15+ horas/semana, simplemente aléjate',
+    'final_cta_primary' => '¡Sí! Muéstrame cómo funciona esto para mi negocio',
+    'final_cta_secondary' => 'Quiero ver primero el ejemplo de Startups Españolas',
+    'final_cta_personal' => 'Construido por Martin Schenk - 20+ años construyendo software para negocios',
+    'final_cta_testimonial' => '"Creé MindBeamer porque yo mismo lo necesitaba. Ahora mi proyecto Startups Españolas funciona solo mientras me enfoco en construir la plataforma."',
+    'final_cta_urgency' => 'El precio beta termina pronto',
+    'final_cta_urgency_sub' => 'Precio actual garantizado para early adopters',
+    'final_cta_trust1' => '✅ Sin contratos a largo plazo',
+    'final_cta_trust2' => '✅ Cancela cuando quieras',
+    'final_cta_trust3' => '✅ Construido en España, funciona en todo el mundo',
+    'final_cta_trust4' => '✅ Cumple GDPR',
+    'final_cta_trust5' => '✅ Tu contenido, tu control',
     
     // Footer
+    'footer_copyright' => '© 2025 MindBeamer.io. Liberando emprendedores del estrés del contenido.',
+    'footer_made_with' => 'Hecho con',
+    'footer_by' => 'por',
+    'footer_privacy' => 'Privacidad',
+    'footer_terms' => 'Términos',
+    'footer_contact' => 'Contacto',
+    'footer_company' => 'MindBeamer',
+    'footer_rights' => 'Todos los derechos reservados.',
+    'footer_description' => 'Convirtiendo productos B2B en imanes de leads a través de contenido automatizado.',
+    'footer_links' => 'Enlaces Rápidos',
+    'footer_home' => 'Inicio',
+    'footer_about' => 'Acerca de',
+    'footer_features' => 'Características',
+    'footer_pricing' => 'Precios',
+    'footer_legal' => 'Legal',
+    'footer_language' => 'Idioma',
     'created_by' => 'creado por',
     'all_rights_reserved' => 'Todos los derechos reservados.',
     'cookie_settings' => 'Configuración de cookies',
-    'footer_copyright' => '2025 MindBeamer.io, creado por Martin Schenk. Todos los derechos reservados.',
-    'footer_privacy' => 'Privacidad',
-    'footer_terms' => 'Términos',
-    'footer_language' => 'Idioma',
+    
+    // Cookie Consent
+    'cookie_consent_message' => 'Usamos cookies para mejorar tu experiencia. ¿Todo bien?',
+    'cookie_consent_accept' => 'Sí, acepto',
+    'cookie_consent_decline' => 'Solo esenciales',
+    'cookie_consent_manage' => 'Gestionar cookies',
+    'cookie_consent_content' => 'Utilizamos cookies para mejorar su experiencia. Al continuar usando nuestro sitio web, acepta el uso de cookies.',
+    'gdpr_compliant' => 'Cumple GDPR',
+    'privacy_first' => 'Privacidad Primero',
+    'data_protection' => 'Protección de Datos',
+    
+    // Form Validation
+    'validation_required' => 'Este campo es obligatorio',
+    'validation_email' => 'Por favor, ingresa un email válido',
+    'validation_min_length' => 'Mínimo :min caracteres',
+    'validation_max_length' => 'Máximo :max caracteres',
+    
+    // Success Messages
+    'demo_scheduled' => '¡Perfecto! Te enviaremos los detalles por email.',
+    'message_sent' => 'Mensaje enviado. Te respondemos en menos de 24h.',
+    
+    // Error Messages
+    'error_generic' => 'Ups, algo salió mal. Intenta de nuevo.',
+    'error_network' => 'Error de conexión. Verifica tu internet.',
     
     // Error Pages
     'return_home' => 'Volver a la página de inicio',
@@ -298,12 +522,6 @@ return [
     'error_503_message' => 'Lo sentimos, estamos temporalmente fuera de servicio por mantenimiento o alta carga.',
     'error_503_joke' => '¡Incluso nuestra incansable IA necesita un descanso para tomar café a veces!',
     
-    // GDPR Compliance and Security
-    'cookie_consent_content' => 'Utilizamos cookies para mejorar su experiencia. Al continuar usando nuestro sitio web, acepta el uso de cookies.',
-    'gdpr_compliant' => 'Cumple RGPD',
-    'privacy_first' => 'Prioridad en Privacidad',
-    'data_protection' => 'Protección de Datos',
-    
     // Marketing consent
     'marketing_consent_text' => 'Acepto que mis datos se almacenen y utilicen con fines de marketing.',
     
@@ -311,125 +529,42 @@ return [
     'js_default_error' => 'Se produjo un error al enviar su solicitud.',
     'js_connection_error' => 'Error de conexión. Por favor, inténtelo de nuevo.',
     
-    // Problem Section
-    'problem_headline' => 'Todo Emprendedor Conoce Este Dolor',
-    'problem_subheadline' => 'Sabes que necesitas estar en redes sociales, pero ¿quién tiene tiempo?',
-    // Pain Points
-    'problem_time_title' => 'Pánico del Domingo',
-    'problem_time_desc' => '"¿Qué voy a publicar esta semana?" - El estrés semanal de crear contenido',
-    'problem_time_cost' => '15-20 horas/semana desperdiciadas',
+    // Meta
+    'meta_title' => 'MindBeamer - Contenido en Piloto Automático Para Tu Negocio',
+    'meta_description' => 'Deja de perder domingos creando posts. MindBeamer crea y publica contenido profesional automáticamente. Ve demo en vivo.',
     
-    'problem_consistency_title' => 'Publicación Irregular',
-    'problem_consistency_desc' => 'Una semana activo, tres semanas en silencio - esto mata tu alcance en el algoritmo',
-    'problem_consistency_cost' => '70% menos visibilidad',
+    // Misc
+    'loading' => 'Cargando...',
+    'close' => 'Cerrar',
+    'learn_more' => 'Saber más',
+    'get_started' => 'Empezar ahora',
     
-    'problem_ideas_title' => 'Contenido Genérico',
-    'problem_ideas_desc' => 'Posts que podrían ser de cualquier empresa - nada único sobre ti',
-    'problem_ideas_cost' => 'Cero diferenciación',
+    // Email translations
+    'email_subject_demo' => 'Nueva solicitud de demo - :email',
+    'email_subject_confirmation' => 'Tu demo de MindBeamer está confirmada',
+    'email_greeting' => 'Hola',
+    'email_demo_received' => 'Hemos recibido tu solicitud de demo.',
+    'email_demo_scheduled' => 'Tu demo está programada. Aquí están los detalles:',
+    'email_demo_prepare' => 'Para aprovechar al máximo tu demo, ten preparado:',
+    'email_demo_prepare1' => 'La URL de tu sitio web o descripción de tu negocio',
+    'email_demo_prepare2' => 'Tus principales desafíos con el marketing de contenidos',
+    'email_demo_prepare3' => 'Cualquier pregunta específica sobre MindBeamer',
+    'email_questions' => 'Si tienes preguntas antes de la demo, simplemente responde a este email.',
+    'email_signature' => 'Saludos,',
+    'email_signature_name' => 'Martin Schenk',
+    'email_signature_title' => 'Fundador de MindBeamer',
     
-    'problem_roi_title' => 'Pérdida de Tiempo',
-    'problem_roi_desc' => '3 horas para 5 posts mediocres - mejor invertir ese tiempo en clientes',
-    'problem_roi_cost' => '500-1000€/semana en productividad perdida',
+    // Admin email
+    'email_admin_new_demo' => 'Nueva solicitud de demo recibida',
+    'email_admin_contact_soon' => 'Por favor, contacta al cliente pronto para programar la demo.',
+    'email_admin_from' => 'De:',
+    'email_admin_language' => 'Idioma preferido:',
     
-    'problem_competition_title' => 'Ventaja Competitiva',
-    'problem_competition_desc' => 'Tu competencia siempre visible, mientras tú luchas por mantener el ritmo',
-    'problem_competition_cost' => 'Cuota de mercado perdida',
-    
-    'problem_expertise_title' => 'Falta de Experiencia',
-    'problem_expertise_desc' => 'Las redes sociales cambian constantemente - imposible mantenerse actualizado',
-    'problem_expertise_cost' => 'Estrategias obsoletas',
-    
-    'problem_cta_text' => 'Esto te está costando dinero real en oportunidades perdidas y leads',
-    'problem_cta_button' => 'Así lo resuelve MindBeamer ↓',
-    'problem_cost_title' => 'Esto Te Está Costando Dinero Real:',
-    'problem_missed_opportunities' => '❌ Oportunidades perdidas - los prospectos no te encuentran online',
-    'problem_lower_trust' => '❌ Menos confianza - los perfiles inactivos parecen poco profesionales',
-    'problem_lost_leads' => '❌ Leads perdidos - los competidores capturan clientes mientras eres invisible',
-    
-    // Pricing Section
-    'pricing_headline' => 'Programa Beta de Acceso Anticipado',
-    'pricing_subheadline' => 'Sé uno de los primeros 100 clientes. Obtén precios de fundador + soporte directo.',
-    'pricing_most_popular' => 'Opción más popular',
-    'pricing_per_month' => 'Mes',
-    'pricing_beta_benefit1' => '✅ 50% descuento Beta',
-    'pricing_beta_benefit2' => '✅ Acceso directo al fundador',
-    'pricing_beta_benefit3' => '✅ Precio garantizado para siempre',
-    'pricing_beta_benefit4' => '✅ Soporte prioritario',
-    
-    // Starter Beta Plan
-    'pricing_starter_name' => 'Startup Beta',
-    'pricing_starter_desc' => 'Precios beta para los primeros 100 clientes',
-    'pricing_starter_old_price' => '497€/mes',
-    'pricing_starter_price' => '249',
-    'pricing_starter_savings' => 'Ahorra 248€/mes',
-    'pricing_starter_feature1' => '40 posts/mes en todas las plataformas',
-    'pricing_starter_feature2' => 'Integración catálogo producto/servicio',
-    'pricing_starter_feature3' => 'Analíticas básicas',
-    'pricing_starter_feature4' => 'Soporte por email',
-    'pricing_cta_start' => 'Unirse al programa Beta',
-    
-    // Growth Beta Plan
-    'pricing_pro_name' => 'Growth Beta',
-    'pricing_pro_desc' => 'Perfecto para empresas en crecimiento',
-    'pricing_pro_old_price' => '997€/mes',
-    'pricing_pro_price' => '497',
-    'pricing_pro_savings' => 'Ahorra 500€/mes',
-    'pricing_pro_feature1' => '100 posts/mes + artículos de blog',
-    'pricing_pro_feature2' => 'Segmentación avanzada de audiencia',
-    'pricing_pro_feature3' => 'Análisis de competencia',
-    'pricing_pro_feature4' => 'Soporte prioritario + llamadas mensuales',
-    'pricing_cta_popular' => 'Unirse al programa Beta',
-    
-    // Scale Beta Plan
-    'pricing_enterprise_name' => 'Scale Beta',
-    'pricing_enterprise_desc' => 'Para automatización seria de contenido',
-    'pricing_enterprise_old_price' => '1.997€/mes',
-    'pricing_enterprise_price' => '997',
-    'pricing_enterprise_savings' => 'Ahorra 1.000€/mes',
-    'pricing_enterprise_feature1' => 'Creación ilimitada de contenido',
-    'pricing_enterprise_feature2' => 'Gestión multi-marca',
-    'pricing_enterprise_feature3' => 'Integraciones personalizadas',
-    'pricing_enterprise_feature4' => 'Soporte directo del fundador',
-    'pricing_cta_contact' => 'Unirse al programa Beta',
-    
-    'pricing_beta_counter' => 'Plazas Beta ocupadas: <strong>0/100</strong>',
-    'pricing_beta_note' => 'El precio sube a tarifa completa en: <strong>100 clientes</strong>',
-    
-    // Pricing extras
-    'pricing_guarantee_title' => 'Garantía de Devolución de 30 Días',
-    'pricing_guarantee_desc' => 'Prueba MindBeamer sin riesgo. ¿No estás satisfecho? Reembolso completo.',
-    'pricing_questions' => '¿Tienes preguntas?',
-    'pricing_contact_us' => 'Contáctanos',
-    
-    'month' => 'mes',
-    'request_demo_button' => 'Solicitar Demo',
-    
-    // FAQ Section
-    'faq_title' => 'Respuestas Honestas a Tus Preguntas',
-    
-    'faq1_question' => '¿Ya tienen clientes reales?',
-    'faq1_answer' => 'Actualmente estamos en fase beta. Serás uno de nuestros primeros 100 clientes, lo que significa que obtienes los mejores precios y acceso directo a mí (el fundador) para soporte y solicitudes de funciones.',
-    
-    'faq2_question' => '¿Realmente funciona de forma autónoma?',
-    'faq2_answer' => '¡Sí! Mira Startups Españolas - ha estado funcionando 100% autónomo durante 90+ días. Nuevos posts de blog cada 2-3 días, posts diarios en redes sociales en 5 plataformas, cero intervención manual.',
-    
-    'faq3_question' => '¿Por qué debería confiar en un producto beta?',
-    'faq3_answer' => '¡Porque puedes verlo funcionando en vivo! Además, he construido y escalado software que gestionó 1,4M+ sitios web. No es mi primer rodeo - sé cómo construir sistemas confiables y escalables.',
-    
-    'faq4_question' => '¿Qué pasa si cambian los precios más tarde?',
-    'faq4_answer' => 'Los clientes beta mantienen sus precios para siempre. Cuando lleguemos a 100 clientes, los precios suben a tarifa completa, pero tú permaneces con tu precio beta congelado.',
-    
-    'faq5_question' => '¿Y si no soy técnico?',
-    'faq5_answer' => '¡Perfecto! MindBeamer está diseñado para emprendedores, no expertos en tecnología. Si puedes enviar un email, puedes usar MindBeamer.',
-    
-    // Final CTA Section
-    'final_cta_headline' => '¿Listo para ser uno de nuestros primeros 100 clientes?',
-    'final_cta_subheadline' => 'Únete al programa beta con 50% de descuento de fundador. Ve la demo en vivo, luego asegura tu plaza.',
-    'final_cta_primary' => 'Ver Demo en Vivo + Unirse Beta',
-    'final_cta_secondary' => 'Agendar llamada con fundador',
-    'final_cta_guarantee1' => '✅ Sin contratos',
-    'final_cta_guarantee2' => '✅ Cancela cuando quieras',
-    'final_cta_guarantee3' => '✅ 30 días de garantía',
-    'final_cta_guarantee4' => '✅ Soporte directo del fundador',
-    'final_cta_founder_note' => 'Nota personal de Martin: "No solo obtienes software, obtienes mis 20+ años de experiencia construyendo y escalando plataformas web. Estoy personalmente comprometido con tu éxito."',
+    // Language names for display
+    'language_en' => 'English',
+    'language_de' => 'Deutsch',
+    'language_es' => 'Español',
+    'language_zh_CN' => '中文',
+    'language_pt_BR' => 'Português',
+    'language_fr' => 'Français',
 ];

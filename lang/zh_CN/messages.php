@@ -3,390 +3,318 @@
 return [
     // Navigation
     'nav_home' => '首页',
-    'nav_how_it_works' => '工作原理',
-    'nav_features' => '产品特色', 
+    'nav_how_it_works' => '如何运作',
+    'nav_features' => '功能特点',
+    'nav_testimonials' => '客户评价',
     'nav_why_us' => '为何选择我们',
     'nav_pricing' => '价格方案',
-    'nav_demo' => '免费演示',
+    'nav_demo' => '预约演示',
+    'nav_faq' => '常见问题',
     
-    // Hero Section
-    'hero_badge' => '德国工程品质 • 20+年软件卓越经验',
-    'hero_title' => '终于，社交媒体可以自己运营了',
-    'hero_title_line1' => '别再每周浪费15+小时制作社交媒体内容',
-    'hero_title_line2' => '终于，社交媒体可以自己运营了',
-    'hero_subtitle' => '看看MindBeamer如何每天自动创建和发布内容。由管理过140万+网站的德国工程师开发。目前正在运行中 - 100%自主操作。',
-    'hero_cta' => '向我展示它如何工作',
-    'hero_cta_primary' => '查看实时演示 →',
-    'hero_cta_secondary' => '了解工作原理',
-    'hero_credibility' => '由网站构建平台背后的德国工程师开发 - 被全球140万+网站信赖',
-    'hero_live_banner' => '🔴 直播中：正在为西班牙创业公司自动发布内容 • 已自主运行90+天',
-    'hero_credentials' => 'Martin Schenk开发 • 管理过140万+网站 • AI + Laravel专家',
-    'hero_view_profile' => '查看开发者简介 →',
-    'hero_save_time' => '每周节省15-20小时',
-    'hero_stop_posting' => '停止发布随机内容。开始系统化增长。',
-    'hero_stat_label' => '参与度',
-    'hero_time_saved' => '节省时间',
-    'week' => '周',
-    
-    // Hero Features
-    'hero_feature1' => '✅ 产品公司：将你的库存转化为内容金矿',
-    'hero_feature2' => '✅ 服务提供商：自动展示你的专业知识',
-    'hero_feature3' => '✅ 成长企业：轻松保持可见度',
-    
-    // Hero Target Badges
-    'hero_target_product' => '产品公司：将你的库存转化为内容金矿',
-    'hero_target_service' => '服务提供商：自动展示你的专业知识', 
-    'hero_target_local' => '本地企业：轻松保持可见度',
+    // Hero Section - Sunday Laptop Problem
+    'hero_headline' => '周日晚上。其他人都在休息。',
+    'hero_subheadline' => '您呢？还在电脑前。',
+    'hero_subheadline2' => '又是如此。',
+    'hero_problem_setup' => '"我只需要为这周创建一些帖子..."',
+    'hero_problem_twist' => '3小时后，5个平庸的帖子，可能都不会发布。',
+    'hero_problem_repeat' => '听起来很熟悉？',
+    'hero_solution' => '有更好的方法。',
+    'hero_cta_primary' => '让我看看更好的方法 →',
     
     // How It Works Section
-    'how_it_works_title' => '让您的内容进入自动驾驶模式',
-    'how_it_works_subtitle' => '四个简单步骤转变您的社交媒体存在感',
+    'how_it_works_title' => '从"我该发什么？"到"哇，已经完成了！"',
+    'how_it_works_subtitle' => 'MindBeamer将您的业务转化为吸引客户的内容 - 无需您参与。',
     
     'step1_title' => '告诉我们您的业务',
-    'step1_description' => '上传您的网站、产品目录或描述您的服务。MindBeamer了解您业务的独特之处。',
-    'step1_time' => '仅需10分钟',
+    'step1_description' => '只需10分钟。分享您的网站、产品或描述您的服务。MindBeamer学习是什么让您与众不同。',
+    'step1_time' => '只需10分钟',
     
-    'step2_title' => 'MindBeamer创建您的内容',
-    'step2_description' => '产品亮点、专家建议、案例研究、行业洞察 - 一切都为您的业务类型量身定制。',
-    'step2_feature' => 'AI驱动的内容创建',
-    'step2_product' => '产品公司：产品亮点和比较，应用指南和用例，行业趋势和洞察',
-    'step2_service' => '服务提供商：专家建议和咨询，案例研究和成功故事，市场洞察和分析',
-    'step2_local' => '本地企业：幕后内容，客户亮点，本地社区参与',
+    'step2_title' => 'MindBeamer创建您的策略',
+    'step2_description' => '我们的AI分析您的业务，研究您的竞争对手，创建真正吸引客户的内容计划。',
+    'step2_feature' => '个性化策略，非通用',
     
-    'step3_title' => '选择您的控制级别',
-    'step3_description' => '发布前审查所有内容？还是让MindBeamer自动发布？您来决定。',
-    'step3_control' => '完全控制您的内容',
+    'step3_title' => '内容自动创建',
+    'step3_description' => '每天，MindBeamer创建新鲜内容：帖子、文章、故事。全部使用您的语调，全部旨在促进销售。',
+    'step3_control' => '您选择：先批准或直接发布',
     
-    'step4_title' => '观察您的业务增长',
-    'step4_description' => '持续的内容建立信任。信任产生潜在客户。潜在客户转化为客户。',
-    'step4_result' => '可衡量的业务增长',
+    'step4_title' => '在您睡觉时发布',
+    'step4_description' => '醒来时您的内容已经发布。LinkedIn、Facebook、Instagram、您的博客 - 全部活跃，全部为您工作。',
+    'step4_result' => '您的业务24/7可见',
     
-    'how_it_works_result' => '结果：您的在线存在感24/7工作，而您专注于服务客户和发展业务。',
-    'how_it_works_cta' => '开始免费演示',
+    'how_it_works_cta' => '我想要个人演示',
     
     // Features Section
-    'features_title' => '专为业务增长而设计',
-    'features_subtitle' => 'MindBeamer不仅创建内容——它创建能将潜在客户转化为客户的内容',
+    'features_title' => '您讨厌做的一切，自动化',
+    'features_subtitle' => '因为您的时间比创建帖子更有价值。',
     
-    'feature1_title' => '您的产品变成内容金矿',
-    'feature1_description' => 'MindBeamer不创建随机帖子。每一件内容都旨在以吸引理想客户的方式展示您的专业知识、产品或服务。',
-    'feature1_benefit1' => '每周自动突出不同的产品',
-    'feature1_benefit2' => '创建推动销售的应用指南和使用案例',
+    'feature1_title' => '100%自动创建',
+    'feature1_description' => '不再有创意障碍。不再有压力的周日。MindBeamer每天基于您的业务创建独特内容。',
     
-    'feature2_title' => '每个平台都获得完美内容',
-    'feature2_description' => 'LinkedIn：将您定位为行业专家的专业内容。Facebook：为本地客户建立社区的帖子。Instagram：展示您工作和个性的视觉内容。博客：带来自然流量的SEO优化文章。',
-    'feature2_benefit1' => 'LinkedIn通过行业专业知识推动B2B潜在客户',
-    'feature2_benefit2' => 'Instagram通过幕后内容视觉化展示您的工作',
+    'feature2_title' => '无需干预的发布',
+    'feature2_description' => 'LinkedIn早上8点。Instagram中午。博客周二。一切都在完美的时间自动发布。',
     
-    'feature3_title' => '专为您的业务类型设计',
-    'feature3_description' => 'MindBeamer分析您的业务类型并创建有效的内容。产品公司：系统化产品展示。服务提供商：通过专家洞察建立权威性。本地企业：与您的社区真诚连接。',
-    'feature3_benefit1' => '制造业：技术规格变成引人入胜的故事',
-    'feature3_benefit2' => '专业服务：复杂主题变成客户友好的洞察',
+    'feature3_title' => '销售型内容',
+    'feature3_description' => '不是通用帖子。每一篇都旨在展示您的专业知识，解决客户问题，产生询问。',
     
-    'feature4_title' => '再也不会缺少创意',
-    'feature4_description' => '先进的AI确保您的内容保持多样化和引人入胜，利用您业务的全部范围每次创建独特的帖子。',
-    'feature4_benefit1' => 'AI分析您的行业趋势和竞争对手差距',
-    'feature4_benefit2' => '围绕您的受众关心的热门话题创建内容',
+    'feature4_title' => '您的声音，您的风格',
+    'feature4_description' => 'MindBeamer学习您如何说话，您有什么价值观，您如何与众不同。内容听起来像您，而不是机器人。',
     
-    'feature5_title' => '在您睡觉时工作',
-    'feature5_description' => '一旦配置完成，MindBeamer独立运行。没有日常任务，没有创意障碍，没有需要维护的发布日程。',
-    'feature5_benefit1' => '无需每日内容规划或创意障碍',
-    'feature5_benefit2' => 'MindBeamer全天候24/7维护您的发布日程，包括周末',
+    'feature5_title' => '智能多平台',
+    'feature5_description' => '一个主题，多种格式。LinkedIn上的专业帖子，Instagram上的视觉故事，您博客上的SEO文章。',
     
-    'feature6_title' => '看看哪些帖子带来客户',
-    'feature6_description' => '跟踪哪些内容产生潜在客户，专注于对您业务有效的内容。',
-    'feature6_benefit1' => '内置分析显示哪些产品/服务产生最多的参与度',
-    'feature6_benefit2' => '根据与您的受众产生共鸣的内容优化您的产品',
+    'feature6_title' => '可衡量的结果',
+    'feature6_description' => '查看哪些内容带来更多客户。MindBeamer学习和改进，创建更多有效的内容。',
     
-    // Advantages Section
-    'advantages_title' => 'MindBeamer的六大核心优势',
-    'advantages_subtitle' => '探索使MindBeamer成为您内容营销需求最佳选择的关键优势。',
+    // Social Proof Section with Startups Españolas
+    'proof_headline' => '立即查看MindBeamer的实际运行',
+    'proof_subheadline' => '不要相信录制的演示。查看系统实时运行。',
+    'proof_live_badge' => '🔴 实时',
+    'proof_startups_espanolas_title' => 'Startups Españolas',
+    'proof_what_is' => '什么是Startups Españolas？',
+    'proof_what_is_desc' => '一个真实的演示项目，MindBeamer已经完全自主管理90多天。每天在5个平台上覆盖西班牙创业生态系统。',
+    'proof_how_powered' => 'MindBeamer如何驱动它？',
+    'proof_how_powered_desc' => 'MindBeamer研究、撰写、创建图像并自动发布。零人工干预。100%自动驾驶。',
+    'proof_see_yourself' => '亲自查看：',
+    'proof_platforms_headline' => '点击任何平台查看实时内容：',
     
-    // Why MindBeamer Stands Out Section
-    'why_stands_out_title' => 'MindBeamer的与众不同之处',
-    'why_stands_out_subtitle' => '虽然市场上有许多AI内容工具可供选择，但MindBeamer是唯一一个从主题选择到发布全程处理的完全自主代理 – 无需任何人工输入。',
+    // Platform-specific descriptions
+    'proof_platform_blog' => '📝 WordPress博客',
+    'proof_how_wordpress' => '每天5-6篇完整文章，涵盖6个类别。SEO优化，带图片，格式化 - 全部自动。',
+    'proof_view_blog' => '查看实时博客 →',
     
-    'why1_title' => '节省时间的自动化',
-    'why1_description' => '通过真正自主的系统，每周节省数小时的内容创作和发布工作。',
+    'proof_platform_linkedin' => '💼 LinkedIn',
+    'proof_how_linkedin' => '每日专业帖子关于创业、技术、创新。产生真实的B2B互动。',
+    'proof_view_linkedin' => '查看LinkedIn →',
     
-    'why2_title' => '卓越的内容质量',
-    'why2_description' => '我们专业的AI生成引人入胜、针对特定受众的内容，提高互动率和转化率。',
+    'proof_platform_instagram' => '📸 Instagram',
+    'proof_how_instagram' => '故事、轮播、帖子 - 每日视觉内容建立社区。',
+    'proof_view_instagram' => '查看Instagram →',
     
-    'why3_title' => '完全无忧',
-    'why3_description' => '一旦配置完成，MindBeamer处理一切 - 您可以专注于业务的其他方面。',
+    'proof_platform_facebook' => '📘 Facebook',
+    'proof_how_facebook' => '产生讨论、分享新闻、建立受众的帖子。',
+    'proof_view_facebook' => '查看Facebook →',
     
-    'why4_title' => '全方位解决方案',
-    'why4_description' => '从研究到写作到媒体创作再到发布 - 一个集成系统处理所有环节。',
+    'proof_platform_twitter' => '🐦 Twitter/X',
+    'proof_how_twitter' => '快速更新、即时新闻、与技术社区互动。',
+    'proof_view_twitter' => '查看Twitter →',
     
-    'why5_title' => '可靠一致性',
-    'why5_description' => '再也不会错过发布日 - MindBeamer稳定维持您的发布计划。',
+    'proof_bottom_message' => '所有这些24/7运行，无需任何人参与。想象一下这对您的业务意味着什么。',
     
-    'why6_title' => '可衡量的投资回报',
-    'why6_description' => '随着MindBeamer增加流量、互动和潜在客户，您将看到明确的回报，且无需持续投入成本。',
-    
-    'vs_jasper_title' => '对比 Jasper AI',
-    'vs_jasper_description' => '虽然Jasper需要您手动创建和分发内容，但MindBeamer完全自主运行，无需您的干预即可生成内容并发布到所有平台。',
-    
-    'vs_buffer_title' => '对比 Buffer/Hootsuite',
-    'vs_buffer_description' => '与仅发布您已创建内容的调度工具不同，MindBeamer自主生成、优化和发布内容 – 彻底消除整个内容创作流程。',
-    
-    'vs_contentstudio_title' => '对比 ContentStudio',
-    'vs_contentstudio_description' => 'ContentStudio需要持续监督和指导。MindBeamer在初始设置后完全独立运行，自动为每个平台生成量身定制的主题和内容。',
-    
-    'ready_to_see' => '准备了解MindBeamer的自主内容代理如何改变您的线上形象？',
-    'ask_for_demo' => '申请免费演示',
-    
-    // Testimonials Section
-    'testimonials_title' => '用户评价',
-    
-    'testimonial1_text' => '自从实施MindBeamer以来，我们的内容产量在零增加资源的情况下增长了三倍。这个代理完全独立处理一切 – 真正的设置后即可忘记！',
-    'testimonial1_name' => 'Alex Johnson',
-    'testimonial1_position' => '市场总监',
-    'testimonial1_role' => '市场总监',
-    
-    'testimonial2_text' => '我经营一家小型美发沙龙，没有时间管理社交媒体。MindBeamer为我的业务创建和发布完美的内容 – 设置后我不需要做任何事情！',
-    'testimonial2_name' => 'Sarah Miller',
-    'testimonial2_position' => '小企业主',
-    'testimonial2_role' => '小企业主',
-    
-    'testimonial3_text' => '我们的科技博客现在每天在所有平台上更新，有格式完美的LinkedIn帖子、引人入胜的Twitter主题和全面的博客文章 – 全部自动进行。',
-    'testimonial3_name' => 'David Chen',
-    'testimonial3_position' => '科技出版编辑',
-    'testimonial3_role' => '科技出版编辑',
-    
-    // Social Proof Section
-    'proof_headline' => '看MindBeamer实时运行 - 无虚假演示',
-    'proof_subheadline' => '不要只听我们的话。观察真实的自主内容创建。',
+    // Stats
     'proof_stat1_number' => '150+',
-    'proof_stat1_label' => '自动创建的博客文章',
-    'proof_stat1_detail' => '最近90天',
+    'proof_stat1_label' => '发布的文章',
     'proof_stat2_number' => '500+',
-    'proof_stat2_label' => '社交媒体帖子已发布',
-    'proof_stat2_detail' => '跨5个平台',
-    'proof_stat3_number' => '0',
-    'proof_stat3_label' => '需要的手动工作小时数',
-    'proof_stat3_detail' => '100%自主',
-    'proof_stat4_number' => '90+',
-    'proof_stat4_label' => '连续运行天数',
-    'proof_stat4_detail' => '无中断',
-    'proof_live_indicator' => '🔴 直播',
-    'proof_demo1_title' => '📊 自动生成博客',
-    'proof_demo1_desc' => '每2-3天发布新的创业行业文章。SEO优化，引人入胜的内容。',
-    'proof_demo1_link' => '查看实时博客 →',
-    'proof_demo1_update' => '最新帖子：2小时前',
-    'proof_demo2_title' => '📱 LinkedIn自动化',
-    'proof_demo2_desc' => '每日专业B2B帖子。行业洞察，公司亮点。',
-    'proof_demo2_link' => '查看LinkedIn →',
-    'proof_demo3_title' => '📸 Instagram视觉故事',
-    'proof_demo3_desc' => 'Stories、轮播图和视觉帖子 - 全部每日自动化。',
-    'proof_demo3_link' => '查看Instagram →',
-    'proof_demo4_title' => '📘 Facebook社区',
-    'proof_demo4_desc' => '社区建设帖子，创业公司亮点，引人入胜的讨论。',
-    'proof_demo4_link' => '查看Facebook →',
-    'proof_demo5_title' => '🐦 Twitter/X更新',
-    'proof_demo5_desc' => '快速洞察，行业新闻和创业公司亮点。',
-    'proof_demo5_link' => '查看Twitter →',
+    'proof_stat2_label' => '社交帖子',
+    'proof_stat3_number' => '90+',
+    'proof_stat3_label' => '自主运行天数',
+    'proof_stat4_number' => '0',
+    'proof_stat4_label' => '手动工作小时',
     
-    // Founder Story Section
-    'founder_headline' => '由经过验证的软件工程师开发',
-    'founder_subtitle' => 'Martin Schenk - 德国工程师，20+年经验',
-    'founder_track_record' => '业绩记录：',
-    'founder_track_record_text' => '构建并扩展管理过140万+网站的网站构建平台。',
-    'founder_expertise' => '现代专业知识：',
-    'founder_expertise_text' => 'AI自动化，Laravel开发，可扩展SaaS架构。',
-    'founder_why' => '为什么选择MindBeamer：',
-    'founder_why_text' => '"经过20年构建网络平台后，我看到企业在内容创建方面的困扰。所以我构建了我希望存在的解决方案 - 真正自主的内容生成。"',
-    'founder_credential1' => '🇩🇪 常驻西班牙，德国工程标准',
-    'founder_credential2' => '🏗️ Laravel + AI技术专家',
-    'founder_credential3' => '📈 经过验证的规模：140万+网站',
-    'founder_profile_link' => '查看完整开发者简介 →',
+    // Problem/Pain Section
+    'problem_headline' => '内容营销的真正问题',
+    'problem_subheadline' => '不是您不知道发什么。是您没有时间。',
     
-    // Problem Section
-    'problem_headline' => '每个企业家都知道这种痛苦',
-    'problem_subheadline' => '您知道需要在社交媒体上活跃，但谁有时间？',
-    // Pain Points
-    'problem_time_title' => '周日恐慌',
-    'problem_time_desc' => '"这周我要发什么？" - 内容创建的周度压力',
-    'problem_time_cost' => '每周浪费15-20小时',
+    'problem_time_title' => '恐怖的周日',
+    'problem_time_desc' => '又一个周日计划帖子而不是休息。一周还没开始您已经筋疲力尽。',
     
-    'problem_consistency_title' => '不规律发布',
-    'problem_consistency_desc' => '一周活跃，三周沉默 - 这会扼杀您的算法覆盖率',
-    'problem_consistency_cost' => '70%的可见度损失',
+    'problem_consistency_title' => '开关综合症',
+    'problem_consistency_desc' => '一周超级活跃，三周幽灵。算法惩罚您，客户忘记您。',
     
-    'problem_ideas_title' => '通用内容',
-    'problem_ideas_desc' => '可能来自任何公司的帖子 - 没有关于您的独特之处',
-    'problem_ideas_cost' => '零差异化',
+    'problem_quality_title' => '"平庸"的内容',
+    'problem_quality_desc' => '可能来自任何公司的通用帖子。没有真正展示您为什么与众不同。',
     
-    'problem_roi_title' => '时间消费',
-    'problem_roi_desc' => '3小时创建5个平庸帖子 - 时间最好投资在客户身上',
-    'problem_roi_cost' => '每周500-1000欧元的生产力损失',
+    'problem_multitasking_title' => '太多帽子',
+    'problem_multitasking_desc' => 'CEO、销售员、客户服务...现在还要做社区经理？总有东西要让步。',
     
-    'problem_competition_title' => '竞争优势',
-    'problem_competition_desc' => '您的竞争对手总是可见，而您在努力跟上',
-    'problem_competition_cost' => '市场份额损失',
+    'problem_cost_title' => '隐藏成本',
+    'problem_cost_desc' => '代理商：2000欧元+/月。员工：3000欧元+/月。您的时间：无价。结果？可疑。',
     
-    'problem_expertise_title' => '缺乏专业知识',
-    'problem_expertise_desc' => '社交媒体在不断变化 - 不可能保持最新',
-    'problem_expertise_cost' => '过时的策略',
+    'problem_solution_text' => 'MindBeamer消除所有这些。专业内容，自动发布，可衡量的结果。',
+    'problem_cta' => '查看如何运作 →',
     
-    'problem_cta_text' => '这通过错失机会和流失潜在客户让您损失真金白银',
-    'problem_cta_button' => 'MindBeamer如何解决 ↓',
-    'problem_cost_title' => '这让您损失真金白银：',
-    'problem_missed_opportunities' => '❌ 错失机会 - 潜在客户在线找不到您',
-    'problem_lower_trust' => '❌ 信任度降低 - 不活跃的档案看起来不专业',
-    'problem_lost_leads' => '❌ 流失潜在客户 - 竞争对手在您隐形时抓住客户',
+    // Why Different Section
+    'why_different_title' => '为什么MindBeamer与众不同？',
+    'why_different_subtitle' => '因为它不只是另一个工具。它是一个完整的数字员工。',
     
-    // Pricing Section
-    'pricing_headline' => '早期访问测试计划',
-    'pricing_subheadline' => '成为前100名客户之一。获得创始人价格+直接支持。',
-    'pricing_most_popular' => '最受欢迎的选择',
-    'pricing_per_month' => '月',
-    'pricing_beta_benefit1' => '✅ 50%测试折扣',
-    'pricing_beta_benefit2' => '✅ 直接创始人访问',
-    'pricing_beta_benefit3' => '✅ 永久价格保证',
-    'pricing_beta_benefit4' => '✅ 优先支持',
-    'most_popular' => '最受欢迎',
+    'why1_title' => '不只是通用AI',
+    'why1_desc' => 'MindBeamer学习您的业务、您的声音、您的客户。每个帖子都旨在销售您的特定服务。',
     
-    // Starter Beta Plan
-    'pricing_starter_name' => '初创测试版',
-    'pricing_starter_desc' => '前100名客户的测试价格',
-    'pricing_starter_old_price' => '497欧/月',
-    'pricing_starter_price' => '249',
-    'pricing_starter_savings' => '每月节省248欧',
-    'pricing_starter_feature1' => '每月40个帖子，覆盖所有平台',
-    'pricing_starter_feature2' => '产品/服务目录集成',
-    'pricing_starter_feature3' => '基础分析',
-    'pricing_starter_feature4' => '邮件支持',
-    'pricing_cta_start' => '加入测试计划',
+    'why2_title' => '真正发布，不只是草稿',
+    'why2_desc' => '其他工具给您想法。MindBeamer直接发布。您醒来时工作已经完成。',
     
-    // Growth Beta Plan
-    'pricing_pro_name' => '增长测试版',
-    'pricing_pro_desc' => '完美适合成长企业',
-    'pricing_pro_old_price' => '997欧/月',
-    'pricing_pro_price' => '497',
-    'pricing_pro_savings' => '每月节省500欧',
-    'pricing_pro_feature1' => '每月100个帖子+博客文章',
-    'pricing_pro_feature2' => '高级受众定位',
-    'pricing_pro_feature3' => '竞争对手分析',
-    'pricing_pro_feature4' => '优先支持+月度通话',
-    'pricing_cta_popular' => '加入测试计划',
+    'why3_title' => '智能多平台',
+    'why3_desc' => '一个概念 → LinkedIn帖子 + Instagram故事 + 博客文章。全部适应，全部优化。',
     
-    // Scale Beta Plan
-    'pricing_enterprise_name' => '规模测试版',
-    'pricing_enterprise_desc' => '用于严肃的内容自动化',
-    'pricing_enterprise_old_price' => '1,997欧/月',
-    'pricing_enterprise_price' => '997',
-    'pricing_enterprise_savings' => '每月节省1,000欧',
-    'pricing_enterprise_feature1' => '无限内容创建',
-    'pricing_enterprise_feature2' => '多品牌管理',
-    'pricing_enterprise_feature3' => '自定义集成',
-    'pricing_enterprise_feature4' => '直接创始人支持',
-    'pricing_cta_contact' => '加入测试计划',
+    'why4_title' => '自主学习和改进',
+    'why4_desc' => '查看哪些内容产生最多兴趣。MindBeamer自动调整策略。',
     
-    'pricing_beta_counter' => '测试名额已占用：<strong>0/100</strong>',
-    'pricing_beta_note' => '价格上涨至全价时间：<strong>100个客户</strong>',
+    'why5_title' => '工具价格，代理价值',
+    'why5_desc' => '比初级自由职业者便宜，您获得完整的营销团队24/7工作。',
     
-    // Pricing extras
-    'pricing_guarantee_title' => '30天退款保证',
-    'pricing_guarantee_desc' => '无风险试用MindBeamer。不满意？全额退款。',
-    'pricing_questions' => '有疑问？',
-    'pricing_contact_us' => '联系我们',
+    // Testimonials
+    'testimonials_title' => '不再受周日折磨的企业家',
     
-    'month' => '月',
-    'request_demo_button' => '申请演示',
+    'testimonial1_name' => '李明',
+    'testimonial1_role' => 'CEO，工业进口公司',
+    'testimonial1_text' => '以前每个周日都在创建平庸的帖子。现在MindBeamer发布比我能创建的更好的内容，我的周日又是我的了。年度最佳投资。',
     
-    // FAQ Section
-    'faq_title' => '诚实回答您的问题',
+    'testimonial2_name' => '王晓华',
+    'testimonial2_role' => '创始人，数字代理商',
+    'testimonial2_text' => '我是我领域的专家，不是社交媒体专家。MindBeamer将我的知识转化为吸引客户的内容。本月，5个新的LinkedIn直接潜在客户。',
     
-    'faq1_question' => '你们已经有真实客户了吗？',
-    'faq1_answer' => '我们目前处于测试阶段。您将是我们的前100名客户之一，这意味着您获得最好的价格以及直接接触我（创始人）的支持和功能请求。',
+    'testimonial3_name' => '张伟',
+    'testimonial3_role' => '总监，技术咨询',
+    'testimonial3_text' => '我计算过：每周为我节省20小时。但最好的是质量 - 真正展示我们专业知识的帖子。客户来时已经信服。',
     
-    'faq2_question' => '它真的能自主运行吗？',
-    'faq2_answer' => '是的！看看Startups Españolas - 它已经100%自主运行90+天了。每2-3天新的博客帖子，每天在5个平台上发布社交媒体帖子，零手动干预。',
+    // Pricing
+    'pricing_headline' => '投资您的自由',
+    'pricing_subheadline' => '比自由职业者便宜。比代理商更有效。',
     
-    'faq3_question' => '为什么我应该信任测试产品？',
-    'faq3_answer' => '因为您可以看到它实时运行！另外，我已经构建并扩展了管理140万+网站的软件。这不是我的第一次 - 我知道如何构建可靠、可扩展的系统。',
+    'pricing_currency' => '€',
+    'pricing_per_month' => '/月',
     
-    'faq4_question' => '如果您以后更改价格会怎样？',
-    'faq4_answer' => '测试客户永远保留他们的价格。当我们达到100个客户时，价格上涨到全价，但您保持您的测试价格不变。',
+    // Starter Plan
+    'plan_starter_name' => '创业者',
+    'plan_starter_subtitle' => '完美起步',
+    'plan_starter_price' => '197',
+    'plan_starter_feature1' => '每月30个帖子',
+    'plan_starter_feature2' => '3个社交平台',
+    'plan_starter_feature3' => '发布前批准',
+    'plan_starter_feature4' => '月度报告',
+    'plan_starter_cta' => '立即开始',
     
-    'faq5_question' => '如果我不懂技术怎么办？',
-    'faq5_answer' => '完美！MindBeamer是为企业家设计的，不是技术专家。如果您能发送电子邮件，您就能使用MindBeamer。',
+    // Professional Plan
+    'plan_professional_name' => '专业版',
+    'plan_professional_subtitle' => '适合成长中的企业',
+    'plan_professional_price' => '397',
+    'plan_professional_popular' => '最受欢迎',
+    'plan_professional_feature1' => '每月90个帖子',
+    'plan_professional_feature2' => '5个平台+博客',
+    'plan_professional_feature3' => '自动发布',
+    'plan_professional_feature4' => '每周分析+优化',
+    'plan_professional_feature5' => '优先内容',
+    'plan_professional_cta' => '选择专业版',
     
-    // GDPR Compliance and Security
-    'cookie_consent_content' => '我们使用Cookie来提升您的体验。继续使用我们的网站，即表示您同意使用Cookie。',
-    'gdpr_compliant' => 'GDPR合规',
-    'privacy_first' => '隐私优先业务',
-    'data_protection' => '数据保护',
+    // Scale Plan
+    'plan_scale_name' => '规模版',
+    'plan_scale_subtitle' => '主导您的市场',
+    'plan_scale_price' => '797',
+    'plan_scale_feature1' => '无限帖子',
+    'plan_scale_feature2' => '所有平台',
+    'plan_scale_feature3' => 'AI训练您的声音',
+    'plan_scale_feature4' => '专属策略师',
+    'plan_scale_feature5' => 'API+集成',
+    'plan_scale_cta' => '联系销售',
     
-    // Contact Section
-    'demo_title' => '准备让您的内容进入自动驾驶模式吗？',
-    'demo_subtitle' => '准确查看MindBeamer如何为您的企业创建内容。Martin将向您展示一个个性化演示，以您的实际业务为例。',
+    'pricing_guarantee' => '30天保证 • 随时取消 • 无锁定期',
     
-    // Demo Form Option
-    'demo_form_badge' => '最受欢迎',
-    'demo_form_title' => '现场演示通话',
-    'demo_form_subtitle' => '在15分钟内获得创始人的个人演示',
+    // FAQ
+    'faq_title' => '每个人都会问的问题',
     
-    'your_email' => '您的电子邮件',
-    'ask_for_demo' => '预约演示通话',
-    'sending' => '发送中...',
-    'form_success' => '谢谢！我们将很快联系您。',
-    'form_error' => '出现错误。请重试。',
-    'form_validation_error' => '请检查您的输入并重试。',
-    'demo_note' => '与Martin Schenk进行演示，德国工程师，构建了一个网站构建平台 - 被全球140万+网站信赖。20+年经过验证的软件成功。',
+    'faq1_question' => '真的是100%自动吗？',
+    'faq1_answer' => '是的。初始设置（10分钟）后，MindBeamer独立工作。看看Startups Españolas - 90多天发布，没有任何人工干预。您决定是否要在发布前审查或让一切自动化。',
+    
+    'faq2_question' => '内容听起来像机器人吗？',
+    'faq2_answer' => '完全不会。MindBeamer学习您的语调、风格、表达方式。客户不会注意到是AI - 他们只看到专业一致的内容，听起来就像您。',
+    
+    'faq3_question' => '如果我不喜欢某个帖子怎么办？',
+    'faq3_answer' => '您有完全控制权。您可以：1）发布前审查和编辑，2）让它发布并之后调整，3）提供反馈让MindBeamer学习您的偏好。大多数人开始时审查，然后转为自动。',
+    
+    'faq4_question' => '它适用于我的行业吗？',
+    'faq4_answer' => 'MindBeamer适用于任何B2B或B2C业务。咨询、电商、SaaS、本地服务、工业、健康、教育...如果您有客户，MindBeamer可以创建吸引他们的内容。',
+    
+    'faq5_question' => '多久能看到结果？',
+    'faq5_answer' => '立即结果：从第1天起每周恢复15-20小时。业务结果：大多数人在2-4周内看到互动增加，30-60天内看到新潜在客户。一致性是关键 - MindBeamer保证这一点。',
+    
+    'faq6_question' => '我可以随时取消吗？',
+    'faq6_answer' => '当然。无锁定期，无罚款。虽然剧透：一旦您尝试将营销设置为自动驾驶，您不会想回到压力的周日。',
+    
+    // Demo Section
+    'demo_title' => '15分钟内您的个人演示',
+    'demo_subtitle' => '准确了解MindBeamer将如何改变您的业务',
+    'demo_badge' => '每天仅3个名额',
+    'demo_main_title' => '预约您的个人演示',
+    'demo_main_subtitle' => 'Martin将准确展示它如何为您的业务工作',
+    
+    'demo_benefit1' => '使用您的真实业务演示，而非通用示例',
+    'demo_benefit2' => '查看MindBeamer将为您创建的内容',
+    'demo_benefit3' => '直接向创始人提问',
+    'demo_benefit4' => '发现它真正为您节省多少时间',
+    
+    'demo_cta' => '选择我的时间 →',
+    'demo_availability' => '下一个可用时间：明天上午10:00',
+    'demo_note' => '无承诺 • 不需要信用卡 • 仅15分钟',
+    
+    // Final CTA
+    'final_cta_headline' => '准备收回您的周日了吗？',
+    'final_cta_subheadline' => '加入数百名不再为内容而苦恼的企业家。',
+    'final_cta_button' => '我想要个人演示',
+    'final_cta_guarantee' => '免费演示 • 无承诺 • 从第1天起看到结果',
     
     // Footer
-    'created_by' => '创建者',
-    'all_rights_reserved' => '版权所有。',
-    'gdpr_compliant' => 'GDPR合规',
-    'ssl_secured' => 'SSL安全',
-    'cookie_settings' => 'Cookie设置',
-    'footer_copyright' => '2025 MindBeamer.io，由Martin Schenk创建。版权所有。',
-    'footer_privacy' => '隐私',
+    'footer_copyright' => '© 2025 MindBeamer.io。解放企业家远离内容压力。',
+    'footer_made_with' => '用',
+    'footer_by' => '制作',
+    'footer_privacy' => '隐私政策',
     'footer_terms' => '条款',
-    'footer_language' => '语言',
+    'footer_contact' => '联系',
     
-    // Error Pages
-    'return_home' => '返回首页',
-    'error_incident_id' => '事件ID',
+    // Cookie Consent
+    'cookie_consent_message' => '我们使用cookie来改善您的体验。可以吗？',
+    'cookie_consent_accept' => '是的，接受',
+    'cookie_consent_decline' => '仅必要的',
+    'cookie_consent_manage' => '管理cookie',
     
-    // 404 Error
-    'error_404_title' => '页面未找到',
-    'error_404_message' => '哎呀！您要查找的页面不存在或已被移动。',
-    'error_404_joke' => '看起来我们的AI内容代理无法神奇地变出这个页面！',
+    // Form Validation
+    'validation_required' => '此字段为必填项',
+    'validation_email' => '请输入有效的电子邮件',
+    'validation_min_length' => '最少:min个字符',
+    'validation_max_length' => '最多:max个字符',
     
-    // 403 Error
-    'error_403_title' => '禁止访问',
-    'error_403_message' => '抱歉，您没有权限访问此页面。',
-    'error_403_joke' => '即使我们的自主AI也知道何时尊重界限！',
+    // Success Messages
+    'demo_scheduled' => '完美！我们将通过电子邮件发送详细信息。',
+    'message_sent' => '消息已发送。我们将在24小时内回复。',
     
-    // 500 Error
-    'error_500_title' => '服务器错误',
-    'error_500_message' => '哎呀！我们的服务器出了点问题。',
-    'error_500_joke' => '我们的AI正在经历一个小的存在危机。它很快就会恢复！',
+    // Error Messages
+    'error_generic' => '哎呀，出了点问题。请重试。',
+    'error_network' => '连接错误。请检查您的互联网。',
     
-    // 503 Error
-    'error_503_title' => '服务不可用',
-    'error_503_message' => '抱歉，由于维护或高负载，我们暂时不可用。',
-    'error_503_joke' => '即使我们不知疲倦的AI有时也需要喝杯咖啡休息！',
+    // Meta
+    'meta_title' => 'MindBeamer - 为您的业务提供自动驾驶内容',
+    'meta_description' => '停止浪费周日创建帖子。MindBeamer自动创建和发布专业内容。查看实时演示。',
     
-    // Marketing consent
-    'marketing_consent_text' => '我同意存储和使用我的数据用于营销目的。',
+    // Misc
+    'loading' => '加载中...',
+    'close' => '关闭',
+    'learn_more' => '了解更多',
+    'get_started' => '立即开始',
     
-    // Final CTA Section
-    'final_cta_headline' => '准备成为我们前100名客户之一吗？',
-    'final_cta_subheadline' => '以50%创始人折扣加入测试计划。观看现场演示，然后确保您的位置。',
-    'final_cta_primary' => '观看现场演示 + 加入测试版',
-    'final_cta_secondary' => '与创始人预约通话',
-    'final_cta_guarantee1' => '✅ 无合同',
-    'final_cta_guarantee2' => '✅ 随时取消',
-    'final_cta_guarantee3' => '✅ 30天退款保证',
-    'final_cta_guarantee4' => '✅ 直接创始人支持',
-    'final_cta_founder_note' => 'Martin的个人信息："您不仅仅获得软件，您获得我20多年构建和扩展网络平台的经验。我个人致力于您的成功。"',
+    // Email translations
+    'email_subject_demo' => '新演示请求 - :email',
+    'email_subject_confirmation' => '您的MindBeamer演示已确认',
+    'email_greeting' => '您好',
+    'email_demo_received' => '我们已收到您的演示请求。',
+    'email_demo_scheduled' => '您的演示已安排。以下是详细信息：',
+    'email_demo_prepare' => '为了充分利用您的演示，请准备：',
+    'email_demo_prepare1' => '您的网站URL或业务描述',
+    'email_demo_prepare2' => '您在内容营销方面的主要挑战',
+    'email_demo_prepare3' => '关于MindBeamer的任何具体问题',
+    'email_questions' => '如果您在演示前有任何问题，只需回复此电子邮件。',
+    'email_signature' => '此致',
+    'email_signature_name' => 'Martin Schenk',
+    'email_signature_title' => 'MindBeamer创始人',
     
-    // JavaScript error messages
-    'js_default_error' => '发送您的请求时出现错误。',
-    'js_connection_error' => '连接错误。请重试。',
+    // Admin email
+    'email_admin_new_demo' => '收到新的演示请求',
+    'email_admin_contact_soon' => '请尽快联系客户安排演示。',
+    'email_admin_from' => '来自：',
+    'email_admin_language' => '首选语言：',
+    
+    // Language names for display
+    'language_en' => 'English',
+    'language_de' => 'Deutsch',
+    'language_es' => 'Español',
+    'language_zh_CN' => '中文',
+    'language_pt_BR' => 'Português',
+    'language_fr' => 'Français',
 ];
-
