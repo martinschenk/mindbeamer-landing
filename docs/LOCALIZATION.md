@@ -4,11 +4,22 @@
 
 MindBeamer.io supports multiple languages through a central configuration system. All language settings are managed in `config/languages.php`.
 
+### URL Structure & SEO Strategy
+
+- **Root domain** (`mindbeamer.io`) serves English content without `/en` prefix for optimal SEO
+- **All other languages** use language prefixes: `/de`, `/es`, `/zh_CN`, `/pt_BR`, `/fr`, `/hi`
+- **No automatic browser language redirection** to prevent search engine bot issues
+- **Smart Cookie approach**: First-time visitors see content, returning users get language preference
+
 ## Currently Supported Languages
 
+- **English** (en) 🇬🇧 - Source of truth
 - **German** (de) 🇩🇪
-- **English** (en) 🇬🇧  
 - **Spanish** (es) 🇪🇸
+- **Chinese** (zh_CN) 🇨🇳
+- **Portuguese** (pt_BR) 🇧🇷
+- **French** (fr) 🇫🇷
+- **Hindi** (hi) 🇮🇳
 
 ## 🔧 Adding a New Language
 
@@ -75,7 +86,29 @@ public function it()
 }
 ```
 
-### Step 5: Extend Navigation
+### Step 5: Add Localized URLs
+
+Update `app/Helpers/LocalizedUrlHelper.php` to add localized URLs for the new language:
+
+```php
+'privacy-policy' => [
+    'en' => 'privacy-policy',
+    'de' => 'datenschutz-richtlinie',
+    'es' => 'politica-privacidad',
+    'it' => 'informativa-privacy', // NEW
+],
+```
+
+Then add the routes in `routes/web.php`:
+
+```php
+// Italian routes
+Route::get('/informativa-privacy', [PrivacyController::class, 'index']);
+Route::get('/note-legali', [LegalController::class, 'impressum']);
+Route::get('/termini', [LegalController::class, 'terms']);
+```
+
+### Step 6: Extend Navigation
 
 Add Italian to the language selector component (if present).
 
@@ -92,6 +125,7 @@ Add Italian to the language selector component (if present).
 - `config/languages.php` - Main configuration file
 - `app/Services/LocaleService.php` - Service for language management
 - `app/Services/TranslationService.php` - Translation service
+- `app/Helpers/LocalizedUrlHelper.php` - Manages SEO-friendly localized URLs
 
 ### Email System
 - `app/Mail/DemoRequest.php` - Admin notification
@@ -111,6 +145,31 @@ $display = $localeService->getFormattedDisplayName('de'); // "Deutsch 🇩🇪"
 // Validate language
 $valid = $localeService->sanitizeLocale('invalid'); // Fallback to 'en'
 ```
+
+### LocalizedUrlHelper
+```php
+use App\Helpers\LocalizedUrlHelper;
+
+// Get localized URL for current locale
+$url = LocalizedUrlHelper::getLocalizedUrl('privacy-policy'); // Returns 'datenschutz-richtlinie' for German
+
+// Get route for a specific locale
+$route = LocalizedUrlHelper::getLocalizedRoute('privacy-policy', 'de'); // Returns '/de/datenschutz-richtlinie'
+
+// Get all localized routes for hreflang tags
+$hreflangs = LocalizedUrlHelper::getHreflangUrls('privacy-policy');
+```
+
+## 📊 Translation Coverage
+
+All languages maintain 100% translation coverage with 592 keys per language:
+- **English**: Source of truth
+- **German**: Complete with formal language (Sie form)
+- **Spanish**: Complete with cultural adaptations
+- **Chinese**: Complete with simplified characters
+- **Portuguese**: Brazilian Portuguese variant
+- **French**: Complete with formal tone
+- **Hindi**: Complete with Devanagari script
 
 ## 🚫 What NOT to Do
 

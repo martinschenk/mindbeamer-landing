@@ -5,6 +5,73 @@ All notable changes to the MindBeamer Landing Page project will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.3.0] - 2025-08-01
+
+### ✨ **Added**
+- **Complete Internationalization**: Full translation coverage for all 7 languages
+  - Spanish: Fixed 273 missing translation keys (from 319 to 592 keys)
+  - Chinese (zh_CN): Added 414 missing keys for complete coverage
+  - Portuguese (pt_BR): Added 414 missing keys
+  - French: Added 414 missing keys
+  - German: Already complete at 592 keys
+  - English: Source of truth with 592 keys
+- **Hindi Language Support (hi)**: Complete implementation
+  - All 592 translation keys with cultural adaptations
+  - Devanagari script (हिन्दी) display name
+  - SEO-friendly URLs: `/gizla-niti`, `/vidhi-suchna`, `/sharten`
+  - Added to language dropdown with Indian flag emoji 🇮🇳
+  - Culturally adapted content with Indian examples and names
+- **Maria Story Visual**: 4-panel illustration showing transformation
+  - Added to MariaStorySection between struggle title and social list
+  - WebP format for optimal performance
+  - Illustrates Maria's journey from stressed to relaxed with MindBeamer
+- **SEO Enhancements**: Improved multilingual SEO implementation
+  - Added priorities to sitemap (Home: 1.0, Legal pages: 0.5)
+  - Added change frequencies (monthly for most pages)
+  - Proper hreflang mapping with locale code conversion
+  - Improved x-default handling in sitemap generation
+
+### 🔧 **Changed**
+- **Translation System**: Moved from hardcoded text to translation keys
+  - Fixed demo-request.blade.php to use translation keys
+  - Added email subject translations for all languages
+  - Ensured all UI elements use proper localization
+- **Pricing Display**: Standardized to USD across all languages
+  - Changed from localized currencies to USD for consistency
+  - Dynamic currency symbol using `pricing_currency` key
+  - Fixed hardcoded $ symbol in PricingSection.vue
+- **Trust Messaging**: Removed all palimpalem.com references
+  - Updated to emphasize German engineering expertise
+  - Removed palimpalem logo and mentions across all languages
+  - Focused on direct demo proposition
+- **Robots.txt**: Optimized for better SEO
+  - Removed palimpalem.com reference
+  - Added explicit allow/disallow rules for better crawler guidance
+
+### 🐛 **Fixed**
+- **Mobile Translation Issues**: Fixed missing translations on iPhone
+  - Added missing `pricing_currency` key in all language files
+  - Fixed translation keys showing as text (pricing_starter_name, etc.)
+  - Resolved cache issues affecting mobile devices
+- **Logo Distortion**: Fixed Startups Españolas logo aspect ratio
+  - Added `w-auto object-contain` classes to maintain proportions
+  - Prevented image stretching on mobile devices
+- **Missing Translations**: Completed all partial translation files
+  - Spanish: Added Maria story keys and 273 other missing translations
+  - All languages now have complete 592-key coverage
+
+### 📚 **Documentation**
+- Updated CLAUDE.md to reflect v2.3.0 as current version
+- Added complete internationalization details to documentation
+- Updated essential commands and development guidelines
+- Enhanced multilingual routing documentation with Hindi routes
+
+### 🌐 **Internationalization Details**
+- **Total Languages**: 7 (en, de, es, zh_CN, pt_BR, fr, hi)
+- **Translation Coverage**: 100% (592 keys per language)
+- **Cultural Adaptations**: Names, examples, and context for each market
+- **URL Localization**: SEO-friendly URLs in native languages
+
 ## [v2.2.1] - 2025-07-10
 
 ### ✨ **Added**

@@ -4,11 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-MindBeamer.io is a multilingual Laravel 11 landing page with GDPR-compliant cookie consent. It supports German, English, Spanish, and Simplified Chinese with automatic browser language detection and SEO optimization.
+MindBeamer.io is a multilingual Laravel 11 landing page with GDPR-compliant cookie consent. It supports German, English, Spanish, Simplified Chinese, Portuguese (Brazil), French, and Hindi with automatic browser language detection and SEO optimization.
 
-**Current Version**: v2.2.1 (Patch Release - Enhanced Backup System & Sitemap)
+**Current Version**: v2.3.0 (Minor Release - Complete Internationalization & Hindi Support)
 
-### Key Features (v2.2.1)
+### Key Features (v2.3.0)
+- **Complete Translation Coverage**: Fixed all missing translation keys across all languages
+- **Hindi Language Support**: Added full Hindi (hi) language with Devanagari script
+- **Removed Palimpalem References**: All mentions of palimpalem.com removed from the site
+- **USD Pricing Standardization**: All prices now displayed in USD across all languages
+- **Maria Story Visual**: Added 4-panel illustration showing customer transformation
+- **Mobile Optimizations**: Fixed logo distortion issues on iPhone displays
+- **SEO Enhancements**: Improved multilingual SEO with proper hreflang implementation
+
+### Previous Features (v2.2.1)
 - **Human-Readable Sitemap**: Added XSL stylesheet for formatted sitemap display in browsers
 - **Automatic Backup on Every Commit**: Changed from every 10th push to every single commit
 - **iCloud Backup Sync**: Automatic synchronization of backups to iCloud after each commit

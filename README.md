@@ -14,7 +14,7 @@ We welcome contributions that improve code quality or documentation. See [CONTRI
 
 ## Features
 
-- 🌍 **Multilingual Support**: German, English, Spanish, Simplified Chinese
+- 🌍 **Multilingual Support**: English, German, Spanish, Chinese, Portuguese, French, Hindi
 - 🛡️ **GDPR Compliant**: Cookie consent with granular controls, locally hosted fonts
 - 🎨 **Modern Design**: Pink-purple-teal gradient theme with custom Poppins favicon
 - 📱 **Responsive**: Mobile-first design
