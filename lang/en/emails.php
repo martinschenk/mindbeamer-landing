@@ -26,6 +26,16 @@ return [
     'founder_ceo' => 'Founder & CEO, MindBeamer.io',
     'email_sent_reason' => 'This email was sent to <strong>:email</strong> because you requested a demo of MindBeamer.io.',
     
+    // Admin Demo Request Email
+    'admin_demo_title' => 'New Demo Request',
+    'admin_demo_subject' => 'New Demo Request - :email',
+    'admin_demo_received' => 'A new demo request has been submitted via the contact form on :domain:',
+    'admin_email_label' => 'Email:',
+    'admin_email_not_provided' => 'Not provided',
+    'admin_language_label' => 'Website language:',
+    'admin_contact_prompt' => 'Please contact the prospect promptly to schedule a personal demo.',
+    'admin_email_footer' => 'This email was sent automatically by :domain.',
+    
     // Development Environment
     'dev_environment_notice' => '<strong>DEVELOPMENT ENVIRONMENT:</strong> This email was sent from :url (:env). NOT PRODUCTION!',
     'environment_label' => ':env ENVIRONMENT',

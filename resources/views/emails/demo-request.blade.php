@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Neue Demo-Anfrage</title>
+    <title>{{ __('emails.admin_demo_title') }}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,25 +40,25 @@
 </head>
 <body>
     <div class="header">
-        <h1>Neue Demo-Anfrage</h1>
+        <h1>{{ __('emails.admin_demo_title') }}</h1>
     </div>
     
     <div class="content">
         @if(config('app.env') !== 'production')
             <div style="background-color: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; padding: 10px; margin-bottom: 20px; border-radius: 4px;">
-                <strong>ENTWICKLUNGSUMGEBUNG:</strong> Diese E-Mail wurde von {{ config('app.url') }} ({{ config('app.env') }}) gesendet. NICHT PRODUKTIV!
+                {!! __('emails.dev_environment_notice', ['url' => config('app.url'), 'env' => config('app.env')]) !!}
             </div>
         @endif
         
-        <p>Es wurde eine neue Demo-Anfrage über das Kontaktformular auf {{ parse_url(config('app.url'), PHP_URL_HOST) }} eingereicht:</p>
+        <p>{{ __('emails.admin_demo_received', ['domain' => parse_url(config('app.url'), PHP_URL_HOST)]) }}</p>
         
         <div class="info-row">
-            <span class="info-label">E-Mail:</span> 
-            <span>{{ $email ?? 'Nicht angegeben' }}</span>
+            <span class="info-label">{{ __('emails.admin_email_label') }}</span> 
+            <span>{{ $email ?? __('emails.admin_email_not_provided') }}</span>
         </div>
         
         <div class="info-row">
-            <span class="info-label">Sprache der Website:</span> 
+            <span class="info-label">{{ __('emails.admin_language_label') }}</span> 
             <span>
                 @php
                     $localeService = app(\App\Services\LocaleService::class);
@@ -69,13 +69,13 @@
             </span>
         </div>
         
-        <p>Bitte kontaktieren Sie den Interessenten zeitnah, um einen Termin für eine persönliche Demo zu vereinbaren.</p>
+        <p>{{ __('emails.admin_contact_prompt') }}</p>
     </div>
     
     <div class="footer">
-        <p>Diese E-Mail wurde automatisch von {{ parse_url(config('app.url'), PHP_URL_HOST) }} gesendet.</p>
+        <p>{{ __('emails.admin_email_footer', ['domain' => parse_url(config('app.url'), PHP_URL_HOST)]) }}</p>
         @if(config('app.env') !== 'production')
-            <p style="color: #0369a1; font-weight: bold;">{{ strtoupper(config('app.env')) }}-UMGEBUNG</p>
+            <p style="color: #0369a1; font-weight: bold;">{{ __('emails.environment_label', ['env' => strtoupper(config('app.env'))]) }}</p>
         @endif
     </div>
 </body>

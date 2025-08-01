@@ -279,6 +279,22 @@ return [
     'error_generic' => '哎呀，出了点问题。请重试。',
     'error_network' => '连接错误。请检查您的互联网。',
     
+    // Form Errors
+    'form_error' => '出了点问题。请重试。',
+    'form_validation_error' => '请检查您的信息并重试。',
+    
+    // Contact Form Errors
+    'contact_error_name_required' => '请输入您的姓名',
+    'contact_error_email_required' => '请输入您的邮箱',
+    'contact_error_email_invalid' => '请输入有效的邮箱地址',
+    'contact_error_privacy_required' => '请接受隐私政策',
+    'contact_error_title' => '错误',
+    'contact_error_message' => '出了点问题。请重试或直接给我们发邮件。',
+    
+    // JavaScript Errors
+    'js_default_error' => '发送请求时发生错误。',
+    'js_connection_error' => '连接错误。请重试。',
+    
     // Meta
     'meta_title' => 'MindBeamer - 为您的业务提供自动驾驶内容',
     'meta_description' => '停止浪费周日创建帖子。MindBeamer自动创建和发布专业内容。查看实时演示。',
