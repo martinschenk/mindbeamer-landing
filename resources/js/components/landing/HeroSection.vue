@@ -10,12 +10,12 @@
       <div class="max-w-4xl mx-auto">
         <!-- Text Content - Now Centered -->
         <div class="text-center fade-in">
-          <!-- Main Headline -->
+          <!-- Main Headline - Only H1 on page for SEO -->
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-surface-900 mb-8 leading-tight">
             {{ t('hero_headline') }}
           </h1>
           
-          <!-- Subheadline -->
+          <!-- Subheadline - Using p tags for SEO but keeping original styling -->
           <p class="text-2xl md:text-3xl text-surface-700 mb-3">
             {{ t('hero_subheadline') }}
           </p>
@@ -36,10 +36,10 @@
             </p>
           </div>
           
-          <!-- Solution Hook -->
-          <h2 class="text-3xl md:text-4xl font-bold text-primary-600 mb-10">
+          <!-- Solution Hook - Using p tag instead of h2 for SEO -->
+          <p class="text-3xl md:text-4xl font-bold text-primary-600 mb-10">
             {{ t('hero_solution') }}
-          </h2>
+          </p>
           
           <!-- CTA Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
