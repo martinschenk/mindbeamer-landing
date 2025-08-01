@@ -414,7 +414,7 @@ return [
     'form_success' => 'Thank you! We\'ll contact you soon.',
     'form_error' => 'Something went wrong. Please try again.',
     'form_validation_error' => 'Please check your input and try again.',
-    'demo_note' => 'Demo with Martin Schenk, German engineer who built palimpalem.com - trusted by 1.4M+ websites worldwide. 20+ years of proven software success.',
+    'demo_note' => 'Demo with Martin Schenk, German software engineer with 20+ years of proven experience building successful SaaS platforms.',
     
     // Contact Section
     'contact_headline' => 'Ready to Put Your Content on Autopilot?',
@@ -477,12 +477,12 @@ return [
     'trust_title' => 'Built by Proven German Engineering',
     'trust1' => 'German-engineered precision - quality and reliability you can trust',
     'trust2' => 'Global experience, personal service - GDPR compliant, business-friendly',
-    'trust3' => 'Proven track record - 1.4M+ websites powered by our previous platform',
+    'trust3' => 'Proven track record - 20+ years building successful SaaS platforms',
     'trust4' => '20+ years software expertise - we understand business automation',
     'trust5' => 'Cancel anytime - no long contracts, no hidden fees',
     
     'track_record_title' => 'Track Record You Can Trust',
-    'track_record1' => '1.4M+ websites built with our previous platform palimpalem.com',
+    'track_record1' => '1.4M+ successful deployments across multiple platforms',
     'track_record2' => '20+ years of successful software development',
     'track_record3' => 'German engineering standards applied to every feature',
     'track_record4' => 'Entrepreneur-built - we understand business challenges firsthand',

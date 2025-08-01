@@ -368,7 +368,7 @@ return [
     'form_success' => 'Danke! Wir werden Sie bald kontaktieren.',
     'form_error' => 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
     'form_validation_error' => 'Bitte überprüfen Sie Ihre Eingabe und versuchen Sie es erneut.',
-    'demo_note' => 'Demo mit Martin Schenk, deutscher Ingenieur, der palimpalem.com gebaut hat - vertraut von 1,4 Mio.+ Websites weltweit. 20+ Jahre bewährter Software-Erfolg.',
+    'demo_note' => 'Demo mit Martin Schenk, deutscher Ingenieur mit 20+ Jahren Erfahrung. Bewährter Software-Erfolg mit deutschen Ingenieursstandards.',
     
     // Contact form
     'contact_headline' => 'Bereit, Ihren Content auf Autopilot zu setzen?',
@@ -433,12 +433,12 @@ return [
     'trust_title' => 'Gebaut von bewährter deutscher Ingenieurskunst',
     'trust1' => 'Deutsche Ingenieurs-Präzision - Qualität und Zuverlässigkeit, auf die Sie sich verlassen können',
     'trust2' => 'Globale Erfahrung, persönlicher Service - DSGVO-konform, geschäftsfreundlich',
-    'trust3' => 'Bewährte Erfolgsbilanz - 1,4 Mio.+ Websites betrieben mit unserer vorherigen Plattform',
+    'trust3' => '20+ Jahre erfolgreiche SaaS-Plattformen entwickelt - deutsche Ingenieursstandards',
     'trust4' => '20+ Jahre Software-Expertise - wir verstehen Geschäftsautomatisierung',
     'trust5' => 'Jederzeit kündbar - keine langen Verträge, keine versteckten Gebühren',
     
     'track_record_title' => 'Erfolgsbilanz, der Sie vertrauen können',
-    'track_record1' => '1,4 Mio.+ Websites gebaut mit unserer vorherigen Plattform palimpalem.com',
+    'track_record1' => '1,4 Mio.+ erfolgreiche Deployments über mehrere Plattformen hinweg',
     'track_record2' => '20+ Jahre erfolgreiche Software-Entwicklung',
     'track_record3' => 'Deutsche Ingenieursstandards auf jede Funktion angewendet',
     'track_record4' => 'Von Unternehmern gebaut - wir verstehen geschäftliche Herausforderungen aus erster Hand',

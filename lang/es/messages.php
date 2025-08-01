@@ -541,7 +541,7 @@ return [
     'form_success' => '¡Gracias! Te contactaremos pronto.',
     'form_error' => 'Algo salió mal. Por favor, inténtalo de nuevo.',
     'form_validation_error' => 'Por favor, verifica tu información e inténtalo de nuevo.',
-    'demo_note' => 'Demo con Martin Schenk, ingeniero alemán que construyó palimpalem.com - confiado por 1,4M+ sitios web en todo el mundo. 20+ años de éxito probado en software.',
+    'demo_note' => 'Demo con Martin Schenk, ingeniero alemán con 20+ años de experiencia. Éxito probado en software con estándares de ingeniería alemana.',
     
     // Contact Section
     'contact_headline' => '¿Listo para Poner tu Contenido en Piloto Automático?',
@@ -604,12 +604,12 @@ return [
     'trust_title' => 'Construido por Ingeniería Alemana Probada',
     'trust1' => 'Precisión de ingeniería alemana - calidad y confiabilidad en las que puedes confiar',
     'trust2' => 'Experiencia global, servicio personal - Cumple GDPR, favorable a los negocios',
-    'trust3' => 'Historial probado - 1,4M+ sitios web impulsados por nuestra plataforma anterior',
+    'trust3' => '20+ años construyendo plataformas SaaS exitosas - estándares de ingeniería alemana',
     'trust4' => '20+ años de experiencia en software - entendemos la automatización empresarial',
     'trust5' => 'Cancela en cualquier momento - sin contratos largos, sin tarifas ocultas',
     
     'track_record_title' => 'Historial en el Que Puedes Confiar',
-    'track_record1' => '1,4M+ sitios web construidos con nuestra plataforma anterior palimpalem.com',
+    'track_record1' => '1,4M+ deployments exitosos a través de múltiples plataformas',
     'track_record2' => '20+ años de desarrollo de software exitoso',
     'track_record3' => 'Estándares de ingeniería alemana aplicados a cada función',
     'track_record4' => 'Construido por emprendedores - entendemos los desafíos empresariales de primera mano',

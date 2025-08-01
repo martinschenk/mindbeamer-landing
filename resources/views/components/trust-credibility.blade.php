@@ -71,10 +71,10 @@
                     </div>
                 </div>
                 
-                <!-- palimpalem Screenshot Placeholder -->
+                <!-- Experience Showcase Placeholder -->
                 <div class="mb-8 bg-gray-200 rounded-lg p-8 text-center">
                     <p class="text-gray-600 font-medium">
-                        [PALIMPALEM-SCREENSHOT]: Screenshot of palimpalem.com platform dashboard showing the 1.4M+ websites counter, modern interface, and professional design that builds trust.
+                        [EXPERIENCE-SHOWCASE]: Visual representation of 20+ years of software development experience, showcasing successful projects and German engineering excellence.
                     </p>
                 </div>
                 
