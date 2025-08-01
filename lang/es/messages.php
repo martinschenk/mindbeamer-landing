@@ -393,11 +393,12 @@ return [
     'testimonial3_text' => 'Calculé: me ahorra 20 horas semanales. Pero lo mejor es la calidad - posts que realmente muestran nuestra expertise. Los clientes llegan ya convencidos.',
     
     // Pricing
-    'pricing_headline' => 'Invierte en Tu Libertad',
-    'pricing_subheadline' => 'Menos que un freelancer. Más efectivo que una agencia.',
+    'pricing_headline' => 'Precios Simples Que Tienen Sentido',
+    'pricing_subheadline' => '',
+    'pricing_most_popular' => '⭐ MÁS POPULAR',
+    'pricing_per_month' => 'mes',
     
     'pricing_currency' => '€',
-    'pricing_per_month' => '/mes',
     
     // Starter Plan
     'plan_starter_name' => 'Emprendedor',
@@ -434,21 +435,26 @@ return [
     
     'pricing_guarantee' => '30 días de garantía • Cancela cuando quieras • Sin permanencia',
     
-    // Pricing Beta Plans
-    'pricing_starter_desc' => 'Precio beta para los primeros 100 clientes',
+    // Pricing Plans
+    'pricing_starter_name' => 'Starter',
+    'pricing_starter_desc' => 'Perfecto para probar las aguas',
+    'pricing_starter_price' => '47',
     'pricing_starter_old_price' => '497€/mes',
-    'pricing_starter_price' => '249',
     'pricing_starter_savings' => 'Ahorra 248€/mes',
-    'pricing_cta_start' => 'Empezar prueba gratuita',
+    'pricing_starter_feature1' => '1 negocio, 2 plataformas sociales',
+    'pricing_starter_feature2' => '3 publicaciones por semana',
+    'pricing_starter_feature3' => 'Soporte por email',
+    'pricing_cta_start' => 'Empezar mi prueba gratuita',
     
-    'pricing_pro_desc' => 'Para negocios en crecimiento',
-    'pricing_pro_old_price' => '997€/mes',
+    'pricing_pro_name' => 'Growth',
+    'pricing_pro_desc' => 'Todo lo que la mayoría de negocios necesitan',
     'pricing_pro_price' => '97',
-    'pricing_pro_feature1' => 'Contenido ilimitado en todas las plataformas',
-    'pricing_pro_feature2' => 'Estrategias de contenido avanzadas',
-    'pricing_pro_feature3' => 'Soporte prioritario',
+    'pricing_pro_old_price' => '997€/mes',
     'pricing_pro_savings' => 'Ahorra 900€/mes',
-    'pricing_cta_popular' => 'Empezar prueba gratuita',
+    'pricing_pro_feature1' => '1 negocio, todas las plataformas (LinkedIn, Instagram, Facebook, Blog)',
+    'pricing_pro_feature2' => 'Publicaciones diarias + artículos de blog semanales',
+    'pricing_pro_feature3' => 'Soporte prioritario + revisión mensual de estrategia',
+    'pricing_cta_popular' => 'Empezar mi prueba gratuita',
     
     // Scale Plan
     'pricing_enterprise_name' => 'Escala',
