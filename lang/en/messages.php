@@ -10,9 +10,9 @@ return [
     'nav_demo' => 'Free Demo',
     
     // Hero Section
-    'hero_headline' => 'Sound familiar?',
-    'hero_subheadline' => 'Sunday evening. Everyone else is relaxing.',
-    'hero_subheadline2' => 'You? Still at your laptop.',
+    'hero_headline' => 'Sunday evening. Everyone else is relaxing.',
+    'hero_subheadline' => 'You? Still at your laptop.',
+    'hero_subheadline2' => 'Sound familiar?',
     'hero_problem_setup' => '"Just gonna quickly prep next week\'s posts..."',
     'hero_problem_twist' => 'Three hours later: 7 posts written, edited, deleted.',
     'hero_problem_repeat' => 'Every. Single. Week.',
