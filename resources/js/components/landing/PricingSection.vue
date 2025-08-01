@@ -25,7 +25,7 @@
             
             <div class="mb-8">
               <div class="flex items-baseline">
-                <span class="text-5xl font-bold text-surface-900">${{ t('pricing_starter_price') }}</span>
+                <span class="text-5xl font-bold text-surface-900">{{ t('pricing_currency') }}{{ t('pricing_starter_price') }}</span>
                 <span class="text-surface-600 ml-2">/{{ t('pricing_per_month') }}</span>
               </div>
             </div>
@@ -69,7 +69,7 @@
             
             <div class="mb-8">
               <div class="flex items-baseline">
-                <span class="text-5xl font-bold">${{ t('pricing_pro_price') }}</span>
+                <span class="text-5xl font-bold">{{ t('pricing_currency') }}{{ t('pricing_pro_price') }}</span>
                 <span class="text-primary-100 ml-2">/{{ t('pricing_per_month') }}</span>
               </div>
             </div>
@@ -107,7 +107,7 @@
             
             <div class="mb-8">
               <div class="flex items-baseline">
-                <span class="text-5xl font-bold text-surface-900">${{ t('pricing_enterprise_price') }}</span>
+                <span class="text-5xl font-bold text-surface-900">{{ t('pricing_currency') }}{{ t('pricing_enterprise_price') }}</span>
                 <span class="text-surface-600 ml-2">/{{ t('pricing_per_month') }}</span>
               </div>
             </div>

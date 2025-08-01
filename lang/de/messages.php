@@ -263,6 +263,7 @@ return [
     'pricing_subheadline' => '',
     'pricing_most_popular' => '⭐ BELIEBTESTE WAHL',
     'pricing_per_month' => 'Monat',
+    'pricing_currency' => '€',
     
     // Starter Plan
     'pricing_starter_name' => 'Starter',

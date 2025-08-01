@@ -280,6 +280,7 @@ return [
     'pricing_subheadline' => '',
     'pricing_most_popular' => '⭐ सबसे लोकप्रिय',
     'pricing_per_month' => 'महीना',
+    'pricing_currency' => '₹',
     
     // Starter Plan
     'pricing_starter_name' => 'स्टार्टर',

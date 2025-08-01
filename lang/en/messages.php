@@ -280,6 +280,7 @@ return [
     'pricing_subheadline' => '',
     'pricing_most_popular' => '⭐ MOST POPULAR',
     'pricing_per_month' => 'month',
+    'pricing_currency' => '$',
     
     // Starter Plan
     'pricing_starter_name' => 'Starter',
