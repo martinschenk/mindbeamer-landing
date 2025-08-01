@@ -21,6 +21,25 @@ return [
     'hero_solution' => '有更好的方法。',
     'hero_cta_primary' => '让我看看更好的方法 →',
     
+    // Maria Case Study
+    'maria_headline' => '认识玛丽亚：她重新拥有了周末',
+    'maria_intro' => '玛丽亚在西班牙瓦伦西亚经营一家干果工厂。她的有机杏子、无花果和枣子在西班牙各地的商店销售。她还直接向注重健康的在线客户销售。',
+    'maria_struggle_title' => '周日的挣扎：',
+    'maria_struggle_subtitle' => '每个周末都意味着笔记本电脑时间：',
+    'maria_instagram' => 'Instagram：产品照片、工厂幕后花絮',
+    'maria_facebook' => 'Facebook：健康益处、客户食谱',
+    'maria_linkedin' => 'LinkedIn：可持续农业见解、行业趋势',
+    'maria_blog' => '博客：营养指南、季节性贴士、公司动态',
+    'maria_time' => '每个周日3-4小时。压力很大，永远不确定是否足够好。',
+    'maria_transformation' => '现在MindBeamer处理一切：',
+    'maria_benefit1' => '与以前一样真实的声音',
+    'maria_benefit2' => '对健康生活的同样热情',
+    'maria_benefit3' => '更好的帖子想法（AI有更多灵感）',
+    'maria_benefit4' => '零周日压力',
+    'maria_result1' => '玛丽亚的客户喜欢一致、有用的内容。',
+    'maria_result2' => '玛丽亚喜欢她的自由周末。',
+    'maria_cta' => '我想要玛丽亚拥有的',
+    
     // How It Works Section
     'how_it_works_title' => '从"我该发什么？"到"哇，已经完成了！"',
     'how_it_works_subtitle' => 'MindBeamer将您的业务转化为吸引客户的内容 - 无需您参与。',

@@ -21,6 +21,25 @@ return [
     'hero_solution' => 'Il existe une meilleure façon.',
     'hero_cta_primary' => 'Montrez-moi la Meilleure Façon →',
     
+    // Maria Case Study
+    'maria_headline' => 'Rencontrez Maria : Elle a Récupéré Ses Week-ends',
+    'maria_intro' => 'Maria dirige une usine de fruits secs à Valence, en Espagne. Ses abricots, figues et dattes biologiques sont vendus dans des magasins à travers l\'Espagne. Elle vend aussi directement aux clients soucieux de leur santé en ligne.',
+    'maria_struggle_title' => 'La Lutte du Dimanche :',
+    'maria_struggle_subtitle' => 'Chaque week-end signifiait du temps sur l\'ordinateur :',
+    'maria_instagram' => 'Instagram : Photos de produits, coulisses de l\'usine',
+    'maria_facebook' => 'Facebook : Bienfaits pour la santé, recettes de clients',
+    'maria_linkedin' => 'LinkedIn : Insights sur l\'agriculture durable, tendances du secteur',
+    'maria_blog' => 'Blog : Guides nutritionnels, conseils saisonniers, actualités de l\'entreprise',
+    'maria_time' => '3-4 heures chaque dimanche. Stressée, jamais sûre si c\'était assez bien.',
+    'maria_transformation' => 'Maintenant MindBeamer gère tout :',
+    'maria_benefit1' => 'La même voix authentique qu\'avant',
+    'maria_benefit2' => 'La même passion pour la vie saine',
+    'maria_benefit3' => 'De meilleures idées de posts (l\'IA a beaucoup plus d\'inspiration)',
+    'maria_benefit4' => 'Zéro stress dominical',
+    'maria_result1' => 'Les clients de Maria adorent le contenu cohérent et utile.',
+    'maria_result2' => 'Maria adore ses week-ends libres.',
+    'maria_cta' => 'Je veux ce que Maria a',
+    
     // How It Works Section
     'how_it_works_title' => 'De "Qu\'est-ce que je publie ?" à "Wow, c\'est déjà fait !"',
     'how_it_works_subtitle' => 'MindBeamer transforme votre entreprise en contenu qui attire des clients - sans vous.',

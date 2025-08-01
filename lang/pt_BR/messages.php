@@ -21,6 +21,25 @@ return [
     'hero_solution' => 'Existe um jeito melhor.',
     'hero_cta_primary' => 'Me Mostre o Jeito Melhor →',
     
+    // Maria Case Study
+    'maria_headline' => 'Conheça Maria: Ela Recuperou Seus Fins de Semana',
+    'maria_intro' => 'Maria administra uma fábrica de frutas secas em Valência, Espanha. Seus damascos, figos e tâmaras orgânicos estão em lojas por toda a Espanha. Ela também vende diretamente para clientes conscientes sobre saúde online.',
+    'maria_struggle_title' => 'A Luta de Domingo:',
+    'maria_struggle_subtitle' => 'Todo fim de semana significava tempo no notebook:',
+    'maria_instagram' => 'Instagram: Fotos de produtos, bastidores da fábrica',
+    'maria_facebook' => 'Facebook: Benefícios para saúde, receitas de clientes',
+    'maria_linkedin' => 'LinkedIn: Insights sobre agricultura sustentável, tendências do setor',
+    'maria_blog' => 'Blog: Guias nutricionais, dicas sazonais, novidades da empresa',
+    'maria_time' => '3-4 horas todo domingo. Estressada, nunca certa se estava bom o suficiente.',
+    'maria_transformation' => 'Agora o MindBeamer cuida de tudo:',
+    'maria_benefit1' => 'A mesma voz autêntica de antes',
+    'maria_benefit2' => 'A mesma paixão por vida saudável',
+    'maria_benefit3' => 'Melhores ideias de posts (IA tem muito mais inspiração)',
+    'maria_benefit4' => 'Zero estresse dominical',
+    'maria_result1' => 'Os clientes da Maria adoram o conteúdo consistente e útil.',
+    'maria_result2' => 'Maria adora seus fins de semana livres.',
+    'maria_cta' => 'Quero o que a Maria tem',
+    
     // How It Works Section
     'how_it_works_title' => 'De "O Que Vou Postar?" para "Uau, Já Está Feito!"',
     'how_it_works_subtitle' => 'MindBeamer transforma seu negócio em conteúdo que atrai clientes - sem você.',
