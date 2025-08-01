@@ -27,6 +27,16 @@
           <h3 class="text-2xl font-bold text-red-600 mb-4">{{ t('maria_struggle_title') }}</h3>
           <p class="text-lg text-surface-700 mb-6">{{ t('maria_struggle_subtitle') }}</p>
           
+          <!-- Maria's Story Illustration -->
+          <div class="my-8">
+            <img 
+              src="/images/maria-story.png" 
+              alt="Maria's transformation from stressed to relaxed with MindBeamer" 
+              class="w-full max-w-3xl mx-auto rounded-xl shadow-lg"
+              loading="lazy"
+            />
+          </div>
+          
           <div class="space-y-4 mb-6">
             <div class="flex items-start">
               <span class="text-2xl mr-4">📸</span>
