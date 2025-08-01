@@ -44,7 +44,7 @@ const routes = [
   
   // Localized routes
   {
-    path: '/:locale(en|de|es|zh_CN|pt_BR|fr)',
+    path: '/:locale(en|de|es|zh_CN|pt_BR|fr|hi)',
     component: LandingLayout,
     children: [
       {
@@ -79,6 +79,11 @@ const routes = [
         component: PrivacyView
       },
       {
+        path: 'gizla-niti',
+        alias: 'privacy-policy',
+        component: PrivacyView
+      },
+      {
         path: 'legal-notice',
         name: 'legal-notice',
         component: ImpressumView
@@ -95,6 +100,11 @@ const routes = [
       },
       {
         path: 'mentions-legales',
+        alias: 'legal-notice',
+        component: ImpressumView
+      },
+      {
+        path: 'vidhi-suchna',
         alias: 'legal-notice',
         component: ImpressumView
       },
@@ -120,6 +130,11 @@ const routes = [
       },
       {
         path: 'conditions',
+        alias: 'terms',
+        component: TermsView
+      },
+      {
+        path: 'sharten',
         alias: 'terms',
         component: TermsView
       }

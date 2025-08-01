@@ -76,6 +76,7 @@ export const useLocaleStore = defineStore('locale', () => {
   
   // Initialize from window data
   if (window.__APP_DATA__) {
+    console.log('Initializing locale store with data:', window.__APP_DATA__.locale);
     if (window.__APP_DATA__.locale) {
       setLocale(window.__APP_DATA__.locale);
     }
