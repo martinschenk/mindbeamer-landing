@@ -17,7 +17,7 @@
           <img 
             src="https://startups-espanolas.es/wp-content/uploads/startups-espanolas-logo-2024-01-12-v1.png"
             alt="Startups Españolas"
-            class="h-20 mx-auto mb-6"
+            class="h-20 w-auto object-contain mx-auto mb-6"
           />
           <p class="text-xl text-surface-700 mb-4">
             {{ t('proof_intro') }}

@@ -247,7 +247,7 @@ return [
     'pricing_headline' => 'Investissez Dans Votre Liberté',
     'pricing_subheadline' => 'Moins cher qu\'un freelance. Plus efficace qu\'une agence.',
     
-    'pricing_currency' => '€',
+    'pricing_currency' => '$',
     'pricing_per_month' => '/mois',
     
     // Starter Plan

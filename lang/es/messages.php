@@ -398,7 +398,7 @@ return [
     'pricing_most_popular' => '⭐ MÁS POPULAR',
     'pricing_per_month' => 'mes',
     
-    'pricing_currency' => '€',
+    'pricing_currency' => '$',
     
     // Starter Plan
     'plan_starter_name' => 'Emprendedor',

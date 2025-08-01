@@ -280,12 +280,12 @@ return [
     'pricing_subheadline' => '',
     'pricing_most_popular' => '⭐ सबसे लोकप्रिय',
     'pricing_per_month' => 'महीना',
-    'pricing_currency' => '₹',
+    'pricing_currency' => '$',
     
     // Starter Plan
     'pricing_starter_name' => 'स्टार्टर',
     'pricing_starter_desc' => 'पानी परखने के लिए परफेक्ट',
-    'pricing_starter_price' => '₹3,997',
+    'pricing_starter_price' => '47',
     'pricing_starter_feature1' => '1 बिजनेस, 2 सोशल प्लेटफॉर्म्स',
     'pricing_starter_feature2' => 'हफ्ते में 3 पोस्ट्स',
     'pricing_starter_feature3' => 'ईमेल सपोर्ट',
@@ -294,7 +294,7 @@ return [
     // Growth Plan
     'pricing_pro_name' => 'ग्रोथ',
     'pricing_pro_desc' => 'ज्यादातर बिजनेसेस को जो चाहिए',
-    'pricing_pro_price' => '₹8,297',
+    'pricing_pro_price' => '97',
     'pricing_pro_feature1' => '1 बिजनेस, सभी प्लेटफॉर्म्स (लिंक्डइन, इंस्टाग्राम, फेसबुक, ब्लॉग)',
     'pricing_pro_feature2' => 'रोज पोस्ट्स + साप्ताहिक ब्लॉग आर्टिकल्स',
     'pricing_pro_feature3' => 'प्राथमिकता सपोर्ट + मासिक स्ट्रैटेजी रिव्यू',
@@ -303,7 +303,7 @@ return [
     // Scale Plan
     'pricing_enterprise_name' => 'स्केल',
     'pricing_enterprise_desc' => 'बड़े ऑपरेशन्स के लिए',
-    'pricing_enterprise_price' => '₹16,797',
+    'pricing_enterprise_price' => '197',
     'pricing_enterprise_feature1' => 'मल्टिपल बिजनेसेस/ब्रांड्स',
     'pricing_enterprise_feature2' => 'सभी प्लेटफॉर्म्स पर अनलिमिटेड कंटेंट',
     'pricing_enterprise_feature3' => 'कस्टम स्ट्रैटेजीज के लिए मार्टिन तक डायरेक्ट एक्सेस',

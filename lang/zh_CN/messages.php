@@ -450,7 +450,7 @@ return [
     'pricing_headline' => '投资您的自由',
     'pricing_subheadline' => '比自由职业者便宜。比代理商更有效。',
     
-    'pricing_currency' => '€',
+    'pricing_currency' => '$',
     'pricing_per_month' => '/月',
     
     // Starter Plan

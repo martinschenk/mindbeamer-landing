@@ -247,7 +247,7 @@ return [
     'pricing_headline' => 'Invista na Sua Liberdade',
     'pricing_subheadline' => 'Menos que um freelancer. Mais efetivo que uma agência.',
     
-    'pricing_currency' => 'R$',
+    'pricing_currency' => '$',
     'pricing_per_month' => '/mês',
     
     // Starter Plan
