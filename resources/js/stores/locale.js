@@ -7,7 +7,7 @@ export const useLocaleStore = defineStore('locale', () => {
   
   // State
   const currentLocale = ref('en');
-  const availableLocales = ref(localeConfig.availableLocales || ['en', 'de', 'es', 'zh_CN', 'pt_BR', 'fr']);
+  const availableLocales = ref(localeConfig.availableLocales || ['en', 'de', 'es', 'zh_CN', 'pt_BR', 'fr', 'hi']);
   const translations = ref({});
   
   // Locale display names - use config if available, fallback to defaults
@@ -17,7 +17,8 @@ export const useLocaleStore = defineStore('locale', () => {
     es: 'Español',
     zh_CN: '中文',
     pt_BR: 'Português',
-    fr: 'Français'
+    fr: 'Français',
+    hi: 'हिन्दी'
   };
   
   // Locale flags - use config if available, fallback to defaults
@@ -29,7 +30,8 @@ export const useLocaleStore = defineStore('locale', () => {
     es: configFlags.es || '🇪🇸',
     zh_CN: configFlags.zh_CN || '🇨🇳',
     pt_BR: configFlags.pt_BR || '🇧🇷',
-    fr: configFlags.fr || '🇫🇷'
+    fr: configFlags.fr || '🇫🇷',
+    hi: configFlags.hi || '🇮🇳'
   });
   
   // Getters
