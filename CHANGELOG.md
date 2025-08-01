@@ -59,6 +59,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Missing Translations**: Completed all partial translation files
   - Spanish: Added Maria story keys and 273 other missing translations
   - All languages now have complete 592-key coverage
+- **Hindi Page White Screen**: Fixed Vue router configuration
+  - Added 'hi' to router locale pattern: `/:locale(en|de|es|zh_CN|pt_BR|fr|hi)`
+  - Added Hindi routes for all legal pages
+  - Updated locale store and hreflang tags for complete Hindi support
 
 ### 📚 **Documentation**
 - Updated CLAUDE.md to reflect v2.3.0 as current version

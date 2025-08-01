@@ -202,3 +202,9 @@ After adding a new language:
 ### Problem: Flags are not displayed
 - ✅ Check `locale_flags` array in `config/languages.php`
 - ✅ Ensure UTF-8 is correctly configured
+
+### Problem: Language page shows white screen
+- ✅ Check Vue router pattern includes the locale (e.g., `/:locale(en|de|es|zh_CN|pt_BR|fr|hi)`)
+- ✅ Ensure routes are defined for all localized legal pages in routes/web.php
+- ✅ Update locale.js store with new language in fallback arrays
+- ✅ Add hreflang tag in app.blade.php for the new language
