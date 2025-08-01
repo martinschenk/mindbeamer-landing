@@ -1,6 +1,6 @@
 @php
     $base = 'https://mindbeamer.io';
-    $locales = config('languages.available_locales', ['en','de','es','zh_CN']);
+    $locales = config('languages.available_locales', ['en','de','es','zh_CN','pt_BR','fr']);
 
     // Mapping: canonical page key -> locale -> slug
     $slugTranslations = [
@@ -9,24 +9,32 @@
             'de' => '',
             'es' => '',
             'zh_CN' => '',
+            'pt_BR' => '',
+            'fr' => '',
         ],
         'privacy-policy' => [
             'en' => 'privacy-policy',
             'de' => 'datenschutz-richtlinie',
             'es' => 'politica-privacidad',
             'zh_CN' => 'privacy-policy',
+            'pt_BR' => 'politica-privacidade',
+            'fr' => 'politique-confidentialite',
         ],
         'impressum' => [
             'en' => 'legal-notice',
             'de' => 'impressum',
             'es' => 'aviso-legal',
             'zh_CN' => 'legal-notice',
+            'pt_BR' => 'aviso-legal',
+            'fr' => 'mentions-legales',
         ],
         'terms' => [
             'en' => 'terms',
             'de' => 'agb',
             'es' => 'terminos',
             'zh_CN' => 'terms',
+            'pt_BR' => 'termos',
+            'fr' => 'conditions',
         ],
     ];
 
@@ -51,8 +59,14 @@
     @php
         $slug = $slugTranslations[$pageKey][$loc] ?? $pageKey;
         $url  = rtrim($base, '/') . '/' . $loc . ($slug ? '/' . $slug : '');
+        // Convert internal locale codes to proper hreflang codes
+        $hreflangCode = match($loc) {
+            'zh_CN' => 'zh-CN',
+            'pt_BR' => 'pt-BR',
+            default => $loc
+        };
     @endphp
-    <link rel="alternate" hreflang="{{ $loc }}" href="{{ $url }}">
+    <link rel="alternate" hreflang="{{ $hreflangCode }}" href="{{ $url }}">
 @endforeach
 @if($pageKey === '')
     <link rel="alternate" hreflang="x-default" href="{{ $base }}">

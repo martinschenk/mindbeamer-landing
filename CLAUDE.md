@@ -34,6 +34,11 @@ MindBeamer.io is a multilingual Laravel 11 landing page with GDPR-compliant cook
 - **Data URL Implementation**: Modern favicon approach with 2025 best practices
 - **Streamlined Deployment**: No LFS dependencies, faster cloning
 
+## Translation Management
+
+### Translation Principles
+- **English Language Files as Source of Truth**: English language files are the source of truth for all other languages and translations
+
 ## Essential Commands
 
 ### Development

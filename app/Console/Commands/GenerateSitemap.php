@@ -37,17 +37,29 @@ class GenerateSitemap extends Command
 
         $locales = config('languages.available_locales', ['en']);
         $defaultLocale = config('languages.default_locale', 'en');
+        
+        // Map internal locale codes to proper hreflang codes
+        $hreflangMap = [
+            'en' => 'en',
+            'de' => 'de',
+            'es' => 'es',
+            'zh_CN' => 'zh-CN',  // Convert underscore to hyphen for hreflang
+            'pt_BR' => 'pt-BR',  // Convert underscore to hyphen for hreflang
+            'fr' => 'fr',
+        ];
 
         // Get slug translations from LocalizedUrlHelper to ensure consistency
         // This eliminates duplication and ensures sitemap URLs match actual site URLs
         $slugTranslations = LocalizedUrlHelper::getSlugTranslations();
         
-        // Add home page to translations
+        // Add home page to translations - all languages have the same empty slug for home
         $slugTranslations[''] = [
             'en' => '',
             'de' => '',
             'es' => '',
             'zh_CN' => '',
+            'pt_BR' => '',
+            'fr' => '',
         ];
 
         // Define static page keys we want to include
@@ -62,6 +74,22 @@ class GenerateSitemap extends Command
             'privacy-policy' => [],
             'impressum' => [],
             'terms' => []
+        ];
+        
+        // Define priorities for different pages (SEO optimization)
+        $priorities = [
+            '' => '1.0',              // Home page - highest priority
+            'privacy-policy' => '0.5', // Legal pages - lower priority
+            'impressum' => '0.5',
+            'terms' => '0.5',
+        ];
+        
+        // Define change frequencies based on page type
+        $changeFreqs = [
+            '' => 'daily',            // Home page changes frequently
+            'privacy-policy' => 'monthly', // Legal pages change rarely
+            'impressum' => 'yearly',
+            'terms' => 'monthly',
         ];
 
         // Force production domain regardless of local config; adjust if option provided later.
@@ -84,12 +112,13 @@ class GenerateSitemap extends Command
         $xml[] = '  <url>';
         $xml[] = '    <loc>' . e($baseUrl) . '</loc>';
         $xml[] = '    <lastmod>' . $now . '</lastmod>';
-        $xml[] = '    <changefreq>weekly</changefreq>';
+        $xml[] = '    <changefreq>daily</changefreq>';
         $xml[] = '    <priority>1.0</priority>';  // Highest priority for root domain
         
         // Add hreflang links for all languages
         foreach ($locales as $locale) {
-            $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $locale . '" href="' . e($baseUrl . '/' . $locale) . '" />';
+            $hreflangCode = $hreflangMap[$locale] ?? $locale;
+            $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $hreflangCode . '" href="' . e($baseUrl . '/' . $locale) . '" />';
         }
         $xml[] = '    <xhtml:link rel="alternate" hreflang="x-default" href="' . e($baseUrl) . '" />';
         
@@ -110,17 +139,21 @@ class GenerateSitemap extends Command
                 $slug = $slugTranslations[$slugPart][$locale] ?? $slugPart;
                 $loc = rtrim($baseUrl, '/') . '/' . $locale . ($slug ? '/' . $slug : '');
 
+                $priority = $priorities[$slugPart] ?? '0.8';
+                $changeFreq = $changeFreqs[$slugPart] ?? 'weekly';
+                
                 $xml[] = '  <url>';
                 $xml[] = '    <loc>' . e($loc) . '</loc>';
                 $xml[] = '    <lastmod>' . $now . '</lastmod>';
-                $xml[] = '    <changefreq>weekly</changefreq>';
-                $xml[] = '    <priority>0.8</priority>';
+                $xml[] = '    <changefreq>' . $changeFreq . '</changefreq>';
+                $xml[] = '    <priority>' . $priority . '</priority>';
 
                 // Alternate links for the same route in all locales
                 foreach ($locales as $altLocale) {
                     $altSlug = $slugTranslations[$slugPart][$altLocale] ?? $slugPart;
                     $altUrl = rtrim($baseUrl, '/') . '/' . $altLocale . ($altSlug ? '/' . $altSlug : '');
-                    $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $altLocale . '" href="' . e(
+                    $hreflangCode = $hreflangMap[$altLocale] ?? $altLocale;
+                    $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $hreflangCode . '" href="' . e(
                             $altUrl,
                         ) . '" />';
                 }
