@@ -208,7 +208,7 @@ return [
     'proof_instagram_title' => 'Instagram视觉故事',
     'proof_instagram_desc' => '📸 文章转化为6-8个图像轮播，带文字叠加',
     'proof_instagram_link' => '查看Instagram',
-    'proof_instagram_url' => 'https://instagram.com/startups_espanolas',
+    'proof_instagram_url' => 'https://www.instagram.com/start_up_esp/',
     
     // Facebook platform
     'proof_facebook_title' => 'Facebook社区',

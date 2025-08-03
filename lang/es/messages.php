@@ -271,7 +271,7 @@ return [
     'proof_instagram_title' => 'Historias Visuales Instagram',
     'proof_instagram_desc' => '📸 Artículos transformados en carruseles de 6-8 imágenes con superposiciones de texto',
     'proof_instagram_link' => 'Revisar Instagram',
-    'proof_instagram_url' => 'https://instagram.com/startups_espanolas',
+    'proof_instagram_url' => 'https://www.instagram.com/start_up_esp/',
     
     // Facebook platform
     'proof_facebook_title' => 'Comunidad Facebook',

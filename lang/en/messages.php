@@ -206,7 +206,7 @@ return [
     'proof_instagram_title' => 'Instagram Visual Stories',
     'proof_instagram_desc' => '📸 Articles transformed into 6-8 image carousels with text overlays',
     'proof_instagram_link' => 'Check Instagram',
-    'proof_instagram_url' => 'https://instagram.com/startups_espanolas',
+    'proof_instagram_url' => 'https://www.instagram.com/start_up_esp/',
     
     // Facebook platform
     'proof_facebook_title' => 'Facebook Community',
