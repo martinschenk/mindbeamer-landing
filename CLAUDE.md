@@ -47,6 +47,12 @@ MindBeamer.io is a multilingual Laravel 11 landing page with GDPR-compliant cook
 
 ### Translation Principles
 - **English Language Files as Source of Truth**: English language files are the source of truth for all other languages and translations
+- **Translation Workflow**: When changing or adding new texts:
+  1. ALWAYS make changes in English first (`lang/en/`)
+  2. English text definitions are mandatory and must be completed first
+  3. After English texts are defined, translate them to ALL other supported languages
+  4. Never modify texts in other languages without first updating the English version
+  5. Maintain consistency across all language files - if a key exists in English, it must exist in all other languages
 
 ## Essential Commands
 
