@@ -2,8 +2,8 @@
 
 return [
     // SEO Meta Tags - Optimiert für deutsche Suchmaschinen
-    'meta_title' => 'KI Content Automatisierung | Blog & Social Media automatisch - MindBeamer',
-    'meta_description' => 'Content automatisch erstellen mit KI. Blog-Artikel und Social Media Posts generieren. 10+ Stunden wöchentlich sparen. 14 Tage kostenlos testen. Ab 15€/Monat.',
+    'meta_title' => 'KI Content Automatisierung | Professionelle Inhalte automatisch - MindBeamer',
+    'meta_description' => 'Content automatisch erstellen mit KI. Blog-Artikel und Social Media Posts professionell generieren. Effizienter arbeiten. 14 Tage kostenlos testen. Ab 15€/Monat.',
     'meta_keywords' => 'ki content generator, automatische texterstellung, social media automatisierung, content marketing tool, ki textgenerator, auto posting, content automation',
     
     // Navigation

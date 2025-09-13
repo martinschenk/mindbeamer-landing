@@ -6,21 +6,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     {{-- SEO Meta Tags - Server-side rendered --}}
-    <title>@yield('title', 'MindBeamer - Social Media That Runs Itself | Save 20+ Hours/Week')</title>
-    <meta name="description" content="@yield('description', 'German-engineered content automation for B2B companies. Create and post engaging social media content automatically. Trusted by 1.4M+ websites. Start free trial.')">
+    <title>@yield('title', __('messages.meta_title', 'MindBeamer - Smart Content Automation for Your Business'))</title>
+    <meta name="description" content="@yield('description', __('messages.meta_description', 'Smart content automation for your business. Create and publish professional content automatically. Free 14-day trial.'))">
     
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('og_title', 'MindBeamer - Finally, Social Media That Runs Itself')">
-    <meta property="og:description" content="@yield('og_description', 'Save 20+ hours/week with German-engineered content automation. Perfect for B2B manufacturers and service providers.')">
+    <meta property="og:title" content="@yield('og_title', __('messages.meta_title', 'MindBeamer - Smart Content Automation'))">
+    <meta property="og:description" content="@yield('og_description', __('messages.meta_description', 'Smart content automation for your business. Free 14-day trial.'))">
     <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
     
     {{-- Twitter --}}
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
-    <meta property="twitter:title" content="@yield('twitter_title', 'MindBeamer - Social Media Automation for B2B')">
-    <meta property="twitter:description" content="@yield('twitter_description', 'Automated content creation and posting. Save time, stay consistent.')">
+    <meta property="twitter:title" content="@yield('twitter_title', __('messages.meta_title', 'MindBeamer - Smart Content Automation'))">
+    <meta property="twitter:description" content="@yield('twitter_description', __('messages.meta_description', 'Smart content automation. Free 14-day trial.'))">
     <meta property="twitter:image" content="{{ asset('images/twitter-card.jpg') }}">
     
     {{-- Canonical URL --}}

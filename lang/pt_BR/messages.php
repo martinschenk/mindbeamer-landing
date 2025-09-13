@@ -607,8 +607,8 @@ return [
     'js_connection_error' => 'Erro de conexão. Por favor, tente novamente.',
     
     // Meta - SEO otimizado para buscas em português brasileiro
-    'meta_title' => 'Gerador de Conteúdo com IA | Blog e Redes Sociais Automático - MindBeamer',
-    'meta_description' => 'Crie conteúdo automaticamente com IA. Gere artigos de blog e posts para redes sociais. Economize 10+ horas por semana. Teste grátis 14 dias. A partir de R$ 75/mês.',
+    'meta_title' => 'Automação de Conteúdo com IA | Blog e Redes Sociais - MindBeamer',
+    'meta_description' => 'Crie conteúdo profissional automaticamente com IA. Gere artigos de blog e posts para redes sociais. Trabalhe com mais eficiência. Teste grátis 14 dias. A partir de R$ 75/mês.',
     'meta_keywords' => 'gerador de conteudo ia, criacao automatica de conteudo, automacao redes sociais, ferramenta marketing digital, inteligencia artificial textos, publicacao automatica',
     
     // Misc
