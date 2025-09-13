@@ -576,8 +576,10 @@ return [
     'js_connection_error' => '连接错误。请重试。',
     
     // Meta
-    'meta_title' => 'MindBeamer - 为您的业务提供自动驾驶内容',
-    'meta_description' => '停止浪费周日创建帖子。MindBeamer自动创建和发布专业内容。查看实时演示。',
+    // SEO元标签 - 针对中文搜索优化
+    'meta_title' => 'AI内容生成器 | 自动化博客社交媒体发布 - MindBeamer',
+    'meta_description' => 'AI智能内容创作，自动生成博客文章和社交媒体内容。每周节省10+小时。14天免费试用。￥99/月起。',
+    'meta_keywords' => 'ai内容生成器,自动写作工具,社交媒体自动化,内容营销工具,人工智能写作,自动发布',
     
     // Misc
     'loading' => '加载中...',

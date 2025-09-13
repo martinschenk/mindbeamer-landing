@@ -1,6 +1,11 @@
 <?php
 
 return [
+    // SEO Meta Tags - Optimized for search engines
+    'meta_title' => 'AI Content Automation Tool | Auto Blog & Social Media Posts - MindBeamer',
+    'meta_description' => 'Automate content creation with AI. Generate blog posts, social media content automatically. Save 10+ hours weekly. Free 14-day trial. From $15/month.',
+    'meta_keywords' => 'ai content generator, automated blog writing, social media automation, content creation tool, ai writing assistant, auto posting, content marketing automation',
+    
     // Navigation
     'nav_home' => 'Home',
     'nav_how_it_works' => 'How It Works',

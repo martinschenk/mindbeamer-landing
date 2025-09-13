@@ -606,9 +606,10 @@ return [
     'js_default_error' => 'Ocorreu um erro ao enviar sua solicitação.',
     'js_connection_error' => 'Erro de conexão. Por favor, tente novamente.',
     
-    // Meta
-    'meta_title' => 'MindBeamer - Conteúdo no Piloto Automático Para Seu Negócio',
-    'meta_description' => 'Pare de perder domingos criando posts. MindBeamer cria e publica conteúdo profissional automaticamente. Veja demo ao vivo.',
+    // Meta - SEO otimizado para buscas em português brasileiro
+    'meta_title' => 'Gerador de Conteúdo com IA | Blog e Redes Sociais Automático - MindBeamer',
+    'meta_description' => 'Crie conteúdo automaticamente com IA. Gere artigos de blog e posts para redes sociais. Economize 10+ horas por semana. Teste grátis 14 dias. A partir de R$ 75/mês.',
+    'meta_keywords' => 'gerador de conteudo ia, criacao automatica de conteudo, automacao redes sociais, ferramenta marketing digital, inteligencia artificial textos, publicacao automatica',
     
     // Misc
     'loading' => 'Carregando...',

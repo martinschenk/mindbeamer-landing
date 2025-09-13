@@ -1,6 +1,11 @@
 <?php
 
 return [
+    // SEO Meta Tags - हिंदी खोजों के लिए अनुकूलित
+    'meta_title' => 'AI कंटेंट जेनरेटर | ऑटोमैटिक ब्लॉग और सोशल मीडिया - MindBeamer',
+    'meta_description' => 'AI से ऑटोमैटिक कंटेंट बनाएं। ब्लॉग पोस्ट और सोशल मीडिया कंटेंट जेनरेट करें। हर सप्ताह 10+ घंटे बचाएं। 14 दिन मुफ्त ट्रायल। केवल ₹1,299/माह से।',
+    'meta_keywords' => 'ai content generator hindi, automatic blog writing, social media automation india, content marketing tool, artificial intelligence writing, auto posting hindi',
+    
     // Navigation
     'nav_home' => 'होम',
     'nav_how_it_works' => 'कैसे काम करता है',
