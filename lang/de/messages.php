@@ -16,9 +16,9 @@ return [
     'hero_problem_setup' => '"Nur noch schnell die Posts für nächste Woche vorbereiten..."',
     'hero_problem_twist' => 'Drei Stunden später: 7 Posts geschrieben, bearbeitet, gelöscht.',
     'hero_problem_repeat' => 'Jede. Einzelne. Woche.',
-    'hero_solution' => 'Zeit, Ihre Wochenenden zurückzubekommen.',
+    'hero_solution' => 'Es geht auch anders - und zwar entspannter.',
     'hero_cta_primary' => 'Zeig mir, wie das funktioniert',
-    'hero_cta_secondary' => 'Das brauche ich',
+    'hero_cta_secondary' => 'Das will ich sehen',
     'week' => 'Woche',
     
     // Maria Story Section
@@ -34,14 +34,14 @@ return [
     'maria_transformation' => 'Jetzt übernimmt MindBeamer alles:',
     'maria_benefit1' => 'Gleiche authentische Stimme wie zuvor',
     'maria_benefit2' => 'Gleiche Leidenschaft für gesundes Leben',
-    'maria_benefit3' => 'Bessere Post-Ideen (KI hat viel mehr Inspiration)',
+    'maria_benefit3' => 'Frische Ideen, die ankommen (KI kennt die Trends)',
     'maria_benefit4' => 'Null Sonntagsstress',
     'maria_result1' => 'Marias Kunden lieben den konsistenten, hilfreichen Content.',
     'maria_result2' => 'Maria liebt ihre freien Wochenenden.',
-    'maria_cta' => 'Ich will, was Maria hat',
+    'maria_cta' => 'Das hätte ich auch gern',
     
     // How It Works Section - Simplified
-    'how_it_works_title' => 'Vergessen Sie alles, was Sie über Social Media zu wissen glauben',
+    'how_it_works_title' => 'Social Media kann auch einfach sein',
     'how_it_works_subtitle' => 'Einfacher 3-Schritte-Prozess',
     
     'step1_emoji' => '1️⃣',
@@ -58,13 +58,13 @@ return [
     'step2_point3' => 'Lernt in Ihrer Stimme zu schreiben (nicht wie ein Roboter)',
     
     'step3_emoji' => '3️⃣',
-    'step3_title' => 'Content erscheint wie von Zauberhand',
+    'step3_title' => 'Inhalte entstehen automatisch - aber Sie behalten die Kontrolle',
     'step3_point1' => 'Schauen Sie auf Ihr Handy: neuer Post ist live',
     'step3_point2' => 'Sie haben ihn nicht geschrieben, aber er klingt genau wie Sie',
     'step3_point3' => 'Ihre Kunden interagieren, Ihr Geschäft wächst',
-    'step3_note' => '(Sie können alles vorher prüfen oder es einfach laufen lassen - Ihre Wahl)',
+    'step3_note' => '(Erst prüfen, dann posten? Oder automatisch? Sie entscheiden!)',
     
-    'how_it_works_cta' => 'Das klingt zu gut um wahr zu sein - zeig\'s mir',
+    'how_it_works_cta' => 'Zu schön um wahr zu sein? Überzeugen Sie sich selbst',
     
     // Features Section - Business Types
     'features_title' => 'Perfekt für Ihren Unternehmenstyp',
@@ -103,7 +103,7 @@ return [
     'advantages_subtitle' => 'Entdecken Sie die Vorteile, die MindBeamer zur intelligentesten Wahl für Ihr Content-Marketing machen.',
     
     // Why MindBeamer Stands Out Section
-    'why_stands_out_title' => 'Warum MindBeamer alles andere schlägt',
+    'why_stands_out_title' => 'Der Vergleich macht sicher',
     'why_stands_out_subtitle' => 'Hören Sie auf, Content-Tools zu vergleichen. Fangen Sie an, Ergebnisse zu vergleichen.',
     
     'vs_hiring_title' => 'vs. Jemanden einstellen',
@@ -259,25 +259,25 @@ return [
     'trust_customer_choice' => 'Kundenwahl',
     
     // Pricing Section
-    'pricing_headline' => 'Einfache Preise, die Sinn machen',
-    'pricing_subheadline' => '',
+    'pricing_headline' => 'Erst testen, dann entscheiden',
+    'pricing_subheadline' => '14 Tage gratis - ohne Kleingedrucktes',
     'pricing_most_popular' => '⭐ BELIEBTESTE WAHL',
     'pricing_per_month' => 'Monat',
     'pricing_currency' => '$',
     
     // Starter Plan
-    'pricing_starter_name' => 'Starter',
-    'pricing_starter_desc' => 'Perfekt zum Testen',
-    'pricing_starter_price' => '47',
+    'pricing_starter_name' => 'Testphase',
+    'pricing_starter_desc' => 'Alle Funktionen freischalten',
+    'pricing_starter_price' => 'GRATIS',
     'pricing_starter_feature1' => '1 Geschäft, 2 Social-Plattformen',
     'pricing_starter_feature2' => '3 Posts pro Woche',
     'pricing_starter_feature3' => 'E-Mail-Support',
     'pricing_cta_start' => 'Gratis-Test starten',
     
     // Growth Plan (Most Popular)
-    'pricing_pro_name' => 'Growth',
-    'pricing_pro_desc' => 'Alles was die meisten Unternehmen brauchen',
-    'pricing_pro_price' => '97',
+    'pricing_pro_name' => 'Professional',
+    'pricing_pro_desc' => 'Nach der Testphase',
+    'pricing_pro_price' => 'Ab 15€',
     'pricing_pro_feature1' => '1 Geschäft, alle Plattformen (LinkedIn, Instagram, Facebook, Blog)',
     'pricing_pro_feature2' => 'Tägliche Posts + wöchentliche Blog-Artikel',
     'pricing_pro_feature3' => 'Prioritäts-Support + monatliches Strategie-Review',
@@ -286,7 +286,7 @@ return [
     // Scale Plan
     'pricing_enterprise_name' => 'Scale',
     'pricing_enterprise_desc' => 'Für größere Operationen',
-    'pricing_enterprise_price' => '197',
+    'pricing_enterprise_price' => 'Individuell',
     'pricing_enterprise_feature1' => 'Mehrere Geschäfte/Marken',
     'pricing_enterprise_feature2' => 'Unbegrenzter Content auf allen Plattformen',
     'pricing_enterprise_feature3' => 'Direkter Zugang zu Martin für individuelle Strategien',
@@ -431,8 +431,8 @@ return [
     'urgency_no_credit_card' => 'Keine Kreditkarte für Demo nötig',
     
     // Trust badges
-    'trust_title' => 'Gebaut von bewährter deutscher Ingenieurskunst',
-    'trust1' => 'Deutsche Ingenieurs-Präzision - Qualität und Zuverlässigkeit, auf die Sie sich verlassen können',
+    'trust_title' => 'Entwickelt von einem erfahrenen Software-Ingenieur',
+    'trust1' => 'Zuverlässig und durchdacht bis ins Detail',
     'trust2' => 'Globale Erfahrung, persönlicher Service - DSGVO-konform, geschäftsfreundlich',
     'trust3' => '20+ Jahre erfolgreiche SaaS-Plattformen entwickelt - deutsche Ingenieursstandards',
     'trust4' => '20+ Jahre Software-Expertise - wir verstehen Geschäftsautomatisierung',
@@ -446,7 +446,7 @@ return [
     'track_record5' => 'Bootstrap-Erfolg - profitabel, stabil und organisch wachsend',
     
     // Guarantee Section
-    'guarantee_headline' => '30-Tage-Ergebnis-Garantie',
+    'guarantee_headline' => '14 Tage gratis testen + 30 Tage Geld-zurück',
     'guarantee_subheadline' => 'Wir sind so überzeugt, dass Sie MindBeamer lieben werden',
     'guarantee_promise' => 'Testen Sie MindBeamer 30 Tage lang. Wenn Sie keine verbesserte Online-Präsenz und mehr Geschäftsanfragen sehen, erstatten wir jeden Cent zurück. Keine Fragen gestellt.',
     'guarantee_point1_title' => 'Risikofreier Test',

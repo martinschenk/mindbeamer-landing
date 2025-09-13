@@ -18,9 +18,9 @@ return [
     'hero_problem_setup' => '"Solo necesito crear algunos posts para esta semana..."',
     'hero_problem_twist' => '3 horas después, 5 posts mediocres que probablemente ni publiques.',
     'hero_problem_repeat' => '¿Te suena familiar?',
-    'hero_solution' => 'Hay una forma mejor.',
+    'hero_solution' => 'Hay una forma más inteligente.',
     'hero_cta_primary' => 'Muéstrame la Mejor Forma →',
-    'hero_cta_secondary' => 'Necesito esto',
+    'hero_cta_secondary' => 'Quiero saber más',
     'week' => 'semana',
     
     // Maria Case Study
@@ -40,10 +40,10 @@ return [
     'maria_benefit4' => 'Cero estrés dominical',
     'maria_result1' => 'A los clientes de María les encanta el contenido consistente y útil.',
     'maria_result2' => 'A María le encantan sus fines de semana libres.',
-    'maria_cta' => 'Quiero lo que tiene María',
+    'maria_cta' => '¡Yo también lo quiero!',
     
     // How It Works Section - Simplified
-    'how_it_works_title' => 'Olvida Todo Lo Que Crees Saber Sobre Redes Sociales',
+    'how_it_works_title' => 'Las redes sociales, sin complicaciones',
     'how_it_works_subtitle' => 'Proceso Simple de 3 Pasos',
     
     'step1_emoji' => '1️⃣',
@@ -60,7 +60,7 @@ return [
     'step2_point3' => 'Aprende a escribir con tu voz (no con voz de robot)',
     
     'step3_emoji' => '3️⃣',
-    'step3_title' => 'El contenido aparece como por arte de magia',
+    'step3_title' => 'Se crea solo - pero tú mandas',
     'step3_point1' => 'Mira tu teléfono: nuevo post ya publicado',
     'step3_point2' => 'No lo escribiste tú, pero suena exactamente como tú',
     'step3_point3' => 'Tus clientes interactúan, tu negocio crece',
@@ -438,7 +438,7 @@ return [
     // Pricing Plans
     'pricing_starter_name' => 'Starter',
     'pricing_starter_desc' => 'Perfecto para probar las aguas',
-    'pricing_starter_price' => '47',
+    'pricing_starter_price' => 'GRATIS',
     'pricing_starter_old_price' => '497€/mes',
     'pricing_starter_savings' => 'Ahorra 248€/mes',
     'pricing_starter_feature1' => '1 negocio, 2 plataformas sociales',
@@ -448,7 +448,7 @@ return [
     
     'pricing_pro_name' => 'Growth',
     'pricing_pro_desc' => 'Todo lo que la mayoría de negocios necesitan',
-    'pricing_pro_price' => '97',
+    'pricing_pro_price' => 'Desde 15€',
     'pricing_pro_old_price' => '997€/mes',
     'pricing_pro_savings' => 'Ahorra 900€/mes',
     'pricing_pro_feature1' => '1 negocio, todas las plataformas (LinkedIn, Instagram, Facebook, Blog)',

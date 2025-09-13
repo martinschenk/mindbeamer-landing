@@ -18,9 +18,9 @@ return [
     'hero_problem_setup' => '"Je dois juste créer quelques posts pour cette semaine..."',
     'hero_problem_twist' => '3 heures plus tard, 5 posts médiocres que vous ne publierez probablement même pas.',
     'hero_problem_repeat' => 'Ça vous parle ?',
-    'hero_solution' => 'Il existe une meilleure façon.',
+    'hero_solution' => 'Il existe une solution plus élégante.',
     'hero_cta_primary' => 'Montrez-moi la Meilleure Façon →',
-    'hero_cta_secondary' => 'J\'ai besoin de ça',
+    'hero_cta_secondary' => 'En savoir plus',
     'week' => 'semaine',
     
     // Maria Case Study
@@ -36,14 +36,14 @@ return [
     'maria_transformation' => 'Maintenant MindBeamer gère tout :',
     'maria_benefit1' => 'La même voix authentique qu\'avant',
     'maria_benefit2' => 'La même passion pour la vie saine',
-    'maria_benefit3' => 'De meilleures idées de posts (l\'IA a beaucoup plus d\'inspiration)',
+    'maria_benefit3' => 'Des idées fraîches et pertinentes (l\'IA suit les tendances)',
     'maria_benefit4' => 'Zéro stress dominical',
     'maria_result1' => 'Les clients de Maria adorent le contenu cohérent et utile.',
     'maria_result2' => 'Maria adore ses week-ends libres.',
-    'maria_cta' => 'Je veux ce que Maria a',
+    'maria_cta' => 'Je veux la même chose pour mon entreprise',
     
     // How It Works Section - Simplified
-    'how_it_works_title' => 'Oubliez Tout Ce Que Vous Croyez Savoir Sur Les Réseaux Sociaux',
+    'how_it_works_title' => 'Les réseaux sociaux en toute simplicité',
     'how_it_works_subtitle' => 'Processus Simple en 3 Étapes',
     
     'step1_emoji' => '1️⃣',
@@ -60,7 +60,7 @@ return [
     'step2_point3' => 'Apprend à écrire avec votre voix (pas une voix de robot)',
     
     'step3_emoji' => '3️⃣',
-    'step3_title' => 'Le contenu apparaît comme par magie',
+    'step3_title' => 'Création automatique - mais vous gardez la main',
     'step3_point1' => 'Regardez votre téléphone : nouveau post mis en ligne',
     'step3_point2' => 'Vous ne l\'avez pas écrit, mais ça sonne exactement comme vous',
     'step3_point3' => 'Vos clients s\'engagent, votre entreprise grandit',
@@ -288,13 +288,13 @@ return [
     // Pricing Beta Plans
     'pricing_starter_desc' => 'Prix beta pour les 100 premiers clients',
     'pricing_starter_old_price' => '497€/mois',
-    'pricing_starter_price' => '249',
+    'pricing_starter_price' => 'GRATUIT',
     'pricing_starter_savings' => 'Économisez 248€/mois',
     'pricing_cta_start' => 'Commencer l\'essai gratuit',
     
     'pricing_pro_desc' => 'Pour entreprises en croissance',
     'pricing_pro_old_price' => '997€/mois',
-    'pricing_pro_price' => '97',
+    'pricing_pro_price' => 'À partir de 15€',
     'pricing_pro_feature1' => 'Contenu illimité sur toutes les plateformes',
     'pricing_pro_feature2' => 'Stratégies de contenu avancées',
     'pricing_pro_feature3' => 'Support prioritaire',

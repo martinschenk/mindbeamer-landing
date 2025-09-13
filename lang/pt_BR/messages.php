@@ -18,9 +18,9 @@ return [
     'hero_problem_setup' => '"Só preciso criar alguns posts para esta semana..."',
     'hero_problem_twist' => '3 horas depois, 5 posts medíocres que você provavelmente nem vai publicar.',
     'hero_problem_repeat' => 'Soa familiar?',
-    'hero_solution' => 'Existe um jeito melhor.',
+    'hero_solution' => 'Tem um jeito mais esperto de fazer isso.',
     'hero_cta_primary' => 'Me Mostre o Jeito Melhor →',
-    'hero_cta_secondary' => 'Eu preciso disso',
+    'hero_cta_secondary' => 'Quero saber mais',
     'week' => 'semana',
     
     // Maria Case Study
@@ -36,14 +36,14 @@ return [
     'maria_transformation' => 'Agora o MindBeamer cuida de tudo:',
     'maria_benefit1' => 'A mesma voz autêntica de antes',
     'maria_benefit2' => 'A mesma paixão por vida saudável',
-    'maria_benefit3' => 'Melhores ideias de posts (IA tem muito mais inspiração)',
+    'maria_benefit3' => 'Ideias fresquinhas que engajam (IA sabe o que bomb a)',
     'maria_benefit4' => 'Zero estresse dominical',
     'maria_result1' => 'Os clientes da Maria adoram o conteúdo consistente e útil.',
     'maria_result2' => 'Maria adora seus fins de semana livres.',
-    'maria_cta' => 'Quero o que a Maria tem',
+    'maria_cta' => 'Quero isso pro meu negócio',
     
     // How It Works Section - Simplified
-    'how_it_works_title' => 'Esqueça Tudo Que Você Pensa Sobre Redes Sociais',
+    'how_it_works_title' => 'Redes sociais sem complicação',
     'how_it_works_subtitle' => 'Processo Simples de 3 Passos',
     
     'step1_emoji' => '1️⃣',
@@ -60,7 +60,7 @@ return [
     'step2_point3' => 'Aprende a escrever na sua voz (não com voz de robô)',
     
     'step3_emoji' => '3️⃣',
-    'step3_title' => 'Conteúdo aparece como mágica',
+    'step3_title' => 'Criação automática - mas você no comando',
     'step3_point1' => 'Olhe seu celular: novo post foi ao ar',
     'step3_point2' => 'Você não escreveu, mas parece exatamente com você',
     'step3_point3' => 'Seus clientes interagem, seu negócio cresce',
@@ -105,7 +105,7 @@ return [
     'advantages_subtitle' => 'Descubra os benefícios que fazem do MindBeamer a escolha mais inteligente para suas necessidades de marketing de conteúdo.',
     
     // Why MindBeamer Stands Out Section
-    'why_stands_out_title' => 'Por Que MindBeamer Supera Todo o Resto',
+    'why_stands_out_title' => 'Compare as opções',
     'why_stands_out_subtitle' => 'Pare de comparar ferramentas de conteúdo. Comece a comparar resultados.',
     
     'vs_hiring_title' => 'vs. Contratar Alguém',
@@ -288,13 +288,13 @@ return [
     // Pricing Beta Plans
     'pricing_starter_desc' => 'Preço beta para os primeiros 100 clientes',
     'pricing_starter_old_price' => 'R$2.497/mês',
-    'pricing_starter_price' => '1.247',
+    'pricing_starter_price' => 'GRÁTIS',
     'pricing_starter_savings' => 'Economize R$1.250/mês',
     'pricing_cta_start' => 'Começar teste grátis',
     
     'pricing_pro_desc' => 'Para negócios em crescimento',
     'pricing_pro_old_price' => 'R$4.997/mês',
-    'pricing_pro_price' => '497',
+    'pricing_pro_price' => 'A partir de R$ 75',
     'pricing_pro_feature1' => 'Conteúdo ilimitado em todas as plataformas',
     'pricing_pro_feature2' => 'Estratégias de conteúdo avançadas',
     'pricing_pro_feature3' => 'Suporte prioritário',

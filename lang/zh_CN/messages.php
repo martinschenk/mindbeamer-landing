@@ -18,9 +18,9 @@ return [
     'hero_problem_setup' => '"我只需要为这周创建一些帖子..."',
     'hero_problem_twist' => '3小时后，5个平庸的帖子，可能都不会发布。',
     'hero_problem_repeat' => '听起来很熟悉？',
-    'hero_solution' => '有更好的方法。',
+    'hero_solution' => '让内容管理更智能、更高效。',
     'hero_cta_primary' => '让我看看更好的方法 →',
-    'hero_cta_secondary' => '我需要这个',
+    'hero_cta_secondary' => '了解详情',
     'week' => '周',
     
     // Maria Case Study
@@ -36,14 +36,14 @@ return [
     'maria_transformation' => '现在MindBeamer处理一切：',
     'maria_benefit1' => '与以前一样真实的声音',
     'maria_benefit2' => '对健康生活的同样热情',
-    'maria_benefit3' => '更好的帖子想法（AI有更多灵感）',
+    'maria_benefit3' => 'AI驱动的热门话题（紧跟市场趋势）',
     'maria_benefit4' => '零周日压力',
     'maria_result1' => '玛丽亚的客户喜欢一致、有用的内容。',
     'maria_result2' => '玛丽亚喜欢她的自由周末。',
-    'maria_cta' => '我想要玛丽亚拥有的',
+    'maria_cta' => '我也要提升效率',
     
     // How It Works Section - Simplified
-    'how_it_works_title' => '忘记您对社交媒体的所有认知',
+    'how_it_works_title' => '社交媒体营销，智能化升级',
     'how_it_works_subtitle' => '简单的3步流程',
     
     'step1_emoji' => '1️⃣',
@@ -60,7 +60,7 @@ return [
     'step2_point3' => '学会用您的语调写作（不是机器人语调）',
     
     'step3_emoji' => '3️⃣',
-    'step3_title' => '内容像魔法一样出现',
+    'step3_title' => '自动创作 - 完全掌控权在您手中',
     'step3_point1' => '查看您的手机：新帖子已上线',
     'step3_point2' => '您没有写，但听起来完全像您',
     'step3_point3' => '您的客户互动，您的业务增长',
@@ -105,7 +105,7 @@ return [
     'advantages_subtitle' => '发现使MindBeamer成为您内容营销需求最明智选择的好处。',
     
     // Why MindBeamer Stands Out Section
-    'why_stands_out_title' => '为什么MindBeamer胜过其他一切',
+    'why_stands_out_title' => '方案对比，一目了然',
     'why_stands_out_subtitle' => '停止比较内容工具。开始比较结果。',
     
     'vs_hiring_title' => 'vs. 雇佣某人',
@@ -278,7 +278,7 @@ return [
     'trust_customer_choice' => '客户选择',
     
     // Pricing Section - Simple & Clear
-    'pricing_headline' => '简单合理的定价',
+    'pricing_headline' => '免费试用，放心选择',
     'pricing_subheadline' => '',
     'pricing_most_popular' => '⭐ 最受欢迎',
     'pricing_per_month' => '月',
@@ -286,7 +286,7 @@ return [
     // Starter Plan
     'pricing_starter_name' => '入门版',
     'pricing_starter_desc' => '适合测试水温',
-    'pricing_starter_price' => '47',
+    'pricing_starter_price' => '免费',
     'pricing_starter_feature1' => '1个企业，2个社交平台',
     'pricing_starter_feature2' => '每周3个帖子',
     'pricing_starter_feature3' => '电子邮件支持',
@@ -295,7 +295,7 @@ return [
     // Growth Plan
     'pricing_pro_name' => '成长版',
     'pricing_pro_desc' => '大多数企业需要的一切',
-    'pricing_pro_price' => '97',
+    'pricing_pro_price' => '¥99/月起',
     'pricing_pro_feature1' => '1个企业，所有平台（LinkedIn、Instagram、Facebook、博客）',
     'pricing_pro_feature2' => '每日帖子+每周博客文章',
     'pricing_pro_feature3' => '优先支持+每月策略审查',

@@ -16,9 +16,9 @@ return [
     'hero_problem_setup' => '"बस जल्दी से अगले हफ्ते के पोस्ट्स तैयार कर लूं..."',
     'hero_problem_twist' => 'तीन घंटे बाद: 7 पोस्ट लिखे, एडिट किए, डिलीट किए।',
     'hero_problem_repeat' => 'हर। एक। हफ्ते।',
-    'hero_solution' => 'अपने वीकेंड वापस पाने का समय आ गया है।',
+    'hero_solution' => 'Smart work करने का समय आ गया है।',
     'hero_cta_primary' => 'दिखाएं यह कैसे काम करता है',
-    'hero_cta_secondary' => 'मुझे यह चाहिए',
+    'hero_cta_secondary' => 'और जानें',
     'week' => 'हफ्ता',
     
     // Maria Story Section
@@ -34,14 +34,14 @@ return [
     'maria_transformation' => 'अब MindBeamer सब कुछ संभालता है:',
     'maria_benefit1' => 'वही प्रामाणिक आवाज जैसे पहले',
     'maria_benefit2' => 'स्वस्थ जीवन के लिए वही जुनून',
-    'maria_benefit3' => 'बेहतर पोस्ट आइडियाज (AI के पास कहीं ज्यादा प्रेरणा है)',
+    'maria_benefit3' => 'Trending topics के साथ fresh content (AI जानता है क्या चल रहा है)',
     'maria_benefit4' => 'रविवार का कोई तनाव नहीं',
     'maria_result1' => 'मारिया के ग्राहक लगातार, मददगार कंटेंट पसंद करते हैं।',
     'maria_result2' => 'मारिया को अपने फ्री वीकेंड्स पसंद हैं।',
-    'maria_cta' => 'मुझे वो चाहिए जो मारिया के पास है',
+    'maria_cta' => 'मेरे business के लिए भी चाहिए',
     
     // How It Works Section - Simplified
-    'how_it_works_title' => 'सोशल मीडिया के बारे में जो कुछ भी आपको लगता है, भूल जाइए',
+    'how_it_works_title' => 'Social Media marketing, अब आसान तरीके से',
     'how_it_works_subtitle' => 'सरल 3-स्टेप प्रक्रिया',
     
     'step1_emoji' => '1️⃣',
@@ -58,7 +58,7 @@ return [
     'step2_point3' => 'आपकी आवाज में लिखना सीखता है (किसी रोबोट की आवाज में नहीं)',
     
     'step3_emoji' => '3️⃣',
-    'step3_title' => 'कंटेंट जादू की तरह दिखाई देता है',
+    'step3_title' => 'Automatic creation - लेकिन control आपके हाथ में',
     'step3_point1' => 'अपना फोन चेक करें: नया पोस्ट लाइव हो गया',
     'step3_point2' => 'आपने इसे नहीं लिखा, लेकिन यह बिल्कुल आपकी तरह लगता है',
     'step3_point3' => 'आपके ग्राहक एंगेज करते हैं, आपका बिजनेस बढ़ता है',
@@ -285,7 +285,7 @@ return [
     // Starter Plan
     'pricing_starter_name' => 'स्टार्टर',
     'pricing_starter_desc' => 'पानी परखने के लिए परफेक्ट',
-    'pricing_starter_price' => '47',
+    'pricing_starter_price' => 'मुफ्त',
     'pricing_starter_feature1' => '1 बिजनेस, 2 सोशल प्लेटफॉर्म्स',
     'pricing_starter_feature2' => 'हफ्ते में 3 पोस्ट्स',
     'pricing_starter_feature3' => 'ईमेल सपोर्ट',
@@ -294,7 +294,7 @@ return [
     // Growth Plan
     'pricing_pro_name' => 'ग्रोथ',
     'pricing_pro_desc' => 'ज्यादातर बिजनेसेस को जो चाहिए',
-    'pricing_pro_price' => '97',
+    'pricing_pro_price' => 'केवल ₹1,299/माह से',
     'pricing_pro_feature1' => '1 बिजनेस, सभी प्लेटफॉर्म्स (लिंक्डइन, इंस्टाग्राम, फेसबुक, ब्लॉग)',
     'pricing_pro_feature2' => 'रोज पोस्ट्स + साप्ताहिक ब्लॉग आर्टिकल्स',
     'pricing_pro_feature3' => 'प्राथमिकता सपोर्ट + मासिक स्ट्रैटेजी रिव्यू',

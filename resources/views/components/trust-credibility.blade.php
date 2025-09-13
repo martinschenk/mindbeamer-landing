@@ -62,8 +62,8 @@
                 <!-- Stats Grid -->
                 <div class="grid grid-cols-2 gap-6 mb-8">
                     <div class="bg-white rounded-lg p-6 text-center shadow-md">
-                        <div class="text-4xl font-bold text-blue-700 mb-2">1.4M+</div>
-                        <p class="text-gray-600 text-sm">Websites Built</p>
+                        <div class="text-4xl font-bold text-blue-700 mb-2">Many</div>
+                        <p class="text-gray-600 text-sm">Successful Projects</p>
                     </div>
                     <div class="bg-white rounded-lg p-6 text-center shadow-md">
                         <div class="text-4xl font-bold text-blue-700 mb-2">20+</div>
@@ -74,7 +74,7 @@
                 <!-- Experience Showcase Placeholder -->
                 <div class="mb-8 bg-gray-200 rounded-lg p-8 text-center">
                     <p class="text-gray-600 font-medium">
-                        [EXPERIENCE-SHOWCASE]: Visual representation of 20+ years of software development experience, showcasing successful projects and German engineering excellence.
+                        [EXPERIENCE-SHOWCASE]: Visual representation of 20+ years of software development experience, showcasing successful projects and professional standards.
                     </p>
                 </div>
                 

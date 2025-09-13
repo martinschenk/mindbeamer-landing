@@ -16,9 +16,9 @@ return [
     'hero_problem_setup' => '"Just gonna quickly prep next week\'s posts..."',
     'hero_problem_twist' => 'Three hours later: 7 posts written, edited, deleted.',
     'hero_problem_repeat' => 'Every. Single. Week.',
-    'hero_solution' => 'Time to get your weekends back.',
+    'hero_solution' => 'There\'s a better way to handle your content.',
     'hero_cta_primary' => 'Show me how this works',
-    'hero_cta_secondary' => 'I need this',
+    'hero_cta_secondary' => 'Learn more',
     'week' => 'week',
     
     // Maria Story Section (NEW)
@@ -34,14 +34,14 @@ return [
     'maria_transformation' => 'Now MindBeamer handles everything:',
     'maria_benefit1' => 'Same authentic voice as before',
     'maria_benefit2' => 'Same passion for healthy living',
-    'maria_benefit3' => 'Better post ideas (AI has way more inspiration)',
+    'maria_benefit3' => 'Fresh content ideas from AI-powered research',
     'maria_benefit4' => 'Zero Sunday stress',
     'maria_result1' => 'Maria\'s customers love the consistent, helpful content.',
     'maria_result2' => 'Maria loves her free weekends.',
-    'maria_cta' => 'I want what Maria has',
+    'maria_cta' => 'See how we can help your business',
     
     // How It Works Section - Simplified
-    'how_it_works_title' => 'Forget Everything You Think You Know About Social Media',
+    'how_it_works_title' => 'A Smarter Approach to Content Creation',
     'how_it_works_subtitle' => 'Simple 3-Step Process',
     
     'step1_emoji' => '1️⃣',
@@ -58,13 +58,13 @@ return [
     'step2_point3' => 'Learns to write in your voice (not some robot voice)',
     
     'step3_emoji' => '3️⃣',
-    'step3_title' => 'Content appears like magic',
+    'step3_title' => 'Content is created automatically - always under your control',
     'step3_point1' => 'Check your phone: new post went live',
     'step3_point2' => 'You didn\'t write it, but it sounds exactly like you',
     'step3_point3' => 'Your customers engage, your business grows',
-    'step3_note' => '(You can review everything first, or just let it run - your choice)',
+    'step3_note' => '(Review and edit every post before publishing, or let it run automatically - YOUR choice)',
     
-    'how_it_works_cta' => 'This sounds too good to be true - show me',
+    'how_it_works_cta' => 'See a demonstration',
     
     // Features Section - Business Types
     'features_title' => 'Perfect for Your Business Type',
@@ -103,11 +103,11 @@ return [
     'advantages_subtitle' => 'Discover the benefits that make MindBeamer the smartest choice for your content marketing needs.',
     
     // Why MindBeamer Stands Out Section
-    'why_stands_out_title' => 'Why MindBeamer Beats Everything Else',
+    'why_stands_out_title' => 'Compare Your Options',
     'why_stands_out_subtitle' => 'Stop comparing content tools. Start comparing results.',
     
     'vs_hiring_title' => 'vs. Hiring Someone',
-    'vs_hiring_description' => 'Marketing hire: $3K-8K/month + they don\'t know your business. MindBeamer: From $297/month, learns your business deeply.',
+    'vs_hiring_description' => 'Marketing hire: Significant monthly cost. MindBeamer: Affordable subscription starting at $15/month.',
     
     'vs_diy_title' => 'vs. DIY Content Creation',
     'vs_diy_description' => 'DIY: 15-20 hours/week + constant creative pressure. MindBeamer: 10 minutes setup, then it runs itself.',
@@ -118,7 +118,7 @@ return [
     'vs_agencies_title' => 'vs. Social Media Agencies',
     'vs_agencies_description' => 'Agencies: Expensive, generic strategies, long contracts. MindBeamer: Business-specific content, affordable, cancel anytime.',
     
-    'roi_makes_sense' => 'ROI That Makes Sense: Most businesses see their investment returned within 30-60 days through increased leads and visibility.',
+    'roi_makes_sense' => 'Many of our customers report positive results and increased online visibility.',
     
     // Problem Section - Psychological Pain Points
     'problem_headline' => 'Does This Sound Like You?',
@@ -158,7 +158,7 @@ return [
     'proof_intro' => 'Let me show you Startups Españolas - my Spanish startup magazine that runs 100% on autopilot with MindBeamer.',
     'proof_what_is_title' => 'What exactly is Startups Españolas?',
     'proof_what_is_desc' => 'It\'s a complete online magazine about Spanish startups. A WordPress blog where I publish 5-6 articles EVERY SINGLE DAY about startup news, founder stories, business strategies, and startup ideas. Plus, all the social media channels that promote this content.',
-    'proof_running_time' => 'Here\'s the crazy part: It\'s been running completely automatically for 12 months. I haven\'t written a single article myself.',
+    'proof_running_time' => 'It\'s been running automatically for months. Check the timestamps - new content every day, created by MindBeamer.',
     
     'proof_how_title' => 'How MindBeamer Makes This Magic Happen:',
     'proof_how_wordpress' => '📝 WordPress Blog: 5-6 full articles daily across 6 categories (startup profiles, strategies, ideas, news, opinions, analysis)',
@@ -168,10 +168,10 @@ return [
     'proof_how_facebook' => '👥 Facebook: Community-focused posts that spark discussions about entrepreneurship',
     
     'proof_results_title' => 'The Real Numbers (From Startups Españolas, Not MindBeamer):',
-    'proof_stat1' => '69,000 blog visitors every month (started from zero)',
-    'proof_stat2' => '1,000+ Twitter followers (growing daily)',
+    'proof_stat1' => 'Consistent blog traffic from organic search',
+    'proof_stat2' => 'Growing social media following across platforms',
     'proof_stat3' => '200+ LinkedIn connections (1-2 new ones every day)',
-    'proof_stat4' => 'Top Google rankings for "Spanish Startups"',
+    'proof_stat4' => 'Strong search engine visibility',
     
     'proof_links_title' => 'See For Yourself:',
     'proof_link1_text' => '🌐 Live Blog',
@@ -230,12 +230,12 @@ return [
     'founder_headline' => 'Built by a Proven Software Engineer',
     'founder_subtitle' => 'Martin Schenk - German Engineer, 20+ Years Experience',
     'founder_track_record' => 'Track Record:',
-    'founder_track_record_text' => 'Built and scaled web platform that powered 1.4M+ websites worldwide.',
+    'founder_track_record_text' => 'Successfully built and scaled multiple web platforms over 20 years.',
     'founder_expertise' => 'Modern Expertise:',
     'founder_expertise_text' => 'AI automation, Laravel development, scalable SaaS architecture.',
     'founder_why' => 'Why MindBeamer:',
     'founder_why_text' => '"After 20 years building web platforms, I saw businesses struggling with content creation. So I built the solution I wish existed - truly autonomous content generation."',
-    'founder_credential1' => '🇩🇪 Based in Spain, German Engineering Standards',
+    'founder_credential1' => '📍 Based in Spain, serving businesses worldwide',
     'founder_credential2' => '🏗️ Laravel + AI Technology Expert',
     'founder_credential3' => '📈 Proven Scale: 1.4M+ websites',
     'founder_profile_link' => 'View Full Developer Profile →',
@@ -276,44 +276,44 @@ return [
     'trust_customer_choice' => 'Customer Choice',
     
     // Pricing Section - Simple & Clear
-    'pricing_headline' => 'Simple Pricing That Makes Sense',
-    'pricing_subheadline' => '',
+    'pricing_headline' => 'Start Your Free Trial Today',
+    'pricing_subheadline' => 'No credit card required - See real results first',
     'pricing_most_popular' => '⭐ MOST POPULAR',
     'pricing_per_month' => 'month',
     'pricing_currency' => '$',
     
-    // Starter Plan
-    'pricing_starter_name' => 'Starter',
-    'pricing_starter_desc' => 'Perfect for testing the waters',
-    'pricing_starter_price' => '47',
-    'pricing_starter_feature1' => '1 business, 2 social platforms',
-    'pricing_starter_feature2' => '3 posts per week',
-    'pricing_starter_feature3' => 'Email support',
-    'pricing_cta_start' => 'Start my free trial',
+    // Free Trial Plan
+    'pricing_starter_name' => 'Free Trial',
+    'pricing_starter_desc' => 'Test everything risk-free',
+    'pricing_starter_price' => 'FREE',
+    'pricing_starter_feature1' => 'All features included',
+    'pricing_starter_feature2' => 'Personal onboarding session',
+    'pricing_starter_feature3' => 'Full content control',
+    'pricing_cta_start' => 'Start 14-Day Free Trial',
     
-    // Growth Plan
-    'pricing_pro_name' => 'Growth',
-    'pricing_pro_desc' => 'Everything most businesses need',
-    'pricing_pro_price' => '97',
-    'pricing_pro_feature1' => '1 business, all platforms (LinkedIn, Instagram, Facebook, Blog)',
-    'pricing_pro_feature2' => 'Daily posts + weekly blog articles',
-    'pricing_pro_feature3' => 'Priority support + monthly strategy review',
-    'pricing_cta_popular' => 'Start my free trial',
+    // Professional Plan
+    'pricing_pro_name' => 'Professional',
+    'pricing_pro_desc' => 'After your trial',
+    'pricing_pro_price' => 'From $15',
+    'pricing_pro_feature1' => 'All social platforms',
+    'pricing_pro_feature2' => 'Daily automated posts',
+    'pricing_pro_feature3' => 'Review & approve mode',
+    'pricing_cta_popular' => 'View Plans After Trial',
     
-    // Scale Plan
-    'pricing_enterprise_name' => 'Scale',
-    'pricing_enterprise_desc' => 'For bigger operations',
-    'pricing_enterprise_price' => '197',
+    // Enterprise Plan
+    'pricing_enterprise_name' => 'Enterprise',
+    'pricing_enterprise_desc' => 'Multiple businesses',
+    'pricing_enterprise_price' => 'Custom',
     'pricing_enterprise_feature1' => 'Multiple businesses/brands',
-    'pricing_enterprise_feature2' => 'Unlimited content across all platforms',
-    'pricing_enterprise_feature3' => 'Direct access to Martin for custom strategies',
-    'pricing_cta_contact' => 'Start my free trial',
+    'pricing_enterprise_feature2' => 'Unlimited content',
+    'pricing_enterprise_feature3' => 'Personal support',
+    'pricing_cta_contact' => 'Contact Us',
     
     'pricing_includes_title' => 'All plans include:',
     'pricing_include1' => '✅ 14-day free trial (no credit card needed)',
     'pricing_include2' => '✅ Cancel anytime',
     'pricing_include3' => '✅ Full content approval control',
-    'pricing_include4' => '✅ If it doesn\'t save you 15+ hours/week - money back',
+    'pricing_include4' => '✅ If you\'re not satisfied - money back guarantee',
     
     'pricing_beta_note' => 'Beta pricing ends soon - Current pricing locked in for early adopters',
     
@@ -345,6 +345,9 @@ return [
     'objection5_q' => '"I\'m not comfortable with technology"',
     'objection5_a' => 'After the initial 10-minute setup call, you don\'t touch any technology. Posts just appear. Think of it like hiring a social media person, except they never take vacation or get sick.',
     
+    'objection6_q' => '"Will it post without my permission?"',
+    'objection6_a' => 'Never! You decide: Review everything first OR automate after you trust it. Switch between modes anytime. It\'s YOUR business, YOUR control.',
+    
     // FAQ Section
     'faq_title' => 'Honest Answers to Your Questions',
     
@@ -352,10 +355,10 @@ return [
     'faq1_answer' => 'We\'re currently in beta phase. You\'ll be among our first 100 customers, which means you get the best pricing and direct access to me (the founder) for support and feature requests.',
     
     'faq2_question' => 'Is this really working autonomously?',
-    'faq2_answer' => 'Yes! Check out Startups Españolas - it\'s been running 100% autonomously for 90+ days. New blog posts every 2-3 days, daily social media posts across 5 platforms, zero manual intervention.',
+    'faq2_answer' => 'Yes! Check out Startups Españolas - new content is published automatically every day. See the timestamps yourself.',
     
     'faq3_question' => 'Why should I trust a beta product?',
-    'faq3_answer' => 'Because you can see it working live! Plus, I\'ve built and scaled software that powered 1.4M+ websites. This isn\'t my first rodeo - I know how to build reliable, scalable systems.',
+    'faq3_answer' => 'Because you can see it working live! Plus, I have 20+ years experience building reliable software systems.',
     
     'faq4_question' => 'What happens if you change the pricing later?',
     'faq4_answer' => 'Beta customers keep their pricing forever. When we hit 100 customers, prices go to full rate, but you\'re grandfathered in at your beta price.',
@@ -376,7 +379,7 @@ return [
     'final_cta_point1' => 'See sample posts created for your industry',
     'final_cta_point2' => 'Watch how it finds topics you\'d never think of',
     'final_cta_point3' => 'No pressure, no credit card needed',
-    'final_cta_point4' => 'If you don\'t see how it saves you 15+ hours/week, just walk away',
+    'final_cta_point4' => 'No obligation - see if it\'s right for your business',
     'final_cta_primary' => 'Yes! Show me how this works for my business',
     'final_cta_secondary' => 'I want to see the Startups Españolas example first',
     'final_cta_personal' => 'Built by Martin Schenk - 20+ years building software for businesses',
@@ -475,24 +478,24 @@ return [
     'urgency_no_credit_card' => 'No credit card required for demo',
     
     // Trust & Credibility
-    'trust_title' => 'Built by Proven German Engineering',
-    'trust1' => 'German-engineered precision - quality and reliability you can trust',
+    'trust_title' => 'Built by an Experienced Software Engineer',
+    'trust1' => 'Built with precision and reliability in mind',
     'trust2' => 'Global experience, personal service - GDPR compliant, business-friendly',
-    'trust3' => 'Proven track record - 20+ years building successful SaaS platforms',
+    'trust3' => '20+ years experience building successful software platforms',
     'trust4' => '20+ years software expertise - we understand business automation',
     'trust5' => 'Cancel anytime - no long contracts, no hidden fees',
     
     'track_record_title' => 'Track Record You Can Trust',
-    'track_record1' => '1.4M+ successful deployments across multiple platforms',
+    'track_record1' => 'Multiple successful platform launches',
     'track_record2' => '20+ years of successful software development',
-    'track_record3' => 'German engineering standards applied to every feature',
+    'track_record3' => 'Professional standards applied to every feature',
     'track_record4' => 'Entrepreneur-built - we understand business challenges firsthand',
     'track_record5' => 'Bootstrap success - profitable, stable, and growing organically',
     
     // Guarantee Section
-    'guarantee_headline' => '30-Day Results Guarantee',
+    'guarantee_headline' => '14-Day Free Trial + 30-Day Money Back',
     'guarantee_subheadline' => 'We\'re so confident you\'ll love MindBeamer',
-    'guarantee_promise' => 'Try MindBeamer for 30 days. If you don\'t see improved online presence and more business inquiries, we\'ll refund every penny. No questions asked.',
+    'guarantee_promise' => 'Try MindBeamer free for 14 days. Then if you\'re not satisfied within 30 days of payment, get a full refund.',
     'guarantee_point1_title' => 'Risk-Free Trial',
     'guarantee_point1_desc' => 'Full access to all features for 30 days',
     'guarantee_point2_title' => 'No Questions Asked',
@@ -502,7 +505,7 @@ return [
     'guarantee_point4_title' => 'Keep Your Content',
     'guarantee_point4_desc' => 'All content created is yours forever',
     'guarantee_risk_title' => 'Why can we make this guarantee?',
-    'guarantee_risk_desc' => 'Because consistent, professional content always improves business results. Your expertise deserves to be seen - MindBeamer makes sure it is.',
+    'guarantee_risk_desc' => 'We\'re confident you\'ll love the time savings and professional content.',
     'guarantee_cta' => 'Start Risk-Free Trial',
     'guarantee_disclaimer' => 'Terms and conditions apply',
     'guarantee_trusted_by' => 'Trusted by businesses worldwide',
