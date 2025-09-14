@@ -1,8 +1,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="@yield('meta_description', __('messages.meta_description', __('messages.hero_subtitle')))">
-    <meta name="keywords" content="@yield('meta_keywords', __('messages.meta_keywords', 'ai content generator, automated blog writing, social media automation, content creation tool'))">
+    <meta name="description" content="@yield('meta_description', __('messages.meta_description'))">
+    <meta name="keywords" content="@yield('meta_keywords', __('messages.meta_keywords'))">
     {{-- Google Search Console Verification - TODO: Add your verification code --}}
     {{-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE"> --}}
     {{-- SEO Essentials (canonical, hreflang, OG, Twitter) --}}
@@ -19,7 +19,7 @@
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
     <meta name="theme-color" content="#9F7AEA">
     
-    <title>@yield('title', __('messages.meta_title', 'MindBeamer - AI Content Automation'))</title>
+    <title>@yield('title', __('messages.meta_title'))</title>
     
     <!-- Vite Assets -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])

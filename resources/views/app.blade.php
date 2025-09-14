@@ -6,21 +6,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     {{-- SEO Meta Tags - Server-side rendered --}}
-    <title>@yield('title', __('messages.meta_title', 'MindBeamer - Smart Content Automation for Your Business'))</title>
-    <meta name="description" content="@yield('description', __('messages.meta_description', 'Smart content automation for your business. Create and publish professional content automatically. Free 14-day trial.'))">
+    <title>@yield('title', __('messages.meta_title'))</title>
+    <meta name="description" content="@yield('description', __('messages.meta_description'))">
     
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('og_title', __('messages.meta_title', 'MindBeamer - Smart Content Automation'))">
-    <meta property="og:description" content="@yield('og_description', __('messages.meta_description', 'Smart content automation for your business. Free 14-day trial.'))">
+    <meta property="og:title" content="@yield('og_title', __('messages.meta_title'))">
+    <meta property="og:description" content="@yield('og_description', __('messages.meta_description'))">
     <meta property="og:image" content="{{ asset('images/og-image.jpg') }}">
     
     {{-- Twitter --}}
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
-    <meta property="twitter:title" content="@yield('twitter_title', __('messages.meta_title', 'MindBeamer - Smart Content Automation'))">
-    <meta property="twitter:description" content="@yield('twitter_description', __('messages.meta_description', 'Smart content automation. Free 14-day trial.'))">
+    <meta property="twitter:title" content="@yield('twitter_title', __('messages.meta_title'))">
+    <meta property="twitter:description" content="@yield('twitter_description', __('messages.meta_description'))">
     <meta property="twitter:image" content="{{ asset('images/twitter-card.jpg') }}">
     
     {{-- Canonical URL --}}

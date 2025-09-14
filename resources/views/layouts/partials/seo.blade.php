@@ -84,7 +84,7 @@
 <!-- Open Graph -->
 <meta property="og:title"
       content="@yield('og_title', trim(View::hasSection('title') ? View::yieldContent('title') : 'MindBeamer'))">
-<meta property="og:description" content="@yield('og_description', __('messages.meta_description', __('messages.hero_subtitle')))">
+<meta property="og:description" content="@yield('og_description', __('messages.meta_description'))">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ $canonical }}">
 <meta property="og:site_name" content="MindBeamer">
@@ -95,5 +95,5 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title"
       content="@yield('twitter_title', trim(View::hasSection('title') ? View::yieldContent('title') : 'MindBeamer'))">
-<meta name="twitter:description" content="@yield('twitter_description', __('messages.meta_description', __('messages.hero_subtitle')))">
+<meta name="twitter:description" content="@yield('twitter_description', __('messages.meta_description'))">
 <meta name="twitter:image" content="@yield('twitter_image', asset('images/og-default.jpg'))">
