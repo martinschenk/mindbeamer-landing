@@ -120,7 +120,9 @@ class GenerateSitemap extends Command
         // Add hreflang links for all languages
         foreach ($locales as $locale) {
             $hreflangCode = $hreflangMap[$locale] ?? $locale;
-            $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $hreflangCode . '" href="' . e($baseUrl . '/' . $locale) . '" />';
+            // English points to root domain (SEO strategy: root = English)
+            $hreflangUrl = ($locale === 'en') ? $baseUrl : $baseUrl . '/' . $locale;
+            $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $hreflangCode . '" href="' . e($hreflangUrl) . '" />';
         }
         $xml[] = '    <xhtml:link rel="alternate" hreflang="x-default" href="' . e($baseUrl) . '" />';
         
@@ -138,6 +140,12 @@ class GenerateSitemap extends Command
 
         foreach ($pageKeys as $slugPart) {
             foreach ($locales as $locale) {
+                // Skip English homepage as it's already covered by root domain
+                // This prevents duplicate content in sitemap
+                if ($locale === 'en' && $slugPart === '') {
+                    continue;
+                }
+
                 $slug = $slugTranslations[$slugPart][$locale] ?? $slugPart;
                 $loc = rtrim($baseUrl, '/') . '/' . $locale . ($slug ? '/' . $slug : '');
 
@@ -153,7 +161,12 @@ class GenerateSitemap extends Command
                 // Alternate links for the same route in all locales
                 foreach ($locales as $altLocale) {
                     $altSlug = $slugTranslations[$slugPart][$altLocale] ?? $slugPart;
-                    $altUrl = rtrim($baseUrl, '/') . '/' . $altLocale . ($altSlug ? '/' . $altSlug : '');
+                    // For English homepage, use root domain (SEO strategy)
+                    if ($altLocale === 'en' && $slugPart === '') {
+                        $altUrl = $baseUrl;
+                    } else {
+                        $altUrl = rtrim($baseUrl, '/') . '/' . $altLocale . ($altSlug ? '/' . $altSlug : '');
+                    }
                     $hreflangCode = $hreflangMap[$altLocale] ?? $altLocale;
                     $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $hreflangCode . '" href="' . e(
                             $altUrl,

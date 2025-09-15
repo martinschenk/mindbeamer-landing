@@ -24,7 +24,14 @@
     <meta property="twitter:image" content="{{ asset('images/twitter-card.jpg') }}">
     
     {{-- Canonical URL --}}
-    <link rel="canonical" href="{{ url()->current() }}">
+    @php
+        // For English pages accessed via /en, canonical should point to root domain
+        // This prevents duplicate content issues (SEO best practice)
+        $canonicalUrl = (app()->getLocale() === 'en' && request()->is('en') && !request()->is('en/*'))
+            ? url('/')
+            : url()->current();
+    @endphp
+    <link rel="canonical" href="{{ $canonicalUrl }}">
     
     {{-- Hreflang tags for language versions --}}
     <link rel="alternate" hreflang="x-default" href="{{ url('/') }}">
