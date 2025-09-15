@@ -64,12 +64,12 @@ const iconSize = computed(() => {
 
 .logo-text {
     font-size: 42px;
-    font-weight: 300;
+    font-weight: 300 !important;
     letter-spacing: 0.05em;
     margin: 0;
     line-height: 1;
     transform: translateY(-2px); /* Optical alignment */
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 /* Size Variations */
