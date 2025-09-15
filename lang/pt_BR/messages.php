@@ -135,7 +135,33 @@ return [
     
     'feature4_title' => 'Sua Voz, Seu Estilo',
     'feature4_description' => 'MindBeamer aprende como você fala, seus valores, o que te diferencia. O conteúdo soa como você, não como um robô.',
-    
+
+    'problem_pain1_emoji' => '💭',
+    'problem_pain1_title' => '"O que eu deveria postar?"',
+    'problem_pain1_desc' => 'Você olha para a tela em branco por uma hora. Sua mente fica completamente vazia. Você conhece seu negócio por dentro e por fora, mas de alguma forma não consegue pensar em nada interessante para dizer.',
+
+    'problem_pain2_emoji' => '😰',
+    'problem_pain2_title' => '"Isso parece muito estúpido..."',
+    'problem_pain2_desc' => 'Você escreve algo, lê de volta, apaga. Tenta de novo. Apaga de novo. Tudo parece propaganda ruim ou ostentação.',
+
+    'problem_pain3_emoji' => '📱',
+    'problem_pain3_title' => '"Todo mundo posta tão profissionalmente"',
+    'problem_pain3_desc' => 'Você rola pelos feeds dos concorrentes. Os posts deles parecem caros, polidos. Você sente que suas fotos de celular e legendas básicas parecem amadoras.',
+
+    'problem_pain4_emoji' => '⏰',
+    'problem_pain4_title' => '"Droga, esqueci de postar de novo"',
+    'problem_pain4_desc' => 'Semana passada: 0 posts. Semana anterior: 0 posts. Seus clientes provavelmente pensam que você faliu. Enquanto isso, os concorrentes estão postando diariamente.',
+
+    'problem_pain5_emoji' => '🎯',
+    'problem_pain5_title' => '"Quem se importa com minhas coisas mesmo?"',
+    'problem_pain5_desc' => 'Você faz ótimos produtos, fornece excelente serviço. Mas online? Você não tem ideia do que as pessoas realmente querem ouvir.',
+
+    'problem_pain6_emoji' => '📈',
+    'problem_pain6_title' => '"Não tenho tempo para essas coisas de marketing"',
+    'problem_pain6_desc' => 'Você está administrando um negócio. Clientes, fornecedores, contabilidade, operações. Quando exatamente você deveria se tornar um criador de conteúdo também?',
+
+    'problem_empathy' => 'Nós entendemos totalmente. É exatamente por isso que construímos o MindBeamer.',
+
     'feature5_title' => 'Multi-Plataforma Inteligente',
     'feature5_description' => 'Um tema, vários formatos. Post profissional no LinkedIn, story visual no Instagram, artigo SEO no seu blog.',
     
@@ -143,49 +169,77 @@ return [
     'feature6_description' => 'Veja qual conteúdo traz mais clientes. MindBeamer aprende e melhora, criando mais do que funciona.',
     
     // Social Proof Section with Startups Españolas
-    'proof_headline' => 'Veja MindBeamer Em Ação AGORA MESMO',
-    'proof_subheadline' => 'Não confie em demos gravadas. Veja o sistema funcionando ao vivo.',
-    'proof_live_badge' => '🔴 AO VIVO',
-    'proof_startups_espanolas_title' => 'Startups Españolas',
-    'proof_what_is' => 'O Que é Startups Españolas?',
-    'proof_what_is_desc' => 'Um projeto demo real que o MindBeamer gerencia completamente sozinho há 90+ dias. Cobre o ecossistema de startups espanhol com conteúdo diário em 5 plataformas.',
-    'proof_how_powered' => 'Como o MindBeamer Faz Isso?',
-    'proof_how_powered_desc' => 'MindBeamer pesquisa, escreve, cria imagens e publica automaticamente. Zero intervenção humana. 100% piloto automático.',
-    'proof_see_yourself' => 'Veja Você Mesmo:',
-    'proof_platforms_headline' => 'Clique em Qualquer Plataforma Para Ver o Conteúdo AO VIVO:',
-    
-    // Platform-specific descriptions
-    'proof_platform_blog' => '📝 Blog WordPress',
-    'proof_how_wordpress' => '5-6 artigos completos diários em 6 categorias. SEO otimizado, com imagens, formatado - tudo automático.',
-    'proof_view_blog' => 'Ver Blog ao Vivo →',
-    
-    'proof_platform_linkedin' => '💼 LinkedIn',
-    'proof_how_linkedin' => 'Posts profissionais diários sobre startups, tecnologia, inovação. Gera engajamento B2B real.',
-    'proof_view_linkedin' => 'Ver LinkedIn →',
-    
-    'proof_platform_instagram' => '📸 Instagram',
-    'proof_how_instagram' => 'Stories, carrosséis, posts - conteúdo visual diário que constrói comunidade.',
-    'proof_view_instagram' => 'Ver Instagram →',
-    
-    'proof_platform_facebook' => '📘 Facebook',
-    'proof_how_facebook' => 'Posts que geram discussão, compartilham notícias, constroem audiência.',
-    'proof_view_facebook' => 'Ver Facebook →',
-    
-    'proof_platform_twitter' => '🐦 Twitter/X',
-    'proof_how_twitter' => 'Atualizações rápidas, notícias em tempo real, engajamento com a comunidade tech.',
-    'proof_view_twitter' => 'Ver Twitter →',
-    
-    'proof_bottom_message' => 'Tudo isso funciona 24/7 sem nenhuma pessoa envolvida. Imagine isso para o SEU negócio.',
-    
-    // Stats
-    'proof_stat1_number' => '150+',
-    'proof_stat1_label' => 'Artigos Publicados',
-    'proof_stat2_number' => '500+',
-    'proof_stat2_label' => 'Posts Sociais',
-    'proof_stat3_number' => '90+',
-    'proof_stat3_label' => 'Dias Autônomo',
-    'proof_stat4_number' => '0',
-    'proof_stat4_label' => 'Horas de Trabalho Manual',
+    'proof_headline' => 'Não Acredite Apenas em Palavras - Veja Funcionando Ao Vivo',
+    'proof_intro' => 'Deixe-me mostrar o Startups Españolas - minha revista espanhola de startups que funciona 100% no piloto automático com MindBeamer.',
+    'proof_what_is_title' => 'O que exatamente é Startups Españolas?',
+    'proof_what_is_desc' => 'É uma revista online completa sobre startups espanholas. Um blog WordPress onde publico 5-6 artigos TODOS OS DIAS sobre notícias de startups, histórias de fundadores, estratégias de negócios e ideias de startups. Além disso, todos os canais de mídia social que promovem esse conteúdo.',
+    'proof_running_time' => 'Está funcionando automaticamente há meses. Verifique os timestamps - novo conteúdo todos os dias, criado pelo MindBeamer.',
+
+    'proof_how_title' => 'Como o MindBeamer Faz Essa Mágica Acontecer:',
+    'proof_how_wordpress' => '📝 Blog WordPress: 5-6 artigos completos diários em 6 categorias (perfis de startups, estratégias, ideias, notícias, opiniões, análises)',
+    'proof_how_linkedin' => '💼 LinkedIn: Cada artigo se transforma em posts B2B condensados perfeitos para executivos',
+    'proof_how_instagram' => '📸 Instagram: Artigos viram carrosséis de 6-8 imagens com sobreposição de texto que contam a história visualmente',
+    'proof_how_twitter' => '🐦 Twitter: Cria "hilos" (threads) - 6 tweets conectados que constroem engajamento',
+    'proof_how_facebook' => '👥 Facebook: Posts focados na comunidade que geram discussões sobre empreendedorismo',
+
+    'proof_results_title' => 'Os Números Reais (Do Startups Españolas, Não do MindBeamer):',
+    'proof_stat1' => 'Tráfego consistente no blog de busca orgânica',
+    'proof_stat2' => 'Seguidores crescentes nas mídias sociais em todas as plataformas',
+    'proof_stat3' => '200+ conexões no LinkedIn (1-2 novas todos os dias)',
+    'proof_stat4' => 'Forte visibilidade nos mecanismos de busca',
+
+    'proof_links_title' => 'Veja Por Si Mesmo:',
+    'proof_link1_text' => '🌐 Blog Ao Vivo',
+    'proof_link1_desc' => 'Confira os posts de hoje',
+    'proof_link1_url' => 'https://startups-espanolas.es',
+    'proof_link2_text' => '🐦 Twitter',
+    'proof_link2_desc' => '1000+ seguidores, conteúdo diário',
+    'proof_link2_url' => 'https://twitter.com/StartupsEsp',
+    'proof_link3_text' => '💼 LinkedIn',
+    'proof_link3_desc' => 'Crescendo todos os dias',
+    'proof_link3_url' => 'https://linkedin.com/company/startups-espanolas',
+
+    // New Platform Links Section
+    'proof_platforms_headline' => 'Clique em Qualquer Plataforma Abaixo para Ver Conteúdo AO VIVO:',
+    'proof_platforms_subheadline' => 'Estes são os canais reais do Startups Españolas - atualizados automaticamente a cada poucas horas:',
+    'proof_important_note' => '⚠️ Importante: Estes são links REAIS, AO VIVO. Verifique os timestamps - o conteúdo foi postado HOJE, não por mim, mas pelo MindBeamer.',
+
+    // WordPress Blog
+    'proof_blog_title' => 'Blog WordPress (Hub Principal)',
+    'proof_blog_desc' => '📝 5-6 artigos completos DIARIAMENTE sobre startups espanholas, estratégias e tendências',
+    'proof_blog_update' => 'Verifique os timestamps - novo conteúdo a cada poucas horas',
+    'proof_blog_link' => 'Ver Blog Ao Vivo',
+    'proof_blog_url' => 'https://startups-espanolas.es',
+
+    // LinkedIn
+    'proof_linkedin_title' => 'Rede de Negócios LinkedIn',
+    'proof_linkedin_desc' => '💼 Cada artigo do blog se torna um post B2B condensado para executivos',
+    'proof_linkedin_link' => 'Ver Crescimento no LinkedIn',
+    'proof_linkedin_url' => 'https://linkedin.com/company/startups-espanolas',
+
+    // Instagram
+    'proof_instagram_title' => 'Histórias Visuais do Instagram',
+    'proof_instagram_desc' => '📸 Artigos transformados em carrosséis de 6-8 imagens com sobreposições de texto',
+    'proof_instagram_link' => 'Conferir Instagram',
+    'proof_instagram_url' => 'https://www.instagram.com/start_up_esp/',
+
+    // Facebook
+    'proof_facebook_title' => 'Comunidade Facebook',
+    'proof_facebook_desc' => '👥 Posts focados na comunidade projetados para gerar discussões sobre startups',
+    'proof_facebook_link' => 'Ver Facebook',
+    'proof_facebook_url' => 'https://facebook.com/startups.espanolas',
+
+    // Twitter
+    'proof_twitter_title' => 'Threads Twitter/X',
+    'proof_twitter_desc' => '🐦 "Hilos" - threads de 6 tweets que contam histórias completas de startups',
+    'proof_twitter_link' => 'Ver Feed do Twitter',
+    'proof_twitter_url' => 'https://twitter.com/StartupsEsp',
+
+    'proof_live_indicator' => 'AO VIVO',
+    'proof_kicker' => 'Eu não escrevi um único post eu mesmo em 6 meses.',
+    'proof_result' => 'Ainda assim: Tráfego constante, comunidade crescente, novos contatos comerciais diários.',
+    'proof_question' => 'Se o MindBeamer pode fazer isso para minha revista de nicho, o que poderia fazer pelo SEU negócio?',
+    'proof_cta' => 'Mostre-me o que pode fazer pelo meu negócio',
     
     // Problem/Pain Section
     'problem_headline' => 'O Problema Real do Marketing de Conteúdo',
