@@ -3,7 +3,7 @@
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 text-transparent bg-clip-text mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 text-transparent bg-clip-text mb-6 leading-relaxed">
           {{ t('title') }}
         </h1>
         <p class="text-surface-600 text-lg">
