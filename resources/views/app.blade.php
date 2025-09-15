@@ -46,7 +46,14 @@
     {{-- Favicon --}}
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     
-    {{-- Preload fonts - Using local Poppins for GDPR compliance --}}
+    {{-- Preload critical fonts for immediate rendering --}}
+    <link rel="preload" href="{{ asset('fonts/poppins-300.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ asset('fonts/poppins-400.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ asset('fonts/poppins-500.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ asset('fonts/poppins-600.woff2') }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ asset('fonts/poppins-700.woff2') }}" as="font" type="font/woff2" crossorigin>
+
+    {{-- Load font definitions - Using local Poppins for GDPR compliance --}}
     <link href="{{ asset('css/local-fonts.css') }}" rel="stylesheet">
     
     {{-- PrimeIcons --}}
@@ -106,10 +113,24 @@
     {{-- Vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    {{-- Ensure Poppins font is used consistently --}}
+    {{-- Critical CSS for immediate font rendering --}}
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        /* Ensure Poppins is used everywhere from the start */
+        body, * {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        /* Critical styles for logo to prevent font switching */
+        .logo-text {
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 300 !important;
+        }
+
+        /* Prevent Inter font from being used as fallback */
+        @font-face {
+            font-family: 'Inter';
+            src: local('Poppins');
+            font-weight: 100 900;
         }
     </style>
 
