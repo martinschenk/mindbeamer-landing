@@ -132,7 +132,8 @@ function getLocalizedUrl(page, locale = null) {
       es: '/es/politica-privacidad',
       zh_CN: '/zh_CN/privacy-policy',
       pt_BR: '/pt_BR/politica-privacidade',
-      fr: '/fr/politique-confidentialite'
+      fr: '/fr/politique-confidentialite',
+      hi: '/hi/gizla-niti'
     },
     impressum: {
       en: '/legal-notice',
@@ -140,7 +141,8 @@ function getLocalizedUrl(page, locale = null) {
       es: '/es/aviso-legal',
       zh_CN: '/zh_CN/legal-notice',
       pt_BR: '/pt_BR/aviso-legal',
-      fr: '/fr/mentions-legales'
+      fr: '/fr/mentions-legales',
+      hi: '/hi/vidhi-suchna'
     },
     terms: {
       en: '/terms',
@@ -148,10 +150,11 @@ function getLocalizedUrl(page, locale = null) {
       es: '/es/terminos',
       zh_CN: '/zh_CN/terms',
       pt_BR: '/pt_BR/termos',
-      fr: '/fr/conditions'
+      fr: '/fr/conditions',
+      hi: '/hi/sharten'
     }
   };
-  
+
   return urlMap[page]?.[targetLocale] || urlMap[page]?.en || '#';
 }
 
