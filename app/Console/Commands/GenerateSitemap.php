@@ -138,16 +138,56 @@ class GenerateSitemap extends Command
         
         $xml[] = '  </url>';
 
+        // Add English legal pages at root level (without /en prefix)
+        foreach ($pageKeys as $slugPart) {
+            if ($slugPart === '') {
+                continue; // Skip homepage, already handled above
+            }
+
+            $slug = $slugTranslations[$slugPart]['en'] ?? $slugPart;
+            $loc = rtrim($baseUrl, '/') . '/' . $slug;
+            $priority = $priorities[$slugPart] ?? '0.8';
+            $changeFreq = $changeFreqs[$slugPart] ?? 'weekly';
+
+            $xml[] = '  <url>';
+            $xml[] = '    <loc>' . e($loc) . '</loc>';
+            $xml[] = '    <lastmod>' . $now . '</lastmod>';
+            $xml[] = '    <changefreq>' . $changeFreq . '</changefreq>';
+            $xml[] = '    <priority>' . $priority . '</priority>';
+
+            // Add hreflang links for all languages
+            foreach ($locales as $altLocale) {
+                $altSlug = $slugTranslations[$slugPart][$altLocale] ?? $slugPart;
+                if ($altLocale === 'en') {
+                    $altUrl = rtrim($baseUrl, '/') . '/' . $altSlug;
+                } else {
+                    $altUrl = rtrim($baseUrl, '/') . '/' . $altLocale . '/' . $altSlug;
+                }
+                $hreflangCode = $hreflangMap[$altLocale] ?? $altLocale;
+                $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $hreflangCode . '" href="' . e($altUrl) . '" />';
+            }
+
+            // x-default points to English version at root
+            $xml[] = '    <xhtml:link rel="alternate" hreflang="x-default" href="' . e($loc) . '" />';
+
+            $xml[] = '  </url>';
+        }
+
+        // Add non-English pages with locale prefix
         foreach ($pageKeys as $slugPart) {
             foreach ($locales as $locale) {
-                // Skip English homepage as it's already covered by root domain
-                // This prevents duplicate content in sitemap
-                if ($locale === 'en' && $slugPart === '') {
+                // Skip English pages (handled above at root level)
+                if ($locale === 'en') {
                     continue;
                 }
 
                 $slug = $slugTranslations[$slugPart][$locale] ?? $slugPart;
-                $loc = rtrim($baseUrl, '/') . '/' . $locale . ($slug ? '/' . $slug : '');
+                // English pages use root-level URLs without /en prefix
+                if ($locale === 'en') {
+                    $loc = rtrim($baseUrl, '/') . ($slug ? '/' . $slug : '');
+                } else {
+                    $loc = rtrim($baseUrl, '/') . '/' . $locale . ($slug ? '/' . $slug : '');
+                }
 
                 $priority = $priorities[$slugPart] ?? '0.8';
                 $changeFreq = $changeFreqs[$slugPart] ?? 'weekly';
@@ -161,9 +201,9 @@ class GenerateSitemap extends Command
                 // Alternate links for the same route in all locales
                 foreach ($locales as $altLocale) {
                     $altSlug = $slugTranslations[$slugPart][$altLocale] ?? $slugPart;
-                    // For English homepage, use root domain (SEO strategy)
-                    if ($altLocale === 'en' && $slugPart === '') {
-                        $altUrl = $baseUrl;
+                    // English pages use root-level URLs without /en prefix
+                    if ($altLocale === 'en') {
+                        $altUrl = rtrim($baseUrl, '/') . ($altSlug ? '/' . $altSlug : '');
                     } else {
                         $altUrl = rtrim($baseUrl, '/') . '/' . $altLocale . ($altSlug ? '/' . $altSlug : '');
                     }
@@ -179,10 +219,9 @@ class GenerateSitemap extends Command
                     // This tells Google that the root domain is the default for unknown languages
                     $xml[] = '    <xhtml:link rel="alternate" hreflang="x-default" href="' . e($baseUrl) . '" />';
                 } else {
-                    // For other pages (privacy, terms, etc), x-default points to English version
-                    // since we don't serve these pages on the root domain
+                    // For other pages, x-default points to English version at root level (no /en prefix)
                     $defaultSlug = $slugTranslations[$slugPart]['en'] ?? $slugPart;
-                    $defaultUrl = rtrim($baseUrl, '/') . '/en' . ($defaultSlug ? '/' . $defaultSlug : '');
+                    $defaultUrl = rtrim($baseUrl, '/') . '/' . $defaultSlug;
                     $xml[] = '    <xhtml:link rel="alternate" hreflang="x-default" href="' . e($defaultUrl) . '" />';
                 }
 

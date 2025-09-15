@@ -20,6 +20,6 @@ class PrivacyController extends Controller
      */
     public function index(Request $request): View
     {
-        return view('privacy-policy');
+        return view('privacy-policy', ['pageKey' => 'privacy-policy']);
     }
 }

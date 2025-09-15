@@ -17,7 +17,7 @@ class LegalController extends Controller
      */
     public function impressum(): View
     {
-        return view('legal.impressum');
+        return view('legal.impressum', ['pageKey' => 'impressum']);
     }
 
     /**
@@ -25,6 +25,6 @@ class LegalController extends Controller
      */
     public function terms(): View
     {
-        return view('legal.terms');
+        return view('legal.terms', ['pageKey' => 'terms']);
     }
 }

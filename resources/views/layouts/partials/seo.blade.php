@@ -45,10 +45,14 @@
     $pageKey = $pageKey ?? '';
     $currentLocale = app()->getLocale();
     $isRootDomain = $isRootDomain ?? false;
-    
-    // If we're on the root domain, canonical should be the root URL
+
+    // If we're on the root domain or English, canonical should not have /en prefix
     if ($isRootDomain && $pageKey === '') {
         $canonical = $base;
+    } elseif ($currentLocale === 'en') {
+        // English pages don't use /en prefix
+        $slugForLocale = $slugTranslations[$pageKey]['en'] ?? $pageKey;
+        $canonical = rtrim($base, '/') . '/' . $slugForLocale;
     } else {
         $slugForLocale = $slugTranslations[$pageKey][$currentLocale] ?? $pageKey;
         $canonical = rtrim($base, '/') . '/' . $currentLocale . ($slugForLocale ? '/' . $slugForLocale : '');
@@ -62,7 +66,12 @@
 @foreach($locales as $loc)
     @php
         $slug = $slugTranslations[$pageKey][$loc] ?? $pageKey;
-        $url  = rtrim($base, '/') . '/' . $loc . ($slug ? '/' . $slug : '');
+        // English pages don't use /en prefix
+        if ($loc === 'en') {
+            $url = rtrim($base, '/') . ($slug ? '/' . $slug : '');
+        } else {
+            $url = rtrim($base, '/') . '/' . $loc . ($slug ? '/' . $slug : '');
+        }
         // Convert internal locale codes to proper hreflang codes
         $hreflangCode = match($loc) {
             'zh_CN' => 'zh-CN',
@@ -75,7 +84,10 @@
 @if($pageKey === '')
     <link rel="alternate" hreflang="x-default" href="{{ $base }}">
 @else
-    <link rel="alternate" hreflang="x-default" href="{{ rtrim($base, '/') . '/en' . ($slugTranslations[$pageKey]['en'] ? '/' . $slugTranslations[$pageKey]['en'] : '') }}">
+    @php
+        $defaultSlug = $slugTranslations[$pageKey]['en'] ?? $pageKey;
+    @endphp
+    <link rel="alternate" hreflang="x-default" href="{{ rtrim($base, '/') . '/' . $defaultSlug }}">
 @endif
 
 <!-- Robots -->

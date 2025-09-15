@@ -35,6 +35,27 @@ Route::domain('www.mindbeamer.io')->group(function () {
 // Serves default language content at the root domain for better SEO
 Route::get('/', [RootController::class, 'index'])->name('root');
 
+// English legal pages at root level (without /en prefix) for SEO
+// These routes serve English content directly at the root domain
+Route::middleware(['web'])->group(function () {
+    Route::get('/privacy-policy', function () {
+        app()->setLocale('en');
+        $controller = app(PrivacyController::class);
+        return $controller->index(request());
+    })->name('privacy.policy.root');
+
+    Route::get('/legal-notice', function () {
+        app()->setLocale('en');
+        $controller = app(LegalController::class);
+        return $controller->impressum();
+    })->name('legal.impressum.root');
+
+    Route::get('/terms', function () {
+        app()->setLocale('en');
+        $controller = app(LegalController::class);
+        return $controller->terms();
+    })->name('legal.terms.root');
+});
 
 // Language switching route
 Route::get('/language/{locale}', [TranslationController::class, 'switchLocale'])

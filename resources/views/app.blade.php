@@ -46,9 +46,8 @@
     {{-- Favicon --}}
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     
-    {{-- Preload fonts --}}
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    {{-- Preload fonts - Using local Poppins for GDPR compliance --}}
+    <link href="{{ asset('css/local-fonts.css') }}" rel="stylesheet">
     
     {{-- PrimeIcons --}}
     <link rel="stylesheet" href="https://unpkg.com/primeicons@7.0.0/primeicons.css">
@@ -106,7 +105,14 @@
     
     {{-- Vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+
+    {{-- Ensure Poppins font is used consistently --}}
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
     {{-- Additional head content --}}
     @stack('head')
 </head>

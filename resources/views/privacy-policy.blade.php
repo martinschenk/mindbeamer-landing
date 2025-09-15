@@ -1,4 +1,14 @@
-<x-app-layout>
+@extends('layouts.app')
+
+@section('title')
+    {{ __('privacy.title') }} - MindBeamer
+@endsection
+
+@section('meta_description')
+    {{ __('privacy.meta_description') }}
+@endsection
+
+@section('content')
     <div class="min-h-screen bg-gray-50 py-12">
         <div class="max-w-4xl mx-auto px-6 lg:px-8">
             <!-- Header -->
@@ -99,4 +109,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+@endsection

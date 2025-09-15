@@ -69,7 +69,7 @@ const iconSize = computed(() => {
     margin: 0;
     line-height: 1;
     transform: translateY(-2px); /* Optical alignment */
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Size Variations */
