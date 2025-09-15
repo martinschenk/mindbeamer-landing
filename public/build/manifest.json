@@ -15,12 +15,12 @@
     "name": "vendor"
   },
   "resources/css/app.css": {
-    "file": "css/app-CRXDOitp.css",
+    "file": "css/app-Bk3wY8oJ.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-CnpZgiso.js",
+    "file": "assets/app-ChSpUWB4.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -29,8 +29,8 @@
       "_primevue-CTmqe06O.js"
     ],
     "css": [
-      "css/app-DNOzXwgI.css",
-      "css/app-CRXDOitp.css"
+      "css/app-bvpG_UcZ.css",
+      "css/app-Bk3wY8oJ.css"
     ]
   }
 }
