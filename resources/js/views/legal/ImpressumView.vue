@@ -1,6 +1,6 @@
 <template>
-  <div class="container mx-auto px-6 pt-24 pb-24">
-    <div class="max-w-4xl mx-auto">
+  <div class="impressum-page">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 py-12">
       <h1 class="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-primary-600 to-primary-800 text-transparent bg-clip-text" style="line-height: 1.5;">
         {{ t('impressum_title') }}
       </h1>

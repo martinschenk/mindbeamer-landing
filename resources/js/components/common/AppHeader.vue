@@ -20,12 +20,12 @@
         <a :href="`${homeRoute}#pricing`" class="text-surface-900 hover:text-primary font-medium transition-colors">
           {{ t('nav_pricing') }}
         </a>
-        <a 
+        <a
           :href="`${homeRoute}#demo`"
-          class="p-button p-component p-button-primary text-white"
+          class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200"
         >
-          <span class="p-button-label text-white">{{ t('nav_demo') }}</span>
-          <i class="pi pi-arrow-right p-button-icon-right text-white"></i>
+          <span class="text-white">{{ t('nav_demo') }}</span>
+          <i class="pi pi-arrow-right ml-2 text-white"></i>
         </a>
       </nav>
       
@@ -89,13 +89,13 @@
         >
           {{ t('nav_pricing') }}
         </a>
-        <a 
+        <a
           :href="`${homeRoute}#demo`"
           @click="closeMobileMenu"
-          class="p-button p-component p-button-primary w-full text-center text-white"
+          class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200"
         >
-          <span class="p-button-label text-white">{{ t('nav_demo') }}</span>
-          <i class="pi pi-arrow-right p-button-icon-right text-white"></i>
+          <span class="text-white">{{ t('nav_demo') }}</span>
+          <i class="pi pi-arrow-right ml-2 text-white"></i>
         </a>
       </nav>
     </Drawer>

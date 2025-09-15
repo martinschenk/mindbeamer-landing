@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gray-50 pt-24 pb-12">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+  <div class="privacy-policy-page">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 py-12">
       <!-- Header -->
       <div class="text-center mb-12">
         <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 text-transparent bg-clip-text mb-6" style="line-height: 1.5;">
@@ -88,12 +88,12 @@
 
       <!-- Back to Home -->
       <div class="text-center mt-12">
-        <router-link 
+        <router-link
           :to="currentLocale === 'en' ? '/' : `/${currentLocale}`"
           class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-200"
         >
           <i class="pi pi-arrow-left mr-2"></i>
-          {{ t('back_to_home') }}
+          {{ localeStore.t('footer_home') }}
         </router-link>
       </div>
     </div>

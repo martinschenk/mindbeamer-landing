@@ -28,6 +28,7 @@
 .bg-primary-600 { background-color: var(--p-primary-600); }
 .hover\:bg-primary-500:hover { background-color: var(--p-primary-500); }
 .hover\:bg-primary-600:hover { background-color: var(--p-primary-600); }
+.hover\:bg-primary-700:hover { background-color: var(--p-primary-700); }
 
 /* Hover Text Colors */
 .hover\:text-primary:hover { color: var(--p-primary-500); }
