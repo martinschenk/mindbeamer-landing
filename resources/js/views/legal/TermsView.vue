@@ -145,10 +145,13 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import { useLocaleStore } from '@/stores/locale';
+import { useUIStore } from '@/stores/ui';
 import { storeToRefs } from 'pinia';
 
 const localeStore = useLocaleStore();
+const uiStore = useUIStore();
 const { currentLocale } = storeToRefs(localeStore);
 
 // Custom translation function for legal namespace
@@ -167,4 +170,17 @@ const getPrivacyPolicyUrl = () => {
   };
   return urlMap[currentLocale.value] || '/privacy-policy';
 };
+
+// Fix mobile menu and font issues on mount
+onMounted(() => {
+  // Ensure mobile menu is closed
+  uiStore.closeMobileMenu();
+
+  // Force font to be applied (prevent Inter fallback)
+  const logoElements = document.querySelectorAll('.logo-text');
+  logoElements.forEach(el => {
+    el.style.fontFamily = 'Poppins, sans-serif';
+    el.style.fontWeight = '300';
+  });
+});
 </script>
