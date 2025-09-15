@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 
 export const useUIStore = defineStore('ui', () => {
-  // State - explicitly initialize as false to prevent hydration issues
+  // State
   const mobileMenuOpen = ref(false);
   const languageBannerVisible = ref(false);
   const languageBannerDismissed = ref(false);

@@ -40,8 +40,7 @@
     </div>
     
     <!-- Mobile Menu -->
-    <Drawer
-      v-if="isMounted"
+    <Drawer 
       v-model:visible="mobileMenuOpen"
       position="right"
       :showCloseIcon="false"
@@ -115,9 +114,6 @@ import MindBeamerLogo from '@/components/common/MindBeamerLogo.vue';
 const uiStore = useUIStore();
 const localeStore = useLocaleStore();
 
-// Add mounted state to prevent hydration issues
-const isMounted = ref(false);
-
 const { mobileMenuOpen, languageBannerVisible } = storeToRefs(uiStore);
 const { toggleMobileMenu, closeMobileMenu } = uiStore;
 const { t, currentLocale } = localeStore;
@@ -151,12 +147,6 @@ watch(languageBannerVisible, async () => {
 });
 
 onMounted(() => {
-  // Mark as mounted to enable mobile menu
-  isMounted.value = true;
-
-  // Ensure mobile menu is closed on mount
-  closeMobileMenu();
-
   updateHeaderOffset();
   window.addEventListener('resize', updateHeaderOffset);
 });

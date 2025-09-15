@@ -15,8 +15,7 @@
             </g>
         </svg>
 
-        <h1 class="logo-text" translate="no"
-            :style="{ fontFamily: 'Poppins, sans-serif', fontWeight: '300' }">
+        <h1 class="logo-text" translate="no">
             <span class="text-primary">Mind</span><span class="text-surface-900">Beamer</span>
         </h1>
     </div>
