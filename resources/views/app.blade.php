@@ -23,25 +23,8 @@
     <meta property="twitter:description" content="@yield('twitter_description', __('messages.meta_description'))">
     <meta property="twitter:image" content="{{ asset('images/twitter-card.jpg') }}">
     
-    {{-- Canonical URL --}}
-    @php
-        // For English pages accessed via /en, canonical should point to root domain
-        // This prevents duplicate content issues (SEO best practice)
-        $canonicalUrl = (app()->getLocale() === 'en' && request()->is('en') && !request()->is('en/*'))
-            ? url('/')
-            : url()->current();
-    @endphp
-    <link rel="canonical" href="{{ $canonicalUrl }}">
-    
-    {{-- Hreflang tags for language versions --}}
-    <link rel="alternate" hreflang="x-default" href="{{ url('/') }}">
-    <link rel="alternate" hreflang="en" href="{{ url('/') }}">
-    <link rel="alternate" hreflang="de" href="{{ url('/de') }}">
-    <link rel="alternate" hreflang="es" href="{{ url('/es') }}">
-    <link rel="alternate" hreflang="zh-CN" href="{{ url('/zh_CN') }}">
-    <link rel="alternate" hreflang="pt-BR" href="{{ url('/pt_BR') }}">
-    <link rel="alternate" hreflang="fr" href="{{ url('/fr') }}">
-    <link rel="alternate" hreflang="hi" href="{{ url('/hi') }}">
+    {{-- SEO Meta Tags handled by layouts.partials.seo partial --}}
+    {{-- This ensures consistent canonical URLs and hreflang tags across the site --}}
     
     {{-- Favicon --}}
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">

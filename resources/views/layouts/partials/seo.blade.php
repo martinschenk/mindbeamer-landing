@@ -48,14 +48,22 @@
 
     // If we're on the root domain or English, canonical should not have /en prefix
     if ($isRootDomain && $pageKey === '') {
-        $canonical = $base;
+        $canonical = $base;  // No trailing slash for root domain
     } elseif ($currentLocale === 'en') {
         // English pages don't use /en prefix
         $slugForLocale = $slugTranslations[$pageKey]['en'] ?? $pageKey;
-        $canonical = rtrim($base, '/') . '/' . $slugForLocale;
+        if ($slugForLocale === '') {
+            $canonical = $base;  // No trailing slash for homepage
+        } else {
+            $canonical = rtrim($base, '/') . '/' . rtrim($slugForLocale, '/');  // No trailing slash
+        }
     } else {
         $slugForLocale = $slugTranslations[$pageKey][$currentLocale] ?? $pageKey;
-        $canonical = rtrim($base, '/') . '/' . $currentLocale . ($slugForLocale ? '/' . $slugForLocale : '');
+        if ($slugForLocale === '') {
+            $canonical = rtrim($base, '/') . '/' . $currentLocale;  // No trailing slash
+        } else {
+            $canonical = rtrim($base, '/') . '/' . $currentLocale . '/' . rtrim($slugForLocale, '/');  // No trailing slash
+        }
     }
 @endphp
 
@@ -68,9 +76,17 @@
         $slug = $slugTranslations[$pageKey][$loc] ?? $pageKey;
         // English pages don't use /en prefix
         if ($loc === 'en') {
-            $url = rtrim($base, '/') . ($slug ? '/' . $slug : '');
+            if ($slug === '') {
+                $url = $base;  // No trailing slash for homepage
+            } else {
+                $url = rtrim($base, '/') . '/' . rtrim($slug, '/');  // No trailing slash
+            }
         } else {
-            $url = rtrim($base, '/') . '/' . $loc . ($slug ? '/' . $slug : '');
+            if ($slug === '') {
+                $url = rtrim($base, '/') . '/' . $loc;  // No trailing slash
+            } else {
+                $url = rtrim($base, '/') . '/' . $loc . '/' . rtrim($slug, '/');  // No trailing slash
+            }
         }
         // Convert internal locale codes to proper hreflang codes
         $hreflangCode = match($loc) {
@@ -86,8 +102,9 @@
 @else
     @php
         $defaultSlug = $slugTranslations[$pageKey]['en'] ?? $pageKey;
+        $xDefaultUrl = rtrim($base, '/') . '/' . rtrim($defaultSlug, '/');  // No trailing slash
     @endphp
-    <link rel="alternate" hreflang="x-default" href="{{ rtrim($base, '/') . '/' . $defaultSlug }}">
+    <link rel="alternate" hreflang="x-default" href="{{ $xDefaultUrl }}">
 @endif
 
 <!-- Robots -->
