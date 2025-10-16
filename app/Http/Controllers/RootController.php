@@ -77,10 +77,12 @@ class RootController extends Controller
         ]);
         
         // Pass both default and preferred locale to the view
+        // pageKey = '' indicates this is the home page (for SEO canonical/hreflang tags)
         return view('app', [
             'currentLocale' => $defaultLocale,
             'preferredLocale' => $preferredLocale,
-            'isRootDomain' => true
+            'isRootDomain' => true,
+            'pageKey' => ''
         ]);
     }
 

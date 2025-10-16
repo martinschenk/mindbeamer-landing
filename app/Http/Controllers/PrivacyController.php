@@ -20,6 +20,9 @@ class PrivacyController extends Controller
      */
     public function index(Request $request): View
     {
-        return view('app', ['pageKey' => 'privacy-policy']);
+        return view('app', [
+            'pageKey' => 'privacy-policy',
+            'isRootDomain' => false
+        ]);
     }
 }

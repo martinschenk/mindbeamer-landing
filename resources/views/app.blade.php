@@ -23,9 +23,9 @@
     <meta property="twitter:description" content="@yield('twitter_description', __('messages.meta_description'))">
     <meta property="twitter:image" content="{{ asset('images/twitter-card.jpg') }}">
     
-    {{-- SEO Meta Tags handled by layouts.partials.seo partial --}}
-    {{-- This ensures consistent canonical URLs and hreflang tags across the site --}}
-    
+    {{-- SEO Meta Tags: Canonical URLs, hreflang tags, and structured data --}}
+    @include('layouts.partials.seo', ['pageKey' => $pageKey ?? '', 'isRootDomain' => $isRootDomain ?? false])
+
     {{-- Favicon --}}
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     

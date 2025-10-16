@@ -17,7 +17,10 @@ class LegalController extends Controller
      */
     public function impressum(): View
     {
-        return view('app', ['pageKey' => 'impressum']);
+        return view('app', [
+            'pageKey' => 'impressum',
+            'isRootDomain' => false
+        ]);
     }
 
     /**
@@ -25,6 +28,9 @@ class LegalController extends Controller
      */
     public function terms(): View
     {
-        return view('app', ['pageKey' => 'terms']);
+        return view('app', [
+            'pageKey' => 'terms',
+            'isRootDomain' => false
+        ]);
     }
 }

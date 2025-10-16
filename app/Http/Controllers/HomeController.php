@@ -26,11 +26,15 @@ class HomeController extends Controller
 
     /**
      * Display the landing page
-     * 
+     *
      * @return View
      */
     public function index(): View
     {
-        return view('app');
+        // pageKey = '' indicates this is the home page (for SEO canonical/hreflang tags)
+        return view('app', [
+            'pageKey' => '',
+            'isRootDomain' => false
+        ]);
     }
 }
