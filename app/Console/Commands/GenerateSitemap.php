@@ -138,12 +138,14 @@ class GenerateSitemap extends Command
         
         $xml[] = '  </url>';
 
-        // Add English legal pages at root level (without /en prefix)
+        // Add all other pages - ONLY canonical URLs (English without /en prefix)
+        // hreflang links point to all language versions, but only the canonical URL is in <loc>
         foreach ($pageKeys as $slugPart) {
             if ($slugPart === '') {
                 continue; // Skip homepage, already handled above
             }
 
+            // Use English slug as the canonical URL (without /en prefix)
             $slug = $slugTranslations[$slugPart]['en'] ?? $slugPart;
             $loc = rtrim($baseUrl, '/') . '/' . $slug;
             $priority = $priorities[$slugPart] ?? '0.8';
@@ -171,72 +173,6 @@ class GenerateSitemap extends Command
             $xml[] = '    <xhtml:link rel="alternate" hreflang="x-default" href="' . e($loc) . '" />';
 
             $xml[] = '  </url>';
-        }
-
-        // Add non-English pages with locale prefix
-        foreach ($pageKeys as $slugPart) {
-            foreach ($locales as $locale) {
-                // Skip English pages (handled above at root level)
-                if ($locale === 'en') {
-                    continue;
-                }
-
-                $slug = $slugTranslations[$slugPart][$locale] ?? $slugPart;
-                // English pages use root-level URLs without /en prefix
-                if ($locale === 'en') {
-                    $loc = rtrim($baseUrl, '/') . ($slug ? '/' . $slug : '');
-                } else {
-                    $loc = rtrim($baseUrl, '/') . '/' . $locale . ($slug ? '/' . $slug : '');
-                }
-
-                $priority = $priorities[$slugPart] ?? '0.8';
-                $changeFreq = $changeFreqs[$slugPart] ?? 'weekly';
-                
-                $xml[] = '  <url>';
-                $xml[] = '    <loc>' . e($loc) . '</loc>';
-                $xml[] = '    <lastmod>' . $now . '</lastmod>';
-                $xml[] = '    <changefreq>' . $changeFreq . '</changefreq>';
-                $xml[] = '    <priority>' . $priority . '</priority>';
-
-                // Alternate links for the same route in all locales
-                foreach ($locales as $altLocale) {
-                    $altSlug = $slugTranslations[$slugPart][$altLocale] ?? $slugPart;
-                    // English pages use root-level URLs without /en prefix
-                    if ($altLocale === 'en') {
-                        $altUrl = rtrim($baseUrl, '/') . ($altSlug ? '/' . $altSlug : '');
-                    } else {
-                        $altUrl = rtrim($baseUrl, '/') . '/' . $altLocale . ($altSlug ? '/' . $altSlug : '');
-                    }
-                    $hreflangCode = $hreflangMap[$altLocale] ?? $altLocale;
-                    $xml[] = '    <xhtml:link rel="alternate" hreflang="' . $hreflangCode . '" href="' . e(
-                            $altUrl,
-                        ) . '" />';
-                }
-                
-                // Add x-default hreflang - critical for international SEO
-                if ($slugPart === '') {
-                    // For home page, x-default points to root domain (mindbeamer.io)
-                    // This tells Google that the root domain is the default for unknown languages
-                    $xml[] = '    <xhtml:link rel="alternate" hreflang="x-default" href="' . e($baseUrl) . '" />';
-                } else {
-                    // For other pages, x-default points to English version at root level (no /en prefix)
-                    $defaultSlug = $slugTranslations[$slugPart]['en'] ?? $slugPart;
-                    $defaultUrl = rtrim($baseUrl, '/') . '/' . $defaultSlug;
-                    $xml[] = '    <xhtml:link rel="alternate" hreflang="x-default" href="' . e($defaultUrl) . '" />';
-                }
-
-                // Add images for this page if available
-                if (isset($pageImages[$slugPart]) && !empty($pageImages[$slugPart])) {
-                    foreach ($pageImages[$slugPart] as $imageUrl) {
-                        $xml[] = '    <image:image>';
-                        $xml[] = '      <image:loc>' . e($imageUrl) . '</image:loc>';
-                        $xml[] = '      <image:caption>MindBeamer - Autonomous AI Content Creation</image:caption>';
-                        $xml[] = '    </image:image>';
-                    }
-                }
-
-                $xml[] = '  </url>';
-            }
         }
 
         $xml[] = '</urlset>';
