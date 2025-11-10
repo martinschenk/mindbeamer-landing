@@ -126,3 +126,6 @@
       content="@yield('twitter_title', trim(View::hasSection('title') ? View::yieldContent('title') : 'MindBeamer'))">
 <meta name="twitter:description" content="@yield('twitter_description', __('messages.meta_description'))">
 <meta name="twitter:image" content="@yield('twitter_image', asset('images/og-default.jpg'))">
+
+<!-- Structured Data (JSON-LD) -->
+@include('layouts.partials.structured-data', ['pageKey' => $pageKey, 'isRootDomain' => $isRootDomain])

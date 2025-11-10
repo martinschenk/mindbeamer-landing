@@ -37,29 +37,7 @@
     
     {{-- Calendly Widget CSS --}}
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    
-    {{-- Structured Data --}}
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "MindBeamer",
-        "url": "{{ url('/') }}",
-        "logo": "{{ asset('images/logo.png') }}",
-        "description": "German-engineered content automation for B2B companies",
-        "founder": {
-            "@type": "Person",
-            "name": "Martin Schenk",
-            "url": "https://martin-schenk.es"
-        },
-        "foundingDate": "2024",
-        "sameAs": [
-            "https://twitter.com/mindbeamer",
-            "https://linkedin.com/company/mindbeamer"
-        ]
-    }
-    </script>
-    
+
     {{-- Vue App Data --}}
     <script>
         window.__APP_DATA__ = {
