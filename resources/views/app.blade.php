@@ -26,8 +26,13 @@
     {{-- SEO Meta Tags: Canonical URLs, hreflang tags, and structured data --}}
     @include('layouts.partials.seo', ['pageKey' => $pageKey ?? '', 'isRootDomain' => $isRootDomain ?? false])
 
-    {{-- Favicon --}}
+    {{-- Favicons - Multiple formats for maximum compatibility --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon-192x192.png') }}">
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="apple-touch-icon" sizes="192x192" href="{{ asset('favicon-192x192.png') }}">
     
     {{-- Preload fonts - Using local Poppins for GDPR compliance --}}
     <link href="{{ asset('css/local-fonts.css') }}" rel="stylesheet">
