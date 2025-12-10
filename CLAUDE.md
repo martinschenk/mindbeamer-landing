@@ -360,3 +360,18 @@ docs/                  # Comprehensive documentation
 ├── LOCALIZATION.md    # Multilingual implementation guide
 └── SEO-MULTILINGUAL-STRATEGY.md  # SEO strategy and root domain handling
 ```
+---
+
+## Deploy Configuration (for /deploy command)
+
+```yaml
+type: laravel
+deploy_method: github_only
+github: https://github.com/martinschenk/mindbeamer-landing.git
+remotes:
+  - github-mindbeamer-landing → GitHub
+deploy_command: "git push github-mindbeamer-landing main"
+server: none
+production_url: https://mindbeamer.io
+notes: Mindbeamer Landing Page
+```
